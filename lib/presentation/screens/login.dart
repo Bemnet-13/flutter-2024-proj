@@ -29,17 +29,17 @@ class LoginScreen extends StatelessWidget {
                     topRight: Radius.circular(40)),
                 color: Colors.white,
               ),
-              child: Column(
+              child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.fromLTRB(30, 20, 0, 0),
                     child: Text(
                       "Login",
                       style: StyledText.loginStyle,
                     ),
                   ),
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.fromLTRB(30, 10, 0, 0),
                     child: Text(
                       "Please sign in to continue",
@@ -47,16 +47,16 @@ class LoginScreen extends StatelessWidget {
                           fontWeight: FontWeight.w500, fontSize: 20.0),
                     ),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: 15.0,
                   ),
-                  const TextFieldWithIcon("EMAIL", Icons.email_outlined),
-                  const TextFieldWithIcon("PASSWORD", Icons.lock_open_outlined),
-                  const SizedBox(
+                  TextFieldWithIcon("EMAIL", Icons.email_outlined),
+                  TextFieldWithIcon("PASSWORD", Icons.lock_open_outlined),
+                  SizedBox(
                     height: 20.0,
                   ),
                   AuthButton("LOGIN ", CustomColors.divider, '/choice'),
-                  const BottomText("Don't you have an account?", "Sign Up", '/signup')
+                  BottomText("Don't you have an account?", "Sign Up", '/signup')
                 ],
               ),
             ),
