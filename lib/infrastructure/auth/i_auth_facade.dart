@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
-import 'package:notes_app/domain/auth/auth_failure.dart';
-import 'package:notes_app/domain/auth/value_objects.dart';
+import 'package:FantasyE/domain/auth/auth_failure.dart';
+import 'package:FantasyE/domain/auth/value_objects.dart';
 
 abstract class IAuthFacade {
   Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword(
