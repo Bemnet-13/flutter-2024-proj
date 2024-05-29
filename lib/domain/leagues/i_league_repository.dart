@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:kt_dart/collection.dart';
-import 'package:finished_notes_firebase_ddd_course/domain/leagues/league.dart';
-import 'package:finished_notes_firebase_ddd_course/domain/leagues/league_failure.dart';
+import 'package:FantasyE/domain/leagues/league.dart';
+import 'package:FantasyE/domain/leagues/league_failure.dart';
 
 abstract class ILeagueRepository {
   Stream<Either<LeagueFailure, KtList<League>>> watchAll();
