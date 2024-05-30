@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import 'package:faq/presentation/widgets/appbar.dart';
+=======
+import 'package:FantasyE/presentation/widgets/appbar.dart';
+import 'package:FantasyE/presentation/widgets/buttons.dart';
+>>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
 import 'package:flutter/material.dart';
 import '../widgets/cards.dart';
 

@@ -1,4 +1,4 @@
-import 'package:faq/presentation/widgets/appbar.dart';
+import 'package:FantasyE/presentation/widgets/appbar.dart';
 import 'package:flutter/material.dart';
 
 class LeaguesScreen extends StatelessWidget {
