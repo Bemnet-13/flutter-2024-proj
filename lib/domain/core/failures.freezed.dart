@@ -21,39 +21,27 @@ mixin _$ValueFailure<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
-<<<<<<< HEAD
-    required TResult Function(T failedValue) invalidRole,
-=======
     required TResult Function(T failedValue) invalidPlayerName,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) empty,
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T failedValue)? invalidEmail,
     TResult? Function(T failedValue)? shortPassword,
-<<<<<<< HEAD
-    TResult? Function(T failedValue)? invalidRole,
-=======
     TResult? Function(T failedValue)? invalidPlayerName,
     TResult? Function(T failedValue, int max)? exceedingLength,
     TResult? Function(T failedValue)? empty,
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
-<<<<<<< HEAD
-    TResult Function(T failedValue)? invalidRole,
-=======
     TResult Function(T failedValue)? invalidPlayerName,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? empty,
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -61,39 +49,27 @@ mixin _$ValueFailure<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
-<<<<<<< HEAD
-    required TResult Function(InvalidRole<T> value) invalidRole,
-=======
     required TResult Function(InvalidPlayerName<T> value) invalidPlayerName,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Empty<T> value) empty,
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(InvalidEmail<T> value)? invalidEmail,
     TResult? Function(ShortPassword<T> value)? shortPassword,
-<<<<<<< HEAD
-    TResult? Function(InvalidRole<T> value)? invalidRole,
-=======
     TResult? Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult? Function(ExceedingLength<T> value)? exceedingLength,
     TResult? Function(Empty<T> value)? empty,
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
-<<<<<<< HEAD
-    TResult Function(InvalidRole<T> value)? invalidRole,
-=======
     TResult Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -207,13 +183,9 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
-<<<<<<< HEAD
-    required TResult Function(T failedValue) invalidRole,
-=======
     required TResult Function(T failedValue) invalidPlayerName,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) empty,
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
   }) {
     return invalidEmail(failedValue);
   }
@@ -223,13 +195,9 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T failedValue)? invalidEmail,
     TResult? Function(T failedValue)? shortPassword,
-<<<<<<< HEAD
-    TResult? Function(T failedValue)? invalidRole,
-=======
     TResult? Function(T failedValue)? invalidPlayerName,
     TResult? Function(T failedValue, int max)? exceedingLength,
     TResult? Function(T failedValue)? empty,
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
   }) {
     return invalidEmail?.call(failedValue);
   }
@@ -239,13 +207,9 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
-<<<<<<< HEAD
-    TResult Function(T failedValue)? invalidRole,
-=======
     TResult Function(T failedValue)? invalidPlayerName,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? empty,
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -259,13 +223,9 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
-<<<<<<< HEAD
-    required TResult Function(InvalidRole<T> value) invalidRole,
-=======
     required TResult Function(InvalidPlayerName<T> value) invalidPlayerName,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Empty<T> value) empty,
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
   }) {
     return invalidEmail(this);
   }
@@ -275,13 +235,9 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(InvalidEmail<T> value)? invalidEmail,
     TResult? Function(ShortPassword<T> value)? shortPassword,
-<<<<<<< HEAD
-    TResult? Function(InvalidRole<T> value)? invalidRole,
-=======
     TResult? Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult? Function(ExceedingLength<T> value)? exceedingLength,
     TResult? Function(Empty<T> value)? empty,
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
   }) {
     return invalidEmail?.call(this);
   }
@@ -291,13 +247,9 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
-<<<<<<< HEAD
-    TResult Function(InvalidRole<T> value)? invalidRole,
-=======
     TResult Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -390,13 +342,9 @@ class _$ShortPasswordImpl<T> implements ShortPassword<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
-<<<<<<< HEAD
-    required TResult Function(T failedValue) invalidRole,
-=======
     required TResult Function(T failedValue) invalidPlayerName,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) empty,
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
   }) {
     return shortPassword(failedValue);
   }
@@ -406,13 +354,9 @@ class _$ShortPasswordImpl<T> implements ShortPassword<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T failedValue)? invalidEmail,
     TResult? Function(T failedValue)? shortPassword,
-<<<<<<< HEAD
-    TResult? Function(T failedValue)? invalidRole,
-=======
     TResult? Function(T failedValue)? invalidPlayerName,
     TResult? Function(T failedValue, int max)? exceedingLength,
     TResult? Function(T failedValue)? empty,
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
   }) {
     return shortPassword?.call(failedValue);
   }
@@ -422,13 +366,9 @@ class _$ShortPasswordImpl<T> implements ShortPassword<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
-<<<<<<< HEAD
-    TResult Function(T failedValue)? invalidRole,
-=======
     TResult Function(T failedValue)? invalidPlayerName,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? empty,
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
     required TResult orElse(),
   }) {
     if (shortPassword != null) {
@@ -442,13 +382,9 @@ class _$ShortPasswordImpl<T> implements ShortPassword<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
-<<<<<<< HEAD
-    required TResult Function(InvalidRole<T> value) invalidRole,
-=======
     required TResult Function(InvalidPlayerName<T> value) invalidPlayerName,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Empty<T> value) empty,
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
   }) {
     return shortPassword(this);
   }
@@ -458,13 +394,9 @@ class _$ShortPasswordImpl<T> implements ShortPassword<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(InvalidEmail<T> value)? invalidEmail,
     TResult? Function(ShortPassword<T> value)? shortPassword,
-<<<<<<< HEAD
-    TResult? Function(InvalidRole<T> value)? invalidRole,
-=======
     TResult? Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult? Function(ExceedingLength<T> value)? exceedingLength,
     TResult? Function(Empty<T> value)? empty,
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
   }) {
     return shortPassword?.call(this);
   }
@@ -474,13 +406,9 @@ class _$ShortPasswordImpl<T> implements ShortPassword<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
-<<<<<<< HEAD
-    TResult Function(InvalidRole<T> value)? invalidRole,
-=======
     TResult Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
     required TResult orElse(),
   }) {
     if (shortPassword != null) {
@@ -503,38 +431,22 @@ abstract class ShortPassword<T> implements ValueFailure<T> {
 }
 
 /// @nodoc
-<<<<<<< HEAD
-abstract class _$$InvalidRoleImplCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
-  factory _$$InvalidRoleImplCopyWith(_$InvalidRoleImpl<T> value,
-          $Res Function(_$InvalidRoleImpl<T>) then) =
-      __$$InvalidRoleImplCopyWithImpl<T, $Res>;
-=======
 abstract class _$$InvalidPlayerNameImplCopyWith<T, $Res>
     implements $ValueFailureCopyWith<T, $Res> {
   factory _$$InvalidPlayerNameImplCopyWith(_$InvalidPlayerNameImpl<T> value,
           $Res Function(_$InvalidPlayerNameImpl<T>) then) =
       __$$InvalidPlayerNameImplCopyWithImpl<T, $Res>;
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
   @override
   @useResult
   $Res call({T failedValue});
 }
 
 /// @nodoc
-<<<<<<< HEAD
-class __$$InvalidRoleImplCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res, _$InvalidRoleImpl<T>>
-    implements _$$InvalidRoleImplCopyWith<T, $Res> {
-  __$$InvalidRoleImplCopyWithImpl(
-      _$InvalidRoleImpl<T> _value, $Res Function(_$InvalidRoleImpl<T>) _then)
-=======
 class __$$InvalidPlayerNameImplCopyWithImpl<T, $Res>
     extends _$ValueFailureCopyWithImpl<T, $Res, _$InvalidPlayerNameImpl<T>>
     implements _$$InvalidPlayerNameImplCopyWith<T, $Res> {
   __$$InvalidPlayerNameImplCopyWithImpl(_$InvalidPlayerNameImpl<T> _value,
       $Res Function(_$InvalidPlayerNameImpl<T>) _then)
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -542,11 +454,7 @@ class __$$InvalidPlayerNameImplCopyWithImpl<T, $Res>
   $Res call({
     Object? failedValue = freezed,
   }) {
-<<<<<<< HEAD
-    return _then(_$InvalidRoleImpl<T>(
-=======
     return _then(_$InvalidPlayerNameImpl<T>(
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
       failedValue: freezed == failedValue
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
@@ -557,35 +465,22 @@ class __$$InvalidPlayerNameImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-<<<<<<< HEAD
-class _$InvalidRoleImpl<T> implements InvalidRole<T> {
-  const _$InvalidRoleImpl({required this.failedValue});
-=======
 class _$InvalidPlayerNameImpl<T> implements InvalidPlayerName<T> {
   const _$InvalidPlayerNameImpl({required this.failedValue});
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
 
   @override
   final T failedValue;
 
   @override
   String toString() {
-<<<<<<< HEAD
-    return 'ValueFailure<$T>.invalidRole(failedValue: $failedValue)';
-=======
     return 'ValueFailure<$T>.invalidPlayerName(failedValue: $failedValue)';
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-<<<<<<< HEAD
-            other is _$InvalidRoleImpl<T> &&
-=======
             other is _$InvalidPlayerNameImpl<T> &&
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
             const DeepCollectionEquality()
                 .equals(other.failedValue, failedValue));
   }
@@ -597,33 +492,21 @@ class _$InvalidPlayerNameImpl<T> implements InvalidPlayerName<T> {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-<<<<<<< HEAD
-  _$$InvalidRoleImplCopyWith<T, _$InvalidRoleImpl<T>> get copyWith =>
-      __$$InvalidRoleImplCopyWithImpl<T, _$InvalidRoleImpl<T>>(
-          this, _$identity);
-=======
   _$$InvalidPlayerNameImplCopyWith<T, _$InvalidPlayerNameImpl<T>>
       get copyWith =>
           __$$InvalidPlayerNameImplCopyWithImpl<T, _$InvalidPlayerNameImpl<T>>(
               this, _$identity);
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
-<<<<<<< HEAD
-    required TResult Function(T failedValue) invalidRole,
-  }) {
-    return invalidRole(failedValue);
-=======
     required TResult Function(T failedValue) invalidPlayerName,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) empty,
   }) {
     return invalidPlayerName(failedValue);
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
   }
 
   @override
@@ -631,17 +514,11 @@ class _$InvalidPlayerNameImpl<T> implements InvalidPlayerName<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T failedValue)? invalidEmail,
     TResult? Function(T failedValue)? shortPassword,
-<<<<<<< HEAD
-    TResult? Function(T failedValue)? invalidRole,
-  }) {
-    return invalidRole?.call(failedValue);
-=======
     TResult? Function(T failedValue)? invalidPlayerName,
     TResult? Function(T failedValue, int max)? exceedingLength,
     TResult? Function(T failedValue)? empty,
   }) {
     return invalidPlayerName?.call(failedValue);
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
   }
 
   @override
@@ -649,13 +526,6 @@ class _$InvalidPlayerNameImpl<T> implements InvalidPlayerName<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
-<<<<<<< HEAD
-    TResult Function(T failedValue)? invalidRole,
-    required TResult orElse(),
-  }) {
-    if (invalidRole != null) {
-      return invalidRole(failedValue);
-=======
     TResult Function(T failedValue)? invalidPlayerName,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? empty,
@@ -663,7 +533,6 @@ class _$InvalidPlayerNameImpl<T> implements InvalidPlayerName<T> {
   }) {
     if (invalidPlayerName != null) {
       return invalidPlayerName(failedValue);
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
     }
     return orElse();
   }
@@ -673,17 +542,11 @@ class _$InvalidPlayerNameImpl<T> implements InvalidPlayerName<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
-<<<<<<< HEAD
-    required TResult Function(InvalidRole<T> value) invalidRole,
-  }) {
-    return invalidRole(this);
-=======
     required TResult Function(InvalidPlayerName<T> value) invalidPlayerName,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Empty<T> value) empty,
   }) {
     return invalidPlayerName(this);
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
   }
 
   @override
@@ -691,17 +554,11 @@ class _$InvalidPlayerNameImpl<T> implements InvalidPlayerName<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(InvalidEmail<T> value)? invalidEmail,
     TResult? Function(ShortPassword<T> value)? shortPassword,
-<<<<<<< HEAD
-    TResult? Function(InvalidRole<T> value)? invalidRole,
-  }) {
-    return invalidRole?.call(this);
-=======
     TResult? Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult? Function(ExceedingLength<T> value)? exceedingLength,
     TResult? Function(Empty<T> value)? empty,
   }) {
     return invalidPlayerName?.call(this);
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
   }
 
   @override
@@ -709,13 +566,6 @@ class _$InvalidPlayerNameImpl<T> implements InvalidPlayerName<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
-<<<<<<< HEAD
-    TResult Function(InvalidRole<T> value)? invalidRole,
-    required TResult orElse(),
-  }) {
-    if (invalidRole != null) {
-      return invalidRole(this);
-=======
     TResult Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
@@ -723,29 +573,19 @@ class _$InvalidPlayerNameImpl<T> implements InvalidPlayerName<T> {
   }) {
     if (invalidPlayerName != null) {
       return invalidPlayerName(this);
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
     }
     return orElse();
   }
 }
 
-<<<<<<< HEAD
-abstract class InvalidRole<T> implements ValueFailure<T> {
-  const factory InvalidRole({required final T failedValue}) =
-      _$InvalidRoleImpl<T>;
-=======
 abstract class InvalidPlayerName<T> implements ValueFailure<T> {
   const factory InvalidPlayerName({required final T failedValue}) =
       _$InvalidPlayerNameImpl<T>;
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
 
   @override
   T get failedValue;
   @override
   @JsonKey(ignore: true)
-<<<<<<< HEAD
-  _$$InvalidRoleImplCopyWith<T, _$InvalidRoleImpl<T>> get copyWith =>
-=======
   _$$InvalidPlayerNameImplCopyWith<T, _$InvalidPlayerNameImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1073,6 +913,5 @@ abstract class Empty<T> implements ValueFailure<T> {
   @override
   @JsonKey(ignore: true)
   _$$EmptyImplCopyWith<T, _$EmptyImpl<T>> get copyWith =>
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
       throw _privateConstructorUsedError;
 }

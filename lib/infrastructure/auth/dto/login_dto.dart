@@ -1,4 +1,4 @@
-import 'package:faq/infrastructure/auth/model/login_model.dart';
+import 'package:FantasyE/infrastructure/auth/model/login_model.dart';
 
 class LoginDto {
   final String email;

@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$League {
   UniqueId get id => throw _privateConstructorUsedError;
   LeagueName get name => throw _privateConstructorUsedError;
-  dynamic get members => throw _privateConstructorUsedError;
+  ListVO<MemberId> get members => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $LeagueCopyWith<League> get copyWith => throw _privateConstructorUsedError;
@@ -29,7 +29,7 @@ abstract class $LeagueCopyWith<$Res> {
   factory $LeagueCopyWith(League value, $Res Function(League) then) =
       _$LeagueCopyWithImpl<$Res, League>;
   @useResult
-  $Res call({UniqueId id, LeagueName name, dynamic members});
+  $Res call({UniqueId id, LeagueName name, ListVO<MemberId> members});
 }
 
 /// @nodoc
@@ -47,7 +47,7 @@ class _$LeagueCopyWithImpl<$Res, $Val extends League>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? members = freezed,
+    Object? members = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -58,10 +58,10 @@ class _$LeagueCopyWithImpl<$Res, $Val extends League>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as LeagueName,
-      members: freezed == members
+      members: null == members
           ? _value.members
           : members // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as ListVO<MemberId>,
     ) as $Val);
   }
 }
@@ -73,7 +73,7 @@ abstract class _$$LeagueImplCopyWith<$Res> implements $LeagueCopyWith<$Res> {
       __$$LeagueImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({UniqueId id, LeagueName name, dynamic members});
+  $Res call({UniqueId id, LeagueName name, ListVO<MemberId> members});
 }
 
 /// @nodoc
@@ -89,7 +89,7 @@ class __$$LeagueImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? members = freezed,
+    Object? members = null,
   }) {
     return _then(_$LeagueImpl(
       id: null == id
@@ -100,7 +100,10 @@ class __$$LeagueImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as LeagueName,
-      members: freezed == members ? _value.members! : members,
+      members: null == members
+          ? _value.members
+          : members // ignore: cast_nullable_to_non_nullable
+              as ListVO<MemberId>,
     ));
   }
 }
@@ -116,7 +119,7 @@ class _$LeagueImpl with DiagnosticableTreeMixin implements _League {
   @override
   final LeagueName name;
   @override
-  final dynamic members;
+  final ListVO<MemberId> members;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -140,12 +143,11 @@ class _$LeagueImpl with DiagnosticableTreeMixin implements _League {
             other is _$LeagueImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            const DeepCollectionEquality().equals(other.members, members));
+            (identical(other.members, members) || other.members == members));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, name, const DeepCollectionEquality().hash(members));
+  int get hashCode => Object.hash(runtimeType, id, name, members);
 
   @JsonKey(ignore: true)
   @override
@@ -158,14 +160,14 @@ abstract class _League implements League {
   const factory _League(
       {required final UniqueId id,
       required final LeagueName name,
-      required final dynamic members}) = _$LeagueImpl;
+      required final ListVO<MemberId> members}) = _$LeagueImpl;
 
   @override
   UniqueId get id;
   @override
   LeagueName get name;
   @override
-  dynamic get members;
+  ListVO<MemberId> get members;
   @override
   @JsonKey(ignore: true)
   _$$LeagueImplCopyWith<_$LeagueImpl> get copyWith =>

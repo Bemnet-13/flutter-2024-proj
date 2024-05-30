@@ -45,7 +45,7 @@ mixin _$AuthFailure {
   TResult map<TResult extends Object?>({
     required TResult Function(CancelledByUser value) cancelledByUser,
     required TResult Function(ServerError value) serverError,
-    required TResult Function(EmailAlreadInUse value) emailAlreadyInUse,
+    required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
     required TResult Function(InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
   }) =>
@@ -54,7 +54,7 @@ mixin _$AuthFailure {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(CancelledByUser value)? cancelledByUser,
     TResult? Function(ServerError value)? serverError,
-    TResult? Function(EmailAlreadInUse value)? emailAlreadyInUse,
+    TResult? Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult? Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
   }) =>
@@ -63,7 +63,7 @@ mixin _$AuthFailure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CancelledByUser value)? cancelledByUser,
     TResult Function(ServerError value)? serverError,
-    TResult Function(EmailAlreadInUse value)? emailAlreadyInUse,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     required TResult orElse(),
@@ -166,7 +166,7 @@ class _$CancelledByUserImpl implements CancelledByUser {
   TResult map<TResult extends Object?>({
     required TResult Function(CancelledByUser value) cancelledByUser,
     required TResult Function(ServerError value) serverError,
-    required TResult Function(EmailAlreadInUse value) emailAlreadyInUse,
+    required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
     required TResult Function(InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
   }) {
@@ -178,7 +178,7 @@ class _$CancelledByUserImpl implements CancelledByUser {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(CancelledByUser value)? cancelledByUser,
     TResult? Function(ServerError value)? serverError,
-    TResult? Function(EmailAlreadInUse value)? emailAlreadyInUse,
+    TResult? Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult? Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
   }) {
@@ -190,7 +190,7 @@ class _$CancelledByUserImpl implements CancelledByUser {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CancelledByUser value)? cancelledByUser,
     TResult Function(ServerError value)? serverError,
-    TResult Function(EmailAlreadInUse value)? emailAlreadyInUse,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     required TResult orElse(),
@@ -283,7 +283,7 @@ class _$ServerErrorImpl implements ServerError {
   TResult map<TResult extends Object?>({
     required TResult Function(CancelledByUser value) cancelledByUser,
     required TResult Function(ServerError value) serverError,
-    required TResult Function(EmailAlreadInUse value) emailAlreadyInUse,
+    required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
     required TResult Function(InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
   }) {
@@ -295,7 +295,7 @@ class _$ServerErrorImpl implements ServerError {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(CancelledByUser value)? cancelledByUser,
     TResult? Function(ServerError value)? serverError,
-    TResult? Function(EmailAlreadInUse value)? emailAlreadyInUse,
+    TResult? Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult? Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
   }) {
@@ -307,7 +307,7 @@ class _$ServerErrorImpl implements ServerError {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CancelledByUser value)? cancelledByUser,
     TResult Function(ServerError value)? serverError,
-    TResult Function(EmailAlreadInUse value)? emailAlreadyInUse,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     required TResult orElse(),
@@ -324,25 +324,25 @@ abstract class ServerError implements AuthFailure {
 }
 
 /// @nodoc
-abstract class _$$EmailAlreadInUseImplCopyWith<$Res> {
-  factory _$$EmailAlreadInUseImplCopyWith(_$EmailAlreadInUseImpl value,
-          $Res Function(_$EmailAlreadInUseImpl) then) =
-      __$$EmailAlreadInUseImplCopyWithImpl<$Res>;
+abstract class _$$EmailAlreadyInUseImplCopyWith<$Res> {
+  factory _$$EmailAlreadyInUseImplCopyWith(_$EmailAlreadyInUseImpl value,
+          $Res Function(_$EmailAlreadyInUseImpl) then) =
+      __$$EmailAlreadyInUseImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$EmailAlreadInUseImplCopyWithImpl<$Res>
-    extends _$AuthFailureCopyWithImpl<$Res, _$EmailAlreadInUseImpl>
-    implements _$$EmailAlreadInUseImplCopyWith<$Res> {
-  __$$EmailAlreadInUseImplCopyWithImpl(_$EmailAlreadInUseImpl _value,
-      $Res Function(_$EmailAlreadInUseImpl) _then)
+class __$$EmailAlreadyInUseImplCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res, _$EmailAlreadyInUseImpl>
+    implements _$$EmailAlreadyInUseImplCopyWith<$Res> {
+  __$$EmailAlreadyInUseImplCopyWithImpl(_$EmailAlreadyInUseImpl _value,
+      $Res Function(_$EmailAlreadyInUseImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$EmailAlreadInUseImpl implements EmailAlreadInUse {
-  const _$EmailAlreadInUseImpl();
+class _$EmailAlreadyInUseImpl implements EmailAlreadyInUse {
+  const _$EmailAlreadyInUseImpl();
 
   @override
   String toString() {
@@ -352,7 +352,7 @@ class _$EmailAlreadInUseImpl implements EmailAlreadInUse {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$EmailAlreadInUseImpl);
+        (other.runtimeType == runtimeType && other is _$EmailAlreadyInUseImpl);
   }
 
   @override
@@ -400,7 +400,7 @@ class _$EmailAlreadInUseImpl implements EmailAlreadInUse {
   TResult map<TResult extends Object?>({
     required TResult Function(CancelledByUser value) cancelledByUser,
     required TResult Function(ServerError value) serverError,
-    required TResult Function(EmailAlreadInUse value) emailAlreadyInUse,
+    required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
     required TResult Function(InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
   }) {
@@ -412,7 +412,7 @@ class _$EmailAlreadInUseImpl implements EmailAlreadInUse {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(CancelledByUser value)? cancelledByUser,
     TResult? Function(ServerError value)? serverError,
-    TResult? Function(EmailAlreadInUse value)? emailAlreadyInUse,
+    TResult? Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult? Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
   }) {
@@ -424,7 +424,7 @@ class _$EmailAlreadInUseImpl implements EmailAlreadInUse {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CancelledByUser value)? cancelledByUser,
     TResult Function(ServerError value)? serverError,
-    TResult Function(EmailAlreadInUse value)? emailAlreadyInUse,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     required TResult orElse(),
@@ -436,8 +436,8 @@ class _$EmailAlreadInUseImpl implements EmailAlreadInUse {
   }
 }
 
-abstract class EmailAlreadInUse implements AuthFailure {
-  const factory EmailAlreadInUse() = _$EmailAlreadInUseImpl;
+abstract class EmailAlreadyInUse implements AuthFailure {
+  const factory EmailAlreadyInUse() = _$EmailAlreadyInUseImpl;
 }
 
 /// @nodoc
@@ -522,7 +522,7 @@ class _$InvalidEmailAndPasswordCombinationImpl
   TResult map<TResult extends Object?>({
     required TResult Function(CancelledByUser value) cancelledByUser,
     required TResult Function(ServerError value) serverError,
-    required TResult Function(EmailAlreadInUse value) emailAlreadyInUse,
+    required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
     required TResult Function(InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
   }) {
@@ -534,7 +534,7 @@ class _$InvalidEmailAndPasswordCombinationImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(CancelledByUser value)? cancelledByUser,
     TResult? Function(ServerError value)? serverError,
-    TResult? Function(EmailAlreadInUse value)? emailAlreadyInUse,
+    TResult? Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult? Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
   }) {
@@ -546,7 +546,7 @@ class _$InvalidEmailAndPasswordCombinationImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CancelledByUser value)? cancelledByUser,
     TResult Function(ServerError value)? serverError,
-    TResult Function(EmailAlreadInUse value)? emailAlreadyInUse,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     required TResult orElse(),

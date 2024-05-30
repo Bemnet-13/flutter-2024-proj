@@ -1,14 +1,11 @@
 import 'package:dartz/dartz.dart';
-<<<<<<< HEAD
 import '../core/failures.dart';
 import '../core/value_objects.dart';
 import '../core/value_validators.dart';
 import '../../domain/core/errors.dart';
-=======
 import 'package:FantasyE/domain/core/failures.dart';
 import 'package:FantasyE/domain/core/value_objects.dart';
 import 'package:FantasyE/domain/core/value_validators.dart';
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b
 
 class EmailAddress implements ValueObject {
   final Either<ValueFailure<String>, String> value;

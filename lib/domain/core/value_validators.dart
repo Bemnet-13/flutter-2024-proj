@@ -19,15 +19,6 @@ Either<ValueFailure<String>, String> validatePassword(String input) {
   }
 }
 
-<<<<<<< HEAD
-Either<ValueFailure<String>, String> validateRole(String input) {
-  if (input == 'PLAYER' || input == 'ADMIN') {
-    return right(input);
-  } else {
-    return left(ValueFailure.invalidRole(failedValue: input));
-  }
-}
-=======
 Either<ValueFailure<String>, String> validatePlayerName(String input){
   if (input.length >= 20){
     return right(input);
@@ -58,4 +49,3 @@ Either<ValueFailure<String>, String> validateStringNotEmpty(String input) {
   }
 }
 
->>>>>>> 5009362b5ed775a36bee095b36cefdb1b8c3204b

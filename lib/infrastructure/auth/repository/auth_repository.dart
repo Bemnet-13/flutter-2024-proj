@@ -1,4 +1,4 @@
-import 'package:faq/domain/auth/i_auth_facade.dart';
+import 'package:FantasyE/domain/auth/i_auth_facade.dart';
 import '../../../api_constants.dart';
 import 'package:flutter/services.dart';
 import 'package:dartz/dartz.dart';
