@@ -10,15 +10,6 @@ abstract class ValueObject<T> {
 
   const ValueObject();
 
-  bool isValid() => value.isRight();
-
-  // Factory constructor for creating an instance of ValueObject
-    /// Throws [UnexpectedValueError] containing the [ValueFailure]
-  T getOrCrash() {
-    // id = identity - same as writing (right) => right
-    return value.fold((f) => throw UnexpectedValueError(f), id);
-  }
-
   @override
   bool operator ==(Object o) {
     if (identical(this, o)) return true;

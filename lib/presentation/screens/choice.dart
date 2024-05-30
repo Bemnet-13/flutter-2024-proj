@@ -1,10 +1,7 @@
-import 'dart:ui';
 import '../widgets/buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import '../widgets/colors.dart';
-import '../widgets/text_styles.dart';
-import '../widgets/text_fields.dart';
 
 
 class Choice extends StatelessWidget {

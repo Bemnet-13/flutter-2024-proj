@@ -1,7 +1,5 @@
 import 'package:faq/presentation/widgets/appbar.dart';
-import 'package:faq/presentation/widgets/buttons.dart';
 import 'package:flutter/material.dart';
-import '../widgets/colors.dart';
 import '../widgets/cards.dart';
 
 class AdminDashboardScreen extends StatelessWidget {

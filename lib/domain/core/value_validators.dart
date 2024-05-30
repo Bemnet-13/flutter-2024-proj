@@ -18,3 +18,11 @@ Either<ValueFailure<String>, String> validatePassword(String input) {
     return left(ValueFailure.shortPassword(failedValue: input));
   }
 }
+
+Either<ValueFailure<String>, String> validateRole(String input) {
+  if (input == 'PLAYER' || input == 'ADMIN') {
+    return right(input);
+  } else {
+    return left(ValueFailure.invalidRole(failedValue: input));
+  }
+}

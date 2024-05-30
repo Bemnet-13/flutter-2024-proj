@@ -9,4 +9,7 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.shortPassword({
     required T failedValue,
   }) = ShortPassword<T>;
+  const factory ValueFailure.invalidRole({
+    required T failedValue,
+  }) = InvalidRole<T>;
 }

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import '../widgets/colors.dart';
-import '../widgets/buttons.dart';
 import '../widgets/appbar.dart';
 import '../widgets/cards.dart';
 

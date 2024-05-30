@@ -2,11 +2,19 @@ import 'package:dartz/dartz.dart';
 import '../core/failures.dart';
 import '../core/value_objects.dart';
 import '../core/value_validators.dart';
+import '../../domain/core/errors.dart';
 
-class EmailAddress implements ValueObject{
+class EmailAddress implements ValueObject {
   final Either<ValueFailure<String>, String> value;
 
   const EmailAddress._(this.value);
+
+  String getOrCrash() {
+    // id = identity - same as writing (right) => right
+    return value.fold((f) => throw UnexpectedValueError(f), id);
+  }
+
+  bool isValid() => value.isRight();
 
   // Factory constructor for creating an instance of EmailAddress
   factory EmailAddress(String input) {
@@ -16,11 +24,17 @@ class EmailAddress implements ValueObject{
   }
 }
 
-class Password implements ValueObject{
+class Password implements ValueObject {
   @override
   final Either<ValueFailure<String>, String> value;
 
   const Password._(this.value);
+  bool isValid() => value.isRight();
+
+  String getOrCrash() {
+    // id = identity - same as writing (right) => right
+    return value.fold((f) => throw UnexpectedValueError(f), (r) => r);
+  }
 
   // Factory constructor for creating an instance of EmailAddress
   factory Password(String input) {
@@ -28,5 +42,22 @@ class Password implements ValueObject{
       validatePassword(input),
     );
   }
+}
 
+class Role implements ValueObject {
+  final Either<ValueFailure<String>, String> value;
+  const Role._(this.value);
+
+  bool isValid() => value.isRight();
+
+  String getOrCrash() {
+    // id = identity - same as writing (right) => right
+    return value.fold((f) => throw UnexpectedValueError(f), id);
+  }
+
+  factory Role(String input) {
+    return Role._(
+      validateRole(input),
+    );
+  }
 }

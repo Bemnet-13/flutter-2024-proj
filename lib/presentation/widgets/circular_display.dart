@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
 
 class CircleDisplay extends StatelessWidget {
   final double radius;

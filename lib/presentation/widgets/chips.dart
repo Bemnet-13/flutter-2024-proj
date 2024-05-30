@@ -1,37 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../application/auth/auth_bloc.dart';
 
 class RoleChoiceChip extends StatelessWidget {
-  final String role1;
-  final String role2;
-  late final List<String> roles;
-
-  RoleChoiceChip(this.role1, this.role2) {
-    roles = [role1, role2];
-  }
+  static const String role1 = 'PLAYER';
+  static const String role2 = 'ADMIN';
+  static const roles = [role1, role2];
 
   @override
   Widget build(BuildContext context) {
-    // Return the ActionChoiceExample widget directly
     return ActionChoiceExample(roles: roles);
   }
 }
-class ActionChoiceExample extends StatefulWidget {
+
+class ActionChoiceExample extends StatelessWidget {
   final List<String> roles;
-  const ActionChoiceExample({Key? key, required this.roles}) : super(key: key);
-
-  @override
-  State<ActionChoiceExample> createState() => _ActionChoiceExampleState();
-}
-
-class _ActionChoiceExampleState extends State<ActionChoiceExample> {
-  int? _value = 0;
+  ActionChoiceExample({required this.roles});
 
   @override
   Widget build(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
 
-    return Container(
-      height: 155,
+    return BlocBuilder<SignupFormBloc, SignupFormState>(
+      builder: (context, state) {
+        return Container(
+          height: 155,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -40,15 +33,19 @@ class _ActionChoiceExampleState extends State<ActionChoiceExample> {
               Wrap(
                 spacing: 10.0,
                 children: List<Widget>.generate(
-                  widget.roles.length,
-                      (int index) {
+                  roles.length,
+                  (int index) {
                     return ChoiceChip(
-                      label: Text(widget.roles[index]),
-                      selected: _value == index,
+                      label: Text(roles[index]),
+                      selected: state.role.value == roles[index],
                       onSelected: (bool selected) {
-                        setState(() {
-                          _value = selected ? index : null;
-                        });
+                        print(selected);
+                        if (selected) {
+                          context
+                              .read<SignupFormBloc>()
+                              .add(SignupFormEvent.chipSelected(roles[index]));
+                          print(state.role.value);
+                        }
                       },
                     );
                   },
@@ -56,9 +53,8 @@ class _ActionChoiceExampleState extends State<ActionChoiceExample> {
               ),
             ],
           ),
+        );
+      },
     );
   }
 }
-
-
-
