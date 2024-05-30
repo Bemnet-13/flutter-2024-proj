@@ -1,12 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import './failures.dart';
-import '../../domain/core/errors.dart';
 import 'package:uuid/uuid.dart';
 import 'package:FantasyE/domain/core/common_interfaces.dart';
 import 'package:FantasyE/domain/core/errors.dart';
 import 'package:FantasyE/domain/core/failures.dart';
-import 'package:FantasyE/domain/core/value_validators.dart';
 
 
 @immutable

@@ -1,7 +1,4 @@
 import 'package:dartz/dartz.dart';
-import '../core/failures.dart';
-import '../core/value_objects.dart';
-import '../core/value_validators.dart';
 import '../../domain/core/errors.dart';
 import 'package:FantasyE/domain/core/failures.dart';
 import 'package:FantasyE/domain/core/value_objects.dart';
@@ -18,6 +15,14 @@ class EmailAddress implements ValueObject {
   }
 
   bool isValid() => value.isRight();
+
+  @override
+  Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
+    return value.fold(
+      (l) => left(l),
+      (r) => right(unit),
+    );
+  }
 
   // Factory constructor for creating an instance of EmailAddress
   factory EmailAddress(String input) {
@@ -39,6 +44,14 @@ class Password implements ValueObject {
     return value.fold((f) => throw UnexpectedValueError(f), (r) => r);
   }
 
+  @override
+  Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
+    return value.fold(
+      (l) => left(l),
+      (r) => right(unit),
+    );
+  }
+
   // Factory constructor for creating an instance of EmailAddress
   factory Password(String input) {
     return Password._(
@@ -56,6 +69,14 @@ class Role implements ValueObject {
   String getOrCrash() {
     // id = identity - same as writing (right) => right
     return value.fold((f) => throw UnexpectedValueError(f), id);
+  }
+
+  @override
+  Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
+    return value.fold(
+      (l) => left(l),
+      (r) => right(unit),
+    );
   }
 
   factory Role(String input) {

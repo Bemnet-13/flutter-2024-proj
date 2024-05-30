@@ -21,6 +21,7 @@ mixin _$ValueFailure<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidRole,
     required TResult Function(T failedValue) invalidPlayerName,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) empty,
@@ -30,6 +31,7 @@ mixin _$ValueFailure<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T failedValue)? invalidEmail,
     TResult? Function(T failedValue)? shortPassword,
+    TResult? Function(T failedValue)? invalidRole,
     TResult? Function(T failedValue)? invalidPlayerName,
     TResult? Function(T failedValue, int max)? exceedingLength,
     TResult? Function(T failedValue)? empty,
@@ -39,6 +41,7 @@ mixin _$ValueFailure<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidRole,
     TResult Function(T failedValue)? invalidPlayerName,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? empty,
@@ -49,6 +52,7 @@ mixin _$ValueFailure<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidPlayerName<T> value) invalidPlayerName,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Empty<T> value) empty,
@@ -58,6 +62,7 @@ mixin _$ValueFailure<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(InvalidEmail<T> value)? invalidEmail,
     TResult? Function(ShortPassword<T> value)? shortPassword,
+    TResult? Function(InvalidRole<T> value)? invalidRole,
     TResult? Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult? Function(ExceedingLength<T> value)? exceedingLength,
     TResult? Function(Empty<T> value)? empty,
@@ -67,6 +72,7 @@ mixin _$ValueFailure<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
@@ -183,6 +189,7 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidRole,
     required TResult Function(T failedValue) invalidPlayerName,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) empty,
@@ -195,6 +202,7 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T failedValue)? invalidEmail,
     TResult? Function(T failedValue)? shortPassword,
+    TResult? Function(T failedValue)? invalidRole,
     TResult? Function(T failedValue)? invalidPlayerName,
     TResult? Function(T failedValue, int max)? exceedingLength,
     TResult? Function(T failedValue)? empty,
@@ -207,6 +215,7 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidRole,
     TResult Function(T failedValue)? invalidPlayerName,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? empty,
@@ -223,6 +232,7 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidPlayerName<T> value) invalidPlayerName,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Empty<T> value) empty,
@@ -235,6 +245,7 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(InvalidEmail<T> value)? invalidEmail,
     TResult? Function(ShortPassword<T> value)? shortPassword,
+    TResult? Function(InvalidRole<T> value)? invalidRole,
     TResult? Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult? Function(ExceedingLength<T> value)? exceedingLength,
     TResult? Function(Empty<T> value)? empty,
@@ -247,6 +258,7 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
@@ -342,6 +354,7 @@ class _$ShortPasswordImpl<T> implements ShortPassword<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidRole,
     required TResult Function(T failedValue) invalidPlayerName,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) empty,
@@ -354,6 +367,7 @@ class _$ShortPasswordImpl<T> implements ShortPassword<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T failedValue)? invalidEmail,
     TResult? Function(T failedValue)? shortPassword,
+    TResult? Function(T failedValue)? invalidRole,
     TResult? Function(T failedValue)? invalidPlayerName,
     TResult? Function(T failedValue, int max)? exceedingLength,
     TResult? Function(T failedValue)? empty,
@@ -366,6 +380,7 @@ class _$ShortPasswordImpl<T> implements ShortPassword<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidRole,
     TResult Function(T failedValue)? invalidPlayerName,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? empty,
@@ -382,6 +397,7 @@ class _$ShortPasswordImpl<T> implements ShortPassword<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidPlayerName<T> value) invalidPlayerName,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Empty<T> value) empty,
@@ -394,6 +410,7 @@ class _$ShortPasswordImpl<T> implements ShortPassword<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(InvalidEmail<T> value)? invalidEmail,
     TResult? Function(ShortPassword<T> value)? shortPassword,
+    TResult? Function(InvalidRole<T> value)? invalidRole,
     TResult? Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult? Function(ExceedingLength<T> value)? exceedingLength,
     TResult? Function(Empty<T> value)? empty,
@@ -406,6 +423,7 @@ class _$ShortPasswordImpl<T> implements ShortPassword<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
@@ -427,6 +445,171 @@ abstract class ShortPassword<T> implements ValueFailure<T> {
   @override
   @JsonKey(ignore: true)
   _$$ShortPasswordImplCopyWith<T, _$ShortPasswordImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$InvalidRoleImplCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory _$$InvalidRoleImplCopyWith(_$InvalidRoleImpl<T> value,
+          $Res Function(_$InvalidRoleImpl<T>) then) =
+      __$$InvalidRoleImplCopyWithImpl<T, $Res>;
+  @override
+  @useResult
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class __$$InvalidRoleImplCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res, _$InvalidRoleImpl<T>>
+    implements _$$InvalidRoleImplCopyWith<T, $Res> {
+  __$$InvalidRoleImplCopyWithImpl(
+      _$InvalidRoleImpl<T> _value, $Res Function(_$InvalidRoleImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(_$InvalidRoleImpl<T>(
+      failedValue: freezed == failedValue
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InvalidRoleImpl<T> implements InvalidRole<T> {
+  const _$InvalidRoleImpl({required this.failedValue});
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidRole(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InvalidRoleImpl<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InvalidRoleImplCopyWith<T, _$InvalidRoleImpl<T>> get copyWith =>
+      __$$InvalidRoleImplCopyWithImpl<T, _$InvalidRoleImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidRole,
+    required TResult Function(T failedValue) invalidPlayerName,
+    required TResult Function(T failedValue, int max) exceedingLength,
+    required TResult Function(T failedValue) empty,
+  }) {
+    return invalidRole(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(T failedValue)? invalidEmail,
+    TResult? Function(T failedValue)? shortPassword,
+    TResult? Function(T failedValue)? invalidRole,
+    TResult? Function(T failedValue)? invalidPlayerName,
+    TResult? Function(T failedValue, int max)? exceedingLength,
+    TResult? Function(T failedValue)? empty,
+  }) {
+    return invalidRole?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidRole,
+    TResult Function(T failedValue)? invalidPlayerName,
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue)? empty,
+    required TResult orElse(),
+  }) {
+    if (invalidRole != null) {
+      return invalidRole(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidRole<T> value) invalidRole,
+    required TResult Function(InvalidPlayerName<T> value) invalidPlayerName,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(Empty<T> value) empty,
+  }) {
+    return invalidRole(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InvalidEmail<T> value)? invalidEmail,
+    TResult? Function(ShortPassword<T> value)? shortPassword,
+    TResult? Function(InvalidRole<T> value)? invalidRole,
+    TResult? Function(InvalidPlayerName<T> value)? invalidPlayerName,
+    TResult? Function(ExceedingLength<T> value)? exceedingLength,
+    TResult? Function(Empty<T> value)? empty,
+  }) {
+    return invalidRole?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidRole<T> value)? invalidRole,
+    TResult Function(InvalidPlayerName<T> value)? invalidPlayerName,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    required TResult orElse(),
+  }) {
+    if (invalidRole != null) {
+      return invalidRole(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidRole<T> implements ValueFailure<T> {
+  const factory InvalidRole({required final T failedValue}) =
+      _$InvalidRoleImpl<T>;
+
+  @override
+  T get failedValue;
+  @override
+  @JsonKey(ignore: true)
+  _$$InvalidRoleImplCopyWith<T, _$InvalidRoleImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -502,6 +685,7 @@ class _$InvalidPlayerNameImpl<T> implements InvalidPlayerName<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidRole,
     required TResult Function(T failedValue) invalidPlayerName,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) empty,
@@ -514,6 +698,7 @@ class _$InvalidPlayerNameImpl<T> implements InvalidPlayerName<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T failedValue)? invalidEmail,
     TResult? Function(T failedValue)? shortPassword,
+    TResult? Function(T failedValue)? invalidRole,
     TResult? Function(T failedValue)? invalidPlayerName,
     TResult? Function(T failedValue, int max)? exceedingLength,
     TResult? Function(T failedValue)? empty,
@@ -526,6 +711,7 @@ class _$InvalidPlayerNameImpl<T> implements InvalidPlayerName<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidRole,
     TResult Function(T failedValue)? invalidPlayerName,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? empty,
@@ -542,6 +728,7 @@ class _$InvalidPlayerNameImpl<T> implements InvalidPlayerName<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidPlayerName<T> value) invalidPlayerName,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Empty<T> value) empty,
@@ -554,6 +741,7 @@ class _$InvalidPlayerNameImpl<T> implements InvalidPlayerName<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(InvalidEmail<T> value)? invalidEmail,
     TResult? Function(ShortPassword<T> value)? shortPassword,
+    TResult? Function(InvalidRole<T> value)? invalidRole,
     TResult? Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult? Function(ExceedingLength<T> value)? exceedingLength,
     TResult? Function(Empty<T> value)? empty,
@@ -566,6 +754,7 @@ class _$InvalidPlayerNameImpl<T> implements InvalidPlayerName<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
@@ -669,6 +858,7 @@ class _$ExceedingLengthImpl<T> implements ExceedingLength<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidRole,
     required TResult Function(T failedValue) invalidPlayerName,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) empty,
@@ -681,6 +871,7 @@ class _$ExceedingLengthImpl<T> implements ExceedingLength<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T failedValue)? invalidEmail,
     TResult? Function(T failedValue)? shortPassword,
+    TResult? Function(T failedValue)? invalidRole,
     TResult? Function(T failedValue)? invalidPlayerName,
     TResult? Function(T failedValue, int max)? exceedingLength,
     TResult? Function(T failedValue)? empty,
@@ -693,6 +884,7 @@ class _$ExceedingLengthImpl<T> implements ExceedingLength<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidRole,
     TResult Function(T failedValue)? invalidPlayerName,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? empty,
@@ -709,6 +901,7 @@ class _$ExceedingLengthImpl<T> implements ExceedingLength<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidPlayerName<T> value) invalidPlayerName,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Empty<T> value) empty,
@@ -721,6 +914,7 @@ class _$ExceedingLengthImpl<T> implements ExceedingLength<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(InvalidEmail<T> value)? invalidEmail,
     TResult? Function(ShortPassword<T> value)? shortPassword,
+    TResult? Function(InvalidRole<T> value)? invalidRole,
     TResult? Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult? Function(ExceedingLength<T> value)? exceedingLength,
     TResult? Function(Empty<T> value)? empty,
@@ -733,6 +927,7 @@ class _$ExceedingLengthImpl<T> implements ExceedingLength<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
@@ -829,6 +1024,7 @@ class _$EmptyImpl<T> implements Empty<T> {
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidRole,
     required TResult Function(T failedValue) invalidPlayerName,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) empty,
@@ -841,6 +1037,7 @@ class _$EmptyImpl<T> implements Empty<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(T failedValue)? invalidEmail,
     TResult? Function(T failedValue)? shortPassword,
+    TResult? Function(T failedValue)? invalidRole,
     TResult? Function(T failedValue)? invalidPlayerName,
     TResult? Function(T failedValue, int max)? exceedingLength,
     TResult? Function(T failedValue)? empty,
@@ -853,6 +1050,7 @@ class _$EmptyImpl<T> implements Empty<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidRole,
     TResult Function(T failedValue)? invalidPlayerName,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? empty,
@@ -869,6 +1067,7 @@ class _$EmptyImpl<T> implements Empty<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidRole<T> value) invalidRole,
     required TResult Function(InvalidPlayerName<T> value) invalidPlayerName,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Empty<T> value) empty,
@@ -881,6 +1080,7 @@ class _$EmptyImpl<T> implements Empty<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(InvalidEmail<T> value)? invalidEmail,
     TResult? Function(ShortPassword<T> value)? shortPassword,
+    TResult? Function(InvalidRole<T> value)? invalidRole,
     TResult? Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult? Function(ExceedingLength<T> value)? exceedingLength,
     TResult? Function(Empty<T> value)? empty,
@@ -893,6 +1093,7 @@ class _$EmptyImpl<T> implements Empty<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidRole<T> value)? invalidRole,
     TResult Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,

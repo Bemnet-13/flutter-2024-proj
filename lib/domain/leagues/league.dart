@@ -25,18 +25,18 @@ abstract class League with _$League implements IEntity {
       );
 }
 
-extension LeagueX on League {
-  Option<ValueFailure<dynamic>> get failureOption {
-    return name.failureOrUnit
-        .andThen(members.failureOrUnit)
-        .andThen(
-          members
-              .getOrCrash()
-              .map((memberId) => memberId.failureOption)
-              .filter((o) => o.isSome())
-              .getOrElse(0, (_) => none())
-              .fold(() => right(unit), (f) => left(f)),
-        )
-        .fold((f) => some(f), (_) => none());
-  }
-}
+// extension LeagueX on League {
+//   Option<ValueFailure<dynamic>> get failureOption {
+//     return name.failureOrUnit
+//         .andThen(members.failureOrUnit)
+//         .andThen(
+//           members
+//               .getOrCrash()
+//               .map((memberId) => memberId.failureOption)
+//               .filter((o) => o.isSome())
+//               .getOrElse(0, (_) => none())
+//               .fold(() => right(unit), (f) => left(f)),
+//         )
+//         .fold((f) => some(f), (_) => none());
+//   }
+// } 

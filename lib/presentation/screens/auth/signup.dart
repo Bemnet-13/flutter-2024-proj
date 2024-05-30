@@ -1,4 +1,4 @@
-import 'package:faq/application/auth/auth_bloc.dart';
+import 'package:FantasyE/application/auth/auth_bloc.dart';
 import 'package:flutter/material.dart';
 import '../../widgets/colors.dart';
 import '../../../injection.dart';

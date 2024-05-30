@@ -1,4 +1,4 @@
-import 'package:faq/infrastructure/auth/model/signup_model.dart';
+import 'package:FantasyE/infrastructure/auth/model/signup_model.dart';
 
 class SignupDto {
   final String name;
