@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -16,32 +17,25 @@ part 'add_avatar_state.dart';
 class AddAvatarBloc extends Bloc<AddAvatarEvent, AddAvatarState> {
   final IAvatarRepository _avatarRepository;
 
-  AddAvatarBloc(this._avatarRepository) : super(AddAvatarState.initial());
+  AddAvatarBloc(this._avatarRepository) : super(AddAvatarState.initial()) {
+    on<_Initialized>((event, emit) {
+      emit(event.initialAvatarOption.fold(
+        () => state,
+        (initialAvatar) => state.copyWith(
+          avatar: initialAvatar,
+        ),
+      ));
+    });
 
-  Stream<AddAvatarState> mapEventToState(
-    AddAvatarEvent event,
-  ) async* {
-    yield* event.map(
-      initialized: (e) async* {
-        yield e.initialAvatarOption.fold(
-          () => state,
-          (initialAvatar) {
-            return state.copyWith(
-              avatar: initialAvatar,
-            );
-          },
-        );
-      },
-      addStarted: (e) async* {
-        yield state.copyWith(
-          addFailureOrSuccessOption: none(),
-        );
-        final Either<AvatarFailure, Unit> failureOrSuccess =
-            await _avatarRepository.add(state.avatar);
-        yield state.copyWith(
-          addFailureOrSuccessOption: optionOf(failureOrSuccess),
-        );
-      },
-    );
+    on<_AddStarted>((event, emit) async {
+      emit(state.copyWith(
+        addFailureOrSuccessOption: none(),
+      ));
+      final Either<AvatarFailure, Unit> failureOrSuccess =
+          await _avatarRepository.add(state.avatar);
+      emit(state.copyWith(
+        addFailureOrSuccessOption: optionOf(failureOrSuccess),
+      ));
+    });
   }
 }

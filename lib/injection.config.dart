@@ -24,10 +24,10 @@ import 'package:FantasyE/domain/avatar/i_avatar_repository.dart' as _i7;
 import 'package:FantasyE/domain/leagues/i_league_repository.dart' as _i5;
 import 'package:FantasyE/domain/manage_account/i_manage_account_facade.dart'
     as _i9;
-import 'package:FantasyE/infrastructure/auth/api_client.dart' as _i3;
+import 'package:FantasyE/infrastructure/auth/api_client.dart' as _i4;
 import 'package:FantasyE/infrastructure/auth/repository/auth_repository.dart'
     as _i15;
-import 'package:FantasyE/infrastructure/avatar/api_client.dart' as _i4;
+import 'package:FantasyE/infrastructure/avatar/api_client.dart' as _i3;
 import 'package:FantasyE/infrastructure/avatar/repository/avatar_repository.dart'
     as _i8;
 import 'package:FantasyE/infrastructure/leagues/league_repository.dart' as _i6;
@@ -51,9 +51,9 @@ extension GetItInjectableX on _i1.GetIt {
     gh.factory<_i4.ApiClient>(() => _i4.ApiClient());
     gh.lazySingleton<_i5.ILeagueRepository>(() => _i6.LeagueRepository());
     gh.lazySingleton<_i7.IAvatarRepository>(
-        () => _i8.AvatarRepository(apiClient: gh<_i4.ApiClient>()));
+        () => _i8.AvatarRepository(apiClient: gh<_i3.ApiClient>()));
     gh.lazySingleton<_i9.IManageAccountFacade>(
-        () => _i10.AccountManagementRepository(apiClient: gh<_i3.ApiClient>()));
+        () => _i10.AccountManagementRepository(apiClient: gh<_i4.ApiClient>()));
     gh.factory<_i11.AddAvatarBloc>(
         () => _i11.AddAvatarBloc(gh<_i7.IAvatarRepository>()));
     gh.factory<_i12.CreateAvatarBloc>(
@@ -61,7 +61,7 @@ extension GetItInjectableX on _i1.GetIt {
     gh.factory<_i13.UpdateAvatarBloc>(
         () => _i13.UpdateAvatarBloc(gh<_i7.IAvatarRepository>()));
     gh.lazySingleton<_i14.IAuthFacade>(
-        () => _i15.AuthRepository(apiClient: gh<_i3.ApiClient>()));
+        () => _i15.AuthRepository(apiClient: gh<_i4.ApiClient>()));
     gh.factory<_i16.ManageAccountBloc>(
         () => _i16.ManageAccountBloc(gh<_i9.IManageAccountFacade>()));
     gh.factory<_i17.SignupFormBloc>(

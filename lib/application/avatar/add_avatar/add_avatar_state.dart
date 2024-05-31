@@ -1,7 +1,7 @@
 part of 'add_avatar_bloc.dart';
 
 @freezed
-abstract class AddAvatarState with _$AddAvatarState {
+abstract class AddAvatarState extends Equatable with _$AddAvatarState {
   const factory AddAvatarState({
     required Avatar avatar,
     required Option<Either<AvatarFailure, Unit>> addFailureOrSuccessOption,

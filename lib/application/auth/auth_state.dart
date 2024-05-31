@@ -1,7 +1,8 @@
 part of 'auth_bloc.dart';
 
 @freezed
-class SignupFormState with _$SignupFormState {
+class SignupFormState extends Equatable with _$SignupFormState {
+  const SignupFormState._();
   const factory SignupFormState({
     required EmailAddress emailAddress,
     required Password password,
@@ -12,6 +13,18 @@ class SignupFormState with _$SignupFormState {
     required bool isSubmitting,
     required Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption,
   }) = _SignupFormState;
+
+  @override
+  List<Object> get props => [
+        emailAddress,
+        password,
+        name,
+        role,
+        roleValue,
+        showErrorMessages,
+        isSubmitting,
+        authFailureOrSuccessOption
+      ];
 
   factory SignupFormState.initial() => SignupFormState(
       emailAddress: EmailAddress(''),
@@ -25,7 +38,16 @@ class SignupFormState with _$SignupFormState {
 }
 
 @freezed
-class LoginFormState with _$LoginFormState {
+class LoginFormState extends Equatable with _$LoginFormState {
+  @override
+  List<Object> get props => [
+        emailAddress,
+        password,
+        role,
+        showErrorMessages,
+        isSubmitting,
+        authFailureOrSuccessOption
+      ];
   const factory LoginFormState({
     required EmailAddress emailAddress,
     required Password password,
