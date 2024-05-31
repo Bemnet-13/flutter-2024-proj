@@ -1,3 +1,5 @@
+import 'package:FantasyE/presentation/screens/auth/manage_account/all_users.dart';
+import 'package:FantasyE/presentation/screens/auth/manage_account/user_datails.dart';
 import 'package:FantasyE/presentation/screens/league/create_league.dart';
 import 'package:FantasyE/presentation/screens/league/league_details.dart';
 import 'package:FantasyE/presentation/screens/league/manage_league.dart';
@@ -9,7 +11,6 @@ import 'package:FantasyE/presentation/screens/avatar/manage_avatars.dart';
 import 'package:FantasyE/presentation/screens/avatar/my_avatars.dart';
 import 'package:FantasyE/presentation/screens/avatar/add_avatar.dart';
 import 'package:FantasyE/presentation/screens/avatar/avatars.dart';
-
 import 'package:go_router/go_router.dart';
 import 'presentation/screens/admin_manage_avatars.dart';
 import 'presentation/screens/dashboard/admin_dashboard.dart';
@@ -67,6 +68,16 @@ class Routes {
         name: 'edit_account',
         path: '/edit_account',
         builder: (context, state) => const EditAccount(),
+      ),
+      GoRoute(
+        name: 'all_users',
+        path: '/all_users',
+        builder: (context, state) => const UserAccountsScreen(),
+      ),
+      GoRoute(
+        name: 'user_details',
+        path: '/user_details',
+        builder: (context, state) => const UserDetailsScreen(),
       ),
 
       // Dashboard Routes

@@ -23,6 +23,7 @@ mixin _$AuthFailure {
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPasswordCombination,
     required TResult Function() invalidRoleUsedInLogin,
+    required TResult Function() accountSuspended,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +33,7 @@ mixin _$AuthFailure {
     TResult? Function()? emailAlreadyInUse,
     TResult? Function()? invalidEmailAndPasswordCombination,
     TResult? Function()? invalidRoleUsedInLogin,
+    TResult? Function()? accountSuspended,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +43,7 @@ mixin _$AuthFailure {
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
     TResult Function()? invalidRoleUsedInLogin,
+    TResult Function()? accountSuspended,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -53,6 +56,7 @@ mixin _$AuthFailure {
         invalidEmailAndPasswordCombination,
     required TResult Function(InvalidRoleUsedInLogin value)
         invalidRoleUsedInLogin,
+    required TResult Function(AccountSuspended value) accountSuspended,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +67,7 @@ mixin _$AuthFailure {
     TResult? Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     TResult? Function(InvalidRoleUsedInLogin value)? invalidRoleUsedInLogin,
+    TResult? Function(AccountSuspended value)? accountSuspended,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -73,6 +78,7 @@ mixin _$AuthFailure {
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     TResult Function(InvalidRoleUsedInLogin value)? invalidRoleUsedInLogin,
+    TResult Function(AccountSuspended value)? accountSuspended,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -139,6 +145,7 @@ class _$CancelledByUserImpl implements CancelledByUser {
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPasswordCombination,
     required TResult Function() invalidRoleUsedInLogin,
+    required TResult Function() accountSuspended,
   }) {
     return cancelledByUser();
   }
@@ -151,6 +158,7 @@ class _$CancelledByUserImpl implements CancelledByUser {
     TResult? Function()? emailAlreadyInUse,
     TResult? Function()? invalidEmailAndPasswordCombination,
     TResult? Function()? invalidRoleUsedInLogin,
+    TResult? Function()? accountSuspended,
   }) {
     return cancelledByUser?.call();
   }
@@ -163,6 +171,7 @@ class _$CancelledByUserImpl implements CancelledByUser {
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
     TResult Function()? invalidRoleUsedInLogin,
+    TResult Function()? accountSuspended,
     required TResult orElse(),
   }) {
     if (cancelledByUser != null) {
@@ -181,6 +190,7 @@ class _$CancelledByUserImpl implements CancelledByUser {
         invalidEmailAndPasswordCombination,
     required TResult Function(InvalidRoleUsedInLogin value)
         invalidRoleUsedInLogin,
+    required TResult Function(AccountSuspended value) accountSuspended,
   }) {
     return cancelledByUser(this);
   }
@@ -194,6 +204,7 @@ class _$CancelledByUserImpl implements CancelledByUser {
     TResult? Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     TResult? Function(InvalidRoleUsedInLogin value)? invalidRoleUsedInLogin,
+    TResult? Function(AccountSuspended value)? accountSuspended,
   }) {
     return cancelledByUser?.call(this);
   }
@@ -207,6 +218,7 @@ class _$CancelledByUserImpl implements CancelledByUser {
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     TResult Function(InvalidRoleUsedInLogin value)? invalidRoleUsedInLogin,
+    TResult Function(AccountSuspended value)? accountSuspended,
     required TResult orElse(),
   }) {
     if (cancelledByUser != null) {
@@ -263,6 +275,7 @@ class _$ServerErrorImpl implements ServerError {
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPasswordCombination,
     required TResult Function() invalidRoleUsedInLogin,
+    required TResult Function() accountSuspended,
   }) {
     return serverError();
   }
@@ -275,6 +288,7 @@ class _$ServerErrorImpl implements ServerError {
     TResult? Function()? emailAlreadyInUse,
     TResult? Function()? invalidEmailAndPasswordCombination,
     TResult? Function()? invalidRoleUsedInLogin,
+    TResult? Function()? accountSuspended,
   }) {
     return serverError?.call();
   }
@@ -287,6 +301,7 @@ class _$ServerErrorImpl implements ServerError {
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
     TResult Function()? invalidRoleUsedInLogin,
+    TResult Function()? accountSuspended,
     required TResult orElse(),
   }) {
     if (serverError != null) {
@@ -305,6 +320,7 @@ class _$ServerErrorImpl implements ServerError {
         invalidEmailAndPasswordCombination,
     required TResult Function(InvalidRoleUsedInLogin value)
         invalidRoleUsedInLogin,
+    required TResult Function(AccountSuspended value) accountSuspended,
   }) {
     return serverError(this);
   }
@@ -318,6 +334,7 @@ class _$ServerErrorImpl implements ServerError {
     TResult? Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     TResult? Function(InvalidRoleUsedInLogin value)? invalidRoleUsedInLogin,
+    TResult? Function(AccountSuspended value)? accountSuspended,
   }) {
     return serverError?.call(this);
   }
@@ -331,6 +348,7 @@ class _$ServerErrorImpl implements ServerError {
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     TResult Function(InvalidRoleUsedInLogin value)? invalidRoleUsedInLogin,
+    TResult Function(AccountSuspended value)? accountSuspended,
     required TResult orElse(),
   }) {
     if (serverError != null) {
@@ -387,6 +405,7 @@ class _$EmailAlreadyInUseImpl implements EmailAlreadyInUse {
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPasswordCombination,
     required TResult Function() invalidRoleUsedInLogin,
+    required TResult Function() accountSuspended,
   }) {
     return emailAlreadyInUse();
   }
@@ -399,6 +418,7 @@ class _$EmailAlreadyInUseImpl implements EmailAlreadyInUse {
     TResult? Function()? emailAlreadyInUse,
     TResult? Function()? invalidEmailAndPasswordCombination,
     TResult? Function()? invalidRoleUsedInLogin,
+    TResult? Function()? accountSuspended,
   }) {
     return emailAlreadyInUse?.call();
   }
@@ -411,6 +431,7 @@ class _$EmailAlreadyInUseImpl implements EmailAlreadyInUse {
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
     TResult Function()? invalidRoleUsedInLogin,
+    TResult Function()? accountSuspended,
     required TResult orElse(),
   }) {
     if (emailAlreadyInUse != null) {
@@ -429,6 +450,7 @@ class _$EmailAlreadyInUseImpl implements EmailAlreadyInUse {
         invalidEmailAndPasswordCombination,
     required TResult Function(InvalidRoleUsedInLogin value)
         invalidRoleUsedInLogin,
+    required TResult Function(AccountSuspended value) accountSuspended,
   }) {
     return emailAlreadyInUse(this);
   }
@@ -442,6 +464,7 @@ class _$EmailAlreadyInUseImpl implements EmailAlreadyInUse {
     TResult? Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     TResult? Function(InvalidRoleUsedInLogin value)? invalidRoleUsedInLogin,
+    TResult? Function(AccountSuspended value)? accountSuspended,
   }) {
     return emailAlreadyInUse?.call(this);
   }
@@ -455,6 +478,7 @@ class _$EmailAlreadyInUseImpl implements EmailAlreadyInUse {
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     TResult Function(InvalidRoleUsedInLogin value)? invalidRoleUsedInLogin,
+    TResult Function(AccountSuspended value)? accountSuspended,
     required TResult orElse(),
   }) {
     if (emailAlreadyInUse != null) {
@@ -516,6 +540,7 @@ class _$InvalidEmailAndPasswordCombinationImpl
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPasswordCombination,
     required TResult Function() invalidRoleUsedInLogin,
+    required TResult Function() accountSuspended,
   }) {
     return invalidEmailAndPasswordCombination();
   }
@@ -528,6 +553,7 @@ class _$InvalidEmailAndPasswordCombinationImpl
     TResult? Function()? emailAlreadyInUse,
     TResult? Function()? invalidEmailAndPasswordCombination,
     TResult? Function()? invalidRoleUsedInLogin,
+    TResult? Function()? accountSuspended,
   }) {
     return invalidEmailAndPasswordCombination?.call();
   }
@@ -540,6 +566,7 @@ class _$InvalidEmailAndPasswordCombinationImpl
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
     TResult Function()? invalidRoleUsedInLogin,
+    TResult Function()? accountSuspended,
     required TResult orElse(),
   }) {
     if (invalidEmailAndPasswordCombination != null) {
@@ -558,6 +585,7 @@ class _$InvalidEmailAndPasswordCombinationImpl
         invalidEmailAndPasswordCombination,
     required TResult Function(InvalidRoleUsedInLogin value)
         invalidRoleUsedInLogin,
+    required TResult Function(AccountSuspended value) accountSuspended,
   }) {
     return invalidEmailAndPasswordCombination(this);
   }
@@ -571,6 +599,7 @@ class _$InvalidEmailAndPasswordCombinationImpl
     TResult? Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     TResult? Function(InvalidRoleUsedInLogin value)? invalidRoleUsedInLogin,
+    TResult? Function(AccountSuspended value)? accountSuspended,
   }) {
     return invalidEmailAndPasswordCombination?.call(this);
   }
@@ -584,6 +613,7 @@ class _$InvalidEmailAndPasswordCombinationImpl
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     TResult Function(InvalidRoleUsedInLogin value)? invalidRoleUsedInLogin,
+    TResult Function(AccountSuspended value)? accountSuspended,
     required TResult orElse(),
   }) {
     if (invalidEmailAndPasswordCombination != null) {
@@ -644,6 +674,7 @@ class _$InvalidRoleUsedInLoginImpl implements InvalidRoleUsedInLogin {
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPasswordCombination,
     required TResult Function() invalidRoleUsedInLogin,
+    required TResult Function() accountSuspended,
   }) {
     return invalidRoleUsedInLogin();
   }
@@ -656,6 +687,7 @@ class _$InvalidRoleUsedInLoginImpl implements InvalidRoleUsedInLogin {
     TResult? Function()? emailAlreadyInUse,
     TResult? Function()? invalidEmailAndPasswordCombination,
     TResult? Function()? invalidRoleUsedInLogin,
+    TResult? Function()? accountSuspended,
   }) {
     return invalidRoleUsedInLogin?.call();
   }
@@ -668,6 +700,7 @@ class _$InvalidRoleUsedInLoginImpl implements InvalidRoleUsedInLogin {
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
     TResult Function()? invalidRoleUsedInLogin,
+    TResult Function()? accountSuspended,
     required TResult orElse(),
   }) {
     if (invalidRoleUsedInLogin != null) {
@@ -686,6 +719,7 @@ class _$InvalidRoleUsedInLoginImpl implements InvalidRoleUsedInLogin {
         invalidEmailAndPasswordCombination,
     required TResult Function(InvalidRoleUsedInLogin value)
         invalidRoleUsedInLogin,
+    required TResult Function(AccountSuspended value) accountSuspended,
   }) {
     return invalidRoleUsedInLogin(this);
   }
@@ -699,6 +733,7 @@ class _$InvalidRoleUsedInLoginImpl implements InvalidRoleUsedInLogin {
     TResult? Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     TResult? Function(InvalidRoleUsedInLogin value)? invalidRoleUsedInLogin,
+    TResult? Function(AccountSuspended value)? accountSuspended,
   }) {
     return invalidRoleUsedInLogin?.call(this);
   }
@@ -712,6 +747,7 @@ class _$InvalidRoleUsedInLoginImpl implements InvalidRoleUsedInLogin {
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
     TResult Function(InvalidRoleUsedInLogin value)? invalidRoleUsedInLogin,
+    TResult Function(AccountSuspended value)? accountSuspended,
     required TResult orElse(),
   }) {
     if (invalidRoleUsedInLogin != null) {
@@ -723,4 +759,134 @@ class _$InvalidRoleUsedInLoginImpl implements InvalidRoleUsedInLogin {
 
 abstract class InvalidRoleUsedInLogin implements AuthFailure {
   const factory InvalidRoleUsedInLogin() = _$InvalidRoleUsedInLoginImpl;
+}
+
+/// @nodoc
+abstract class _$$AccountSuspendedImplCopyWith<$Res> {
+  factory _$$AccountSuspendedImplCopyWith(_$AccountSuspendedImpl value,
+          $Res Function(_$AccountSuspendedImpl) then) =
+      __$$AccountSuspendedImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AccountSuspendedImplCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res, _$AccountSuspendedImpl>
+    implements _$$AccountSuspendedImplCopyWith<$Res> {
+  __$$AccountSuspendedImplCopyWithImpl(_$AccountSuspendedImpl _value,
+      $Res Function(_$AccountSuspendedImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AccountSuspendedImpl implements AccountSuspended {
+  const _$AccountSuspendedImpl();
+
+  @override
+  String toString() {
+    return 'AuthFailure.accountSuspended()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$AccountSuspendedImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() cancelledByUser,
+    required TResult Function() serverError,
+    required TResult Function() emailAlreadyInUse,
+    required TResult Function() invalidEmailAndPasswordCombination,
+    required TResult Function() invalidRoleUsedInLogin,
+    required TResult Function() accountSuspended,
+  }) {
+    return accountSuspended();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? cancelledByUser,
+    TResult? Function()? serverError,
+    TResult? Function()? emailAlreadyInUse,
+    TResult? Function()? invalidEmailAndPasswordCombination,
+    TResult? Function()? invalidRoleUsedInLogin,
+    TResult? Function()? accountSuspended,
+  }) {
+    return accountSuspended?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function()? serverError,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPasswordCombination,
+    TResult Function()? invalidRoleUsedInLogin,
+    TResult Function()? accountSuspended,
+    required TResult orElse(),
+  }) {
+    if (accountSuspended != null) {
+      return accountSuspended();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CancelledByUser value) cancelledByUser,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
+    required TResult Function(InvalidEmailAndPasswordCombination value)
+        invalidEmailAndPasswordCombination,
+    required TResult Function(InvalidRoleUsedInLogin value)
+        invalidRoleUsedInLogin,
+    required TResult Function(AccountSuspended value) accountSuspended,
+  }) {
+    return accountSuspended(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(CancelledByUser value)? cancelledByUser,
+    TResult? Function(ServerError value)? serverError,
+    TResult? Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult? Function(InvalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
+    TResult? Function(InvalidRoleUsedInLogin value)? invalidRoleUsedInLogin,
+    TResult? Function(AccountSuspended value)? accountSuspended,
+  }) {
+    return accountSuspended?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CancelledByUser value)? cancelledByUser,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(InvalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
+    TResult Function(InvalidRoleUsedInLogin value)? invalidRoleUsedInLogin,
+    TResult Function(AccountSuspended value)? accountSuspended,
+    required TResult orElse(),
+  }) {
+    if (accountSuspended != null) {
+      return accountSuspended(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AccountSuspended implements AuthFailure {
+  const factory AccountSuspended() = _$AccountSuspendedImpl;
 }

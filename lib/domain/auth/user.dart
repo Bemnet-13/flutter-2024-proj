@@ -8,7 +8,19 @@ part 'user.freezed.dart';
 @freezed
 abstract class User with _$User {
   const factory User({
-    required UniqueId id,
-    required Role role
+    required UniqueId token,
+    required Role role,
+    required UniqueId id
   }) = _User;
+}
+
+@freezed
+abstract class UserDetails with _$UserDetails {
+  const factory UserDetails({
+    required UniqueId id,
+    required Name name,
+    required EmailAddress emailAddress,
+    required Role role,
+    required bool isSuspended,
+  }) = _UserDetails;
 }

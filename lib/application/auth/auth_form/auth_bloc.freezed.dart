@@ -1895,46 +1895,6 @@ class _$SignupFormStateImpl extends _SignupFormState {
   @override
   final Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption;
 
-  @override
-  String toString() {
-    return 'SignupFormState(emailAddress: $emailAddress, password: $password, name: $name, role: $role, roleValue: $roleValue, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, authFailureOrSuccessOption: $authFailureOrSuccessOption)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SignupFormStateImpl &&
-            (identical(other.emailAddress, emailAddress) ||
-                other.emailAddress == emailAddress) &&
-            (identical(other.password, password) ||
-                other.password == password) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.role, role) || other.role == role) &&
-            (identical(other.roleValue, roleValue) ||
-                other.roleValue == roleValue) &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                other.showErrorMessages == showErrorMessages) &&
-            (identical(other.isSubmitting, isSubmitting) ||
-                other.isSubmitting == isSubmitting) &&
-            (identical(other.authFailureOrSuccessOption,
-                    authFailureOrSuccessOption) ||
-                other.authFailureOrSuccessOption ==
-                    authFailureOrSuccessOption));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      emailAddress,
-      password,
-      name,
-      role,
-      roleValue,
-      showErrorMessages,
-      isSubmitting,
-      authFailureOrSuccessOption);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -2123,14 +2083,15 @@ class __$$LoginFormStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoginFormStateImpl implements _LoginFormState {
+class _$LoginFormStateImpl extends _LoginFormState {
   const _$LoginFormStateImpl(
       {required this.emailAddress,
       required this.password,
       required this.role,
       required this.showErrorMessages,
       required this.isSubmitting,
-      required this.authFailureOrSuccessOption});
+      required this.authFailureOrSuccessOption})
+      : super._();
 
   @override
   final EmailAddress emailAddress;
@@ -2145,35 +2106,6 @@ class _$LoginFormStateImpl implements _LoginFormState {
   @override
   final Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption;
 
-  @override
-  String toString() {
-    return 'LoginFormState(emailAddress: $emailAddress, password: $password, role: $role, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, authFailureOrSuccessOption: $authFailureOrSuccessOption)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LoginFormStateImpl &&
-            (identical(other.emailAddress, emailAddress) ||
-                other.emailAddress == emailAddress) &&
-            (identical(other.password, password) ||
-                other.password == password) &&
-            (identical(other.role, role) || other.role == role) &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                other.showErrorMessages == showErrorMessages) &&
-            (identical(other.isSubmitting, isSubmitting) ||
-                other.isSubmitting == isSubmitting) &&
-            (identical(other.authFailureOrSuccessOption,
-                    authFailureOrSuccessOption) ||
-                other.authFailureOrSuccessOption ==
-                    authFailureOrSuccessOption));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, emailAddress, password, role,
-      showErrorMessages, isSubmitting, authFailureOrSuccessOption);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -2182,7 +2114,7 @@ class _$LoginFormStateImpl implements _LoginFormState {
           this, _$identity);
 }
 
-abstract class _LoginFormState implements LoginFormState {
+abstract class _LoginFormState extends LoginFormState {
   const factory _LoginFormState(
       {required final EmailAddress emailAddress,
       required final Password password,
@@ -2191,6 +2123,7 @@ abstract class _LoginFormState implements LoginFormState {
       required final bool isSubmitting,
       required final Option<Either<AuthFailure, Unit>>
           authFailureOrSuccessOption}) = _$LoginFormStateImpl;
+  const _LoginFormState._() : super._();
 
   @override
   EmailAddress get emailAddress;

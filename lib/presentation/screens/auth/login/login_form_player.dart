@@ -59,6 +59,8 @@ class LoginFormPlayer extends StatelessWidget {
                       const Text('Invalid Email or Password'),
                   invalidRoleUsedInLogin: (_) =>
                       const Text('Invalid Role. Use defined these roles'),
+                  accountSuspended: (_) =>
+                      const Text("Your account has been suspended"),
                 ),
               ),
             );

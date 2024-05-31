@@ -23,7 +23,6 @@ class AuthLogicBloc extends Bloc<AuthLogicEvent, AuthLogicState> {
             if (user.role.getOrCrash() == 'PLAYER') {
               return const AuthLogicState.authenticatedAsPlayer();
             } else {
-              print('Handler set states for admin');
               return const AuthLogicState.authenticatedAsAdmin();
             }
           },
@@ -32,7 +31,7 @@ class AuthLogicBloc extends Bloc<AuthLogicEvent, AuthLogicState> {
     });
     on<LoggedOut>((event, emit) async {
       await _authFacade.logOut();
-      emit(AuthLogicState.unauthenticated());
+      emit(const AuthLogicState.unauthenticated());
     });
     on<LoginRequestedAsAdmin>((event, emit) async {
       final userOption = await _authFacade.getSignedInUser();

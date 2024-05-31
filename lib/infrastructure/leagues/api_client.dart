@@ -1,13 +1,9 @@
 import 'dart:convert';
 import 'package:FantasyE/api_constants.dart';
-import 'package:dartz/dartz.dart';
 import 'package:http/http.dart' as http;
 import 'package:injectable/injectable.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:FantasyE/domain/leagues/i_league_repository.dart';
 import 'package:FantasyE/domain/leagues/league.dart';
-import 'package:FantasyE/domain/leagues/league_failure.dart';
-import 'package:FantasyE/infrastructure/leagues/dto/league_dtos.dart';
 
 @injectable
 class ApiClient {
@@ -16,14 +12,13 @@ class ApiClient {
 
   Future<http.Response> getAllLeaguesFromDb() async {
     String? tokenValue = await token.read(key: 'Token');
-    print("tokenValue");
     final headers = {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer $tokenValue',
     };
 
     final response = await http.get(
-      url, // Replace with your API URL
+      url,
       headers: headers,
     );
     return response;

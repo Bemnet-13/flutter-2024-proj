@@ -26,11 +26,9 @@ class AuthRepository implements IAuthFacade {
     String? role = await secureStorage.read(key: 'Role');
 
     if (token != null && role != null) {
-      print('Token : $token');
       role = role == 'user' ? 'PLAYER' : 'ADMIN';
       return some(User(id: UniqueId.fromUniqueString(token), role: Role(role)));
     } else {
-      print('Token not found');
       return none();
     }
   }
@@ -39,12 +37,6 @@ class AuthRepository implements IAuthFacade {
   Future<void> logOut() async {
     await secureStorage.delete(key: 'Token');
     await secureStorage.delete(key: 'Role');
-    String? token = await secureStorage.read(key: 'Token');
-    if (token == null) {
-      print('Token deleted successfully');
-    } else {
-      print('Token is not deleted');
-    }
   }
 
   @override
@@ -64,7 +56,6 @@ class AuthRepository implements IAuthFacade {
       password: passwordStr,
       role: roleStr,
     );
-    print('Signup DTO: ${signup.toJson()}');
 
     try {
       final response = await apiClient.registerUser(
@@ -72,9 +63,6 @@ class AuthRepository implements IAuthFacade {
         signup.toJson(),
       );
       final responseBody = jsonDecode(response.body);
-
-      // Assuming the token is stored in a field called 'token'
-      final token = responseBody['token'];
       print('API Response: ${response.statusCode} ${response.body}');
 
       if (response.statusCode == 500 ||
@@ -83,8 +71,6 @@ class AuthRepository implements IAuthFacade {
       } else if (response.statusCode == 401 ||
           responseBody['message'] == 'Email already in use.') {
         return left(const AuthFailure.emailAlreadyInUse());
-      } else if (token != null) {
-        print('Token stored successfully.');
       }
       return right(unit);
     } catch (e) {
@@ -104,7 +90,6 @@ class AuthRepository implements IAuthFacade {
 
     LoginDto login =
         LoginDto(email: emailAddressStr, password: passwordStr, role: roleStr);
-    print('Login DTO : ${login.toJson()}');
 
     try {
       final response = await apiClient.registerUser(
@@ -113,6 +98,7 @@ class AuthRepository implements IAuthFacade {
       );
       final responseBody = jsonDecode(response.body);
       final token = responseBody['token'];
+      final id = responseBody['userId'];
       print('API Response: ${response.statusCode} ${response.body}');
 
       if (response.statusCode == 500 ||
@@ -125,14 +111,16 @@ class AuthRepository implements IAuthFacade {
           responseBody['message'] ==
               'Wrong Role. Role not matched correctly.') {
         return left(const AuthFailure.invalidRoleUsedInLogin());
+      } else if (response.statusCode == 401 &&
+          responseBody['message'] == 'Account Suspended.') {
+        return left(const AuthFailure.accountSuspended());
       } else if (token != null) {
         await secureStorage.write(key: 'Role', value: roleStr);
         await secureStorage.write(key: 'Token', value: token);
-        print('Token stored successfully.');
+        await secureStorage.write(key: 'id', value: id);
       }
       return right(unit);
     } catch (e) {
-      print('General error: $e');
       return left(const AuthFailure.serverError());
     }
   }

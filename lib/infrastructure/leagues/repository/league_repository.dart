@@ -53,11 +53,8 @@ class LeagueRepository implements ILeagueRepository {
 
   @override
   Future<Either<LeagueFailure, Unit>> updateLeague(League league) async {
-    print(league.name.getOrCrash());
-    print(league.id.getOrCrash());
     try {
       final response = await apiClient.updateLeague(league);
-      print(response.statusCode);
       if (response.statusCode == 200) {
         return right(unit);
       } else {

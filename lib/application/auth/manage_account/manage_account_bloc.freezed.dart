@@ -24,6 +24,9 @@ mixin _$ManageAccountEvent {
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String userId) userIdSet,
     required TResult Function(bool suspensionState) suspensionStateSet,
+    required TResult Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)
+        userAccountSelected,
     required TResult Function() updateUserAccountPressed,
     required TResult Function(String userId) deleteUserAccountPressed,
     required TResult Function(String userId) suspendUserAccountPressed,
@@ -37,6 +40,9 @@ mixin _$ManageAccountEvent {
     TResult? Function(String passwordStr)? passwordChanged,
     TResult? Function(String userId)? userIdSet,
     TResult? Function(bool suspensionState)? suspensionStateSet,
+    TResult? Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)?
+        userAccountSelected,
     TResult? Function()? updateUserAccountPressed,
     TResult? Function(String userId)? deleteUserAccountPressed,
     TResult? Function(String userId)? suspendUserAccountPressed,
@@ -50,6 +56,9 @@ mixin _$ManageAccountEvent {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String userId)? userIdSet,
     TResult Function(bool suspensionState)? suspensionStateSet,
+    TResult Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)?
+        userAccountSelected,
     TResult Function()? updateUserAccountPressed,
     TResult Function(String userId)? deleteUserAccountPressed,
     TResult Function(String userId)? suspendUserAccountPressed,
@@ -64,6 +73,7 @@ mixin _$ManageAccountEvent {
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(UserIdSet value) userIdSet,
     required TResult Function(SuspensionStateSet value) suspensionStateSet,
+    required TResult Function(UserAccountSelected value) userAccountSelected,
     required TResult Function(UpdateUserAccountPressed value)
         updateUserAccountPressed,
     required TResult Function(DeleteUserAccountPressed value)
@@ -80,6 +90,7 @@ mixin _$ManageAccountEvent {
     TResult? Function(PasswordChanged value)? passwordChanged,
     TResult? Function(UserIdSet value)? userIdSet,
     TResult? Function(SuspensionStateSet value)? suspensionStateSet,
+    TResult? Function(UserAccountSelected value)? userAccountSelected,
     TResult? Function(UpdateUserAccountPressed value)? updateUserAccountPressed,
     TResult? Function(DeleteUserAccountPressed value)? deleteUserAccountPressed,
     TResult? Function(SuspendUserAccountPressed value)?
@@ -94,6 +105,7 @@ mixin _$ManageAccountEvent {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(UserIdSet value)? userIdSet,
     TResult Function(SuspensionStateSet value)? suspensionStateSet,
+    TResult Function(UserAccountSelected value)? userAccountSelected,
     TResult Function(UpdateUserAccountPressed value)? updateUserAccountPressed,
     TResult Function(DeleteUserAccountPressed value)? deleteUserAccountPressed,
     TResult Function(SuspendUserAccountPressed value)?
@@ -191,6 +203,9 @@ class _$NameChangedImpl implements NameChanged {
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String userId) userIdSet,
     required TResult Function(bool suspensionState) suspensionStateSet,
+    required TResult Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)
+        userAccountSelected,
     required TResult Function() updateUserAccountPressed,
     required TResult Function(String userId) deleteUserAccountPressed,
     required TResult Function(String userId) suspendUserAccountPressed,
@@ -207,6 +222,9 @@ class _$NameChangedImpl implements NameChanged {
     TResult? Function(String passwordStr)? passwordChanged,
     TResult? Function(String userId)? userIdSet,
     TResult? Function(bool suspensionState)? suspensionStateSet,
+    TResult? Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)?
+        userAccountSelected,
     TResult? Function()? updateUserAccountPressed,
     TResult? Function(String userId)? deleteUserAccountPressed,
     TResult? Function(String userId)? suspendUserAccountPressed,
@@ -223,6 +241,9 @@ class _$NameChangedImpl implements NameChanged {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String userId)? userIdSet,
     TResult Function(bool suspensionState)? suspensionStateSet,
+    TResult Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)?
+        userAccountSelected,
     TResult Function()? updateUserAccountPressed,
     TResult Function(String userId)? deleteUserAccountPressed,
     TResult Function(String userId)? suspendUserAccountPressed,
@@ -243,6 +264,7 @@ class _$NameChangedImpl implements NameChanged {
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(UserIdSet value) userIdSet,
     required TResult Function(SuspensionStateSet value) suspensionStateSet,
+    required TResult Function(UserAccountSelected value) userAccountSelected,
     required TResult Function(UpdateUserAccountPressed value)
         updateUserAccountPressed,
     required TResult Function(DeleteUserAccountPressed value)
@@ -262,6 +284,7 @@ class _$NameChangedImpl implements NameChanged {
     TResult? Function(PasswordChanged value)? passwordChanged,
     TResult? Function(UserIdSet value)? userIdSet,
     TResult? Function(SuspensionStateSet value)? suspensionStateSet,
+    TResult? Function(UserAccountSelected value)? userAccountSelected,
     TResult? Function(UpdateUserAccountPressed value)? updateUserAccountPressed,
     TResult? Function(DeleteUserAccountPressed value)? deleteUserAccountPressed,
     TResult? Function(SuspendUserAccountPressed value)?
@@ -279,6 +302,7 @@ class _$NameChangedImpl implements NameChanged {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(UserIdSet value)? userIdSet,
     TResult Function(SuspensionStateSet value)? suspensionStateSet,
+    TResult Function(UserAccountSelected value)? userAccountSelected,
     TResult Function(UpdateUserAccountPressed value)? updateUserAccountPressed,
     TResult Function(DeleteUserAccountPressed value)? deleteUserAccountPressed,
     TResult Function(SuspendUserAccountPressed value)?
@@ -373,6 +397,9 @@ class _$TeamNameChangedImpl implements TeamNameChanged {
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String userId) userIdSet,
     required TResult Function(bool suspensionState) suspensionStateSet,
+    required TResult Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)
+        userAccountSelected,
     required TResult Function() updateUserAccountPressed,
     required TResult Function(String userId) deleteUserAccountPressed,
     required TResult Function(String userId) suspendUserAccountPressed,
@@ -389,6 +416,9 @@ class _$TeamNameChangedImpl implements TeamNameChanged {
     TResult? Function(String passwordStr)? passwordChanged,
     TResult? Function(String userId)? userIdSet,
     TResult? Function(bool suspensionState)? suspensionStateSet,
+    TResult? Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)?
+        userAccountSelected,
     TResult? Function()? updateUserAccountPressed,
     TResult? Function(String userId)? deleteUserAccountPressed,
     TResult? Function(String userId)? suspendUserAccountPressed,
@@ -405,6 +435,9 @@ class _$TeamNameChangedImpl implements TeamNameChanged {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String userId)? userIdSet,
     TResult Function(bool suspensionState)? suspensionStateSet,
+    TResult Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)?
+        userAccountSelected,
     TResult Function()? updateUserAccountPressed,
     TResult Function(String userId)? deleteUserAccountPressed,
     TResult Function(String userId)? suspendUserAccountPressed,
@@ -425,6 +458,7 @@ class _$TeamNameChangedImpl implements TeamNameChanged {
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(UserIdSet value) userIdSet,
     required TResult Function(SuspensionStateSet value) suspensionStateSet,
+    required TResult Function(UserAccountSelected value) userAccountSelected,
     required TResult Function(UpdateUserAccountPressed value)
         updateUserAccountPressed,
     required TResult Function(DeleteUserAccountPressed value)
@@ -444,6 +478,7 @@ class _$TeamNameChangedImpl implements TeamNameChanged {
     TResult? Function(PasswordChanged value)? passwordChanged,
     TResult? Function(UserIdSet value)? userIdSet,
     TResult? Function(SuspensionStateSet value)? suspensionStateSet,
+    TResult? Function(UserAccountSelected value)? userAccountSelected,
     TResult? Function(UpdateUserAccountPressed value)? updateUserAccountPressed,
     TResult? Function(DeleteUserAccountPressed value)? deleteUserAccountPressed,
     TResult? Function(SuspendUserAccountPressed value)?
@@ -461,6 +496,7 @@ class _$TeamNameChangedImpl implements TeamNameChanged {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(UserIdSet value)? userIdSet,
     TResult Function(SuspensionStateSet value)? suspensionStateSet,
+    TResult Function(UserAccountSelected value)? userAccountSelected,
     TResult Function(UpdateUserAccountPressed value)? updateUserAccountPressed,
     TResult Function(DeleteUserAccountPressed value)? deleteUserAccountPressed,
     TResult Function(SuspendUserAccountPressed value)?
@@ -555,6 +591,9 @@ class _$EmailChangedImpl implements EmailChanged {
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String userId) userIdSet,
     required TResult Function(bool suspensionState) suspensionStateSet,
+    required TResult Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)
+        userAccountSelected,
     required TResult Function() updateUserAccountPressed,
     required TResult Function(String userId) deleteUserAccountPressed,
     required TResult Function(String userId) suspendUserAccountPressed,
@@ -571,6 +610,9 @@ class _$EmailChangedImpl implements EmailChanged {
     TResult? Function(String passwordStr)? passwordChanged,
     TResult? Function(String userId)? userIdSet,
     TResult? Function(bool suspensionState)? suspensionStateSet,
+    TResult? Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)?
+        userAccountSelected,
     TResult? Function()? updateUserAccountPressed,
     TResult? Function(String userId)? deleteUserAccountPressed,
     TResult? Function(String userId)? suspendUserAccountPressed,
@@ -587,6 +629,9 @@ class _$EmailChangedImpl implements EmailChanged {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String userId)? userIdSet,
     TResult Function(bool suspensionState)? suspensionStateSet,
+    TResult Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)?
+        userAccountSelected,
     TResult Function()? updateUserAccountPressed,
     TResult Function(String userId)? deleteUserAccountPressed,
     TResult Function(String userId)? suspendUserAccountPressed,
@@ -607,6 +652,7 @@ class _$EmailChangedImpl implements EmailChanged {
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(UserIdSet value) userIdSet,
     required TResult Function(SuspensionStateSet value) suspensionStateSet,
+    required TResult Function(UserAccountSelected value) userAccountSelected,
     required TResult Function(UpdateUserAccountPressed value)
         updateUserAccountPressed,
     required TResult Function(DeleteUserAccountPressed value)
@@ -626,6 +672,7 @@ class _$EmailChangedImpl implements EmailChanged {
     TResult? Function(PasswordChanged value)? passwordChanged,
     TResult? Function(UserIdSet value)? userIdSet,
     TResult? Function(SuspensionStateSet value)? suspensionStateSet,
+    TResult? Function(UserAccountSelected value)? userAccountSelected,
     TResult? Function(UpdateUserAccountPressed value)? updateUserAccountPressed,
     TResult? Function(DeleteUserAccountPressed value)? deleteUserAccountPressed,
     TResult? Function(SuspendUserAccountPressed value)?
@@ -643,6 +690,7 @@ class _$EmailChangedImpl implements EmailChanged {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(UserIdSet value)? userIdSet,
     TResult Function(SuspensionStateSet value)? suspensionStateSet,
+    TResult Function(UserAccountSelected value)? userAccountSelected,
     TResult Function(UpdateUserAccountPressed value)? updateUserAccountPressed,
     TResult Function(DeleteUserAccountPressed value)? deleteUserAccountPressed,
     TResult Function(SuspendUserAccountPressed value)?
@@ -737,6 +785,9 @@ class _$PasswordChangedImpl implements PasswordChanged {
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String userId) userIdSet,
     required TResult Function(bool suspensionState) suspensionStateSet,
+    required TResult Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)
+        userAccountSelected,
     required TResult Function() updateUserAccountPressed,
     required TResult Function(String userId) deleteUserAccountPressed,
     required TResult Function(String userId) suspendUserAccountPressed,
@@ -753,6 +804,9 @@ class _$PasswordChangedImpl implements PasswordChanged {
     TResult? Function(String passwordStr)? passwordChanged,
     TResult? Function(String userId)? userIdSet,
     TResult? Function(bool suspensionState)? suspensionStateSet,
+    TResult? Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)?
+        userAccountSelected,
     TResult? Function()? updateUserAccountPressed,
     TResult? Function(String userId)? deleteUserAccountPressed,
     TResult? Function(String userId)? suspendUserAccountPressed,
@@ -769,6 +823,9 @@ class _$PasswordChangedImpl implements PasswordChanged {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String userId)? userIdSet,
     TResult Function(bool suspensionState)? suspensionStateSet,
+    TResult Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)?
+        userAccountSelected,
     TResult Function()? updateUserAccountPressed,
     TResult Function(String userId)? deleteUserAccountPressed,
     TResult Function(String userId)? suspendUserAccountPressed,
@@ -789,6 +846,7 @@ class _$PasswordChangedImpl implements PasswordChanged {
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(UserIdSet value) userIdSet,
     required TResult Function(SuspensionStateSet value) suspensionStateSet,
+    required TResult Function(UserAccountSelected value) userAccountSelected,
     required TResult Function(UpdateUserAccountPressed value)
         updateUserAccountPressed,
     required TResult Function(DeleteUserAccountPressed value)
@@ -808,6 +866,7 @@ class _$PasswordChangedImpl implements PasswordChanged {
     TResult? Function(PasswordChanged value)? passwordChanged,
     TResult? Function(UserIdSet value)? userIdSet,
     TResult? Function(SuspensionStateSet value)? suspensionStateSet,
+    TResult? Function(UserAccountSelected value)? userAccountSelected,
     TResult? Function(UpdateUserAccountPressed value)? updateUserAccountPressed,
     TResult? Function(DeleteUserAccountPressed value)? deleteUserAccountPressed,
     TResult? Function(SuspendUserAccountPressed value)?
@@ -825,6 +884,7 @@ class _$PasswordChangedImpl implements PasswordChanged {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(UserIdSet value)? userIdSet,
     TResult Function(SuspensionStateSet value)? suspensionStateSet,
+    TResult Function(UserAccountSelected value)? userAccountSelected,
     TResult Function(UpdateUserAccountPressed value)? updateUserAccountPressed,
     TResult Function(DeleteUserAccountPressed value)? deleteUserAccountPressed,
     TResult Function(SuspendUserAccountPressed value)?
@@ -918,6 +978,9 @@ class _$UserIdSetImpl implements UserIdSet {
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String userId) userIdSet,
     required TResult Function(bool suspensionState) suspensionStateSet,
+    required TResult Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)
+        userAccountSelected,
     required TResult Function() updateUserAccountPressed,
     required TResult Function(String userId) deleteUserAccountPressed,
     required TResult Function(String userId) suspendUserAccountPressed,
@@ -934,6 +997,9 @@ class _$UserIdSetImpl implements UserIdSet {
     TResult? Function(String passwordStr)? passwordChanged,
     TResult? Function(String userId)? userIdSet,
     TResult? Function(bool suspensionState)? suspensionStateSet,
+    TResult? Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)?
+        userAccountSelected,
     TResult? Function()? updateUserAccountPressed,
     TResult? Function(String userId)? deleteUserAccountPressed,
     TResult? Function(String userId)? suspendUserAccountPressed,
@@ -950,6 +1016,9 @@ class _$UserIdSetImpl implements UserIdSet {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String userId)? userIdSet,
     TResult Function(bool suspensionState)? suspensionStateSet,
+    TResult Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)?
+        userAccountSelected,
     TResult Function()? updateUserAccountPressed,
     TResult Function(String userId)? deleteUserAccountPressed,
     TResult Function(String userId)? suspendUserAccountPressed,
@@ -970,6 +1039,7 @@ class _$UserIdSetImpl implements UserIdSet {
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(UserIdSet value) userIdSet,
     required TResult Function(SuspensionStateSet value) suspensionStateSet,
+    required TResult Function(UserAccountSelected value) userAccountSelected,
     required TResult Function(UpdateUserAccountPressed value)
         updateUserAccountPressed,
     required TResult Function(DeleteUserAccountPressed value)
@@ -989,6 +1059,7 @@ class _$UserIdSetImpl implements UserIdSet {
     TResult? Function(PasswordChanged value)? passwordChanged,
     TResult? Function(UserIdSet value)? userIdSet,
     TResult? Function(SuspensionStateSet value)? suspensionStateSet,
+    TResult? Function(UserAccountSelected value)? userAccountSelected,
     TResult? Function(UpdateUserAccountPressed value)? updateUserAccountPressed,
     TResult? Function(DeleteUserAccountPressed value)? deleteUserAccountPressed,
     TResult? Function(SuspendUserAccountPressed value)?
@@ -1006,6 +1077,7 @@ class _$UserIdSetImpl implements UserIdSet {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(UserIdSet value)? userIdSet,
     TResult Function(SuspensionStateSet value)? suspensionStateSet,
+    TResult Function(UserAccountSelected value)? userAccountSelected,
     TResult Function(UpdateUserAccountPressed value)? updateUserAccountPressed,
     TResult Function(DeleteUserAccountPressed value)? deleteUserAccountPressed,
     TResult Function(SuspendUserAccountPressed value)?
@@ -1100,6 +1172,9 @@ class _$SuspensionStateSetImpl implements SuspensionStateSet {
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String userId) userIdSet,
     required TResult Function(bool suspensionState) suspensionStateSet,
+    required TResult Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)
+        userAccountSelected,
     required TResult Function() updateUserAccountPressed,
     required TResult Function(String userId) deleteUserAccountPressed,
     required TResult Function(String userId) suspendUserAccountPressed,
@@ -1116,6 +1191,9 @@ class _$SuspensionStateSetImpl implements SuspensionStateSet {
     TResult? Function(String passwordStr)? passwordChanged,
     TResult? Function(String userId)? userIdSet,
     TResult? Function(bool suspensionState)? suspensionStateSet,
+    TResult? Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)?
+        userAccountSelected,
     TResult? Function()? updateUserAccountPressed,
     TResult? Function(String userId)? deleteUserAccountPressed,
     TResult? Function(String userId)? suspendUserAccountPressed,
@@ -1132,6 +1210,9 @@ class _$SuspensionStateSetImpl implements SuspensionStateSet {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String userId)? userIdSet,
     TResult Function(bool suspensionState)? suspensionStateSet,
+    TResult Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)?
+        userAccountSelected,
     TResult Function()? updateUserAccountPressed,
     TResult Function(String userId)? deleteUserAccountPressed,
     TResult Function(String userId)? suspendUserAccountPressed,
@@ -1152,6 +1233,7 @@ class _$SuspensionStateSetImpl implements SuspensionStateSet {
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(UserIdSet value) userIdSet,
     required TResult Function(SuspensionStateSet value) suspensionStateSet,
+    required TResult Function(UserAccountSelected value) userAccountSelected,
     required TResult Function(UpdateUserAccountPressed value)
         updateUserAccountPressed,
     required TResult Function(DeleteUserAccountPressed value)
@@ -1171,6 +1253,7 @@ class _$SuspensionStateSetImpl implements SuspensionStateSet {
     TResult? Function(PasswordChanged value)? passwordChanged,
     TResult? Function(UserIdSet value)? userIdSet,
     TResult? Function(SuspensionStateSet value)? suspensionStateSet,
+    TResult? Function(UserAccountSelected value)? userAccountSelected,
     TResult? Function(UpdateUserAccountPressed value)? updateUserAccountPressed,
     TResult? Function(DeleteUserAccountPressed value)? deleteUserAccountPressed,
     TResult? Function(SuspendUserAccountPressed value)?
@@ -1188,6 +1271,7 @@ class _$SuspensionStateSetImpl implements SuspensionStateSet {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(UserIdSet value)? userIdSet,
     TResult Function(SuspensionStateSet value)? suspensionStateSet,
+    TResult Function(UserAccountSelected value)? userAccountSelected,
     TResult Function(UpdateUserAccountPressed value)? updateUserAccountPressed,
     TResult Function(DeleteUserAccountPressed value)? deleteUserAccountPressed,
     TResult Function(SuspendUserAccountPressed value)?
@@ -1208,6 +1292,250 @@ abstract class SuspensionStateSet implements ManageAccountEvent {
   bool get suspensionState;
   @JsonKey(ignore: true)
   _$$SuspensionStateSetImplCopyWith<_$SuspensionStateSetImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UserAccountSelectedImplCopyWith<$Res> {
+  factory _$$UserAccountSelectedImplCopyWith(_$UserAccountSelectedImpl value,
+          $Res Function(_$UserAccountSelectedImpl) then) =
+      __$$UserAccountSelectedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call(
+      {UniqueId id,
+      EmailAddress emailAddress,
+      bool suspensionState,
+      Name name,
+      Role role});
+}
+
+/// @nodoc
+class __$$UserAccountSelectedImplCopyWithImpl<$Res>
+    extends _$ManageAccountEventCopyWithImpl<$Res, _$UserAccountSelectedImpl>
+    implements _$$UserAccountSelectedImplCopyWith<$Res> {
+  __$$UserAccountSelectedImplCopyWithImpl(_$UserAccountSelectedImpl _value,
+      $Res Function(_$UserAccountSelectedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? emailAddress = null,
+    Object? suspensionState = null,
+    Object? name = null,
+    Object? role = null,
+  }) {
+    return _then(_$UserAccountSelectedImpl(
+      null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      null == emailAddress
+          ? _value.emailAddress
+          : emailAddress // ignore: cast_nullable_to_non_nullable
+              as EmailAddress,
+      null == suspensionState
+          ? _value.suspensionState
+          : suspensionState // ignore: cast_nullable_to_non_nullable
+              as bool,
+      null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as Name,
+      null == role
+          ? _value.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as Role,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UserAccountSelectedImpl implements UserAccountSelected {
+  const _$UserAccountSelectedImpl(
+      this.id, this.emailAddress, this.suspensionState, this.name, this.role);
+
+  @override
+  final UniqueId id;
+  @override
+  final EmailAddress emailAddress;
+  @override
+  final bool suspensionState;
+  @override
+  final Name name;
+  @override
+  final Role role;
+
+  @override
+  String toString() {
+    return 'ManageAccountEvent.userAccountSelected(id: $id, emailAddress: $emailAddress, suspensionState: $suspensionState, name: $name, role: $role)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserAccountSelectedImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.emailAddress, emailAddress) ||
+                other.emailAddress == emailAddress) &&
+            (identical(other.suspensionState, suspensionState) ||
+                other.suspensionState == suspensionState) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.role, role) || other.role == role));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, id, emailAddress, suspensionState, name, role);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UserAccountSelectedImplCopyWith<_$UserAccountSelectedImpl> get copyWith =>
+      __$$UserAccountSelectedImplCopyWithImpl<_$UserAccountSelectedImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String nameStr) nameChanged,
+    required TResult Function(String teamNameStr) teamNameChanged,
+    required TResult Function(String emailStr) emailChanged,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String userId) userIdSet,
+    required TResult Function(bool suspensionState) suspensionStateSet,
+    required TResult Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)
+        userAccountSelected,
+    required TResult Function() updateUserAccountPressed,
+    required TResult Function(String userId) deleteUserAccountPressed,
+    required TResult Function(String userId) suspendUserAccountPressed,
+  }) {
+    return userAccountSelected(id, emailAddress, suspensionState, name, role);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String nameStr)? nameChanged,
+    TResult? Function(String teamNameStr)? teamNameChanged,
+    TResult? Function(String emailStr)? emailChanged,
+    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String userId)? userIdSet,
+    TResult? Function(bool suspensionState)? suspensionStateSet,
+    TResult? Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)?
+        userAccountSelected,
+    TResult? Function()? updateUserAccountPressed,
+    TResult? Function(String userId)? deleteUserAccountPressed,
+    TResult? Function(String userId)? suspendUserAccountPressed,
+  }) {
+    return userAccountSelected?.call(
+        id, emailAddress, suspensionState, name, role);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(String teamNameStr)? teamNameChanged,
+    TResult Function(String emailStr)? emailChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String userId)? userIdSet,
+    TResult Function(bool suspensionState)? suspensionStateSet,
+    TResult Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)?
+        userAccountSelected,
+    TResult Function()? updateUserAccountPressed,
+    TResult Function(String userId)? deleteUserAccountPressed,
+    TResult Function(String userId)? suspendUserAccountPressed,
+    required TResult orElse(),
+  }) {
+    if (userAccountSelected != null) {
+      return userAccountSelected(id, emailAddress, suspensionState, name, role);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NameChanged value) nameChanged,
+    required TResult Function(TeamNameChanged value) teamNameChanged,
+    required TResult Function(EmailChanged value) emailChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(UserIdSet value) userIdSet,
+    required TResult Function(SuspensionStateSet value) suspensionStateSet,
+    required TResult Function(UserAccountSelected value) userAccountSelected,
+    required TResult Function(UpdateUserAccountPressed value)
+        updateUserAccountPressed,
+    required TResult Function(DeleteUserAccountPressed value)
+        deleteUserAccountPressed,
+    required TResult Function(SuspendUserAccountPressed value)
+        suspendUserAccountPressed,
+  }) {
+    return userAccountSelected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NameChanged value)? nameChanged,
+    TResult? Function(TeamNameChanged value)? teamNameChanged,
+    TResult? Function(EmailChanged value)? emailChanged,
+    TResult? Function(PasswordChanged value)? passwordChanged,
+    TResult? Function(UserIdSet value)? userIdSet,
+    TResult? Function(SuspensionStateSet value)? suspensionStateSet,
+    TResult? Function(UserAccountSelected value)? userAccountSelected,
+    TResult? Function(UpdateUserAccountPressed value)? updateUserAccountPressed,
+    TResult? Function(DeleteUserAccountPressed value)? deleteUserAccountPressed,
+    TResult? Function(SuspendUserAccountPressed value)?
+        suspendUserAccountPressed,
+  }) {
+    return userAccountSelected?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NameChanged value)? nameChanged,
+    TResult Function(TeamNameChanged value)? teamNameChanged,
+    TResult Function(EmailChanged value)? emailChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(UserIdSet value)? userIdSet,
+    TResult Function(SuspensionStateSet value)? suspensionStateSet,
+    TResult Function(UserAccountSelected value)? userAccountSelected,
+    TResult Function(UpdateUserAccountPressed value)? updateUserAccountPressed,
+    TResult Function(DeleteUserAccountPressed value)? deleteUserAccountPressed,
+    TResult Function(SuspendUserAccountPressed value)?
+        suspendUserAccountPressed,
+    required TResult orElse(),
+  }) {
+    if (userAccountSelected != null) {
+      return userAccountSelected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserAccountSelected implements ManageAccountEvent {
+  const factory UserAccountSelected(
+      final UniqueId id,
+      final EmailAddress emailAddress,
+      final bool suspensionState,
+      final Name name,
+      final Role role) = _$UserAccountSelectedImpl;
+
+  UniqueId get id;
+  EmailAddress get emailAddress;
+  bool get suspensionState;
+  Name get name;
+  Role get role;
+  @JsonKey(ignore: true)
+  _$$UserAccountSelectedImplCopyWith<_$UserAccountSelectedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1259,6 +1587,9 @@ class _$UpdateUserAccountPressedImpl implements UpdateUserAccountPressed {
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String userId) userIdSet,
     required TResult Function(bool suspensionState) suspensionStateSet,
+    required TResult Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)
+        userAccountSelected,
     required TResult Function() updateUserAccountPressed,
     required TResult Function(String userId) deleteUserAccountPressed,
     required TResult Function(String userId) suspendUserAccountPressed,
@@ -1275,6 +1606,9 @@ class _$UpdateUserAccountPressedImpl implements UpdateUserAccountPressed {
     TResult? Function(String passwordStr)? passwordChanged,
     TResult? Function(String userId)? userIdSet,
     TResult? Function(bool suspensionState)? suspensionStateSet,
+    TResult? Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)?
+        userAccountSelected,
     TResult? Function()? updateUserAccountPressed,
     TResult? Function(String userId)? deleteUserAccountPressed,
     TResult? Function(String userId)? suspendUserAccountPressed,
@@ -1291,6 +1625,9 @@ class _$UpdateUserAccountPressedImpl implements UpdateUserAccountPressed {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String userId)? userIdSet,
     TResult Function(bool suspensionState)? suspensionStateSet,
+    TResult Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)?
+        userAccountSelected,
     TResult Function()? updateUserAccountPressed,
     TResult Function(String userId)? deleteUserAccountPressed,
     TResult Function(String userId)? suspendUserAccountPressed,
@@ -1311,6 +1648,7 @@ class _$UpdateUserAccountPressedImpl implements UpdateUserAccountPressed {
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(UserIdSet value) userIdSet,
     required TResult Function(SuspensionStateSet value) suspensionStateSet,
+    required TResult Function(UserAccountSelected value) userAccountSelected,
     required TResult Function(UpdateUserAccountPressed value)
         updateUserAccountPressed,
     required TResult Function(DeleteUserAccountPressed value)
@@ -1330,6 +1668,7 @@ class _$UpdateUserAccountPressedImpl implements UpdateUserAccountPressed {
     TResult? Function(PasswordChanged value)? passwordChanged,
     TResult? Function(UserIdSet value)? userIdSet,
     TResult? Function(SuspensionStateSet value)? suspensionStateSet,
+    TResult? Function(UserAccountSelected value)? userAccountSelected,
     TResult? Function(UpdateUserAccountPressed value)? updateUserAccountPressed,
     TResult? Function(DeleteUserAccountPressed value)? deleteUserAccountPressed,
     TResult? Function(SuspendUserAccountPressed value)?
@@ -1347,6 +1686,7 @@ class _$UpdateUserAccountPressedImpl implements UpdateUserAccountPressed {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(UserIdSet value)? userIdSet,
     TResult Function(SuspensionStateSet value)? suspensionStateSet,
+    TResult Function(UserAccountSelected value)? userAccountSelected,
     TResult Function(UpdateUserAccountPressed value)? updateUserAccountPressed,
     TResult Function(DeleteUserAccountPressed value)? deleteUserAccountPressed,
     TResult Function(SuspendUserAccountPressed value)?
@@ -1438,6 +1778,9 @@ class _$DeleteUserAccountPressedImpl implements DeleteUserAccountPressed {
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String userId) userIdSet,
     required TResult Function(bool suspensionState) suspensionStateSet,
+    required TResult Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)
+        userAccountSelected,
     required TResult Function() updateUserAccountPressed,
     required TResult Function(String userId) deleteUserAccountPressed,
     required TResult Function(String userId) suspendUserAccountPressed,
@@ -1454,6 +1797,9 @@ class _$DeleteUserAccountPressedImpl implements DeleteUserAccountPressed {
     TResult? Function(String passwordStr)? passwordChanged,
     TResult? Function(String userId)? userIdSet,
     TResult? Function(bool suspensionState)? suspensionStateSet,
+    TResult? Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)?
+        userAccountSelected,
     TResult? Function()? updateUserAccountPressed,
     TResult? Function(String userId)? deleteUserAccountPressed,
     TResult? Function(String userId)? suspendUserAccountPressed,
@@ -1470,6 +1816,9 @@ class _$DeleteUserAccountPressedImpl implements DeleteUserAccountPressed {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String userId)? userIdSet,
     TResult Function(bool suspensionState)? suspensionStateSet,
+    TResult Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)?
+        userAccountSelected,
     TResult Function()? updateUserAccountPressed,
     TResult Function(String userId)? deleteUserAccountPressed,
     TResult Function(String userId)? suspendUserAccountPressed,
@@ -1490,6 +1839,7 @@ class _$DeleteUserAccountPressedImpl implements DeleteUserAccountPressed {
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(UserIdSet value) userIdSet,
     required TResult Function(SuspensionStateSet value) suspensionStateSet,
+    required TResult Function(UserAccountSelected value) userAccountSelected,
     required TResult Function(UpdateUserAccountPressed value)
         updateUserAccountPressed,
     required TResult Function(DeleteUserAccountPressed value)
@@ -1509,6 +1859,7 @@ class _$DeleteUserAccountPressedImpl implements DeleteUserAccountPressed {
     TResult? Function(PasswordChanged value)? passwordChanged,
     TResult? Function(UserIdSet value)? userIdSet,
     TResult? Function(SuspensionStateSet value)? suspensionStateSet,
+    TResult? Function(UserAccountSelected value)? userAccountSelected,
     TResult? Function(UpdateUserAccountPressed value)? updateUserAccountPressed,
     TResult? Function(DeleteUserAccountPressed value)? deleteUserAccountPressed,
     TResult? Function(SuspendUserAccountPressed value)?
@@ -1526,6 +1877,7 @@ class _$DeleteUserAccountPressedImpl implements DeleteUserAccountPressed {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(UserIdSet value)? userIdSet,
     TResult Function(SuspensionStateSet value)? suspensionStateSet,
+    TResult Function(UserAccountSelected value)? userAccountSelected,
     TResult Function(UpdateUserAccountPressed value)? updateUserAccountPressed,
     TResult Function(DeleteUserAccountPressed value)? deleteUserAccountPressed,
     TResult Function(SuspendUserAccountPressed value)?
@@ -1623,6 +1975,9 @@ class _$SuspendUserAccountPressedImpl implements SuspendUserAccountPressed {
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(String userId) userIdSet,
     required TResult Function(bool suspensionState) suspensionStateSet,
+    required TResult Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)
+        userAccountSelected,
     required TResult Function() updateUserAccountPressed,
     required TResult Function(String userId) deleteUserAccountPressed,
     required TResult Function(String userId) suspendUserAccountPressed,
@@ -1639,6 +1994,9 @@ class _$SuspendUserAccountPressedImpl implements SuspendUserAccountPressed {
     TResult? Function(String passwordStr)? passwordChanged,
     TResult? Function(String userId)? userIdSet,
     TResult? Function(bool suspensionState)? suspensionStateSet,
+    TResult? Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)?
+        userAccountSelected,
     TResult? Function()? updateUserAccountPressed,
     TResult? Function(String userId)? deleteUserAccountPressed,
     TResult? Function(String userId)? suspendUserAccountPressed,
@@ -1655,6 +2013,9 @@ class _$SuspendUserAccountPressedImpl implements SuspendUserAccountPressed {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(String userId)? userIdSet,
     TResult Function(bool suspensionState)? suspensionStateSet,
+    TResult Function(UniqueId id, EmailAddress emailAddress,
+            bool suspensionState, Name name, Role role)?
+        userAccountSelected,
     TResult Function()? updateUserAccountPressed,
     TResult Function(String userId)? deleteUserAccountPressed,
     TResult Function(String userId)? suspendUserAccountPressed,
@@ -1675,6 +2036,7 @@ class _$SuspendUserAccountPressedImpl implements SuspendUserAccountPressed {
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(UserIdSet value) userIdSet,
     required TResult Function(SuspensionStateSet value) suspensionStateSet,
+    required TResult Function(UserAccountSelected value) userAccountSelected,
     required TResult Function(UpdateUserAccountPressed value)
         updateUserAccountPressed,
     required TResult Function(DeleteUserAccountPressed value)
@@ -1694,6 +2056,7 @@ class _$SuspendUserAccountPressedImpl implements SuspendUserAccountPressed {
     TResult? Function(PasswordChanged value)? passwordChanged,
     TResult? Function(UserIdSet value)? userIdSet,
     TResult? Function(SuspensionStateSet value)? suspensionStateSet,
+    TResult? Function(UserAccountSelected value)? userAccountSelected,
     TResult? Function(UpdateUserAccountPressed value)? updateUserAccountPressed,
     TResult? Function(DeleteUserAccountPressed value)? deleteUserAccountPressed,
     TResult? Function(SuspendUserAccountPressed value)?
@@ -1711,6 +2074,7 @@ class _$SuspendUserAccountPressedImpl implements SuspendUserAccountPressed {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(UserIdSet value)? userIdSet,
     TResult Function(SuspensionStateSet value)? suspensionStateSet,
+    TResult Function(UserAccountSelected value)? userAccountSelected,
     TResult Function(UpdateUserAccountPressed value)? updateUserAccountPressed,
     TResult Function(DeleteUserAccountPressed value)? deleteUserAccountPressed,
     TResult Function(SuspendUserAccountPressed value)?
@@ -1739,8 +2103,9 @@ mixin _$ManageAccountState {
   EmailAddress get emailAddress => throw _privateConstructorUsedError;
   Password get password => throw _privateConstructorUsedError;
   Name get name => throw _privateConstructorUsedError;
+  Role get role => throw _privateConstructorUsedError;
+  UniqueId get id => throw _privateConstructorUsedError;
   TeamName get teamName => throw _privateConstructorUsedError;
-  String get userId => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get suspensionState => throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
@@ -1762,8 +2127,9 @@ abstract class $ManageAccountStateCopyWith<$Res> {
       {EmailAddress emailAddress,
       Password password,
       Name name,
+      Role role,
+      UniqueId id,
       TeamName teamName,
-      String userId,
       bool showErrorMessages,
       bool suspensionState,
       bool isSubmitting,
@@ -1787,8 +2153,9 @@ class _$ManageAccountStateCopyWithImpl<$Res, $Val extends ManageAccountState>
     Object? emailAddress = null,
     Object? password = null,
     Object? name = null,
+    Object? role = null,
+    Object? id = null,
     Object? teamName = null,
-    Object? userId = null,
     Object? showErrorMessages = null,
     Object? suspensionState = null,
     Object? isSubmitting = null,
@@ -1807,14 +2174,18 @@ class _$ManageAccountStateCopyWithImpl<$Res, $Val extends ManageAccountState>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as Name,
+      role: null == role
+          ? _value.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as Role,
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
       teamName: null == teamName
           ? _value.teamName
           : teamName // ignore: cast_nullable_to_non_nullable
               as TeamName,
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
       showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -1847,8 +2218,9 @@ abstract class _$$ManageAccountStateImplCopyWith<$Res>
       {EmailAddress emailAddress,
       Password password,
       Name name,
+      Role role,
+      UniqueId id,
       TeamName teamName,
-      String userId,
       bool showErrorMessages,
       bool suspensionState,
       bool isSubmitting,
@@ -1870,8 +2242,9 @@ class __$$ManageAccountStateImplCopyWithImpl<$Res>
     Object? emailAddress = null,
     Object? password = null,
     Object? name = null,
+    Object? role = null,
+    Object? id = null,
     Object? teamName = null,
-    Object? userId = null,
     Object? showErrorMessages = null,
     Object? suspensionState = null,
     Object? isSubmitting = null,
@@ -1890,14 +2263,18 @@ class __$$ManageAccountStateImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as Name,
+      role: null == role
+          ? _value.role
+          : role // ignore: cast_nullable_to_non_nullable
+              as Role,
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
       teamName: null == teamName
           ? _value.teamName
           : teamName // ignore: cast_nullable_to_non_nullable
               as TeamName,
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
       showErrorMessages: null == showErrorMessages
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -1925,8 +2302,9 @@ class _$ManageAccountStateImpl implements _ManageAccountState {
       {required this.emailAddress,
       required this.password,
       required this.name,
+      required this.role,
+      required this.id,
       required this.teamName,
-      required this.userId,
       required this.showErrorMessages,
       required this.suspensionState,
       required this.isSubmitting,
@@ -1939,9 +2317,11 @@ class _$ManageAccountStateImpl implements _ManageAccountState {
   @override
   final Name name;
   @override
-  final TeamName teamName;
+  final Role role;
   @override
-  final String userId;
+  final UniqueId id;
+  @override
+  final TeamName teamName;
   @override
   final bool showErrorMessages;
   @override
@@ -1954,7 +2334,7 @@ class _$ManageAccountStateImpl implements _ManageAccountState {
 
   @override
   String toString() {
-    return 'ManageAccountState(emailAddress: $emailAddress, password: $password, name: $name, teamName: $teamName, userId: $userId, showErrorMessages: $showErrorMessages, suspensionState: $suspensionState, isSubmitting: $isSubmitting, operationFailureOrSuccessOption: $operationFailureOrSuccessOption)';
+    return 'ManageAccountState(emailAddress: $emailAddress, password: $password, name: $name, role: $role, id: $id, teamName: $teamName, showErrorMessages: $showErrorMessages, suspensionState: $suspensionState, isSubmitting: $isSubmitting, operationFailureOrSuccessOption: $operationFailureOrSuccessOption)';
   }
 
   @override
@@ -1967,9 +2347,10 @@ class _$ManageAccountStateImpl implements _ManageAccountState {
             (identical(other.password, password) ||
                 other.password == password) &&
             (identical(other.name, name) || other.name == name) &&
+            (identical(other.role, role) || other.role == role) &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.teamName, teamName) ||
                 other.teamName == teamName) &&
-            (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
                 other.showErrorMessages == showErrorMessages) &&
             (identical(other.suspensionState, suspensionState) ||
@@ -1988,8 +2369,9 @@ class _$ManageAccountStateImpl implements _ManageAccountState {
       emailAddress,
       password,
       name,
+      role,
+      id,
       teamName,
-      userId,
       showErrorMessages,
       suspensionState,
       isSubmitting,
@@ -2008,8 +2390,9 @@ abstract class _ManageAccountState implements ManageAccountState {
       {required final EmailAddress emailAddress,
       required final Password password,
       required final Name name,
+      required final Role role,
+      required final UniqueId id,
       required final TeamName teamName,
-      required final String userId,
       required final bool showErrorMessages,
       required final bool suspensionState,
       required final bool isSubmitting,
@@ -2023,9 +2406,11 @@ abstract class _ManageAccountState implements ManageAccountState {
   @override
   Name get name;
   @override
-  TeamName get teamName;
+  Role get role;
   @override
-  String get userId;
+  UniqueId get id;
+  @override
+  TeamName get teamName;
   @override
   bool get showErrorMessages;
   @override

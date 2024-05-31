@@ -157,8 +157,7 @@ class EditAccountForm extends StatelessWidget {
                       .read<ManageAccountBloc>()
                       .add(ManageAccountEvent.teamNameChanged(value)),
                 ),
-                AuthButton('DONE', CustomColors.divider, '/splash', true,
-                 () {
+                AuthButton('DONE', CustomColors.accent, '/splash', true, () {
                   context.read<ManageAccountBloc>().add(
                         const ManageAccountEvent.updateUserAccountPressed(),
                       );

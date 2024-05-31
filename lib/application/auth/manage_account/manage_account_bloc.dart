@@ -1,3 +1,4 @@
+import 'package:FantasyE/domain/core/value_objects.dart';
 import 'package:FantasyE/domain/manage_account/manage_account_failure.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -24,7 +25,7 @@ class ManageAccountBloc extends Bloc<ManageAccountEvent, ManageAccountState> {
           emailAddress: EmailAddress(event.emailStr),
           operationFailureOrSuccessOption: none()));
     });
-    on<PasswordChanged>((event, emit) { 
+    on<PasswordChanged>((event, emit) {
       emit(state.copyWith(
           password: Password(event.passwordStr),
           operationFailureOrSuccessOption: none()));
@@ -38,12 +39,17 @@ class ManageAccountBloc extends Bloc<ManageAccountEvent, ManageAccountState> {
           teamName: TeamName(event.teamNameStr),
           operationFailureOrSuccessOption: none()));
     });
-    on<UserIdSet>((event, emit) {
-      emit(state.copyWith(
-          userId: event.userId, operationFailureOrSuccessOption: none()));
-    });
     on<SuspensionStateSet>((event, emit) {
       emit(state.copyWith(
+          suspensionState: event.suspensionState,
+          operationFailureOrSuccessOption: none()));
+    });
+    on<UserAccountSelected>((event, emit) {
+      emit(state.copyWith(
+          id: event.id,
+          emailAddress: event.emailAddress,
+          role: event.role,
+          name: event.name,
           suspensionState: event.suspensionState,
           operationFailureOrSuccessOption: none()));
     });

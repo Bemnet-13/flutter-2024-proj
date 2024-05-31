@@ -41,8 +41,7 @@ class LoginFormAdmin extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<LoginFormBloc, LoginFormState>(
         listener: (context, state) {
-      state.authFailureOrSuccessOption
-      .fold(
+      state.authFailureOrSuccessOption.fold(
         () {},
         (either) => either.fold(
           (failure) {
@@ -57,6 +56,8 @@ class LoginFormAdmin extends StatelessWidget {
                       const Text('Invalid Email or Password'),
                   invalidRoleUsedInLogin: (_) =>
                       const Text('Invalid Role. Use defined these roles'),
+                  accountSuspended: (_) =>
+                      const Text("Your account has been suspended"),
                 ),
               ),
             );

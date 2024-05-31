@@ -1,3 +1,4 @@
+import 'package:FantasyE/domain/auth/user.dart';
 import 'package:FantasyE/domain/manage_account/i_manage_account_facade.dart';
 import '../../../api_constants.dart';
 import 'package:dartz/dartz.dart';
@@ -16,6 +17,30 @@ class AccountManagementRepository implements IManageAccountFacade {
   AccountManagementRepository({
     required this.apiClient,
   });
+
+  @override
+  Future<Either<ManageAccountFailure, List<UserDetails>>> getAllUsers() async {
+    try {
+      String? token = await secureStorage.read(key: 'Token');
+      if (token == null) {
+        return left(const ManageAccountFailure.serverError());
+      }
+      final response = await apiClient.getAllUsers(token);
+      if (response.statusCode == 200) {
+        final List<dynamic> responseBody = jsonDecode(response.body);
+        final List<UserDetailsDto> userDtos =
+            responseBody.map((json) => UserDetailsDto.fromJson(json)).toList();
+        final List<UserDetails> usersDetails =
+            userDtos.map((dto) => dto.toDomain()).toList();
+        return right(usersDetails);
+      } else {
+        return left(const ManageAccountFailure.serverError());
+      }
+    } catch (e) {
+      return left(const ManageAccountFailure.serverError());
+    }
+  }
+
   @override
   Future<Either<ManageAccountFailure, Unit>> updateUserAccount(
       {required EmailAddress emailAddress,

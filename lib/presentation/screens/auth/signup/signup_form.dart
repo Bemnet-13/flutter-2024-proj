@@ -22,16 +22,17 @@ class SignUpForm extends StatelessWidget {
           (failure) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: failure.map(
-                  cancelledByUser: (_) => const Text('Cancelled'),
-                  serverError: (_) => const Text('Server Error'),
-                  emailAlreadyInUse: (_) =>
-                      const Text('Email Already In Use. Try another email'),
-                  invalidEmailAndPasswordCombination: (_) =>
-                      const Text('Invalid Email or Password'),
-                  invalidRoleUsedInLogin: (_) =>
-                      const Text('Invalid Role. Use defined these roles'),
-                ),
+                content: failure.maybeMap(
+                    cancelledByUser: (_) => const Text('Cancelled'),
+                    serverError: (_) => const Text('Server Error'),
+                    emailAlreadyInUse: (_) =>
+                        const Text('Email Already In Use. Try another email'),
+                    invalidEmailAndPasswordCombination: (_) =>
+                        const Text('Invalid Email or Password'),
+                    invalidRoleUsedInLogin: (_) =>
+                        const Text('Invalid Role. Use defined these roles'),
+                    orElse: () =>
+                        const Text("Could not sign you up. Try again.")),
               ),
             );
           },
