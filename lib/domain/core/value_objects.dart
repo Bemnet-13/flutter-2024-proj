@@ -18,6 +18,11 @@ abstract class ValueObject<T> {
     return o is ValueObject<T> && o.value == value;
   }
 
+  T getOrCrash() {
+    // id = identity - same as writing (right) => right
+    return value.fold((f) => throw UnexpectedValueError(f), id);
+  }
+
   @override
   int get hashCode => value.hashCode;
 
