@@ -15,6 +15,8 @@ class LeagueName extends ValueObject<String> {
     );
   }
 
+  bool isValid() => value.isRight();
+
   const LeagueName._(this.value);
 }
 

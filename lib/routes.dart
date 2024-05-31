@@ -25,23 +25,7 @@ import 'presentation/screens/choice.dart';
 
 class Routes {
   final router = GoRouter(
-    initialLocation: '/splash',
-    // redirect: (context, state) {
-    // final authState = context.read<AuthLogicBloc>().state;
-    // print(authState);
-
-    // if (authState is Unauthenticated && state.fullPath != '/login') {
-    // return '/login';
-    // } else if (authState is AuthenticatedAsAdmin &&
-    // (state.fullPath == 'login')) {
-    // print('My redirect');
-    // return '/admin_dashboard';
-    // } else if (authState is AuthenticatedAsPlayer &&
-    // (state.fullPath == 'login')) {
-    // return '/player_dashboard';
-    // }
-    // return null;
-    // },
+    initialLocation: '/create_avatar',
     routes: [
       GoRoute(
         name: 'choice',

@@ -4,7 +4,7 @@ import '../../../api_constants.dart';
 import 'package:dartz/dartz.dart';
 import '../../../domain/auth/auth_failure.dart';
 import '../../../domain/auth/value_objects.dart';
-import '../../api_client.dart';
+import '../api_client.dart';
 import '../dto/signup_dto.dart';
 import '../dto/login_dto.dart';
 import 'package:FantasyE/domain/auth/user.dart';
@@ -38,7 +38,7 @@ class AuthRepository implements IAuthFacade {
   @override
   Future<void> logOut() async {
     await secureStorage.delete(key: 'Token');
-    await secureStorage.delete(key: 'Token');
+    await secureStorage.delete(key: 'Role');
     String? token = await secureStorage.read(key: 'Token');
     if (token == null) {
       print('Token deleted successfully');

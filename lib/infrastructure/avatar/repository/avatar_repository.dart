@@ -1,37 +1,30 @@
+import 'package:FantasyE/api_constants.dart';
 import 'package:FantasyE/domain/avatar/avatar_failure.dart';
-import 'package:FantasyE/infrastructure/avatar/avatar_dtos.dart';
+import 'package:FantasyE/infrastructure/avatar/dto/avatar_dtos.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:FantasyE/domain/core/failures.dart';
 import 'package:FantasyE/domain/avatar/avatar.dart';
 import 'package:FantasyE/domain/avatar/i_avatar_repository.dart';
-import 'package:FantasyE/domain/avatar/value_objects.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/collection.dart';
+import '../api_client.dart';
 import 'package:dartz/dartz.dart';
-import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-@prod
-@lazySingleton
-@injectable
+@LazySingleton(as: IAvatarRepository)
 class AvatarRepository implements IAvatarRepository {
-  final http.Client _httpClient;
-
-  AvatarRepository(this._httpClient);
-
-  Future<http.Response> fetchData() async {
-    final response = await _httpClient.get(Uri.parse('https://127.0.0.1/players'));
-    return response;
-  }
-
+  final ApiClient apiClient;
+  AvatarRepository({required this.apiClient});
   @override
   Stream<Either<AvatarFailure, KtList<Avatar>>> watchAll() async* {
     try {
-      final response = await fetchData();
+      final response = await apiClient.fetchData();
       if (response.statusCode == 200) {
-        final List<dynamic> avatarData = jsonDecode(response.body) as List<dynamic>;
+        final List<dynamic> avatarData =
+            jsonDecode(response.body) as List<dynamic>;
         final avatars = avatarData
-            .map((data) => AvatarDto.fromJson(data as Map<String, dynamic>).toDomain())
+            .map((data) =>
+                AvatarDto.fromJson(data as Map<String, dynamic>).toDomain())
             .toImmutableList();
         yield Right(avatars);
       } else {
@@ -45,11 +38,7 @@ class AvatarRepository implements IAvatarRepository {
   @override
   Future<Either<AvatarFailure, Unit>> create(Avatar avatar) async {
     try {
-      final response = await _httpClient.post(
-        Uri.parse('https://127.0.0.1/players'),
-        headers: {'Content-Type': 'application/json'},
-        body: jsonEncode(AvatarDto.fromDomain(avatar).toJson()),
-      );
+      final response = await apiClient.createNewAvatar(avatar);
       if (response.statusCode == 201) {
         return const Right(unit);
       } else {
@@ -63,11 +52,7 @@ class AvatarRepository implements IAvatarRepository {
   @override
   Future<Either<AvatarFailure, Unit>> update(Avatar avatar) async {
     try {
-      final response = await _httpClient.put(
-        Uri.parse('https://127.0.0.1/players/${avatar.id.getOrCrash()}'),
-        headers: {'Content-Type': 'application/json'},
-        body: jsonEncode(AvatarDto.fromDomain(avatar).toJson()),
-      );
+      final response = await apiClient.updateAvatar(avatar);
       if (response.statusCode == 200) {
         return const Right(unit);
       } else {
@@ -81,9 +66,7 @@ class AvatarRepository implements IAvatarRepository {
   @override
   Future<Either<AvatarFailure, Unit>> delete(Avatar avatar) async {
     try {
-      final response = await _httpClient.delete(
-        Uri.parse('https://127.0.0.1/players/${avatar.id.getOrCrash()}'),
-      );
+      final response = await apiClient.deleteAvatar(avatar);
       if (response.statusCode == 200) {
         return const Right(unit);
       } else {
@@ -97,11 +80,7 @@ class AvatarRepository implements IAvatarRepository {
   @override
   Future<Either<AvatarFailure, Unit>> add(Avatar avatar) async {
     try {
-      final response = await _httpClient.put(
-        Uri.parse('https://127.0.0.1/players/${avatar.id.getOrCrash()}'),
-        headers: {'Content-Type': 'application/json'},
-        body: jsonEncode(AvatarDto.fromDomain(avatar).toJson()),
-      );
+      final response = await apiClient.addAvatar(avatar);
       if (response.statusCode == 200) {
         return const Right(unit);
       } else {

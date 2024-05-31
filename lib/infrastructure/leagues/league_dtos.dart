@@ -11,7 +11,7 @@ part 'league_dtos.freezed.dart';
 @freezed
 abstract class LeagueDto with _$LeagueDto {
   const factory LeagueDto({
-    @JsonKey(ignore: true) String? id,
+    @JsonKey(name: '_id') String? id,
     required String name,
     required List<String> members,
   }) = _LeagueDto;
@@ -21,9 +21,8 @@ abstract class LeagueDto with _$LeagueDto {
       id: league.id.toString(),
       name: league.name.toString(),
       members: league.members
-          .getOrCrash()
           .map((memberId) => memberId.toString())
-          .asList(),
+          .toList(),
     );
   }
 
@@ -36,7 +35,7 @@ extension LeagueDtoX on LeagueDto {
     return League(
       id: UniqueId.fromUniqueString(id!),
       name: LeagueName(name),
-      members: ListVO(members.map((id) => MemberId(id)).toImmutableList()),
+      members: members.map((id) => MemberId(id)).toList(),
     );
   }
 }

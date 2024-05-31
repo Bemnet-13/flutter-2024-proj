@@ -20,7 +20,7 @@ LeagueDto _$LeagueDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$LeagueDto {
-  @JsonKey(ignore: true)
+  @JsonKey(name: '_id')
   String? get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   List<String> get members => throw _privateConstructorUsedError;
@@ -37,7 +37,7 @@ abstract class $LeagueDtoCopyWith<$Res> {
       _$LeagueDtoCopyWithImpl<$Res, LeagueDto>;
   @useResult
   $Res call(
-      {@JsonKey(ignore: true) String? id, String name, List<String> members});
+      {@JsonKey(name: '_id') String? id, String name, List<String> members});
 }
 
 /// @nodoc
@@ -83,7 +83,7 @@ abstract class _$$LeagueDtoImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(ignore: true) String? id, String name, List<String> members});
+      {@JsonKey(name: '_id') String? id, String name, List<String> members});
 }
 
 /// @nodoc
@@ -122,7 +122,7 @@ class __$$LeagueDtoImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$LeagueDtoImpl implements _LeagueDto {
   const _$LeagueDtoImpl(
-      {@JsonKey(ignore: true) this.id,
+      {@JsonKey(name: '_id') this.id,
       required this.name,
       required final List<String> members})
       : _members = members;
@@ -131,7 +131,7 @@ class _$LeagueDtoImpl implements _LeagueDto {
       _$$LeagueDtoImplFromJson(json);
 
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(name: '_id')
   final String? id;
   @override
   final String name;
@@ -179,7 +179,7 @@ class _$LeagueDtoImpl implements _LeagueDto {
 
 abstract class _LeagueDto implements LeagueDto {
   const factory _LeagueDto(
-      {@JsonKey(ignore: true) final String? id,
+      {@JsonKey(name: '_id') final String? id,
       required final String name,
       required final List<String> members}) = _$LeagueDtoImpl;
 
@@ -187,7 +187,7 @@ abstract class _LeagueDto implements LeagueDto {
       _$LeagueDtoImpl.fromJson;
 
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(name: '_id')
   String? get id;
   @override
   String get name;

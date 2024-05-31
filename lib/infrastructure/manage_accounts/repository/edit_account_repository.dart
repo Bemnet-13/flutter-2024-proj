@@ -2,7 +2,7 @@ import 'package:FantasyE/domain/manage_account/i_manage_account_facade.dart';
 import '../../../api_constants.dart';
 import 'package:dartz/dartz.dart';
 import '../../../domain/auth/value_objects.dart';
-import '../../api_client.dart';
+import '../../auth/api_client.dart';
 import '../dto/edit_account_dto.dart';
 import 'package:FantasyE/domain/manage_account/manage_account_failure.dart';
 import 'dart:convert';

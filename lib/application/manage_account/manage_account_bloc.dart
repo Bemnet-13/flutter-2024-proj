@@ -24,7 +24,7 @@ class ManageAccountBloc extends Bloc<ManageAccountEvent, ManageAccountState> {
           emailAddress: EmailAddress(event.emailStr),
           operationFailureOrSuccessOption: none()));
     });
-    on<PasswordChanged>((event, emit) {
+    on<PasswordChanged>((event, emit) { 
       emit(state.copyWith(
           password: Password(event.passwordStr),
           operationFailureOrSuccessOption: none()));

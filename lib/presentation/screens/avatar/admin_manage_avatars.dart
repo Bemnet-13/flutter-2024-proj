@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:FantasyE/application/avatar/manage_avatar/manage_avatar_bloc.dart';
 import 'package:FantasyE/domain/avatar/avatar.dart';
 import 'package:FantasyE/presentation/widgets/entries/avatar_list_entry.dart';
 import 'package:flutter/material.dart';

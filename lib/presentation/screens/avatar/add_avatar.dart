@@ -19,7 +19,7 @@ class AddAvatarScreen extends StatelessWidget {
     return BlocProvider<AddAvatarBloc>(
       create: (context) {
         final bloc = getIt<AddAvatarBloc>();
-        bloc.add(const AddAvatarEvent.fetchAvatars());
+        bloc.add(const AddAvatarEvent.addStarted());
         return bloc;
       },
       child: Scaffold(
@@ -124,7 +124,7 @@ class AvatarListEntry extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  addAvatarBloc.add(AddAvatarEvent.addStarted(currentAvatar));
+                  addAvatarBloc.add(AddAvatarEvent.addStarted());
                 },
                 child: const Text('Add to Team'),
               ),

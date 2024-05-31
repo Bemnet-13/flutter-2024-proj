@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$League {
   UniqueId get id => throw _privateConstructorUsedError;
   LeagueName get name => throw _privateConstructorUsedError;
-  ListVO<MemberId> get members => throw _privateConstructorUsedError;
+  List<MemberId> get members => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $LeagueCopyWith<League> get copyWith => throw _privateConstructorUsedError;
@@ -29,7 +29,7 @@ abstract class $LeagueCopyWith<$Res> {
   factory $LeagueCopyWith(League value, $Res Function(League) then) =
       _$LeagueCopyWithImpl<$Res, League>;
   @useResult
-  $Res call({UniqueId id, LeagueName name, ListVO<MemberId> members});
+  $Res call({UniqueId id, LeagueName name, List<MemberId> members});
 }
 
 /// @nodoc
@@ -61,7 +61,7 @@ class _$LeagueCopyWithImpl<$Res, $Val extends League>
       members: null == members
           ? _value.members
           : members // ignore: cast_nullable_to_non_nullable
-              as ListVO<MemberId>,
+              as List<MemberId>,
     ) as $Val);
   }
 }
@@ -73,7 +73,7 @@ abstract class _$$LeagueImplCopyWith<$Res> implements $LeagueCopyWith<$Res> {
       __$$LeagueImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({UniqueId id, LeagueName name, ListVO<MemberId> members});
+  $Res call({UniqueId id, LeagueName name, List<MemberId> members});
 }
 
 /// @nodoc
@@ -101,9 +101,9 @@ class __$$LeagueImplCopyWithImpl<$Res>
           : name // ignore: cast_nullable_to_non_nullable
               as LeagueName,
       members: null == members
-          ? _value.members
+          ? _value._members
           : members // ignore: cast_nullable_to_non_nullable
-              as ListVO<MemberId>,
+              as List<MemberId>,
     ));
   }
 }
@@ -112,14 +112,22 @@ class __$$LeagueImplCopyWithImpl<$Res>
 
 class _$LeagueImpl with DiagnosticableTreeMixin implements _League {
   const _$LeagueImpl(
-      {required this.id, required this.name, required this.members});
+      {required this.id,
+      required this.name,
+      required final List<MemberId> members})
+      : _members = members;
 
   @override
   final UniqueId id;
   @override
   final LeagueName name;
+  final List<MemberId> _members;
   @override
-  final ListVO<MemberId> members;
+  List<MemberId> get members {
+    if (_members is EqualUnmodifiableListView) return _members;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_members);
+  }
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -143,11 +151,12 @@ class _$LeagueImpl with DiagnosticableTreeMixin implements _League {
             other is _$LeagueImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.members, members) || other.members == members));
+            const DeepCollectionEquality().equals(other._members, _members));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, members);
+  int get hashCode => Object.hash(
+      runtimeType, id, name, const DeepCollectionEquality().hash(_members));
 
   @JsonKey(ignore: true)
   @override
@@ -160,14 +169,14 @@ abstract class _League implements League {
   const factory _League(
       {required final UniqueId id,
       required final LeagueName name,
-      required final ListVO<MemberId> members}) = _$LeagueImpl;
+      required final List<MemberId> members}) = _$LeagueImpl;
 
   @override
   UniqueId get id;
   @override
   LeagueName get name;
   @override
-  ListVO<MemberId> get members;
+  List<MemberId> get members;
   @override
   @JsonKey(ignore: true)
   _$$LeagueImplCopyWith<_$LeagueImpl> get copyWith =>
