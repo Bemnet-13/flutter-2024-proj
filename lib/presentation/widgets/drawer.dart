@@ -43,7 +43,7 @@ class DrawerAdmin extends StatelessWidget {
             child: Text(''),
           ),
           ListTile(
-            leading: Icon(Icons.dashboard_rounded),
+            leading: const Icon(Icons.dashboard_rounded),
             title: const Text(
               'AdminBoard',
               style: StyledText.drawerTestStyle,
@@ -53,7 +53,7 @@ class DrawerAdmin extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(FontAwesomeIcons.personCircleCheck),
+            leading: const Icon(FontAwesomeIcons.personCircleCheck),
             title: const Text(
               'Manage Avatars',
               style: StyledText.drawerTestStyle,
@@ -63,7 +63,7 @@ class DrawerAdmin extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.table_chart_sharp),
+            leading: const Icon(Icons.table_chart_sharp),
             title: const Text(
               'Manage Leagues',
               style: StyledText.drawerTestStyle,
@@ -80,7 +80,7 @@ class DrawerAdmin extends StatelessWidget {
             height: 20,
           ),
           ListTile(
-            leading: Icon(Icons.question_answer),
+            leading: const Icon(Icons.question_answer),
             title: const Text(
               'FAQ',
               style: StyledText.drawerTestStyle,
@@ -90,13 +90,23 @@ class DrawerAdmin extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.person_2_rounded),
+            leading: const Icon(Icons.person_2_rounded),
             title: const Text(
               'Edit my account',
               style: StyledText.drawerTestStyle,
             ),
             onTap: () {
               context.pushNamed('edit_account');
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.person_2_rounded),
+            title: const Text(
+              'Monitor accounts',
+              style: StyledText.drawerTestStyle,
+            ),
+            onTap: () {
+              context.pushNamed('all_users');
             },
           ),
           ListTile(

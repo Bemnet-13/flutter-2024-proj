@@ -74,7 +74,7 @@ class ManageAccountBloc extends Bloc<ManageAccountEvent, ManageAccountState> {
       );
     });
     on<SuspendUserAccountPressed>((event, emit) async {
-      final userId = state.userId;
+      final userId = event.userId;
       final suspensionState = state.suspensionState;
       emit(state.copyWith(
           isSubmitting: true, operationFailureOrSuccessOption: none()));
@@ -89,7 +89,7 @@ class ManageAccountBloc extends Bloc<ManageAccountEvent, ManageAccountState> {
       );
     });
     on<DeleteUserAccountPressed>((event, emit) async {
-      final userId = state.userId;
+      final userId = event.userId;
       emit(state.copyWith(
           isSubmitting: true, operationFailureOrSuccessOption: none()));
       failureOrSuccess =

@@ -27,7 +27,8 @@ class AuthRepository implements IAuthFacade {
 
     if (token != null && role != null) {
       role = role == 'user' ? 'PLAYER' : 'ADMIN';
-      return some(User(id: UniqueId.fromUniqueString(token), role: Role(role)));
+      return some(
+          User(token: UniqueId.fromUniqueString(token), role: Role(role)));
     } else {
       return none();
     }

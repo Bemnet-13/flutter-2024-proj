@@ -171,7 +171,7 @@ mixin _$AuthUsersState {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(List<UserDetails> users) loadSuccess,
-    required TResult Function(AuthFailure failure) loadFailure,
+    required TResult Function(ManageAccountFailure failure) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -179,7 +179,7 @@ mixin _$AuthUsersState {
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
     TResult? Function(List<UserDetails> users)? loadSuccess,
-    TResult? Function(AuthFailure failure)? loadFailure,
+    TResult? Function(ManageAccountFailure failure)? loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -187,7 +187,7 @@ mixin _$AuthUsersState {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(List<UserDetails> users)? loadSuccess,
-    TResult Function(AuthFailure failure)? loadFailure,
+    TResult Function(ManageAccountFailure failure)? loadFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -277,7 +277,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(List<UserDetails> users) loadSuccess,
-    required TResult Function(AuthFailure failure) loadFailure,
+    required TResult Function(ManageAccountFailure failure) loadFailure,
   }) {
     return initial();
   }
@@ -288,7 +288,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
     TResult? Function(List<UserDetails> users)? loadSuccess,
-    TResult? Function(AuthFailure failure)? loadFailure,
+    TResult? Function(ManageAccountFailure failure)? loadFailure,
   }) {
     return initial?.call();
   }
@@ -299,7 +299,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(List<UserDetails> users)? loadSuccess,
-    TResult Function(AuthFailure failure)? loadFailure,
+    TResult Function(ManageAccountFailure failure)? loadFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -391,7 +391,7 @@ class _$LoadInProgressImpl implements LoadInProgress {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(List<UserDetails> users) loadSuccess,
-    required TResult Function(AuthFailure failure) loadFailure,
+    required TResult Function(ManageAccountFailure failure) loadFailure,
   }) {
     return loadInProgress();
   }
@@ -402,7 +402,7 @@ class _$LoadInProgressImpl implements LoadInProgress {
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
     TResult? Function(List<UserDetails> users)? loadSuccess,
-    TResult? Function(AuthFailure failure)? loadFailure,
+    TResult? Function(ManageAccountFailure failure)? loadFailure,
   }) {
     return loadInProgress?.call();
   }
@@ -413,7 +413,7 @@ class _$LoadInProgressImpl implements LoadInProgress {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(List<UserDetails> users)? loadSuccess,
-    TResult Function(AuthFailure failure)? loadFailure,
+    TResult Function(ManageAccountFailure failure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadInProgress != null) {
@@ -537,7 +537,7 @@ class _$LoadSuccessImpl implements LoadSuccess {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(List<UserDetails> users) loadSuccess,
-    required TResult Function(AuthFailure failure) loadFailure,
+    required TResult Function(ManageAccountFailure failure) loadFailure,
   }) {
     return loadSuccess(users);
   }
@@ -548,7 +548,7 @@ class _$LoadSuccessImpl implements LoadSuccess {
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
     TResult? Function(List<UserDetails> users)? loadSuccess,
-    TResult? Function(AuthFailure failure)? loadFailure,
+    TResult? Function(ManageAccountFailure failure)? loadFailure,
   }) {
     return loadSuccess?.call(users);
   }
@@ -559,7 +559,7 @@ class _$LoadSuccessImpl implements LoadSuccess {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(List<UserDetails> users)? loadSuccess,
-    TResult Function(AuthFailure failure)? loadFailure,
+    TResult Function(ManageAccountFailure failure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadSuccess != null) {
@@ -621,9 +621,9 @@ abstract class _$$LoadFailureImplCopyWith<$Res> {
           _$LoadFailureImpl value, $Res Function(_$LoadFailureImpl) then) =
       __$$LoadFailureImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({AuthFailure failure});
+  $Res call({ManageAccountFailure failure});
 
-  $AuthFailureCopyWith<$Res> get failure;
+  $ManageAccountFailureCopyWith<$Res> get failure;
 }
 
 /// @nodoc
@@ -643,14 +643,14 @@ class __$$LoadFailureImplCopyWithImpl<$Res>
       null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
-              as AuthFailure,
+              as ManageAccountFailure,
     ));
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $AuthFailureCopyWith<$Res> get failure {
-    return $AuthFailureCopyWith<$Res>(_value.failure, (value) {
+  $ManageAccountFailureCopyWith<$Res> get failure {
+    return $ManageAccountFailureCopyWith<$Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
     });
   }
@@ -662,7 +662,7 @@ class _$LoadFailureImpl implements LoadFailure {
   const _$LoadFailureImpl(this.failure);
 
   @override
-  final AuthFailure failure;
+  final ManageAccountFailure failure;
 
   @override
   String toString() {
@@ -692,7 +692,7 @@ class _$LoadFailureImpl implements LoadFailure {
     required TResult Function() initial,
     required TResult Function() loadInProgress,
     required TResult Function(List<UserDetails> users) loadSuccess,
-    required TResult Function(AuthFailure failure) loadFailure,
+    required TResult Function(ManageAccountFailure failure) loadFailure,
   }) {
     return loadFailure(failure);
   }
@@ -703,7 +703,7 @@ class _$LoadFailureImpl implements LoadFailure {
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
     TResult? Function(List<UserDetails> users)? loadSuccess,
-    TResult? Function(AuthFailure failure)? loadFailure,
+    TResult? Function(ManageAccountFailure failure)? loadFailure,
   }) {
     return loadFailure?.call(failure);
   }
@@ -714,7 +714,7 @@ class _$LoadFailureImpl implements LoadFailure {
     TResult Function()? initial,
     TResult Function()? loadInProgress,
     TResult Function(List<UserDetails> users)? loadSuccess,
-    TResult Function(AuthFailure failure)? loadFailure,
+    TResult Function(ManageAccountFailure failure)? loadFailure,
     required TResult orElse(),
   }) {
     if (loadFailure != null) {
@@ -762,9 +762,10 @@ class _$LoadFailureImpl implements LoadFailure {
 }
 
 abstract class LoadFailure implements AuthUsersState {
-  const factory LoadFailure(final AuthFailure failure) = _$LoadFailureImpl;
+  const factory LoadFailure(final ManageAccountFailure failure) =
+      _$LoadFailureImpl;
 
-  AuthFailure get failure;
+  ManageAccountFailure get failure;
   @JsonKey(ignore: true)
   _$$LoadFailureImplCopyWith<_$LoadFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;

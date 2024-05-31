@@ -10,7 +10,6 @@ abstract class User with _$User {
   const factory User({
     required UniqueId token,
     required Role role,
-    required UniqueId id
   }) = _User;
 }
 

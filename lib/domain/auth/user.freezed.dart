@@ -18,7 +18,6 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$User {
   UniqueId get token => throw _privateConstructorUsedError;
   Role get role => throw _privateConstructorUsedError;
-  UniqueId get id => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
@@ -29,7 +28,7 @@ abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res, User>;
   @useResult
-  $Res call({UniqueId token, Role role, UniqueId id});
+  $Res call({UniqueId token, Role role});
 }
 
 /// @nodoc
@@ -47,7 +46,6 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   $Res call({
     Object? token = null,
     Object? role = null,
-    Object? id = null,
   }) {
     return _then(_value.copyWith(
       token: null == token
@@ -58,10 +56,6 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as Role,
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as UniqueId,
     ) as $Val);
   }
 }
@@ -73,7 +67,7 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       __$$UserImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({UniqueId token, Role role, UniqueId id});
+  $Res call({UniqueId token, Role role});
 }
 
 /// @nodoc
@@ -88,7 +82,6 @@ class __$$UserImplCopyWithImpl<$Res>
   $Res call({
     Object? token = null,
     Object? role = null,
-    Object? id = null,
   }) {
     return _then(_$UserImpl(
       token: null == token
@@ -99,10 +92,6 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as Role,
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as UniqueId,
     ));
   }
 }
@@ -110,18 +99,16 @@ class __$$UserImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UserImpl with DiagnosticableTreeMixin implements _User {
-  const _$UserImpl({required this.token, required this.role, required this.id});
+  const _$UserImpl({required this.token, required this.role});
 
   @override
   final UniqueId token;
   @override
   final Role role;
-  @override
-  final UniqueId id;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'User(token: $token, role: $role, id: $id)';
+    return 'User(token: $token, role: $role)';
   }
 
   @override
@@ -130,8 +117,7 @@ class _$UserImpl with DiagnosticableTreeMixin implements _User {
     properties
       ..add(DiagnosticsProperty('type', 'User'))
       ..add(DiagnosticsProperty('token', token))
-      ..add(DiagnosticsProperty('role', role))
-      ..add(DiagnosticsProperty('id', id));
+      ..add(DiagnosticsProperty('role', role));
   }
 
   @override
@@ -140,12 +126,11 @@ class _$UserImpl with DiagnosticableTreeMixin implements _User {
         (other.runtimeType == runtimeType &&
             other is _$UserImpl &&
             (identical(other.token, token) || other.token == token) &&
-            (identical(other.role, role) || other.role == role) &&
-            (identical(other.id, id) || other.id == id));
+            (identical(other.role, role) || other.role == role));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, token, role, id);
+  int get hashCode => Object.hash(runtimeType, token, role);
 
   @JsonKey(ignore: true)
   @override
@@ -156,16 +141,12 @@ class _$UserImpl with DiagnosticableTreeMixin implements _User {
 
 abstract class _User implements User {
   const factory _User(
-      {required final UniqueId token,
-      required final Role role,
-      required final UniqueId id}) = _$UserImpl;
+      {required final UniqueId token, required final Role role}) = _$UserImpl;
 
   @override
   UniqueId get token;
   @override
   Role get role;
-  @override
-  UniqueId get id;
   @override
   @JsonKey(ignore: true)
   _$$UserImplCopyWith<_$UserImpl> get copyWith =>

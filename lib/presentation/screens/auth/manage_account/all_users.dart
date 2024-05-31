@@ -95,12 +95,13 @@ class UserTile extends StatelessWidget {
     return ListTile(
       onTap: () {
         context.read<ManageAccountBloc>().add(
-            ManageAccountEvent.userAccountSelected(
-                userDetails.id,
-                userDetails.emailAddress,
-                userDetails.isSuspended,
-                userDetails.name,
-                userDetails.role));
+              ManageAccountEvent.userAccountSelected(
+                  userDetails.id,
+                  userDetails.emailAddress,
+                  userDetails.isSuspended,
+                  userDetails.name,
+                  userDetails.role),
+            );
         context.go('/user_details');
       },
       leading: const Icon(
