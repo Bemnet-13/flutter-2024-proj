@@ -1,5 +1,6 @@
 import 'package:FantasyE/api_constants.dart';
 import 'package:FantasyE/domain/avatar/avatar_failure.dart';
+import 'package:FantasyE/domain/core/value_objects.dart';
 import 'package:FantasyE/infrastructure/avatar/dto/avatar_dtos.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:FantasyE/domain/core/failures.dart';
@@ -78,9 +79,9 @@ class AvatarRepository implements IAvatarRepository {
   }
 
   @override
-  Future<Either<AvatarFailure, Unit>> add(Avatar avatar) async {
+  Future<Either<AvatarFailure, Unit>> add(UniqueId avatarId) async {
     try {
-      final response = await apiClient.addAvatar(avatar);
+      final response = await apiClient.addAvatar(avatarId);
       if (response.statusCode == 200) {
         return const Right(unit);
       } else {

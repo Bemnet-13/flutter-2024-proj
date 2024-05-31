@@ -1,16 +1,17 @@
 import 'package:FantasyE/presentation/widgets/buttons.dart';
 import 'package:FantasyE/presentation/widgets/colors.dart';
+import 'package:flutter/widgets.dart';
 
 import '../../widgets/appbar.dart';
 import 'package:flutter/material.dart';
 
 class MyAvatarsScreen extends StatelessWidget {
-  const MyAvatarsScreen({super.key});
+  MyAvatarsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppbar(
+      appBar: const CustomAppbar(
         title: 'My Players',
         icon: Icons.menu,
       ),
@@ -27,11 +28,9 @@ class MyAvatarsScreen extends StatelessWidget {
                   leading: Image.asset(
                     'assets/table.png',
                   ),
-                  title: const Padding(
-                    padding: EdgeInsets.only(left: 24.0),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                  title:  Padding(
+                    padding: const EdgeInsets.only(left: 24.0),
+                    child: ListView(                      
                       children: [
                         
                       ],

@@ -3,12 +3,12 @@ part of 'add_avatar_bloc.dart';
 @freezed
 abstract class AddAvatarState with _$AddAvatarState {
   const factory AddAvatarState({
-    required Avatar avatar,
+    required UniqueId avatarId,
     required Option<Either<AvatarFailure, Unit>> addFailureOrSuccessOption,
   }) = _AddAvatarState;
 
   factory AddAvatarState.initial() => AddAvatarState(
-        avatar: Avatar.empty(),
+        avatarId: UniqueId(),
         addFailureOrSuccessOption: none(),
       );
 }

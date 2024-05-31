@@ -1,137 +1,153 @@
-import 'package:FantasyE/domain/avatar/avatar.dart';
-import 'package:FantasyE/injection.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-import '../../widgets/avatar_list_body.dart';
-import '../../widgets/appbar.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:FantasyE/application/avatar/add_avatar/add_avatar_bloc.dart';
-
-
-
-
+import 'package:FantasyE/application/avatar/avatar_manager/avatar_manager_bloc.dart';
+import 'package:FantasyE/domain/leagues/value_objects.dart';
+import 'package:FantasyE/presentation/widgets/appbar.dart';
+import 'package:FantasyE/presentation/widgets/drawer.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:FantasyE/domain/avatar/avatar.dart';
+import 'package:flutter/material.dart';
+import 'package:FantasyE/injection.dart';
+import 'package:go_router/go_router.dart';
 
 class AddAvatarScreen extends StatelessWidget {
-  const AddAvatarScreen({Key? key}) : super(key: key);
+  const AddAvatarScreen();
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<AddAvatarBloc>(
-      create: (context) {
-        final bloc = getIt<AddAvatarBloc>();
-        bloc.add(const AddAvatarEvent.addStarted());
-        return bloc;
-      },
-      child: const Scaffold(
-        appBar: Appbar(title: "Avatars"),
-        body: AvatarListBody(),
-      ),
-    );
-  }
-}
-
-
-class AvatarListBody extends StatelessWidget {
-  const AvatarListBody({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<AddAvatarBloc, AddAvatarState>(
-      builder: (context, state) {
-        final avatarList = state.avatarList;
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 100, vertical: 25),
-              child: Center(
-                child: Text(
-                  'Add avatars to your team and compete!',
-                  style: TextStyle(fontSize: 24),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ),
-            Expanded(
-              child: ListView.builder(
-                itemCount: avatarList.length,
-                itemBuilder: (context, index) {
-                  return AvatarListEntry(
-                    index: index,
-                    avatarList: avatarList,
-                  );
-                },
-              ),
-            ),
-          ],
-        );
-      },
-    );
-  }
-}
-
-
-
-
-class AvatarListEntry extends StatelessWidget {
-  final int index;
-  final List<Avatar> avatarList;
-
-  const AvatarListEntry({
-    Key? key,
-    required this.index,
-    required this.avatarList,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final currentAvatar = avatarList[index];
-    final addAvatarBloc = context.read<AddAvatarBloc>();
-
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(12),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(50),
-            child: const SizedBox(
-              width: 100,
-              height: 100,
-              child: Icon(Icons.man_3_outlined),
-            ),
-          ),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => getIt<AddAvatarBloc>(),
         ),
-        SizedBox(width: 16), 
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              currentAvatar.avatarName.getOrCrash(), 
-              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            Text(currentAvatar.avatarClub.getOrCrash()), 
-            
-              
-              Padding(
-              padding: const EdgeInsets.only(top: 6),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.teal,
-                  foregroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-                onPressed: () {
-                  addAvatarBloc.add(const AddAvatarEvent.addStarted());
-                },
-                child: const Text('Add to Team'),
-              ),
-            ),
-          ],
+        BlocProvider(
+          create: (context) => getIt<AvatarManagerBloc>(),
         ),
       ],
+      child: AvatarDetails(),
+    );
+    
+  }
+}
+
+class AvatarDetails extends StatelessWidget {
+  const AvatarDetails();
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocConsumer<AvatarManagerBloc, AvatarManagerState>(
+      listener: (context, state) {},
+      builder: (context, state) {
+        print(state);
+        final avatarName = state.avatarName.getOrCrash();
+        final avatarScore = state.avatarScore.getOrCrash();
+        final avatarClub = state.avatarClub.getOrCrash();
+        final firstLetter = avatarName[0];
+        return Scaffold(
+          appBar: const CustomAppbar(title: "Avatar Details", icon: Icons.menu),
+          drawer: DrawerMenu(),
+          body: Card.outlined(
+            clipBehavior: Clip.hardEdge,
+            child: InkWell(
+              splashColor: Colors.blue.withAlpha(30),
+              onTap: () {},
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CircleAvatar(
+                    radius: 60,
+                    child: Text(
+                      firstLetter,
+                      style: const TextStyle(
+                          fontSize: 40, fontWeight: FontWeight.w900),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      const Text(
+                        'Avatar Name',
+                        style: TextStyle(
+                            fontSize: 30, fontWeight: FontWeight.w900),
+                      ),
+                      Text(
+                        avatarName,
+                        style: const TextStyle(
+                            fontSize: 30, fontWeight: FontWeight.w900),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      const Text(
+                        'Avatar Club',
+                        style: TextStyle(
+                            fontSize: 30, fontWeight: FontWeight.w900),
+                      ),
+                      Text(
+                        avatarClub,
+                        style: const TextStyle(
+                            fontSize: 30, fontWeight: FontWeight.w900),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      const Text(
+                        'Avatar Score',
+                        style: TextStyle(
+                            fontSize: 30, fontWeight: FontWeight.w900),
+                      ),
+                      Text(
+                        avatarScore as String,
+                        style: const TextStyle(
+                            fontSize: 30, fontWeight: FontWeight.w900),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      TextButton.icon(
+                        onPressed: () {
+                          context
+                              .read<AddAvatarBloc>()
+                              .add(AddAvatarEvent.addAvatarStarted(state.uniqueId));
+                          context.go('/avatar_list_user');
+                        },
+                        icon: const Icon(
+                          Icons.delete_forever,
+                          size: 30,
+                          color: Color.fromARGB(255, 26, 93, 238),
+                        ),
+                        label: const Text("Add",
+                            style: TextStyle(
+                              fontSize: 30,
+                              fontWeight: FontWeight.w900,
+                              color: Color.fromARGB(255, 26, 93, 238),
+                            )),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }

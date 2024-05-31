@@ -167,7 +167,7 @@ class Routes {
       GoRoute(
         name: 'my_avatars',
         path: '/my_avatars',
-        builder: (context, state) => const MyAvatarsScreen(),
+        builder: (context, state) => MyAvatarsScreen(),
       ),
       GoRoute(
         name: 'avatars',

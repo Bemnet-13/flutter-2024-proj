@@ -22,9 +22,9 @@ AvatarDto _$AvatarDtoFromJson(Map<String, dynamic> json) {
 mixin _$AvatarDto {
   @JsonKey(ignore: true)
   String? get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get club => throw _privateConstructorUsedError;
-  int get score => throw _privateConstructorUsedError;
+  String get avatarName => throw _privateConstructorUsedError;
+  String get avatarClub => throw _privateConstructorUsedError;
+  int get avatarScore => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,7 +38,10 @@ abstract class $AvatarDtoCopyWith<$Res> {
       _$AvatarDtoCopyWithImpl<$Res, AvatarDto>;
   @useResult
   $Res call(
-      {@JsonKey(ignore: true) String? id, String name, String club, int score});
+      {@JsonKey(ignore: true) String? id,
+      String avatarName,
+      String avatarClub,
+      int avatarScore});
 }
 
 /// @nodoc
@@ -55,26 +58,26 @@ class _$AvatarDtoCopyWithImpl<$Res, $Val extends AvatarDto>
   @override
   $Res call({
     Object? id = freezed,
-    Object? name = null,
-    Object? club = null,
-    Object? score = null,
+    Object? avatarName = null,
+    Object? avatarClub = null,
+    Object? avatarScore = null,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      avatarName: null == avatarName
+          ? _value.avatarName
+          : avatarName // ignore: cast_nullable_to_non_nullable
               as String,
-      club: null == club
-          ? _value.club
-          : club // ignore: cast_nullable_to_non_nullable
+      avatarClub: null == avatarClub
+          ? _value.avatarClub
+          : avatarClub // ignore: cast_nullable_to_non_nullable
               as String,
-      score: null == score
-          ? _value.score
-          : score // ignore: cast_nullable_to_non_nullable
+      avatarScore: null == avatarScore
+          ? _value.avatarScore
+          : avatarScore // ignore: cast_nullable_to_non_nullable
               as int,
     ) as $Val);
   }
@@ -89,7 +92,10 @@ abstract class _$$AvatarDtoImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(ignore: true) String? id, String name, String club, int score});
+      {@JsonKey(ignore: true) String? id,
+      String avatarName,
+      String avatarClub,
+      int avatarScore});
 }
 
 /// @nodoc
@@ -104,26 +110,26 @@ class __$$AvatarDtoImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? name = null,
-    Object? club = null,
-    Object? score = null,
+    Object? avatarName = null,
+    Object? avatarClub = null,
+    Object? avatarScore = null,
   }) {
     return _then(_$AvatarDtoImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      avatarName: null == avatarName
+          ? _value.avatarName
+          : avatarName // ignore: cast_nullable_to_non_nullable
               as String,
-      club: null == club
-          ? _value.club
-          : club // ignore: cast_nullable_to_non_nullable
+      avatarClub: null == avatarClub
+          ? _value.avatarClub
+          : avatarClub // ignore: cast_nullable_to_non_nullable
               as String,
-      score: null == score
-          ? _value.score
-          : score // ignore: cast_nullable_to_non_nullable
+      avatarScore: null == avatarScore
+          ? _value.avatarScore
+          : avatarScore // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -134,9 +140,9 @@ class __$$AvatarDtoImplCopyWithImpl<$Res>
 class _$AvatarDtoImpl implements _AvatarDto {
   _$AvatarDtoImpl(
       {@JsonKey(ignore: true) this.id,
-      required this.name,
-      required this.club,
-      required this.score});
+      required this.avatarName,
+      required this.avatarClub,
+      required this.avatarScore});
 
   factory _$AvatarDtoImpl.fromJson(Map<String, dynamic> json) =>
       _$$AvatarDtoImplFromJson(json);
@@ -145,15 +151,15 @@ class _$AvatarDtoImpl implements _AvatarDto {
   @JsonKey(ignore: true)
   final String? id;
   @override
-  final String name;
+  final String avatarName;
   @override
-  final String club;
+  final String avatarClub;
   @override
-  final int score;
+  final int avatarScore;
 
   @override
   String toString() {
-    return 'AvatarDto(id: $id, name: $name, club: $club, score: $score)';
+    return 'AvatarDto(id: $id, avatarName: $avatarName, avatarClub: $avatarClub, avatarScore: $avatarScore)';
   }
 
   @override
@@ -162,14 +168,18 @@ class _$AvatarDtoImpl implements _AvatarDto {
         (other.runtimeType == runtimeType &&
             other is _$AvatarDtoImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.club, club) || other.club == club) &&
-            (identical(other.score, score) || other.score == score));
+            (identical(other.avatarName, avatarName) ||
+                other.avatarName == avatarName) &&
+            (identical(other.avatarClub, avatarClub) ||
+                other.avatarClub == avatarClub) &&
+            (identical(other.avatarScore, avatarScore) ||
+                other.avatarScore == avatarScore));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, club, score);
+  int get hashCode =>
+      Object.hash(runtimeType, id, avatarName, avatarClub, avatarScore);
 
   @JsonKey(ignore: true)
   @override
@@ -188,9 +198,9 @@ class _$AvatarDtoImpl implements _AvatarDto {
 abstract class _AvatarDto implements AvatarDto {
   factory _AvatarDto(
       {@JsonKey(ignore: true) final String? id,
-      required final String name,
-      required final String club,
-      required final int score}) = _$AvatarDtoImpl;
+      required final String avatarName,
+      required final String avatarClub,
+      required final int avatarScore}) = _$AvatarDtoImpl;
 
   factory _AvatarDto.fromJson(Map<String, dynamic> json) =
       _$AvatarDtoImpl.fromJson;
@@ -199,11 +209,11 @@ abstract class _AvatarDto implements AvatarDto {
   @JsonKey(ignore: true)
   String? get id;
   @override
-  String get name;
+  String get avatarName;
   @override
-  String get club;
+  String get avatarClub;
   @override
-  int get score;
+  int get avatarScore;
   @override
   @JsonKey(ignore: true)
   _$$AvatarDtoImplCopyWith<_$AvatarDtoImpl> get copyWith =>

@@ -16,43 +16,42 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$AddAvatarEvent {
+  UniqueId get avatarId => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<Avatar> initialAvatarOption) initialized,
-    required TResult Function() addStarted,
+    required TResult Function(UniqueId avatarId) addAvatarStarted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Option<Avatar> initialAvatarOption)? initialized,
-    TResult? Function()? addStarted,
+    TResult? Function(UniqueId avatarId)? addAvatarStarted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<Avatar> initialAvatarOption)? initialized,
-    TResult Function()? addStarted,
+    TResult Function(UniqueId avatarId)? addAvatarStarted,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initialized value) initialized,
-    required TResult Function(_AddStarted value) addStarted,
+    required TResult Function(_AddAvatarStarted value) addAvatarStarted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initialized value)? initialized,
-    TResult? Function(_AddStarted value)? addStarted,
+    TResult? Function(_AddAvatarStarted value)? addAvatarStarted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_AddStarted value)? addStarted,
+    TResult Function(_AddAvatarStarted value)? addAvatarStarted,
     required TResult orElse(),
   }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $AddAvatarEventCopyWith<AddAvatarEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -61,6 +60,8 @@ abstract class $AddAvatarEventCopyWith<$Res> {
   factory $AddAvatarEventCopyWith(
           AddAvatarEvent value, $Res Function(AddAvatarEvent) then) =
       _$AddAvatarEventCopyWithImpl<$Res, AddAvatarEvent>;
+  @useResult
+  $Res call({UniqueId avatarId});
 }
 
 /// @nodoc
@@ -72,97 +73,110 @@ class _$AddAvatarEventCopyWithImpl<$Res, $Val extends AddAvatarEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? avatarId = null,
+  }) {
+    return _then(_value.copyWith(
+      avatarId: null == avatarId
+          ? _value.avatarId
+          : avatarId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$InitializedImplCopyWith<$Res> {
-  factory _$$InitializedImplCopyWith(
-          _$InitializedImpl value, $Res Function(_$InitializedImpl) then) =
-      __$$InitializedImplCopyWithImpl<$Res>;
+abstract class _$$AddAvatarStartedImplCopyWith<$Res>
+    implements $AddAvatarEventCopyWith<$Res> {
+  factory _$$AddAvatarStartedImplCopyWith(_$AddAvatarStartedImpl value,
+          $Res Function(_$AddAvatarStartedImpl) then) =
+      __$$AddAvatarStartedImplCopyWithImpl<$Res>;
+  @override
   @useResult
-  $Res call({Option<Avatar> initialAvatarOption});
+  $Res call({UniqueId avatarId});
 }
 
 /// @nodoc
-class __$$InitializedImplCopyWithImpl<$Res>
-    extends _$AddAvatarEventCopyWithImpl<$Res, _$InitializedImpl>
-    implements _$$InitializedImplCopyWith<$Res> {
-  __$$InitializedImplCopyWithImpl(
-      _$InitializedImpl _value, $Res Function(_$InitializedImpl) _then)
+class __$$AddAvatarStartedImplCopyWithImpl<$Res>
+    extends _$AddAvatarEventCopyWithImpl<$Res, _$AddAvatarStartedImpl>
+    implements _$$AddAvatarStartedImplCopyWith<$Res> {
+  __$$AddAvatarStartedImplCopyWithImpl(_$AddAvatarStartedImpl _value,
+      $Res Function(_$AddAvatarStartedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? initialAvatarOption = null,
+    Object? avatarId = null,
   }) {
-    return _then(_$InitializedImpl(
-      null == initialAvatarOption
-          ? _value.initialAvatarOption
-          : initialAvatarOption // ignore: cast_nullable_to_non_nullable
-              as Option<Avatar>,
+    return _then(_$AddAvatarStartedImpl(
+      null == avatarId
+          ? _value.avatarId
+          : avatarId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
     ));
   }
 }
 
 /// @nodoc
 
-class _$InitializedImpl implements _Initialized {
-  const _$InitializedImpl(this.initialAvatarOption);
+class _$AddAvatarStartedImpl implements _AddAvatarStarted {
+  const _$AddAvatarStartedImpl(this.avatarId);
 
   @override
-  final Option<Avatar> initialAvatarOption;
+  final UniqueId avatarId;
 
   @override
   String toString() {
-    return 'AddAvatarEvent.initialized(initialAvatarOption: $initialAvatarOption)';
+    return 'AddAvatarEvent.addAvatarStarted(avatarId: $avatarId)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$InitializedImpl &&
-            (identical(other.initialAvatarOption, initialAvatarOption) ||
-                other.initialAvatarOption == initialAvatarOption));
+            other is _$AddAvatarStartedImpl &&
+            (identical(other.avatarId, avatarId) ||
+                other.avatarId == avatarId));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, initialAvatarOption);
+  int get hashCode => Object.hash(runtimeType, avatarId);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$InitializedImplCopyWith<_$InitializedImpl> get copyWith =>
-      __$$InitializedImplCopyWithImpl<_$InitializedImpl>(this, _$identity);
+  _$$AddAvatarStartedImplCopyWith<_$AddAvatarStartedImpl> get copyWith =>
+      __$$AddAvatarStartedImplCopyWithImpl<_$AddAvatarStartedImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<Avatar> initialAvatarOption) initialized,
-    required TResult Function() addStarted,
+    required TResult Function(UniqueId avatarId) addAvatarStarted,
   }) {
-    return initialized(initialAvatarOption);
+    return addAvatarStarted(avatarId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Option<Avatar> initialAvatarOption)? initialized,
-    TResult? Function()? addStarted,
+    TResult? Function(UniqueId avatarId)? addAvatarStarted,
   }) {
-    return initialized?.call(initialAvatarOption);
+    return addAvatarStarted?.call(avatarId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<Avatar> initialAvatarOption)? initialized,
-    TResult Function()? addStarted,
+    TResult Function(UniqueId avatarId)? addAvatarStarted,
     required TResult orElse(),
   }) {
-    if (initialized != null) {
-      return initialized(initialAvatarOption);
+    if (addAvatarStarted != null) {
+      return addAvatarStarted(avatarId);
     }
     return orElse();
   }
@@ -170,150 +184,47 @@ class _$InitializedImpl implements _Initialized {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initialized value) initialized,
-    required TResult Function(_AddStarted value) addStarted,
+    required TResult Function(_AddAvatarStarted value) addAvatarStarted,
   }) {
-    return initialized(this);
+    return addAvatarStarted(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initialized value)? initialized,
-    TResult? Function(_AddStarted value)? addStarted,
+    TResult? Function(_AddAvatarStarted value)? addAvatarStarted,
   }) {
-    return initialized?.call(this);
+    return addAvatarStarted?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_AddStarted value)? addStarted,
+    TResult Function(_AddAvatarStarted value)? addAvatarStarted,
     required TResult orElse(),
   }) {
-    if (initialized != null) {
-      return initialized(this);
+    if (addAvatarStarted != null) {
+      return addAvatarStarted(this);
     }
     return orElse();
   }
 }
 
-abstract class _Initialized implements AddAvatarEvent {
-  const factory _Initialized(final Option<Avatar> initialAvatarOption) =
-      _$InitializedImpl;
+abstract class _AddAvatarStarted implements AddAvatarEvent {
+  const factory _AddAvatarStarted(final UniqueId avatarId) =
+      _$AddAvatarStartedImpl;
 
-  Option<Avatar> get initialAvatarOption;
+  @override
+  UniqueId get avatarId;
+  @override
   @JsonKey(ignore: true)
-  _$$InitializedImplCopyWith<_$InitializedImpl> get copyWith =>
+  _$$AddAvatarStartedImplCopyWith<_$AddAvatarStartedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$AddStartedImplCopyWith<$Res> {
-  factory _$$AddStartedImplCopyWith(
-          _$AddStartedImpl value, $Res Function(_$AddStartedImpl) then) =
-      __$$AddStartedImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$AddStartedImplCopyWithImpl<$Res>
-    extends _$AddAvatarEventCopyWithImpl<$Res, _$AddStartedImpl>
-    implements _$$AddStartedImplCopyWith<$Res> {
-  __$$AddStartedImplCopyWithImpl(
-      _$AddStartedImpl _value, $Res Function(_$AddStartedImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$AddStartedImpl implements _AddStarted {
-  const _$AddStartedImpl();
-
-  @override
-  String toString() {
-    return 'AddAvatarEvent.addStarted()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AddStartedImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(Option<Avatar> initialAvatarOption) initialized,
-    required TResult Function() addStarted,
-  }) {
-    return addStarted();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(Option<Avatar> initialAvatarOption)? initialized,
-    TResult? Function()? addStarted,
-  }) {
-    return addStarted?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<Avatar> initialAvatarOption)? initialized,
-    TResult Function()? addStarted,
-    required TResult orElse(),
-  }) {
-    if (addStarted != null) {
-      return addStarted();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initialized value) initialized,
-    required TResult Function(_AddStarted value) addStarted,
-  }) {
-    return addStarted(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initialized value)? initialized,
-    TResult? Function(_AddStarted value)? addStarted,
-  }) {
-    return addStarted?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_AddStarted value)? addStarted,
-    required TResult orElse(),
-  }) {
-    if (addStarted != null) {
-      return addStarted(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _AddStarted implements AddAvatarEvent {
-  const factory _AddStarted() = _$AddStartedImpl;
-}
-
-/// @nodoc
 mixin _$AddAvatarState {
-  Avatar get avatar => throw _privateConstructorUsedError;
+  UniqueId get avatarId => throw _privateConstructorUsedError;
   Option<Either<AvatarFailure, Unit>> get addFailureOrSuccessOption =>
       throw _privateConstructorUsedError;
 
@@ -329,10 +240,8 @@ abstract class $AddAvatarStateCopyWith<$Res> {
       _$AddAvatarStateCopyWithImpl<$Res, AddAvatarState>;
   @useResult
   $Res call(
-      {Avatar avatar,
+      {UniqueId avatarId,
       Option<Either<AvatarFailure, Unit>> addFailureOrSuccessOption});
-
-  $AvatarCopyWith<$Res> get avatar;
 }
 
 /// @nodoc
@@ -348,27 +257,19 @@ class _$AddAvatarStateCopyWithImpl<$Res, $Val extends AddAvatarState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? avatar = null,
+    Object? avatarId = null,
     Object? addFailureOrSuccessOption = null,
   }) {
     return _then(_value.copyWith(
-      avatar: null == avatar
-          ? _value.avatar
-          : avatar // ignore: cast_nullable_to_non_nullable
-              as Avatar,
+      avatarId: null == avatarId
+          ? _value.avatarId
+          : avatarId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
       addFailureOrSuccessOption: null == addFailureOrSuccessOption
           ? _value.addFailureOrSuccessOption
           : addFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<AvatarFailure, Unit>>,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $AvatarCopyWith<$Res> get avatar {
-    return $AvatarCopyWith<$Res>(_value.avatar, (value) {
-      return _then(_value.copyWith(avatar: value) as $Val);
-    });
   }
 }
 
@@ -381,11 +282,8 @@ abstract class _$$AddAvatarStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {Avatar avatar,
+      {UniqueId avatarId,
       Option<Either<AvatarFailure, Unit>> addFailureOrSuccessOption});
-
-  @override
-  $AvatarCopyWith<$Res> get avatar;
 }
 
 /// @nodoc
@@ -399,14 +297,14 @@ class __$$AddAvatarStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? avatar = null,
+    Object? avatarId = null,
     Object? addFailureOrSuccessOption = null,
   }) {
     return _then(_$AddAvatarStateImpl(
-      avatar: null == avatar
-          ? _value.avatar
-          : avatar // ignore: cast_nullable_to_non_nullable
-              as Avatar,
+      avatarId: null == avatarId
+          ? _value.avatarId
+          : avatarId // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
       addFailureOrSuccessOption: null == addFailureOrSuccessOption
           ? _value.addFailureOrSuccessOption
           : addFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
@@ -419,16 +317,16 @@ class __$$AddAvatarStateImplCopyWithImpl<$Res>
 
 class _$AddAvatarStateImpl implements _AddAvatarState {
   const _$AddAvatarStateImpl(
-      {required this.avatar, required this.addFailureOrSuccessOption});
+      {required this.avatarId, required this.addFailureOrSuccessOption});
 
   @override
-  final Avatar avatar;
+  final UniqueId avatarId;
   @override
   final Option<Either<AvatarFailure, Unit>> addFailureOrSuccessOption;
 
   @override
   String toString() {
-    return 'AddAvatarState(avatar: $avatar, addFailureOrSuccessOption: $addFailureOrSuccessOption)';
+    return 'AddAvatarState(avatarId: $avatarId, addFailureOrSuccessOption: $addFailureOrSuccessOption)';
   }
 
   @override
@@ -436,7 +334,8 @@ class _$AddAvatarStateImpl implements _AddAvatarState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AddAvatarStateImpl &&
-            (identical(other.avatar, avatar) || other.avatar == avatar) &&
+            (identical(other.avatarId, avatarId) ||
+                other.avatarId == avatarId) &&
             (identical(other.addFailureOrSuccessOption,
                     addFailureOrSuccessOption) ||
                 other.addFailureOrSuccessOption == addFailureOrSuccessOption));
@@ -444,7 +343,7 @@ class _$AddAvatarStateImpl implements _AddAvatarState {
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, avatar, addFailureOrSuccessOption);
+      Object.hash(runtimeType, avatarId, addFailureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
@@ -456,12 +355,12 @@ class _$AddAvatarStateImpl implements _AddAvatarState {
 
 abstract class _AddAvatarState implements AddAvatarState {
   const factory _AddAvatarState(
-      {required final Avatar avatar,
+      {required final UniqueId avatarId,
       required final Option<Either<AvatarFailure, Unit>>
           addFailureOrSuccessOption}) = _$AddAvatarStateImpl;
 
   @override
-  Avatar get avatar;
+  UniqueId get avatarId;
   @override
   Option<Either<AvatarFailure, Unit>> get addFailureOrSuccessOption;
   @override
