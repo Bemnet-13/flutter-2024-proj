@@ -426,26 +426,6 @@ class _$AddAvatarStateImpl implements _AddAvatarState {
   @override
   final Option<Either<AvatarFailure, Unit>> addFailureOrSuccessOption;
 
-  @override
-  String toString() {
-    return 'AddAvatarState(avatar: $avatar, addFailureOrSuccessOption: $addFailureOrSuccessOption)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AddAvatarStateImpl &&
-            (identical(other.avatar, avatar) || other.avatar == avatar) &&
-            (identical(other.addFailureOrSuccessOption,
-                    addFailureOrSuccessOption) ||
-                other.addFailureOrSuccessOption == addFailureOrSuccessOption));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, avatar, addFailureOrSuccessOption);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')

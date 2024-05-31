@@ -1,4 +1,4 @@
-import 'package:FantasyE/application/auth/auth_bloc.dart';
+import 'package:FantasyE/application/auth/auth_form/auth_bloc.dart';
 import 'package:FantasyE/domain/auth/i_auth_facade.dart';
 import 'package:FantasyE/domain/auth/value_objects.dart';
 import 'package:bloc_test/bloc_test.dart';

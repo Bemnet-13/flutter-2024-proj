@@ -1895,6 +1895,46 @@ class _$SignupFormStateImpl extends _SignupFormState {
   @override
   final Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption;
 
+  @override
+  String toString() {
+    return 'SignupFormState(emailAddress: $emailAddress, password: $password, name: $name, role: $role, roleValue: $roleValue, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, authFailureOrSuccessOption: $authFailureOrSuccessOption)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SignupFormStateImpl &&
+            (identical(other.emailAddress, emailAddress) ||
+                other.emailAddress == emailAddress) &&
+            (identical(other.password, password) ||
+                other.password == password) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.role, role) || other.role == role) &&
+            (identical(other.roleValue, roleValue) ||
+                other.roleValue == roleValue) &&
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                other.showErrorMessages == showErrorMessages) &&
+            (identical(other.isSubmitting, isSubmitting) ||
+                other.isSubmitting == isSubmitting) &&
+            (identical(other.authFailureOrSuccessOption,
+                    authFailureOrSuccessOption) ||
+                other.authFailureOrSuccessOption ==
+                    authFailureOrSuccessOption));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      emailAddress,
+      password,
+      name,
+      role,
+      roleValue,
+      showErrorMessages,
+      isSubmitting,
+      authFailureOrSuccessOption);
+
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
