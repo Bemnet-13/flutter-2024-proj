@@ -14,7 +14,7 @@ class AvatarManagerState with _$AvatarManagerState {
   factory AvatarManagerState.initial() => AvatarManagerState(
         avatarName: AvatarName(''),
         uniqueId: UniqueId.fromUniqueString(''),
-        avatarScore:AvatarScore(0),
+        avatarScore:AvatarScore('0'),
         avatarClub: AvatarClub(''),
         operationFailureOrSuccess: none(),
         showErrorMessages: false,

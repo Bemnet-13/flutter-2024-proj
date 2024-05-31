@@ -20,7 +20,7 @@ mixin _$AvatarManagerEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String nameStr) nameChanged,
     required TResult Function(String clubStr) clubChanged,
-    required TResult Function(int scoreVal) scoreChanged,
+    required TResult Function(String scoreVal) scoreChanged,
     required TResult Function(UniqueId id) idSet,
     required TResult Function(AvatarName name, UniqueId id, AvatarScore score,
             AvatarClub avatarClub)
@@ -34,7 +34,7 @@ mixin _$AvatarManagerEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String nameStr)? nameChanged,
     TResult? Function(String clubStr)? clubChanged,
-    TResult? Function(int scoreVal)? scoreChanged,
+    TResult? Function(String scoreVal)? scoreChanged,
     TResult? Function(UniqueId id)? idSet,
     TResult? Function(AvatarName name, UniqueId id, AvatarScore score,
             AvatarClub avatarClub)?
@@ -48,7 +48,7 @@ mixin _$AvatarManagerEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String nameStr)? nameChanged,
     TResult Function(String clubStr)? clubChanged,
-    TResult Function(int scoreVal)? scoreChanged,
+    TResult Function(String scoreVal)? scoreChanged,
     TResult Function(UniqueId id)? idSet,
     TResult Function(AvatarName name, UniqueId id, AvatarScore score,
             AvatarClub avatarClub)?
@@ -183,7 +183,7 @@ class _$NameChangedImpl implements NameChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(String nameStr) nameChanged,
     required TResult Function(String clubStr) clubChanged,
-    required TResult Function(int scoreVal) scoreChanged,
+    required TResult Function(String scoreVal) scoreChanged,
     required TResult Function(UniqueId id) idSet,
     required TResult Function(AvatarName name, UniqueId id, AvatarScore score,
             AvatarClub avatarClub)
@@ -200,7 +200,7 @@ class _$NameChangedImpl implements NameChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String nameStr)? nameChanged,
     TResult? Function(String clubStr)? clubChanged,
-    TResult? Function(int scoreVal)? scoreChanged,
+    TResult? Function(String scoreVal)? scoreChanged,
     TResult? Function(UniqueId id)? idSet,
     TResult? Function(AvatarName name, UniqueId id, AvatarScore score,
             AvatarClub avatarClub)?
@@ -217,7 +217,7 @@ class _$NameChangedImpl implements NameChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String nameStr)? nameChanged,
     TResult Function(String clubStr)? clubChanged,
-    TResult Function(int scoreVal)? scoreChanged,
+    TResult Function(String scoreVal)? scoreChanged,
     TResult Function(UniqueId id)? idSet,
     TResult Function(AvatarName name, UniqueId id, AvatarScore score,
             AvatarClub avatarClub)?
@@ -359,7 +359,7 @@ class _$ClubChangedImpl implements ClubChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(String nameStr) nameChanged,
     required TResult Function(String clubStr) clubChanged,
-    required TResult Function(int scoreVal) scoreChanged,
+    required TResult Function(String scoreVal) scoreChanged,
     required TResult Function(UniqueId id) idSet,
     required TResult Function(AvatarName name, UniqueId id, AvatarScore score,
             AvatarClub avatarClub)
@@ -376,7 +376,7 @@ class _$ClubChangedImpl implements ClubChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String nameStr)? nameChanged,
     TResult? Function(String clubStr)? clubChanged,
-    TResult? Function(int scoreVal)? scoreChanged,
+    TResult? Function(String scoreVal)? scoreChanged,
     TResult? Function(UniqueId id)? idSet,
     TResult? Function(AvatarName name, UniqueId id, AvatarScore score,
             AvatarClub avatarClub)?
@@ -393,7 +393,7 @@ class _$ClubChangedImpl implements ClubChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String nameStr)? nameChanged,
     TResult Function(String clubStr)? clubChanged,
-    TResult Function(int scoreVal)? scoreChanged,
+    TResult Function(String scoreVal)? scoreChanged,
     TResult Function(UniqueId id)? idSet,
     TResult Function(AvatarName name, UniqueId id, AvatarScore score,
             AvatarClub avatarClub)?
@@ -475,7 +475,7 @@ abstract class _$$ScoreChangedImplCopyWith<$Res> {
           _$ScoreChangedImpl value, $Res Function(_$ScoreChangedImpl) then) =
       __$$ScoreChangedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int scoreVal});
+  $Res call({String scoreVal});
 }
 
 /// @nodoc
@@ -495,7 +495,7 @@ class __$$ScoreChangedImplCopyWithImpl<$Res>
       null == scoreVal
           ? _value.scoreVal
           : scoreVal // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
     ));
   }
 }
@@ -506,7 +506,7 @@ class _$ScoreChangedImpl implements ScoreChanged {
   const _$ScoreChangedImpl(this.scoreVal);
 
   @override
-  final int scoreVal;
+  final String scoreVal;
 
   @override
   String toString() {
@@ -536,7 +536,7 @@ class _$ScoreChangedImpl implements ScoreChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(String nameStr) nameChanged,
     required TResult Function(String clubStr) clubChanged,
-    required TResult Function(int scoreVal) scoreChanged,
+    required TResult Function(String scoreVal) scoreChanged,
     required TResult Function(UniqueId id) idSet,
     required TResult Function(AvatarName name, UniqueId id, AvatarScore score,
             AvatarClub avatarClub)
@@ -553,7 +553,7 @@ class _$ScoreChangedImpl implements ScoreChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String nameStr)? nameChanged,
     TResult? Function(String clubStr)? clubChanged,
-    TResult? Function(int scoreVal)? scoreChanged,
+    TResult? Function(String scoreVal)? scoreChanged,
     TResult? Function(UniqueId id)? idSet,
     TResult? Function(AvatarName name, UniqueId id, AvatarScore score,
             AvatarClub avatarClub)?
@@ -570,7 +570,7 @@ class _$ScoreChangedImpl implements ScoreChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String nameStr)? nameChanged,
     TResult Function(String clubStr)? clubChanged,
-    TResult Function(int scoreVal)? scoreChanged,
+    TResult Function(String scoreVal)? scoreChanged,
     TResult Function(UniqueId id)? idSet,
     TResult Function(AvatarName name, UniqueId id, AvatarScore score,
             AvatarClub avatarClub)?
@@ -638,9 +638,9 @@ class _$ScoreChangedImpl implements ScoreChanged {
 }
 
 abstract class ScoreChanged implements AvatarManagerEvent {
-  const factory ScoreChanged(final int scoreVal) = _$ScoreChangedImpl;
+  const factory ScoreChanged(final String scoreVal) = _$ScoreChangedImpl;
 
-  int get scoreVal;
+  String get scoreVal;
   @JsonKey(ignore: true)
   _$$ScoreChangedImplCopyWith<_$ScoreChangedImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -712,7 +712,7 @@ class _$IdSetImpl implements IdSet {
   TResult when<TResult extends Object?>({
     required TResult Function(String nameStr) nameChanged,
     required TResult Function(String clubStr) clubChanged,
-    required TResult Function(int scoreVal) scoreChanged,
+    required TResult Function(String scoreVal) scoreChanged,
     required TResult Function(UniqueId id) idSet,
     required TResult Function(AvatarName name, UniqueId id, AvatarScore score,
             AvatarClub avatarClub)
@@ -729,7 +729,7 @@ class _$IdSetImpl implements IdSet {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String nameStr)? nameChanged,
     TResult? Function(String clubStr)? clubChanged,
-    TResult? Function(int scoreVal)? scoreChanged,
+    TResult? Function(String scoreVal)? scoreChanged,
     TResult? Function(UniqueId id)? idSet,
     TResult? Function(AvatarName name, UniqueId id, AvatarScore score,
             AvatarClub avatarClub)?
@@ -746,7 +746,7 @@ class _$IdSetImpl implements IdSet {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String nameStr)? nameChanged,
     TResult Function(String clubStr)? clubChanged,
-    TResult Function(int scoreVal)? scoreChanged,
+    TResult Function(String scoreVal)? scoreChanged,
     TResult Function(UniqueId id)? idSet,
     TResult Function(AvatarName name, UniqueId id, AvatarScore score,
             AvatarClub avatarClub)?
@@ -915,7 +915,7 @@ class _$AvatarSelectedImpl implements AvatarSelected {
   TResult when<TResult extends Object?>({
     required TResult Function(String nameStr) nameChanged,
     required TResult Function(String clubStr) clubChanged,
-    required TResult Function(int scoreVal) scoreChanged,
+    required TResult Function(String scoreVal) scoreChanged,
     required TResult Function(UniqueId id) idSet,
     required TResult Function(AvatarName name, UniqueId id, AvatarScore score,
             AvatarClub avatarClub)
@@ -932,7 +932,7 @@ class _$AvatarSelectedImpl implements AvatarSelected {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String nameStr)? nameChanged,
     TResult? Function(String clubStr)? clubChanged,
-    TResult? Function(int scoreVal)? scoreChanged,
+    TResult? Function(String scoreVal)? scoreChanged,
     TResult? Function(UniqueId id)? idSet,
     TResult? Function(AvatarName name, UniqueId id, AvatarScore score,
             AvatarClub avatarClub)?
@@ -949,7 +949,7 @@ class _$AvatarSelectedImpl implements AvatarSelected {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String nameStr)? nameChanged,
     TResult Function(String clubStr)? clubChanged,
-    TResult Function(int scoreVal)? scoreChanged,
+    TResult Function(String scoreVal)? scoreChanged,
     TResult Function(UniqueId id)? idSet,
     TResult Function(AvatarName name, UniqueId id, AvatarScore score,
             AvatarClub avatarClub)?
@@ -1073,7 +1073,7 @@ class _$CreateAvatarPressedImpl implements CreateAvatarPressed {
   TResult when<TResult extends Object?>({
     required TResult Function(String nameStr) nameChanged,
     required TResult Function(String clubStr) clubChanged,
-    required TResult Function(int scoreVal) scoreChanged,
+    required TResult Function(String scoreVal) scoreChanged,
     required TResult Function(UniqueId id) idSet,
     required TResult Function(AvatarName name, UniqueId id, AvatarScore score,
             AvatarClub avatarClub)
@@ -1090,7 +1090,7 @@ class _$CreateAvatarPressedImpl implements CreateAvatarPressed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String nameStr)? nameChanged,
     TResult? Function(String clubStr)? clubChanged,
-    TResult? Function(int scoreVal)? scoreChanged,
+    TResult? Function(String scoreVal)? scoreChanged,
     TResult? Function(UniqueId id)? idSet,
     TResult? Function(AvatarName name, UniqueId id, AvatarScore score,
             AvatarClub avatarClub)?
@@ -1107,7 +1107,7 @@ class _$CreateAvatarPressedImpl implements CreateAvatarPressed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String nameStr)? nameChanged,
     TResult Function(String clubStr)? clubChanged,
-    TResult Function(int scoreVal)? scoreChanged,
+    TResult Function(String scoreVal)? scoreChanged,
     TResult Function(UniqueId id)? idSet,
     TResult Function(AvatarName name, UniqueId id, AvatarScore score,
             AvatarClub avatarClub)?
@@ -1219,7 +1219,7 @@ class _$UpdateAvatarPressedImpl implements UpdateAvatarPressed {
   TResult when<TResult extends Object?>({
     required TResult Function(String nameStr) nameChanged,
     required TResult Function(String clubStr) clubChanged,
-    required TResult Function(int scoreVal) scoreChanged,
+    required TResult Function(String scoreVal) scoreChanged,
     required TResult Function(UniqueId id) idSet,
     required TResult Function(AvatarName name, UniqueId id, AvatarScore score,
             AvatarClub avatarClub)
@@ -1236,7 +1236,7 @@ class _$UpdateAvatarPressedImpl implements UpdateAvatarPressed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String nameStr)? nameChanged,
     TResult? Function(String clubStr)? clubChanged,
-    TResult? Function(int scoreVal)? scoreChanged,
+    TResult? Function(String scoreVal)? scoreChanged,
     TResult? Function(UniqueId id)? idSet,
     TResult? Function(AvatarName name, UniqueId id, AvatarScore score,
             AvatarClub avatarClub)?
@@ -1253,7 +1253,7 @@ class _$UpdateAvatarPressedImpl implements UpdateAvatarPressed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String nameStr)? nameChanged,
     TResult Function(String clubStr)? clubChanged,
-    TResult Function(int scoreVal)? scoreChanged,
+    TResult Function(String scoreVal)? scoreChanged,
     TResult Function(UniqueId id)? idSet,
     TResult Function(AvatarName name, UniqueId id, AvatarScore score,
             AvatarClub avatarClub)?
@@ -1366,7 +1366,7 @@ class _$DeleteAvatarTriggeredImpl implements DeleteAvatarTriggered {
   TResult when<TResult extends Object?>({
     required TResult Function(String nameStr) nameChanged,
     required TResult Function(String clubStr) clubChanged,
-    required TResult Function(int scoreVal) scoreChanged,
+    required TResult Function(String scoreVal) scoreChanged,
     required TResult Function(UniqueId id) idSet,
     required TResult Function(AvatarName name, UniqueId id, AvatarScore score,
             AvatarClub avatarClub)
@@ -1383,7 +1383,7 @@ class _$DeleteAvatarTriggeredImpl implements DeleteAvatarTriggered {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String nameStr)? nameChanged,
     TResult? Function(String clubStr)? clubChanged,
-    TResult? Function(int scoreVal)? scoreChanged,
+    TResult? Function(String scoreVal)? scoreChanged,
     TResult? Function(UniqueId id)? idSet,
     TResult? Function(AvatarName name, UniqueId id, AvatarScore score,
             AvatarClub avatarClub)?
@@ -1400,7 +1400,7 @@ class _$DeleteAvatarTriggeredImpl implements DeleteAvatarTriggered {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String nameStr)? nameChanged,
     TResult Function(String clubStr)? clubChanged,
-    TResult Function(int scoreVal)? scoreChanged,
+    TResult Function(String scoreVal)? scoreChanged,
     TResult Function(UniqueId id)? idSet,
     TResult Function(AvatarName name, UniqueId id, AvatarScore score,
             AvatarClub avatarClub)?

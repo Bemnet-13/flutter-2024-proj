@@ -100,7 +100,10 @@ class AvatarTile extends StatelessWidget {
     return ListTile(
       onTap: () {
         context.read<AvatarManagerBloc>().add(AvatarManagerEvent.avatarSelected(
-            avatar.avatarName, avatar.id, avatar.avatarScore, avatar.avatarClub));
+            avatar.avatarName,
+            avatar.id,
+            avatar.avatarScore,
+            avatar.avatarClub));
         print(avatar.avatarName.getOrCrash());
         print(avatar.id.getOrCrash());
         context.go('/avatar_details');
@@ -113,7 +116,6 @@ class AvatarTile extends StatelessWidget {
         avatar.avatarName.getOrCrash(),
         style: const TextStyle(fontSize: 24),
       ),
-      
     );
   }
 }

@@ -1,22 +1,18 @@
-
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:FantasyE/domain/core/value_objects.dart';
 import 'package:FantasyE/domain/avatar/avatar.dart';
 import 'package:FantasyE/domain/avatar/value_objects.dart';
 
+class AvatarDto {
+  String id;
+  String avatarName;
+  String avatarClub;
+  int avatarScore;
 
-part 'avatar_dtos.freezed.dart';
-part 'avatar_dtos.g.dart';
-
-
-@freezed
-abstract class AvatarDto with _$AvatarDto {
-  factory AvatarDto({
-    @JsonKey(ignore: true) String? id,
-    required String avatarName,
-    required String avatarClub,
-    required int avatarScore,
-  }) = _AvatarDto;
+  AvatarDto(
+      {required this.id,
+      required this.avatarName,
+      required this.avatarClub,
+      required this.avatarScore});
 
   factory AvatarDto.fromDomain(Avatar avatar) {
     return AvatarDto(
@@ -27,16 +23,35 @@ abstract class AvatarDto with _$AvatarDto {
     );
   }
 
-  factory AvatarDto.fromJson(Map<String, dynamic> json) => _$AvatarDtoFromJson(json);
-}
+  Map<String, dynamic> toJson() {
+    return {
+      'name': avatarName,
+      'club': avatarClub,
+      'score': avatarScore,
+    };
+  }
+factory AvatarDto.fromJson(Map<String, dynamic> json) {
+    try {
+      return AvatarDto(
+        id: json['_id'],
+        avatarName: json['name'],
+        avatarClub: json['club'],
+        avatarScore: json.containsKey('score')
+            ? json['score']
+            : 0, // Assuming a default score if not provided
+      );
+    } catch (e) {
+      print("Error parsing AvatarDto from JSON: $e");
+      rethrow; // rethrow to ensure the original error is still caught in the outer catch block
+    }
+  }
 
-extension AvatarDtoX on AvatarDto {
   Avatar toDomain() {
     return Avatar(
-      id: UniqueId.fromUniqueString(id!),
+      id: UniqueId.fromUniqueString(id),
       avatarName: AvatarName(avatarName),
       avatarClub: AvatarClub(avatarClub),
-      avatarScore: AvatarScore(avatarScore),
+      avatarScore: AvatarScore('$avatarScore'),
     );
   }
 }

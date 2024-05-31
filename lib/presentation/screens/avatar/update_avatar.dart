@@ -121,7 +121,7 @@ class UpdateAvatar extends StatelessWidget {
                               ),
                           onchangedCallback: (value) => context
                               .read<AvatarManagerBloc>()
-                              .add(AvatarManagerEvent.scoreChanged(value as int)),
+                              .add(AvatarManagerEvent.scoreChanged(value)),
                         ),
                         FieldEntry(
                           text: "Avatar Club",

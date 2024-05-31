@@ -17,16 +17,19 @@ class AvatarRepository implements IAvatarRepository {
   final ApiClient apiClient;
   AvatarRepository({required this.apiClient});
   @override
-  Future<Either<AvatarFailure, KtList<Avatar>>> watchAll() async {
+  Future<Either<AvatarFailure, List<Avatar>>> watchAll() async {
     try {
       final response = await apiClient.fetchData();
+      print(response.body);
       if (response.statusCode == 200) {
-        final List<dynamic> avatarData =
-            jsonDecode(response.body) as List<dynamic>;
-        final avatars = avatarData
-            .map((data) =>
-                AvatarDto.fromJson(data as Map<String, dynamic>).toDomain())
-            .toImmutableList();
+        final List<dynamic> responseBody = jsonDecode(response.body);
+        final List<AvatarDto> avatarDtos =
+            responseBody.map((json) => AvatarDto.fromJson(json)).toList();
+        print(avatarDtos);
+        final List<Avatar> avatars =
+            avatarDtos.map((dto) => dto.toDomain()).toList();
+        print(avatars);
+        print(435);
         return Right(avatars);
       } else {
         return const Left(AvatarFailure.unexpected());
@@ -40,6 +43,12 @@ class AvatarRepository implements IAvatarRepository {
   Future<Either<AvatarFailure, Unit>> create(Avatar avatar) async {
     try {
       final response = await apiClient.createNewAvatar(avatar);
+      print(avatar.avatarClub);
+      print(avatar.avatarName);
+      print(avatar.avatarScore);
+
+      print(response.body);
+      print(response.statusCode);
       if (response.statusCode == 201) {
         return const Right(unit);
       } else {

@@ -20,7 +20,6 @@ class AddAvatarBloc extends Bloc<AddAvatarEvent, AddAvatarState> {
   final IAvatarRepository _avatarRepository;
 
   AddAvatarBloc(this._avatarRepository) : super(AddAvatarState.initial()) {
-
     on<_AddAvatarStarted>((event, emit) async {
       emit(state.copyWith(
         addFailureOrSuccessOption: none(),

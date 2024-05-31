@@ -124,10 +124,10 @@ class CreateAvatar extends StatelessWidget {
                               ),
                           onchangedCallback: (value) => context
                               .read<AvatarManagerBloc>()
-                              .add(AvatarManagerEvent.nameChanged(value)),
+                              .add(AvatarManagerEvent.clubChanged(value)),
                         ),
                         FieldEntry(
-                          text: "Avatar Club",
+                          text: "Avatar Score",
                           icon: Icons.format_list_numbered_rtl_sharp,
                           isObscured: false,
                           validatorCallback: (_) => context
@@ -145,7 +145,7 @@ class CreateAvatar extends StatelessWidget {
                               ),
                           onchangedCallback: (value) => context
                               .read<AvatarManagerBloc>()
-                              .add(AvatarManagerEvent.scoreChanged(value as int)),
+                              .add(AvatarManagerEvent.scoreChanged(value)),
                         ),
                       ],
                     ),

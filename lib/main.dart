@@ -1,5 +1,6 @@
 import 'package:FantasyE/application/auth/auth_logic/auth_logic_bloc.dart';
 import 'package:FantasyE/application/auth/manage_account/manage_account_bloc.dart';
+import 'package:FantasyE/application/avatar/avatar_manager/avatar_manager_bloc.dart';
 import 'package:FantasyE/application/league/league_manager/league_manager_bloc.dart';
 import 'package:FantasyE/presentation/widgets/colors.dart';
 import 'package:flutter/material.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
             ),
         ),
         BlocProvider(create: (context) => getIt<LeagueManagerBloc>()),
+        BlocProvider(create: (context) => getIt<AvatarManagerBloc>()),
         BlocProvider(create: (context) => getIt<ManageAccountBloc>()),
       ],
       child: MaterialApp.router(

@@ -6,11 +6,10 @@
 import 'dart:async' as _i4;
 
 import 'package:dartz/dartz.dart' as _i2;
-import 'package:FantasyE/domain/avatar/avatar.dart' as _i7;
+import 'package:FantasyE/domain/avatar/avatar.dart' as _i6;
 import 'package:FantasyE/domain/avatar/avatar_failure.dart' as _i5;
 import 'package:FantasyE/domain/avatar/i_avatar_repository.dart' as _i3;
-import 'package:FantasyE/domain/core/value_objects.dart' as _i8;
-import 'package:kt_dart/collection.dart' as _i6;
+import 'package:FantasyE/domain/core/value_objects.dart' as _i7;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -45,28 +44,26 @@ class MockIAvatarRepository extends _i1.Mock implements _i3.IAvatarRepository {
   }
 
   @override
-  _i4.Future<_i2.Either<_i5.AvatarFailure, _i6.KtList<_i7.Avatar>>>
-      watchAll() => (super.noSuchMethod(
-            Invocation.method(
-              #watchAll,
-              [],
-            ),
-            returnValue: _i4.Future<
-                    _i2
-                    .Either<_i5.AvatarFailure, _i6.KtList<_i7.Avatar>>>.value(
-                _FakeEither_0<_i5.AvatarFailure, _i6.KtList<_i7.Avatar>>(
-              this,
-              Invocation.method(
-                #watchAll,
-                [],
-              ),
-            )),
-          ) as _i4
-              .Future<_i2.Either<_i5.AvatarFailure, _i6.KtList<_i7.Avatar>>>);
+  _i4.Future<_i2.Either<_i5.AvatarFailure, List<_i6.Avatar>>> watchAll() =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #watchAll,
+          [],
+        ),
+        returnValue:
+            _i4.Future<_i2.Either<_i5.AvatarFailure, List<_i6.Avatar>>>.value(
+                _FakeEither_0<_i5.AvatarFailure, List<_i6.Avatar>>(
+          this,
+          Invocation.method(
+            #watchAll,
+            [],
+          ),
+        )),
+      ) as _i4.Future<_i2.Either<_i5.AvatarFailure, List<_i6.Avatar>>>);
 
   @override
   _i4.Future<_i2.Either<_i5.AvatarFailure, _i2.Unit>> create(
-          _i7.Avatar? avatar) =>
+          _i6.Avatar? avatar) =>
       (super.noSuchMethod(
         Invocation.method(
           #create,
@@ -84,7 +81,7 @@ class MockIAvatarRepository extends _i1.Mock implements _i3.IAvatarRepository {
 
   @override
   _i4.Future<_i2.Either<_i5.AvatarFailure, _i2.Unit>> update(
-          _i7.Avatar? avatar) =>
+          _i6.Avatar? avatar) =>
       (super.noSuchMethod(
         Invocation.method(
           #update,
@@ -102,7 +99,7 @@ class MockIAvatarRepository extends _i1.Mock implements _i3.IAvatarRepository {
 
   @override
   _i4.Future<_i2.Either<_i5.AvatarFailure, _i2.Unit>> delete(
-          _i7.Avatar? avatar) =>
+          _i6.Avatar? avatar) =>
       (super.noSuchMethod(
         Invocation.method(
           #delete,
@@ -120,7 +117,7 @@ class MockIAvatarRepository extends _i1.Mock implements _i3.IAvatarRepository {
 
   @override
   _i4.Future<_i2.Either<_i5.AvatarFailure, _i2.Unit>> add(
-          _i8.UniqueId? avatarId) =>
+          _i7.UniqueId? avatarId) =>
       (super.noSuchMethod(
         Invocation.method(
           #add,
@@ -147,28 +144,26 @@ class MockAvatarRepositoryUnique extends _i1.Mock
   }
 
   @override
-  _i4.Future<_i2.Either<_i5.AvatarFailure, _i6.KtList<_i7.Avatar>>>
-      watchAll() => (super.noSuchMethod(
-            Invocation.method(
-              #watchAll,
-              [],
-            ),
-            returnValue: _i4.Future<
-                    _i2
-                    .Either<_i5.AvatarFailure, _i6.KtList<_i7.Avatar>>>.value(
-                _FakeEither_0<_i5.AvatarFailure, _i6.KtList<_i7.Avatar>>(
-              this,
-              Invocation.method(
-                #watchAll,
-                [],
-              ),
-            )),
-          ) as _i4
-              .Future<_i2.Either<_i5.AvatarFailure, _i6.KtList<_i7.Avatar>>>);
+  _i4.Future<_i2.Either<_i5.AvatarFailure, List<_i6.Avatar>>> watchAll() =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #watchAll,
+          [],
+        ),
+        returnValue:
+            _i4.Future<_i2.Either<_i5.AvatarFailure, List<_i6.Avatar>>>.value(
+                _FakeEither_0<_i5.AvatarFailure, List<_i6.Avatar>>(
+          this,
+          Invocation.method(
+            #watchAll,
+            [],
+          ),
+        )),
+      ) as _i4.Future<_i2.Either<_i5.AvatarFailure, List<_i6.Avatar>>>);
 
   @override
   _i4.Future<_i2.Either<_i5.AvatarFailure, _i2.Unit>> create(
-          _i7.Avatar? avatar) =>
+          _i6.Avatar? avatar) =>
       (super.noSuchMethod(
         Invocation.method(
           #create,
@@ -186,7 +181,7 @@ class MockAvatarRepositoryUnique extends _i1.Mock
 
   @override
   _i4.Future<_i2.Either<_i5.AvatarFailure, _i2.Unit>> update(
-          _i7.Avatar? avatar) =>
+          _i6.Avatar? avatar) =>
       (super.noSuchMethod(
         Invocation.method(
           #update,
@@ -204,7 +199,7 @@ class MockAvatarRepositoryUnique extends _i1.Mock
 
   @override
   _i4.Future<_i2.Either<_i5.AvatarFailure, _i2.Unit>> delete(
-          _i7.Avatar? avatar) =>
+          _i6.Avatar? avatar) =>
       (super.noSuchMethod(
         Invocation.method(
           #delete,
@@ -222,7 +217,7 @@ class MockAvatarRepositoryUnique extends _i1.Mock
 
   @override
   _i4.Future<_i2.Either<_i5.AvatarFailure, _i2.Unit>> add(
-          _i8.UniqueId? avatarId) =>
+          _i7.UniqueId? avatarId) =>
       (super.noSuchMethod(
         Invocation.method(
           #add,

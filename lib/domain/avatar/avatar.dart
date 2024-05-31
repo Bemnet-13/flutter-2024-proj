@@ -19,8 +19,7 @@ abstract class Avatar with _$Avatar implements IEntity {
   factory Avatar.empty() => Avatar(
         id: UniqueId(),
         avatarName: AvatarName(''),
-        avatarScore: AvatarScore(0),
+        avatarScore: AvatarScore(''),
         avatarClub: AvatarClub(''),
       );
 }
-

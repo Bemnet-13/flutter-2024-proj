@@ -12,7 +12,6 @@ import 'package:FantasyE/presentation/screens/avatar/my_avatars.dart';
 import 'package:FantasyE/presentation/screens/avatar/add_avatar.dart';
 import 'package:FantasyE/presentation/screens/avatar/avatars.dart';
 import 'package:go_router/go_router.dart';
-import 'presentation/screens/admin_manage_avatars.dart';
 import 'presentation/screens/dashboard/admin_dashboard.dart';
 import 'presentation/screens/create_team.dart';
 import 'presentation/screens/faq.dart';
@@ -157,7 +156,7 @@ class Routes {
       GoRoute(
         name: 'admin_manage_avatars',
         path: '/admin_manage_avatars',
-        builder: (context, state) => const AdminManageAvatarsScreen(),
+        builder: (context, state) => const ManageAvatarScreen(),
       ),
       GoRoute(
         name: 'faq',

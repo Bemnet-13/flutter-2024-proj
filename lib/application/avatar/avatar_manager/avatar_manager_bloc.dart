@@ -68,7 +68,7 @@ class AvatarManagerBloc extends Bloc<AvatarManagerEvent, AvatarManagerState> {
     on<AvatarSelected>(((event, emit) {
       emit(
         state.copyWith(
-            avatarName: event.name, uniqueId: event.id, avatarScore: event.score),
+            avatarName: state.avatarName, uniqueId: state.uniqueId, avatarScore: state.avatarScore, avatarClub: state.avatarClub),
       );
     }));
     on<UpdateAvatarPressed>((event, emit) async {

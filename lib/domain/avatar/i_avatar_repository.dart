@@ -6,7 +6,7 @@ import 'package:FantasyE/domain/avatar/avatar_failure.dart';
 
 abstract class IAvatarRepository {
   
-  Future<Either<AvatarFailure, KtList<Avatar>>> watchAll();
+  Future<Either<AvatarFailure, List<Avatar>>> watchAll();
   Future<Either<AvatarFailure, Unit>> create(Avatar avatar);
   Future<Either<AvatarFailure, Unit>> update(Avatar avatar);
   Future<Either<AvatarFailure, Unit>> delete(Avatar avatar);

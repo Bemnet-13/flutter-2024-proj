@@ -9,8 +9,18 @@ import 'dart:convert';
 
 @injectable
 class ApiClient {
+  final FlutterSecureStorage secureStorage = const FlutterSecureStorage();
+
   Future<http.Response> fetchData() async {
-    final response = await http.get(Uri.parse(ApiConstants.avatarEndpoint));
+    String? token = await secureStorage.read(key: 'Token');
+
+    final response = await http.get(
+      Uri.parse(ApiConstants.avatarEndpoint),
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer $token'
+      },
+    );
     return response;
   }
 
@@ -20,41 +30,55 @@ class ApiClient {
   }
 
   Future<http.Response> createNewAvatar(Avatar avatar) async {
+    String? token = await secureStorage.read(key: 'Token');
+
     final response = await http.post(
       Uri.parse(ApiConstants.avatarEndpoint),
-      headers: {'Content-Type': 'application/json'},
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer $token'
+      },
       body: jsonEncode(AvatarDto.fromDomain(avatar).toJson()),
     );
     return response;
   }
 
   Future<http.Response> updateAvatar(Avatar avatar) async {
+    String? token = await secureStorage.read(key: 'Token');
+
     final response = await http.put(
       Uri.parse(ApiConstants.avatarEndpoint + avatar.id.getOrCrash()),
-      headers: {'Content-Type': 'application/json'},
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer $token'
+      },
       body: jsonEncode(AvatarDto.fromDomain(avatar).toJson()),
     );
     return response;
   }
 
   Future<http.Response> deleteAvatar(Avatar avatar) async {
+    String? token = await secureStorage.read(key: 'Token');
+
     final response = await http.delete(
       Uri.parse(ApiConstants.avatarEndpoint + avatar.id.getOrCrash()),
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer $token'
+      },
     );
     return response;
   }
 
   Future<http.Response> addAvatar(UniqueId avatarId) async {
-    const FlutterSecureStorage secureStorage = FlutterSecureStorage();
     String? token = await secureStorage.read(key: 'Token');
 
     final response = await http.get(
-
       Uri.parse(ApiConstants.avatarEndpoint + avatarId.getOrCrash()),
-      headers: {'Content-Type': 'application/json', 
-      'Authorization':'Bearer $token'
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer $token'
       },
-      
     );
     return response;
   }
