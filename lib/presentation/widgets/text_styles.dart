@@ -27,6 +27,8 @@ class StyledText extends StatelessWidget {
   );
   static const TextStyle drawerTestStyle =
       TextStyle(fontSize: 20, fontWeight: FontWeight.w900);
+  static const TextStyle userStyle =
+      TextStyle(fontSize: 20, fontWeight: FontWeight.w700);
 
   const StyledText({super.key});
 

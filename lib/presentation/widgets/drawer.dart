@@ -14,7 +14,8 @@ class DrawerMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => getIt<AuthLogicBloc>(),
+      create: (context) => getIt<AuthLogicBloc>()
+        ..add(const AuthLogicEvent.authCheckRequested()),
       child: BlocProvider.of<AuthLogicBloc>(context).state ==
               const AuthLogicState.authenticatedAsAdmin()
           ? const DrawerAdmin()
@@ -143,6 +144,43 @@ class DrawerPlayer extends StatelessWidget {
               ),
             ),
             child: Text(''),
+          ),
+          ListTile(
+            leading: const Icon(Icons.dashboard_rounded),
+            title: const Text(
+              'Player Dashboard',
+              style: StyledText.drawerTestStyle,
+            ),
+            onTap: () {
+              context.go('/player_dashboard');
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.people),
+            title: const Text(
+              'Manage Teams',
+              style: StyledText.drawerTestStyle,
+            ),
+            onTap: () {
+              context.go('/manage_team');
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.table_chart_sharp),
+            title: const Text(
+              'Leagues',
+              style: StyledText.drawerTestStyle,
+            ),
+            onTap: () {
+              context.go('/leagues');
+            },
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          const Divider(),
+          const SizedBox(
+            height: 20,
           ),
           ListTile(
             leading: Icon(Icons.question_answer),

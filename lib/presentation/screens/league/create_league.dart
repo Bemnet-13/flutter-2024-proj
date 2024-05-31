@@ -3,12 +3,10 @@ import 'package:FantasyE/presentation/widgets/appbar.dart';
 import 'package:FantasyE/presentation/widgets/buttons.dart';
 import 'package:FantasyE/presentation/widgets/drawer.dart';
 import 'package:FantasyE/presentation/widgets/text_fields.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../../../injection.dart';
 import '../../widgets/colors.dart';
-import '../../widgets/custom_field.dart';
 import 'package:flutter/material.dart';
 
 class CreateLeagueScreen extends StatelessWidget {
@@ -17,7 +15,7 @@ class CreateLeagueScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => getIt<LeagueManagerBloc>(),
-      child: CreateLeague(),
+      child: const CreateLeague(),
     );
   }
 }
@@ -49,7 +47,7 @@ class CreateLeague extends StatelessWidget {
               );
             },
             (_) {
-              context.go('/admin_dashboard');
+              context.go('/splash');
             },
           ),
         );
@@ -60,7 +58,7 @@ class CreateLeague extends StatelessWidget {
             title: 'Create League',
             icon: Icons.menu,
           ),
-          drawer: DrawerMenu(),
+          drawer: const DrawerMenu(),
           body: Padding(
             padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 18),
             child: Center(

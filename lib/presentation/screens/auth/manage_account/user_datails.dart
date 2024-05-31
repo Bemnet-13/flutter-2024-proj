@@ -1,8 +1,7 @@
 import 'package:FantasyE/application/auth/manage_account/manage_account_bloc.dart';
-import 'package:FantasyE/domain/auth/value_objects.dart';
-import 'package:FantasyE/domain/leagues/value_objects.dart';
 import 'package:FantasyE/presentation/widgets/appbar.dart';
 import 'package:FantasyE/presentation/widgets/drawer.dart';
+import 'package:FantasyE/presentation/widgets/text_styles.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:FantasyE/injection.dart';
@@ -57,63 +56,49 @@ class UserDetails extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      const Text(
-                        'NAME',
-                        style: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.w900),
+                      const Expanded(
+                        child: Column(
+                          children: [
+                            Text(
+                              'NAME',
+                              style: StyledText.userStyle,
+                            ),
+                            Text(
+                              'EMAIL',
+                              style: StyledText.userStyle,
+                            ),
+                            Text(
+                              'ROLE',
+                              style: StyledText.userStyle,
+                            ),
+                            Text(
+                              'ACCOUNT STATE',
+                              style: StyledText.userStyle,
+                            )
+                          ],
+                        ),
                       ),
-                      Text(
-                        name,
-                        style: const TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.w900),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      const Text(
-                        'EMAIL',
-                        style: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.w900),
-                      ),
-                      Text(
-                        emailAddress,
-                        style: const TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.w900),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      const Text(
-                        'ROLE',
-                        style: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.w900),
-                      ),
-                      Text(
-                        role,
-                        style: const TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.w900),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      const Text(
-                        'SUSPENSION STATE',
-                        style: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.w900),
-                      ),
-                      Text(
-                        isSuspended ? 'SUSPENDED' : 'NOT SUSPENDED',
-                        style: const TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.w900),
+                      Expanded(
+                        child: Column(
+                          children: [
+                            Text(
+                              name,
+                              style: StyledText.userStyle,
+                            ),
+                            Text(
+                              emailAddress,
+                              style: StyledText.userStyle,
+                            ),
+                            Text(
+                              role,
+                              style: StyledText.userStyle,
+                            ),
+                            Text(
+                              isSuspended ? 'SUSPENDED' : 'NOT SUSPENDED',
+                              style: StyledText.userStyle,
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -134,9 +119,9 @@ class UserDetails extends StatelessWidget {
                             Icons.mobile_off_rounded,
                             size: 30,
                           ),
-                          label: const Text(
-                            'SUSPEND',
-                            style: TextStyle(
+                          label: Text(
+                            isSuspended ? 'UNSUSPEND' : 'SUSPEND',
+                            style: const TextStyle(
                                 fontSize: 30, fontWeight: FontWeight.w900),
                           )),
                       TextButton.icon(

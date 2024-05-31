@@ -25,9 +25,6 @@ class LoginAdmin extends StatelessWidget {
         BlocProvider<SignupFormBloc>(
           create: (BuildContext context) => getIt<SignupFormBloc>(),
         ),
-        BlocProvider<AuthLogicBloc>(
-          create: (BuildContext context) => getIt<AuthLogicBloc>(),
-        ),
       ],
       child: LoginFormAdmin(),
     );
@@ -70,6 +67,9 @@ class LoginFormAdmin extends StatelessWidget {
                   label: 'Go To Dashboard',
                   onPressed: () {
                     context.go('/admin_dashboard');
+                    context.read<AuthLogicBloc>().add(
+                          const AuthLogicEvent.loginRequestedAsAdmin(),
+                        );
                   },
                 ),
               ),
@@ -139,9 +139,6 @@ class LoginFormAdmin extends StatelessWidget {
                       context.read<LoginFormBloc>().add(
                             const LoginFormEvent
                                 .loginWithEmailAndPasswordPressed(),
-                          );
-                      context.read<AuthLogicBloc>().add(
-                            const AuthLogicEvent.loginRequestedAsAdmin(),
                           );
                     }),
                     const BottomText(

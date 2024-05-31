@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:FantasyE/domain/auth/i_auth_facade.dart';
 import 'package:FantasyE/domain/core/value_objects.dart';
 import '../../../api_constants.dart';
@@ -57,6 +59,10 @@ class AuthRepository implements IAuthFacade {
       password: passwordStr,
       role: roleStr,
     );
+    print(signup.name);
+    print(signup.email);
+    print(signup.password);
+    print(signup.role);
 
     try {
       final response = await apiClient.registerUser(
@@ -92,6 +98,8 @@ class AuthRepository implements IAuthFacade {
     LoginDto login =
         LoginDto(email: emailAddressStr, password: passwordStr, role: roleStr);
 
+    print(login);
+
     try {
       final response = await apiClient.registerUser(
         ApiConstants.loginEndpoint,
@@ -112,8 +120,7 @@ class AuthRepository implements IAuthFacade {
           responseBody['message'] ==
               'Wrong Role. Role not matched correctly.') {
         return left(const AuthFailure.invalidRoleUsedInLogin());
-      } else if (response.statusCode == 401 &&
-          responseBody['message'] == 'Account Suspended.') {
+      } else if (response.statusCode == 401) {
         return left(const AuthFailure.accountSuspended());
       } else if (token != null) {
         await secureStorage.write(key: 'Role', value: roleStr);

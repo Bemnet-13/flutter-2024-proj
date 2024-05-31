@@ -68,9 +68,7 @@ class ApiClient {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer $token',
     };
-    final response = await http.put(url, headers: headers, body: {
-      "isSuspended": isSuspended,
-    });
+    final response = await http.patch(url, headers: headers);
     print('Request sent to $url');
     print('Response status: ${response.statusCode}');
     print('Response body: ${response.body}');

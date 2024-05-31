@@ -27,9 +27,6 @@ class LoginPlayer extends StatelessWidget {
         BlocProvider<SignupFormBloc>(
           create: (BuildContext context) => getIt<SignupFormBloc>(),
         ),
-        BlocProvider<AuthLogicBloc>(
-          create: (BuildContext context) => getIt<AuthLogicBloc>(),
-        ),
       ],
       child: LoginFormPlayer(),
     );
@@ -74,6 +71,9 @@ class LoginFormPlayer extends StatelessWidget {
                   label: 'Go To Dashboard',
                   onPressed: () {
                     context.go('/player_dashboard');
+                    context.read<AuthLogicBloc>().add(
+                          const AuthLogicEvent.loginRequestedAsPlayer(),
+                        );
                   },
                 ),
               ),
@@ -143,9 +143,6 @@ class LoginFormPlayer extends StatelessWidget {
                       context.read<LoginFormBloc>().add(
                             const LoginFormEvent
                                 .loginWithEmailAndPasswordPressed(),
-                          );
-                      context.read<AuthLogicBloc>().add(
-                            const AuthLogicEvent.loginRequestedAsPlayer(),
                           );
                     }),
                     const BottomText(

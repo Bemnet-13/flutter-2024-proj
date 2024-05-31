@@ -2,10 +2,21 @@ import 'package:FantasyE/application/auth/auth_logic/auth_logic_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:FantasyE/injection.dart';
+
+class AuthSplashScreen extends StatelessWidget {
+  const AuthSplashScreen();
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) =>
+          getIt<AuthLogicBloc>()..add(const AuthLogicEvent.authCheckRequested()),
+      child: AuthSplash(),
+    );
+  }
+}
 
 class AuthSplash extends StatelessWidget {
-  const AuthSplash({super.key});
-
+  const AuthSplash();
   @override
   Widget build(BuildContext context) {
     return BlocListener<AuthLogicBloc, AuthLogicState>(
@@ -29,7 +40,7 @@ class AuthSplash extends StatelessWidget {
         });
       },
       child: Scaffold(
-        body:Container(
+        body: Container(
           width: double.infinity,
           child: const Column(
             mainAxisAlignment: MainAxisAlignment.center,

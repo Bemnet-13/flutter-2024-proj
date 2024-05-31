@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 class ManageLeagueScreen extends StatelessWidget {
   const ManageLeagueScreen({super.key});
 
+  @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
@@ -99,10 +100,10 @@ class LeagueTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: () {
-        context.read<LeagueManagerBloc>().add(LeagueManagerEvent.leagueSelected(
-            league.name, league.id, league.members));
-        print(league.name.getOrCrash());
-        print(league.id.getOrCrash());
+        context.read<LeagueManagerBloc>().add(
+              LeagueManagerEvent.leagueSelected(
+                  league.name, league.id, league.members),
+            );
         context.go('/league_details');
       },
       leading: Icon(
@@ -111,7 +112,7 @@ class LeagueTile extends StatelessWidget {
       ),
       title: Text(
         league.name.getOrCrash(),
-        style: TextStyle(fontSize: 24),
+        style: const TextStyle(fontSize: 24),
       ),
       subtitle: Text('Members : ${league.members.length}'),
     );

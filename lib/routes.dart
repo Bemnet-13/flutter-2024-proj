@@ -36,7 +36,7 @@ class Routes {
       GoRoute(
         name: 'splash',
         path: '/splash',
-        builder: (context, state) => const AuthSplash(),
+        builder: (context, state) => const AuthSplashScreen(),
       ),
       GoRoute(
         name: 'welcome',
