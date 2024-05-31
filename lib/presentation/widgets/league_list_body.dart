@@ -2,11 +2,16 @@ import 'package:flutter/material.dart';
 import 'data/league_list_data.dart';
 import 'entries/league_list_entry.dart';
 
-class LeagueListBody extends StatelessWidget{
-  LeagueListBody({super.key});
-  final league = LeagueListData().leaguelistdata;
-  @override 
-  Widget build(context){
+class LeagueListBody extends StatelessWidget {
+  final LeagueListData? leagueFromConstructor;
+  const LeagueListBody({super.key, this.leagueFromConstructor});
+
+  @override
+  Widget build(context) {
+    final league = leagueFromConstructor != null
+        ? leagueFromConstructor!.leaguelistdata
+        : LeagueListData().leaguelistdata;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -20,20 +25,15 @@ class LeagueListBody extends StatelessWidget{
             ),
           ),
         ),
-
-        Expanded(child: 
-          
-          ListView.builder(
-            
-            itemCount: league.length,
-            itemBuilder: (context, index){
-              return LeagueListEntry(
-                index:index,
-                leaguelist: league,
-              );
-            }
-            )
-        ),
+        Expanded(
+            child: ListView.builder(
+                itemCount: league.length,
+                itemBuilder: (context, index) {
+                  return LeagueListEntry(
+                    index: index,
+                    leaguelist: league,
+                  );
+                })),
       ],
     );
   }

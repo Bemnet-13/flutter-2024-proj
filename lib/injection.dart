@@ -5,4 +5,5 @@ import 'injection.config.dart'; // Import the generated file
 final GetIt getIt = GetIt.instance;
 
 @InjectableInit(preferRelativeImports: false)
-void setup() => getIt.init();
+void configureInjection(String environment) =>
+    getIt.init(environment: environment);

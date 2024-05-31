@@ -1,6 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/material.dart';
-import 'package:kt_dart/collection.dart';
 import 'package:FantasyE/domain/core/failures.dart';
 import 'package:FantasyE/domain/core/value_objects.dart';
 import 'package:FantasyE/domain/core/value_validators.dart';
@@ -20,6 +18,10 @@ class AvatarName extends ValueObject<String> {
   bool isValid() => value.isRight();
 
   const AvatarName._(this.value);
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [value];
 }
 
 class AvatarClub extends ValueObject<String> {
@@ -36,6 +38,10 @@ class AvatarClub extends ValueObject<String> {
   bool isValid() => value.isRight();
 
   const AvatarClub._(this.value);
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [value];
 }
 
 class AvatarScore extends ValueObject<int> {
@@ -49,10 +55,15 @@ class AvatarScore extends ValueObject<int> {
         right(score),
       );
     } catch (e) {
-      return AvatarScore._(left(const ValueFailure.invalidScore(failedValue: -1)));
+      return AvatarScore._(
+          left(const ValueFailure.invalidScore(failedValue: -1)));
     }
   }
   bool isValid() => value.isRight();
 
   const AvatarScore._(this.value);
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [value];
 }

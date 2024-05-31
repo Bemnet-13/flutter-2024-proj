@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'data/avatar_list_data.dart';
 import 'entries/admin_avatar_list_entry.dart';
 
-
 class AdminAvatarListBody extends StatelessWidget {
-  // ignore: use_super_parameters
-  const AdminAvatarListBody({Key? key}) : super(key: key);
+  final AvatarListData avatarListData;
+  const AdminAvatarListBody({super.key, required this.avatarListData});
 
   @override
   Widget build(BuildContext context) {
@@ -23,28 +22,15 @@ class AdminAvatarListBody extends StatelessWidget {
           ),
         ),
         Expanded(
-          
-          
           child: ListView.builder(
-            // physics: const ScrollPhysics(),
-            // shrinkWrap: true,
-            // gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            //   crossAxisCount: 1,
-            //   crossAxisSpacing: 1,
-            //   mainAxisSpacing: 1,
-            // ),
-
-            itemCount: AvatarListData().avatarList.length,
+            itemCount: avatarListData.avatarList.length,
             itemBuilder: (context, index) {
-              final avatarListData = AvatarListData();
               return AvatarListEntry(
-                index: index,
-                avatarList: avatarListData.avatarList,
-                length: avatarListData.avatarList.length,
+                currentAvatar: avatarListData.avatarList[index],
               );
-            }, 
-    ),
-  ),
+            },
+          ),
+        ),
       ],
     );
   }

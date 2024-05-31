@@ -18,6 +18,10 @@ class LeagueName extends ValueObject<String> {
   bool isValid() => value.isRight();
 
   const LeagueName._(this.value);
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [value];
 }
 
 class MemberId extends ValueObject<String> {
@@ -31,6 +35,10 @@ class MemberId extends ValueObject<String> {
   }
 
   const MemberId._(this.value);
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [value];
 }
 
 class ListVO<T> extends ValueObject<KtList<T>> {
@@ -52,6 +60,10 @@ class ListVO<T> extends ValueObject<KtList<T>> {
   Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
     return value.fold((l) => left(l), (r) => right(unit));
   }
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [value];
 }
 
 // Add a simple validator for lists that should not be empty.

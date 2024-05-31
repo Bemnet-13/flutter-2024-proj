@@ -1,9 +1,7 @@
 import 'package:FantasyE/domain/auth/i_auth_facade.dart';
-import 'package:FantasyE/domain/auth/user.dart';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:dartz/dartz.dart';
 
 part 'auth_logic_event.dart';
 part 'auth_logic_state.dart';
@@ -11,9 +9,9 @@ part 'auth_logic_bloc.freezed.dart';
 
 @injectable
 class AuthLogicBloc extends Bloc<AuthLogicEvent, AuthLogicState> {
-  IAuthFacade _authFacade;
+  final IAuthFacade _authFacade;
 
-  AuthLogicBloc(this._authFacade) : super(AuthLogicState.initial()) {
+  AuthLogicBloc(this._authFacade) : super(const AuthLogicState.initial()) {
     on<AuthCheckRequested>((event, emit) async {
       final userOption = await _authFacade.getSignedInUser();
       emit(

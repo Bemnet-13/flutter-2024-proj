@@ -6,6 +6,7 @@ import 'package:FantasyE/domain/core/value_objects.dart';
 import 'package:FantasyE/domain/core/value_validators.dart';
 
 class EmailAddress extends Equatable implements ValueObject {
+  @override
   final Either<ValueFailure<String>, String> value;
 
   @override
@@ -13,6 +14,7 @@ class EmailAddress extends Equatable implements ValueObject {
 
   const EmailAddress._(this.value);
 
+  @override
   String getOrCrash() {
     // id = identity - same as writing (right) => right
     return value.fold((f) => throw UnexpectedValueError(f), id);

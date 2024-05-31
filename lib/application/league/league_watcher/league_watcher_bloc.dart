@@ -1,7 +1,6 @@
 import 'package:FantasyE/domain/leagues/i_league_repository.dart';
 import 'package:FantasyE/domain/leagues/league_failure.dart';
 import 'package:FantasyE/domain/leagues/league.dart';
-import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -17,7 +16,7 @@ class LeagueWatcherBloc extends Bloc<LeagueWatcherEvent, LeagueWatcherState> {
 
   LeagueWatcherBloc(this.repository)
       : super(const LeagueWatcherState.initial()) {
-    on<GetAllLeagues>((event, emit) async{
+    on<GetAllLeagues>((event, emit) async {
       emit(const LeagueWatcherState.loadInProgress());
       await repository.getAllLeagues().then(
         (value) {

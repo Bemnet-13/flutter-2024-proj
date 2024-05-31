@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:FantasyE/application/auth/auth_logic/auth_logic_bloc.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import '../../application/auth/auth_form/auth_bloc.dart';
 import 'colors.dart';
 
 class CustomButton extends StatelessWidget {
@@ -27,7 +23,8 @@ class ActionButton extends StatelessWidget {
   final void Function() onPressedAction;
 
   const ActionButton(
-      {required this.buttonText,
+      {super.key,
+      required this.buttonText,
       required this.buttonColor,
       required this.onPressedAction});
   @override
