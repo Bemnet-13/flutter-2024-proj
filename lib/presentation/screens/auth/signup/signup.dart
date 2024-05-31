@@ -26,7 +26,7 @@ class SignupScreen extends StatelessWidget {
               create: (BuildContext context) => getIt<AuthLogicBloc>(),
             ),
           ],
-          child: SignUpForm(),
+          child: const SignUpForm(),
         ));
   }
 }

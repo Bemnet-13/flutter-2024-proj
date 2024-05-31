@@ -19,14 +19,14 @@ class LoginAdmin extends StatelessWidget {
         BlocProvider<LoginFormBloc>(
           create: (BuildContext context) => getIt<LoginFormBloc>()
             ..add(
-              LoginFormEvent.roleSelected('ADMIN'),
+              const LoginFormEvent.roleSelected('ADMIN'),
             ),
         ),
         BlocProvider<SignupFormBloc>(
           create: (BuildContext context) => getIt<SignupFormBloc>(),
         ),
       ],
-      child: LoginFormAdmin(),
+      child: const LoginFormAdmin(),
     );
   }
 }
@@ -62,7 +62,7 @@ class LoginFormAdmin extends StatelessWidget {
           (_) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
-                content: Text('Login Successful'),
+                content: const Text('Login Successful'),
                 action: SnackBarAction(
                   label: 'Go To Dashboard',
                   onPressed: () {

@@ -7,7 +7,7 @@ class EmailFieldEntry extends StatelessWidget {
   static const IconData icon = Icons.email_outlined;
   static const isObscured = false;
   final bool isLoggingIn;
-  const EmailFieldEntry({required this.isLoggingIn});
+  const EmailFieldEntry({super.key, required this.isLoggingIn});
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +60,7 @@ class PasswordFieldEntry extends StatelessWidget {
   static const IconData icon = Icons.lock_open_outlined;
   static const isObscured = true;
   final bool isLoggingIn;
-  const PasswordFieldEntry({required this.isLoggingIn});
+  const PasswordFieldEntry({super.key, required this.isLoggingIn});
 
   @override
   Widget build(BuildContext context) {
@@ -111,7 +111,7 @@ class NameFieldEntry extends StatelessWidget {
   static const text = 'NAME';
   static const IconData icon = Icons.person_2_rounded;
   static const isObscured = false;
-  const NameFieldEntry();
+  const NameFieldEntry({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -134,8 +134,7 @@ class NameFieldEntry extends StatelessWidget {
           onChanged: (value) => context
               .read<SignupFormBloc>()
               .add(SignupFormEvent.nameChanged(value)),
-          validator:
-           (_) =>
+          validator: (_) =>
               context.read<SignupFormBloc>().state.name.value.fold(
                     (f) => f.maybeMap(
                       invalidName: (_) => 'Short Name',
@@ -157,7 +156,8 @@ class FieldEntry extends StatelessWidget {
   //  = Icons.person_2_rounded;
   final bool isObscured;
   const FieldEntry(
-      {required this.text,
+      {super.key,
+      required this.text,
       required this.icon,
       required this.isObscured,
       required this.validatorCallback,
@@ -166,7 +166,7 @@ class FieldEntry extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20.0),
+      padding: const EdgeInsets.only(left: 20.0),
       child: SizedBox(
         width: 350,
         child: TextFormField(

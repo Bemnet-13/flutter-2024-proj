@@ -7,7 +7,6 @@ import '../../../widgets/chips.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
 import '../../../../application/auth/auth_form/auth_bloc.dart';
-import 'package:FantasyE/application/auth/auth_logic/auth_logic_bloc.dart';
 
 class SignUpForm extends StatelessWidget {
   const SignUpForm({super.key});
@@ -88,7 +87,7 @@ class SignUpForm extends StatelessWidget {
                     autovalidateMode: state.showErrorMessages
                         ? AutovalidateMode.always
                         : AutovalidateMode.disabled,
-                    child: Column(
+                    child: const Column(
                       children: [
                         NameFieldEntry(),
                         EmailFieldEntry(isLoggingIn: false),
@@ -105,7 +104,8 @@ class SignUpForm extends StatelessWidget {
                     '/login',
                     false,
                     () => context.read<SignupFormBloc>().add(
-                          SignupFormEvent.registerWithEmailAndPasswordPressed(),
+                          const SignupFormEvent
+                              .registerWithEmailAndPasswordPressed(),
                         ),
                   ),
                   const BottomText(
@@ -119,20 +119,3 @@ class SignUpForm extends StatelessWidget {
     });
   }
 }
-
-// 
-//  ? context.read<LoginFormBloc>().add(
-      //  const LoginFormEvent
-          //  .loginWithEmailAndPasswordPressed(),
-    //  )
-// 
-// if (navigateTo == '/admin_dashboard') {
-  // context.read<AuthLogicBloc>().add(
-        // const AuthLogicEvent.loginRequestedAsAdmin(),
-      // );
-  // print('I have sent loginRequestedAsAdmin Event');
-// } else {
-  // context.read<AuthLogicBloc>().add(
-        // const AuthLogicEvent.loginRequestedAsPlayer(),
-      // );
-// }
