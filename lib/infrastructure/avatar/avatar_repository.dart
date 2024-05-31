@@ -13,6 +13,7 @@ import 'dart:convert';
 
 @prod
 @lazySingleton
+@injectable
 class AvatarRepository implements IAvatarRepository {
   final http.Client _httpClient;
 
@@ -82,6 +83,24 @@ class AvatarRepository implements IAvatarRepository {
     try {
       final response = await _httpClient.delete(
         Uri.parse('https://127.0.0.1/players/${avatar.id.getOrCrash()}'),
+      );
+      if (response.statusCode == 200) {
+        return const Right(unit);
+      } else {
+        return const Left(AvatarFailure.unexpected());
+      }
+    } catch (e) {
+      return const Left(AvatarFailure.unexpected());
+    }
+  }
+
+  @override
+  Future<Either<AvatarFailure, Unit>> add(Avatar avatar) async {
+    try {
+      final response = await _httpClient.put(
+        Uri.parse('https://127.0.0.1/players/${avatar.id.getOrCrash()}'),
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode(AvatarDto.fromDomain(avatar).toJson()),
       );
       if (response.statusCode == 200) {
         return const Right(unit);

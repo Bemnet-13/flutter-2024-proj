@@ -8,4 +8,5 @@ abstract class IAvatarRepository {
   Future<Either<AvatarFailure, Unit>> create(Avatar avatar);
   Future<Either<AvatarFailure, Unit>> update(Avatar avatar);
   Future<Either<AvatarFailure, Unit>> delete(Avatar avatar);
+  Future<Either<AvatarFailure, Unit>> add(Avatar avatar);
 }
