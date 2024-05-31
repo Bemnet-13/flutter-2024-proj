@@ -1,11 +1,10 @@
 import 'package:FantasyE/application/league/league_manager/league_manager_bloc.dart';
-import 'package:FantasyE/domain/leagues/value_objects.dart';
 import 'package:FantasyE/presentation/widgets/appbar.dart';
 import 'package:FantasyE/presentation/widgets/drawer.dart';
+import 'package:FantasyE/presentation/widgets/text_styles.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:FantasyE/domain/leagues/league.dart';
 import 'package:flutter/material.dart';
-import 'package:FantasyE/injection.dart';
 import 'package:go_router/go_router.dart';
 
 class LeagueDetailsScreen extends StatelessWidget {
@@ -25,13 +24,12 @@ class LeagueDetails extends StatelessWidget {
     return BlocConsumer<LeagueManagerBloc, LeagueManagerState>(
       listener: (context, state) {},
       builder: (context, state) {
-        print(state);
         final leagueName = state.leagueName.getOrCrash();
         final numberOfMembers = state.members.length;
         final firstLetter = leagueName[0];
         return Scaffold(
-          appBar: CustomAppbar(title: "League Details", icon: Icons.menu),
-          drawer: DrawerMenu(),
+          appBar: const CustomAppbar(title: "League Details", icon: Icons.menu),
+          drawer: const DrawerMenu(),
           body: Card.outlined(
             clipBehavior: Clip.hardEdge,
             child: InkWell(
@@ -48,39 +46,28 @@ class LeagueDetails extends StatelessWidget {
                           fontSize: 40, fontWeight: FontWeight.w900),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text(
-                        'LEAGUE NAME',
-                        style: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.w900),
+                      const Expanded(
+                        child: Column(
+                          children: [
+                            Text('LEAGUE NAME', style: StyledText.userStyle),
+                            Text('MEMBERS', style: StyledText.userStyle),
+                          ],
+                        ),
                       ),
-                      Text(
-                        leagueName,
-                        style: const TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.w900),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      const Text(
-                        'MEMBERS',
-                        style: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.w900),
-                      ),
-                      Text(
-                        '$numberOfMembers',
-                        style: const TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.w900),
+                      Expanded(
+                        child: Column(
+                          children: [
+                            Text(leagueName, style: StyledText.userStyle),
+                            Text('$numberOfMembers',
+                                style: StyledText.userStyle),
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -99,7 +86,7 @@ class LeagueDetails extends StatelessWidget {
                                     state.members));
                             context.go('/update_league');
                           },
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.edit,
                             size: 30,
                           ),
@@ -114,7 +101,7 @@ class LeagueDetails extends StatelessWidget {
                               const LeagueManagerEvent.deleteLeagueTriggered());
                           context.go('/manage_leagues');
                         },
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.delete_forever,
                           size: 30,
                           color: Colors.red,

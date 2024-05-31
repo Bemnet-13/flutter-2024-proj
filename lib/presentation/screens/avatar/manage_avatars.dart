@@ -109,7 +109,7 @@ class AvatarTile extends StatelessWidget {
         context.go('/avatar_details');
       },
       leading: const Icon(
-        Icons.table_chart_outlined,
+        Icons.person,
         size: 50,
       ),
       title: Text(

@@ -153,11 +153,13 @@ class FieldEntry extends StatelessWidget {
   final IconData icon;
   final void Function(String value)? onchangedCallback;
   final String Function(String? _)? validatorCallback;
+  final String initialValue;
   //  = Icons.person_2_rounded;
   final bool isObscured;
   const FieldEntry(
       {super.key,
       required this.text,
+      required this.initialValue,
       required this.icon,
       required this.isObscured,
       required this.validatorCallback,
@@ -180,6 +182,7 @@ class FieldEntry extends StatelessWidget {
               ),
             ),
           ),
+          initialValue: initialValue,
           obscureText: isObscured,
           onChanged: onchangedCallback,
           validator: validatorCallback,

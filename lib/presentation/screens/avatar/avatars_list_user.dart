@@ -79,11 +79,6 @@ class LeaguesList extends StatelessWidget {
                     separatorBuilder: (BuildContext context, int index) =>
                         const Divider(),
                     itemCount: state.avatars.length),
-                // floatingActionButton: FloatingActionButton.large(
-                //     child: const Icon(Icons.add),
-                //     onPressed: () {
-                //       context.go('/add_avatar');
-                //     }),
               );
             });
       },
@@ -100,20 +95,22 @@ class AvatarTile extends StatelessWidget {
     return ListTile(
       onTap: () {
         context.read<AvatarManagerBloc>().add(AvatarManagerEvent.avatarSelected(
-            avatar.avatarName, avatar.id, avatar.avatarScore, avatar.avatarClub));
+            avatar.avatarName,
+            avatar.id,
+            avatar.avatarScore,
+            avatar.avatarClub));
         print(avatar.avatarName.getOrCrash());
         print(avatar.id.getOrCrash());
-        context.go('/add_avatar');
+        context.go('/avatar_details');
       },
       leading: const Icon(
-        Icons.table_chart_outlined,
+        Icons.person,
         size: 50,
       ),
       title: Text(
         avatar.avatarName.getOrCrash(),
         style: const TextStyle(fontSize: 24),
       ),
-      
     );
   }
 }

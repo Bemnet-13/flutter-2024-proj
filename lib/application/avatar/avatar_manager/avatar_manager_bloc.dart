@@ -12,7 +12,6 @@ part 'avatar_manager_event.dart';
 part 'avatar_manager_state.dart';
 part 'avatar_manager_bloc.freezed.dart';
 
-
 @injectable
 class AvatarManagerBloc extends Bloc<AvatarManagerEvent, AvatarManagerState> {
   IAvatarRepository repository;
@@ -68,7 +67,10 @@ class AvatarManagerBloc extends Bloc<AvatarManagerEvent, AvatarManagerState> {
     on<AvatarSelected>(((event, emit) {
       emit(
         state.copyWith(
-            avatarName: state.avatarName, uniqueId: state.uniqueId, avatarScore: state.avatarScore, avatarClub: state.avatarClub),
+            avatarName: event.name,
+            uniqueId: event.id,
+            avatarScore: event.score,
+            avatarClub: event.avatarClub),
       );
     }));
     on<UpdateAvatarPressed>((event, emit) async {

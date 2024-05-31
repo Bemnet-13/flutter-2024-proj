@@ -85,6 +85,7 @@ class CreateLeague extends StatelessWidget {
                     child: Column(
                       children: [
                         FieldEntry(
+                          initialValue: "",
                           text: "League Name",
                           icon: Icons.format_list_numbered_rtl_sharp,
                           isObscured: false,

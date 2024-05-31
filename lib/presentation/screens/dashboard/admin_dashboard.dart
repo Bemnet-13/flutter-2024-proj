@@ -1,5 +1,4 @@
 import 'package:FantasyE/presentation/widgets/appbar.dart';
-import 'package:FantasyE/presentation/widgets/buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:FantasyE/presentation/widgets/drawer.dart';
 import '../../widgets/cards.dart';
@@ -38,7 +37,7 @@ class AdminDashboardScreen extends StatelessWidget {
             height: 10,
           ),
           DashboardCard(
-            navigateTo: '/leagues',
+            navigateTo: '/manage_leagues',
             buttonText: 'Manage Leagues',
             imagePath: 'assets/cale.png',
           ),
@@ -47,7 +46,7 @@ class AdminDashboardScreen extends StatelessWidget {
           ),
         ],
       ),
-      backgroundColor: const Color.fromARGB(255, 245, 245, 245),
+      backgroundColor: Color.fromARGB(255, 245, 245, 245),
     );
   }
 }

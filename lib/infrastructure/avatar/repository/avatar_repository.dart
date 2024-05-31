@@ -20,16 +20,16 @@ class AvatarRepository implements IAvatarRepository {
   Future<Either<AvatarFailure, List<Avatar>>> watchAll() async {
     try {
       final response = await apiClient.fetchData();
-      print(response.body);
+      // print(response.body);
       if (response.statusCode == 200) {
         final List<dynamic> responseBody = jsonDecode(response.body);
         final List<AvatarDto> avatarDtos =
             responseBody.map((json) => AvatarDto.fromJson(json)).toList();
-        print(avatarDtos);
+        // print(avatarDtos);
         final List<Avatar> avatars =
             avatarDtos.map((dto) => dto.toDomain()).toList();
-        print(avatars);
-        print(435);
+        // print(avatars);
+        // print(435);
         return Right(avatars);
       } else {
         return const Left(AvatarFailure.unexpected());
@@ -43,12 +43,12 @@ class AvatarRepository implements IAvatarRepository {
   Future<Either<AvatarFailure, Unit>> create(Avatar avatar) async {
     try {
       final response = await apiClient.createNewAvatar(avatar);
-      print(avatar.avatarClub);
-      print(avatar.avatarName);
-      print(avatar.avatarScore);
+      // print(avatar.avatarClub);
+      // print(avatar.avatarName);
+      // print(avatar.avatarScore);
 
-      print(response.body);
-      print(response.statusCode);
+      // print(response.body);
+      // print(response.statusCode);
       if (response.statusCode == 201) {
         return const Right(unit);
       } else {

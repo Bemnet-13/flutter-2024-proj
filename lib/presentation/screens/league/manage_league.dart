@@ -106,7 +106,7 @@ class LeagueTile extends StatelessWidget {
             );
         context.go('/league_details');
       },
-      leading: Icon(
+      leading: const Icon(
         Icons.table_chart_outlined,
         size: 50,
       ),

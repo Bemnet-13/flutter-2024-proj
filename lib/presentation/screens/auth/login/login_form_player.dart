@@ -21,14 +21,14 @@ class LoginPlayer extends StatelessWidget {
         BlocProvider<LoginFormBloc>(
           create: (BuildContext context) => getIt<LoginFormBloc>()
             ..add(
-              LoginFormEvent.roleSelected('PLAYER'),
+              const LoginFormEvent.roleSelected('PLAYER'),
             ),
         ),
         BlocProvider<SignupFormBloc>(
           create: (BuildContext context) => getIt<SignupFormBloc>(),
         ),
       ],
-      child: LoginFormPlayer(),
+      child: const LoginFormPlayer(),
     );
   }
 }

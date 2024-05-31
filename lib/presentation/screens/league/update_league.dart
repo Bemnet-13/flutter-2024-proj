@@ -37,7 +37,7 @@ class UpdateLeague extends StatelessWidget {
                     unexpected: (_) => const Text("Unexpected. Try again"),
                     insufficientPermissions: (_) =>
                         const Text("Insuffiecient Permissions"),
-                    unableToUpdate: (_) =>const Text("Unable to update"),
+                    unableToUpdate: (_) => const Text("Unable to update"),
                     orElse: () => const Text("Please Try again"),
                   ),
                 ),
@@ -82,6 +82,7 @@ class UpdateLeague extends StatelessWidget {
                     child: Column(
                       children: [
                         FieldEntry(
+                          initialValue: state.leagueName.getOrCrash(),
                           text: "League Name",
                           icon: Icons.format_list_numbered_rtl_sharp,
                           isObscured: false,

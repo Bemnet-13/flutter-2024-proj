@@ -1,5 +1,6 @@
 import 'package:FantasyE/presentation/screens/auth/manage_account/all_users.dart';
 import 'package:FantasyE/presentation/screens/auth/manage_account/user_datails.dart';
+import 'package:FantasyE/presentation/screens/avatar/update_avatar.dart';
 import 'package:FantasyE/presentation/screens/league/create_league.dart';
 import 'package:FantasyE/presentation/screens/league/league_details.dart';
 import 'package:FantasyE/presentation/screens/league/manage_league.dart';
@@ -14,7 +15,7 @@ import 'package:FantasyE/presentation/screens/avatar/avatars.dart';
 import 'package:go_router/go_router.dart';
 import 'presentation/screens/dashboard/admin_dashboard.dart';
 import 'presentation/screens/create_team.dart';
-import 'presentation/screens/faq.dart';
+import 'presentation/screens/faq/faq.dart';
 import 'presentation/screens/league/join_league.dart';
 import 'presentation/screens/leaderboard_rank.dart';
 import 'presentation/screens/league/leagues.dart';
@@ -143,10 +144,17 @@ class Routes {
         path: '/leaderboard_rank',
         builder: (context, state) => const LeaderboardRankScreen(),
       ),
+
+      // Avatar routes
       GoRoute(
         name: 'create_avatar',
         path: '/create_avatar',
         builder: (context, state) => const CreateAvatarScreen(),
+      ),
+      GoRoute(
+        name: 'update_avatar',
+        path: '/update_avatar',
+        builder: (context, state) => const UpdateAvatarScreen(),
       ),
       GoRoute(
         name: 'add_avatar',

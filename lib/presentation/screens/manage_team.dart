@@ -61,12 +61,12 @@ class ManageTeamScreen extends StatelessWidget {
                   const SizedBox(
                     height: 25.0,
                   ),
-                  Expanded(child: PlayerTile("Kevin De Bruyne", "Man City")),
-                  Expanded(child: PlayerTile("Mo Salah", "Liverpool")),
+                  PlayerTile("Kevin De Bruyne", "Man City"),
+                  PlayerTile("Mo Salah", "Liverpool"),
                   const SizedBox(
                     height: 25.0,
                   ),
-                  RightAlignedButton(
+                  const RightAlignedButton(
                       "Add Players", CustomColors.accent, 'add_avatar'),
                   const SizedBox(
                     height: 50,
