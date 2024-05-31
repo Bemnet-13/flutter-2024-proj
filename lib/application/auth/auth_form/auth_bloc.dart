@@ -5,6 +5,7 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import '../../../domain/auth/i_auth_facade.dart';
 import '../../../../domain/auth/value_objects.dart';
+import "package:equatable/equatable.dart";
 
 part 'auth_event.dart';
 part 'auth_state.dart';
@@ -13,7 +14,8 @@ part 'auth_bloc.freezed.dart';
 @injectable
 class SignupFormBloc extends Bloc<SignupFormEvent, SignupFormState> {
   final IAuthFacade _authFacade;
-  Either<AuthFailure, Unit> failureOrSuccess = left(const AuthFailure.cancelledByUser());
+  Either<AuthFailure, Unit> failureOrSuccess =
+      left(const AuthFailure.cancelledByUser());
 
   SignupFormBloc(this._authFacade) : super(SignupFormState.initial()) {
     on<EmailChanged>((event, emit) {

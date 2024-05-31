@@ -1,11 +1,15 @@
 import 'package:dartz/dartz.dart';
+import 'package:equatable/equatable.dart';
 import '../../domain/core/errors.dart';
 import 'package:FantasyE/domain/core/failures.dart';
 import 'package:FantasyE/domain/core/value_objects.dart';
 import 'package:FantasyE/domain/core/value_validators.dart';
 
-class EmailAddress implements ValueObject {
+class EmailAddress extends Equatable implements ValueObject {
   final Either<ValueFailure<String>, String> value;
+
+  @override
+  List<Object> get props => [value];
 
   const EmailAddress._(this.value);
 
@@ -32,9 +36,12 @@ class EmailAddress implements ValueObject {
   }
 }
 
-class Password implements ValueObject {
+class Password extends Equatable implements ValueObject {
   @override
   final Either<ValueFailure<String>, String> value;
+
+  @override
+  List<Object> get props => [value];
 
   const Password._(this.value);
   bool isValid() => value.isRight();
@@ -60,7 +67,10 @@ class Password implements ValueObject {
   }
 }
 
-class Role implements ValueObject {
+class Role extends Equatable implements ValueObject {
+  @override
+  List<Object> get props => [value];
+
   final Either<ValueFailure<String>, String> value;
   const Role._(this.value);
 
@@ -86,9 +96,11 @@ class Role implements ValueObject {
   }
 }
 
-class Name implements ValueObject {
+class Name extends Equatable implements ValueObject {
   final Either<ValueFailure<String>, String> value;
   const Name._(this.value);
+  @override
+  List<Object> get props => [value];
 
   bool isValid() => value.isRight();
 

@@ -1866,7 +1866,7 @@ class __$$SignupFormStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SignupFormStateImpl implements _SignupFormState {
+class _$SignupFormStateImpl extends _SignupFormState {
   const _$SignupFormStateImpl(
       {required this.emailAddress,
       required this.password,
@@ -1875,7 +1875,8 @@ class _$SignupFormStateImpl implements _SignupFormState {
       required this.roleValue,
       required this.showErrorMessages,
       required this.isSubmitting,
-      required this.authFailureOrSuccessOption});
+      required this.authFailureOrSuccessOption})
+      : super._();
 
   @override
   final EmailAddress emailAddress;
@@ -1894,46 +1895,6 @@ class _$SignupFormStateImpl implements _SignupFormState {
   @override
   final Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption;
 
-  @override
-  String toString() {
-    return 'SignupFormState(emailAddress: $emailAddress, password: $password, name: $name, role: $role, roleValue: $roleValue, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, authFailureOrSuccessOption: $authFailureOrSuccessOption)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SignupFormStateImpl &&
-            (identical(other.emailAddress, emailAddress) ||
-                other.emailAddress == emailAddress) &&
-            (identical(other.password, password) ||
-                other.password == password) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.role, role) || other.role == role) &&
-            (identical(other.roleValue, roleValue) ||
-                other.roleValue == roleValue) &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                other.showErrorMessages == showErrorMessages) &&
-            (identical(other.isSubmitting, isSubmitting) ||
-                other.isSubmitting == isSubmitting) &&
-            (identical(other.authFailureOrSuccessOption,
-                    authFailureOrSuccessOption) ||
-                other.authFailureOrSuccessOption ==
-                    authFailureOrSuccessOption));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      emailAddress,
-      password,
-      name,
-      role,
-      roleValue,
-      showErrorMessages,
-      isSubmitting,
-      authFailureOrSuccessOption);
-
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
@@ -1942,7 +1903,7 @@ class _$SignupFormStateImpl implements _SignupFormState {
           this, _$identity);
 }
 
-abstract class _SignupFormState implements SignupFormState {
+abstract class _SignupFormState extends SignupFormState {
   const factory _SignupFormState(
       {required final EmailAddress emailAddress,
       required final Password password,
@@ -1953,6 +1914,7 @@ abstract class _SignupFormState implements SignupFormState {
       required final bool isSubmitting,
       required final Option<Either<AuthFailure, Unit>>
           authFailureOrSuccessOption}) = _$SignupFormStateImpl;
+  const _SignupFormState._() : super._();
 
   @override
   EmailAddress get emailAddress;
