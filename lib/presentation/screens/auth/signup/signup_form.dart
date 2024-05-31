@@ -6,7 +6,7 @@ import '../../../widgets/text_fields.dart';
 import '../../../widgets/chips.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
-import '../../../../application/auth/auth_bloc.dart';
+import '../../../../application/auth/auth_form/auth_bloc.dart';
 import 'package:FantasyE/application/auth/auth_logic/auth_logic_bloc.dart';
 
 class SignUpForm extends StatelessWidget {

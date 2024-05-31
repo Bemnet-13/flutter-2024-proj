@@ -1,8 +1,6 @@
 import 'dart:ui';
-
 import '../widgets/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import '../widgets/circular_display.dart';
 import '../widgets/player_tile.dart';
 import '../widgets/buttons.dart';
@@ -63,12 +61,13 @@ class ManageTeamScreen extends StatelessWidget {
                   const SizedBox(
                     height: 25.0,
                   ),
-                  PlayerTile("Kevin De Bruyne", "Man City"),
-                  PlayerTile("Mo Salah", "Liverpool"),
+                  Expanded(child: PlayerTile("Kevin De Bruyne", "Man City")),
+                  Expanded(child: PlayerTile("Mo Salah", "Liverpool")),
                   const SizedBox(
                     height: 25.0,
                   ),
-                  RightAlignedButton("Add Players", CustomColors.accent, 'add_avatar'),
+                  RightAlignedButton(
+                      "Add Players", CustomColors.accent, 'add_avatar'),
                   const SizedBox(
                     height: 50,
                   ),

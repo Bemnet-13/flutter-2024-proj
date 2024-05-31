@@ -3,7 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:FantasyE/application/auth/auth_logic/auth_logic_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import '../../application/auth/auth_bloc.dart';
+import '../../application/auth/auth_form/auth_bloc.dart';
 import 'colors.dart';
 
 class CustomButton extends StatelessWidget {
@@ -16,6 +16,24 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
         onPressed: () => context.go(navigateTo),
+        style: setButtonStyle(buttonColor, 16.0, 8.0),
+        child: setButtonText(buttonText, Colors.black, 25.0, FontWeight.bold));
+  }
+}
+
+class ActionButton extends StatelessWidget {
+  final String buttonText;
+  final Color buttonColor;
+  final void Function() onPressedAction;
+
+  const ActionButton(
+      {required this.buttonText,
+      required this.buttonColor,
+      required this.onPressedAction});
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+        onPressed: onPressedAction,
         style: setButtonStyle(buttonColor, 16.0, 8.0),
         child: setButtonText(buttonText, Colors.black, 25.0, FontWeight.bold));
   }

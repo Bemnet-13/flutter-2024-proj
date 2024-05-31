@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../application/auth/auth_bloc.dart';
+import '../../application/auth/auth_form/auth_bloc.dart';
 
 class EmailFieldEntry extends StatelessWidget {
   static const text = 'EMAIL';
@@ -155,7 +155,7 @@ class FieldEntry extends StatelessWidget {
   final void Function(String value)? onchangedCallback;
   final String Function(String? _)? validatorCallback;
   //  = Icons.person_2_rounded;
-  final isObscured;
+  final bool isObscured;
   const FieldEntry(
       {required this.text,
       required this.icon,

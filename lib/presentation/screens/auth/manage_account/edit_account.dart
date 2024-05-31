@@ -5,7 +5,7 @@ import 'package:FantasyE/presentation/widgets/text_fields.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import '../../../../../injection.dart';
-import 'package:FantasyE/application/manage_account/manage_account_bloc.dart';
+import 'package:FantasyE/application/auth/manage_account/manage_account_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 class EditAccount extends StatelessWidget {
@@ -75,95 +75,97 @@ class EditAccountForm extends StatelessWidget {
             icon: Icons.arrow_back,
           ),
           body: Form(
-              autovalidateMode: state.showErrorMessages
-                  ? AutovalidateMode.always
-                  : AutovalidateMode.disabled,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  FieldEntry(
-                    text: 'NAME',
-                    icon: Icons.person,
-                    isObscured: false,
-                    validatorCallback: (_) =>
-                        context.read<ManageAccountBloc>().state.name.value.fold(
-                              (f) => f.maybeMap(
-                                invalidName: (_) => 'Short Name',
-                                orElse: () => 'Please fill out the Name field',
-                              ),
-                              (_) => 'Please fill out the name field',
+            autovalidateMode: state.showErrorMessages
+                ? AutovalidateMode.always
+                : AutovalidateMode.disabled,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                FieldEntry(
+                  text: 'NAME',
+                  icon: Icons.person,
+                  isObscured: false,
+                  validatorCallback: (_) =>
+                      context.read<ManageAccountBloc>().state.name.value.fold(
+                            (f) => f.maybeMap(
+                              invalidName: (_) => 'Short Name',
+                              orElse: () => 'Please fill out the Name field',
                             ),
-                    onchangedCallback: (value) => context
-                        .read<ManageAccountBloc>()
-                        .add(ManageAccountEvent.nameChanged(value)),
-                  ),
-                  FieldEntry(
-                    text: 'EMAIL',
-                    icon: Icons.email_outlined,
-                    isObscured: false,
-                    validatorCallback: (_) => context
-                        .read<ManageAccountBloc>()
-                        .state
-                        .emailAddress
-                        .value
-                        .fold(
-                          (f) => f.maybeMap(
-                            invalidEmail: (_) => 'Invalid Email',
-                            orElse: () => 'Please fill out the Email field',
+                            (_) => 'Please fill out the name field',
                           ),
-                          (_) => 'Please fill out the Email field',
+                  onchangedCallback: (value) => context
+                      .read<ManageAccountBloc>()
+                      .add(ManageAccountEvent.nameChanged(value)),
+                ),
+                FieldEntry(
+                  text: 'EMAIL',
+                  icon: Icons.email_outlined,
+                  isObscured: false,
+                  validatorCallback: (_) => context
+                      .read<ManageAccountBloc>()
+                      .state
+                      .emailAddress
+                      .value
+                      .fold(
+                        (f) => f.maybeMap(
+                          invalidEmail: (_) => 'Invalid Email',
+                          orElse: () => 'Please fill out the Email field',
                         ),
-                    onchangedCallback: (value) => context
-                        .read<ManageAccountBloc>()
-                        .add(ManageAccountEvent.emailChanged(value)),
-                  ),
-                  FieldEntry(
-                    text: 'PASSWORD',
-                    icon: Icons.lock_open_outlined,
-                    isObscured: true,
-                    validatorCallback: (_) => context
-                        .read<ManageAccountBloc>()
-                        .state
-                        .password
-                        .value
-                        .fold(
-                          (f) => f.maybeMap(
-                            shortPassword: (_) => 'Short password',
-                            orElse: () => 'Please fill out the Password field',
-                          ),
-                          (_) => 'Please fill out the Password field',
+                        (_) => 'Please fill out the Email field',
+                      ),
+                  onchangedCallback: (value) => context
+                      .read<ManageAccountBloc>()
+                      .add(ManageAccountEvent.emailChanged(value)),
+                ),
+                FieldEntry(
+                  text: 'PASSWORD',
+                  icon: Icons.lock_open_outlined,
+                  isObscured: true,
+                  validatorCallback: (_) => context
+                      .read<ManageAccountBloc>()
+                      .state
+                      .password
+                      .value
+                      .fold(
+                        (f) => f.maybeMap(
+                          shortPassword: (_) => 'Short password',
+                          orElse: () => 'Please fill out the Password field',
                         ),
-                    onchangedCallback: (value) => context
-                        .read<ManageAccountBloc>()
-                        .add(ManageAccountEvent.passwordChanged(value)),
-                  ),
-                  FieldEntry(
-                    text: 'TEAM NAME',
-                    icon: Icons.group_add_sharp,
-                    isObscured: false,
-                    validatorCallback: (_) => context
-                        .read<ManageAccountBloc>()
-                        .state
-                        .teamName
-                        .value
-                        .fold(
-                          (f) => f.maybeMap(
-                            invalidName: (_) => 'Short Team Name',
-                            orElse: () => 'Please fill out the team name field',
-                          ),
-                          (_) => 'Please fill out the team name field',
+                        (_) => 'Please fill out the Password field',
+                      ),
+                  onchangedCallback: (value) => context
+                      .read<ManageAccountBloc>()
+                      .add(ManageAccountEvent.passwordChanged(value)),
+                ),
+                FieldEntry(
+                  text: 'TEAM NAME',
+                  icon: Icons.group_add_sharp,
+                  isObscured: false,
+                  validatorCallback: (_) => context
+                      .read<ManageAccountBloc>()
+                      .state
+                      .teamName
+                      .value
+                      .fold(
+                        (f) => f.maybeMap(
+                          invalidName: (_) => 'Short Team Name',
+                          orElse: () => 'Please fill out the team name field',
                         ),
-                    onchangedCallback: (value) => context
-                        .read<ManageAccountBloc>()
-                        .add(ManageAccountEvent.teamNameChanged(value)),
-                  ),
-                  AuthButton('DONE', CustomColors.divider, '/splash', true, () {
-                    context.read<ManageAccountBloc>().add(
-                          const ManageAccountEvent.updateUserAccountPressed(),
-                        );
-                  })
-                ],
-              )),
+                        (_) => 'Please fill out the team name field',
+                      ),
+                  onchangedCallback: (value) => context
+                      .read<ManageAccountBloc>()
+                      .add(ManageAccountEvent.teamNameChanged(value)),
+                ),
+                AuthButton('DONE', CustomColors.divider, '/splash', true,
+                 () {
+                  context.read<ManageAccountBloc>().add(
+                        const ManageAccountEvent.updateUserAccountPressed(),
+                      );
+                })
+              ],
+            ),
+          ),
         );
       },
     );

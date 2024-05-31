@@ -1,7 +1,7 @@
 import 'package:FantasyE/presentation/widgets/buttons.dart';
 import 'package:FantasyE/presentation/widgets/colors.dart';
 
-import '../widgets/appbar.dart';
+import '../../widgets/appbar.dart';
 import 'package:flutter/material.dart';
 
 class MyLeaguesScreen extends StatelessWidget {

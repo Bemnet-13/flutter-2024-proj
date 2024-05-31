@@ -1,4 +1,3 @@
-import 'package:FantasyE/infrastructure/auth/model/login_model.dart';
 
 class LoginDto {
   final String email;
@@ -16,11 +15,11 @@ class LoginDto {
     return {'email': email, 'password': password, 'role': role};
   }
 
-  Login toDomain() {
-    return Login(email: email, password: password, role: role);
+  LoginDto toDomain() {
+    return LoginDto(email: email, password: password, role: role);
   }
 
-  factory LoginDto.fromDomain(Login login) {
+  factory LoginDto.fromDomain(LoginDto login) {
     return LoginDto(
         email: login.email, password: login.password, role: login.role);
   }

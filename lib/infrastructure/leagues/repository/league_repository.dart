@@ -1,36 +1,29 @@
 import 'dart:convert';
 import 'package:dartz/dartz.dart';
-import 'package:http/http.dart' as http;
 import 'package:injectable/injectable.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-
 import 'package:FantasyE/domain/leagues/i_league_repository.dart';
 import 'package:FantasyE/domain/leagues/league.dart';
 import 'package:FantasyE/domain/leagues/league_failure.dart';
-import 'package:FantasyE/infrastructure/leagues/league_dtos.dart';
+import 'package:FantasyE/infrastructure/leagues/dto/league_dtos.dart';
+import '../api_client.dart';
 
 @LazySingleton(as: ILeagueRepository)
 class LeagueRepository implements ILeagueRepository {
-  final token = const FlutterSecureStorage();
-  final url = Uri.parse('http://10.0.2.2:3000/league');
+  ApiClient apiClient;
+  LeagueRepository(this.apiClient);
   @override
   Future<Either<LeagueFailure, List<League>>> getAllLeagues() async {
-    String? tokenValue = await token.read(key: 'Token');
-    final headers = {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer $tokenValue',
-    };
     try {
-      final response = await http.get(
-        url, // Replace with your API URL
-        headers: headers,
-      );
+      final response = await apiClient.getAllLeaguesFromDb();
       if (response.statusCode == 200) {
         final List<dynamic> responseBody = jsonDecode(response.body);
+
         final List<LeagueDto> leagueDtos =
             responseBody.map((json) => LeagueDto.fromJson(json)).toList();
+
         final List<League> leagues =
             leagueDtos.map((dto) => dto.toDomain()).toList();
+
         return right(leagues);
       } else {
         return left(const LeagueFailure.unexpected());
@@ -42,23 +35,14 @@ class LeagueRepository implements ILeagueRepository {
 
   @override
   Future<Either<LeagueFailure, Unit>> createLeague(League league) async {
-    String? tokenValue = await token.read(key: 'Token');
-
-    final leagueDto = LeagueDto.fromDomain(league);
-    final headers = {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer $tokenValue',
-    };
-
     try {
-      final response = await http.post(
-        url,
-        headers: headers,
-        body: jsonEncode(leagueDto.toJson()),
-      );
-
+      final response = await apiClient.createLeague(league);
+      final responseBody = jsonDecode(response.body);
       if (response.statusCode == 201) {
         return right(unit);
+      } else if (response.statusCode == 400 &&
+          responseBody['meassage'] == 'name should not be empty') {
+        return left(const LeagueFailure.shortLeagueName());
       } else {
         return left(const LeagueFailure.unexpected());
       }
@@ -69,21 +53,11 @@ class LeagueRepository implements ILeagueRepository {
 
   @override
   Future<Either<LeagueFailure, Unit>> updateLeague(League league) async {
-    String? tokenValue = await token.read(key: 'Token');
-
-    final leagueDto = LeagueDto.fromDomain(league);
-    final headers = {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer $tokenValue',
-    };
-
+    print(league.name.getOrCrash());
+    print(league.id.getOrCrash());
     try {
-      final response = await http.put(
-        url,
-        headers: headers,
-        body: jsonEncode(leagueDto.toJson()),
-      );
-
+      final response = await apiClient.updateLeague(league);
+      print(response.statusCode);
       if (response.statusCode == 200) {
         return right(unit);
       } else {
@@ -96,19 +70,8 @@ class LeagueRepository implements ILeagueRepository {
 
   @override
   Future<Either<LeagueFailure, Unit>> deleteLeague(League league) async {
-    String? tokenValue = await token.read(key: 'Token');
-
-    final headers = {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer $tokenValue',
-    };
-
     try {
-      final response = await http.delete(
-        url,
-        headers: headers,
-        body: jsonEncode({'id': league.id.toString()}),
-      );
+      final response = await apiClient.deleteLeague(league);
 
       if (response.statusCode == 200) {
         return right(unit);

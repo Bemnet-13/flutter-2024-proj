@@ -15,7 +15,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 @LazySingleton(as: IAuthFacade)
 class AuthRepository implements IAuthFacade {
   final ApiClient apiClient;
-  final FlutterSecureStorage secureStorage = FlutterSecureStorage();
+  final FlutterSecureStorage secureStorage = const FlutterSecureStorage();
   AuthRepository({
     required this.apiClient,
   });

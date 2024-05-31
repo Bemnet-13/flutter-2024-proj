@@ -6,4 +6,5 @@ class ApiConstants {
   static const String deleteAccountEndpoint = "$baseUrl/auth/user/";
   static const String suspendAccountEndpoint = "$baseUrl/auth/suspend";
   static const String avatarEndpoint = "$baseUrl/player/";
+  static const String leagueEndpoint = "$baseUrl/leagues/";
 }

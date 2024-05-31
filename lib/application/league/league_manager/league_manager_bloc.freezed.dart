@@ -18,7 +18,11 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$LeagueManagerEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() nameChanged,
+    required TResult Function(String nameStr) nameChanged,
+    required TResult Function(UniqueId id) idSet,
+    required TResult Function(
+            LeagueName name, UniqueId id, List<MemberId> members)
+        leagueSelected,
     required TResult Function() createLeaguePressed,
     required TResult Function() updateLeaguePressed,
     required TResult Function() deleteLeagueTriggered,
@@ -26,7 +30,10 @@ mixin _$LeagueManagerEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? nameChanged,
+    TResult? Function(String nameStr)? nameChanged,
+    TResult? Function(UniqueId id)? idSet,
+    TResult? Function(LeagueName name, UniqueId id, List<MemberId> members)?
+        leagueSelected,
     TResult? Function()? createLeaguePressed,
     TResult? Function()? updateLeaguePressed,
     TResult? Function()? deleteLeagueTriggered,
@@ -34,7 +41,10 @@ mixin _$LeagueManagerEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? nameChanged,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(UniqueId id)? idSet,
+    TResult Function(LeagueName name, UniqueId id, List<MemberId> members)?
+        leagueSelected,
     TResult Function()? createLeaguePressed,
     TResult Function()? updateLeaguePressed,
     TResult Function()? deleteLeagueTriggered,
@@ -44,6 +54,8 @@ mixin _$LeagueManagerEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(NameChanged value) nameChanged,
+    required TResult Function(IdSet value) idSet,
+    required TResult Function(LeagueSelected value) leagueSelected,
     required TResult Function(CreateLeaguePressed value) createLeaguePressed,
     required TResult Function(UpdateLeaguePressed value) updateLeaguePressed,
     required TResult Function(DeleteLeagueTriggered value)
@@ -53,6 +65,8 @@ mixin _$LeagueManagerEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(NameChanged value)? nameChanged,
+    TResult? Function(IdSet value)? idSet,
+    TResult? Function(LeagueSelected value)? leagueSelected,
     TResult? Function(CreateLeaguePressed value)? createLeaguePressed,
     TResult? Function(UpdateLeaguePressed value)? updateLeaguePressed,
     TResult? Function(DeleteLeagueTriggered value)? deleteLeagueTriggered,
@@ -61,6 +75,8 @@ mixin _$LeagueManagerEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NameChanged value)? nameChanged,
+    TResult Function(IdSet value)? idSet,
+    TResult Function(LeagueSelected value)? leagueSelected,
     TResult Function(CreateLeaguePressed value)? createLeaguePressed,
     TResult Function(UpdateLeaguePressed value)? updateLeaguePressed,
     TResult Function(DeleteLeagueTriggered value)? deleteLeagueTriggered,
@@ -92,6 +108,8 @@ abstract class _$$NameChangedImplCopyWith<$Res> {
   factory _$$NameChangedImplCopyWith(
           _$NameChangedImpl value, $Res Function(_$NameChangedImpl) then) =
       __$$NameChangedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String nameStr});
 }
 
 /// @nodoc
@@ -101,60 +119,94 @@ class __$$NameChangedImplCopyWithImpl<$Res>
   __$$NameChangedImplCopyWithImpl(
       _$NameChangedImpl _value, $Res Function(_$NameChangedImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? nameStr = null,
+  }) {
+    return _then(_$NameChangedImpl(
+      null == nameStr
+          ? _value.nameStr
+          : nameStr // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$NameChangedImpl implements NameChanged {
-  const _$NameChangedImpl();
+  const _$NameChangedImpl(this.nameStr);
+
+  @override
+  final String nameStr;
 
   @override
   String toString() {
-    return 'LeagueManagerEvent.nameChanged()';
+    return 'LeagueManagerEvent.nameChanged(nameStr: $nameStr)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$NameChangedImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$NameChangedImpl &&
+            (identical(other.nameStr, nameStr) || other.nameStr == nameStr));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, nameStr);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NameChangedImplCopyWith<_$NameChangedImpl> get copyWith =>
+      __$$NameChangedImplCopyWithImpl<_$NameChangedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() nameChanged,
+    required TResult Function(String nameStr) nameChanged,
+    required TResult Function(UniqueId id) idSet,
+    required TResult Function(
+            LeagueName name, UniqueId id, List<MemberId> members)
+        leagueSelected,
     required TResult Function() createLeaguePressed,
     required TResult Function() updateLeaguePressed,
     required TResult Function() deleteLeagueTriggered,
   }) {
-    return nameChanged();
+    return nameChanged(nameStr);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? nameChanged,
+    TResult? Function(String nameStr)? nameChanged,
+    TResult? Function(UniqueId id)? idSet,
+    TResult? Function(LeagueName name, UniqueId id, List<MemberId> members)?
+        leagueSelected,
     TResult? Function()? createLeaguePressed,
     TResult? Function()? updateLeaguePressed,
     TResult? Function()? deleteLeagueTriggered,
   }) {
-    return nameChanged?.call();
+    return nameChanged?.call(nameStr);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? nameChanged,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(UniqueId id)? idSet,
+    TResult Function(LeagueName name, UniqueId id, List<MemberId> members)?
+        leagueSelected,
     TResult Function()? createLeaguePressed,
     TResult Function()? updateLeaguePressed,
     TResult Function()? deleteLeagueTriggered,
     required TResult orElse(),
   }) {
     if (nameChanged != null) {
-      return nameChanged();
+      return nameChanged(nameStr);
     }
     return orElse();
   }
@@ -163,6 +215,8 @@ class _$NameChangedImpl implements NameChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(NameChanged value) nameChanged,
+    required TResult Function(IdSet value) idSet,
+    required TResult Function(LeagueSelected value) leagueSelected,
     required TResult Function(CreateLeaguePressed value) createLeaguePressed,
     required TResult Function(UpdateLeaguePressed value) updateLeaguePressed,
     required TResult Function(DeleteLeagueTriggered value)
@@ -175,6 +229,8 @@ class _$NameChangedImpl implements NameChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(NameChanged value)? nameChanged,
+    TResult? Function(IdSet value)? idSet,
+    TResult? Function(LeagueSelected value)? leagueSelected,
     TResult? Function(CreateLeaguePressed value)? createLeaguePressed,
     TResult? Function(UpdateLeaguePressed value)? updateLeaguePressed,
     TResult? Function(DeleteLeagueTriggered value)? deleteLeagueTriggered,
@@ -186,6 +242,8 @@ class _$NameChangedImpl implements NameChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NameChanged value)? nameChanged,
+    TResult Function(IdSet value)? idSet,
+    TResult Function(LeagueSelected value)? leagueSelected,
     TResult Function(CreateLeaguePressed value)? createLeaguePressed,
     TResult Function(UpdateLeaguePressed value)? updateLeaguePressed,
     TResult Function(DeleteLeagueTriggered value)? deleteLeagueTriggered,
@@ -199,7 +257,363 @@ class _$NameChangedImpl implements NameChanged {
 }
 
 abstract class NameChanged implements LeagueManagerEvent {
-  const factory NameChanged() = _$NameChangedImpl;
+  const factory NameChanged(final String nameStr) = _$NameChangedImpl;
+
+  String get nameStr;
+  @JsonKey(ignore: true)
+  _$$NameChangedImplCopyWith<_$NameChangedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$IdSetImplCopyWith<$Res> {
+  factory _$$IdSetImplCopyWith(
+          _$IdSetImpl value, $Res Function(_$IdSetImpl) then) =
+      __$$IdSetImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({UniqueId id});
+}
+
+/// @nodoc
+class __$$IdSetImplCopyWithImpl<$Res>
+    extends _$LeagueManagerEventCopyWithImpl<$Res, _$IdSetImpl>
+    implements _$$IdSetImplCopyWith<$Res> {
+  __$$IdSetImplCopyWithImpl(
+      _$IdSetImpl _value, $Res Function(_$IdSetImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+  }) {
+    return _then(_$IdSetImpl(
+      null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$IdSetImpl implements IdSet {
+  const _$IdSetImpl(this.id);
+
+  @override
+  final UniqueId id;
+
+  @override
+  String toString() {
+    return 'LeagueManagerEvent.idSet(id: $id)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$IdSetImpl &&
+            (identical(other.id, id) || other.id == id));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, id);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$IdSetImplCopyWith<_$IdSetImpl> get copyWith =>
+      __$$IdSetImplCopyWithImpl<_$IdSetImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String nameStr) nameChanged,
+    required TResult Function(UniqueId id) idSet,
+    required TResult Function(
+            LeagueName name, UniqueId id, List<MemberId> members)
+        leagueSelected,
+    required TResult Function() createLeaguePressed,
+    required TResult Function() updateLeaguePressed,
+    required TResult Function() deleteLeagueTriggered,
+  }) {
+    return idSet(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String nameStr)? nameChanged,
+    TResult? Function(UniqueId id)? idSet,
+    TResult? Function(LeagueName name, UniqueId id, List<MemberId> members)?
+        leagueSelected,
+    TResult? Function()? createLeaguePressed,
+    TResult? Function()? updateLeaguePressed,
+    TResult? Function()? deleteLeagueTriggered,
+  }) {
+    return idSet?.call(id);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(UniqueId id)? idSet,
+    TResult Function(LeagueName name, UniqueId id, List<MemberId> members)?
+        leagueSelected,
+    TResult Function()? createLeaguePressed,
+    TResult Function()? updateLeaguePressed,
+    TResult Function()? deleteLeagueTriggered,
+    required TResult orElse(),
+  }) {
+    if (idSet != null) {
+      return idSet(id);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NameChanged value) nameChanged,
+    required TResult Function(IdSet value) idSet,
+    required TResult Function(LeagueSelected value) leagueSelected,
+    required TResult Function(CreateLeaguePressed value) createLeaguePressed,
+    required TResult Function(UpdateLeaguePressed value) updateLeaguePressed,
+    required TResult Function(DeleteLeagueTriggered value)
+        deleteLeagueTriggered,
+  }) {
+    return idSet(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NameChanged value)? nameChanged,
+    TResult? Function(IdSet value)? idSet,
+    TResult? Function(LeagueSelected value)? leagueSelected,
+    TResult? Function(CreateLeaguePressed value)? createLeaguePressed,
+    TResult? Function(UpdateLeaguePressed value)? updateLeaguePressed,
+    TResult? Function(DeleteLeagueTriggered value)? deleteLeagueTriggered,
+  }) {
+    return idSet?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NameChanged value)? nameChanged,
+    TResult Function(IdSet value)? idSet,
+    TResult Function(LeagueSelected value)? leagueSelected,
+    TResult Function(CreateLeaguePressed value)? createLeaguePressed,
+    TResult Function(UpdateLeaguePressed value)? updateLeaguePressed,
+    TResult Function(DeleteLeagueTriggered value)? deleteLeagueTriggered,
+    required TResult orElse(),
+  }) {
+    if (idSet != null) {
+      return idSet(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class IdSet implements LeagueManagerEvent {
+  const factory IdSet(final UniqueId id) = _$IdSetImpl;
+
+  UniqueId get id;
+  @JsonKey(ignore: true)
+  _$$IdSetImplCopyWith<_$IdSetImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LeagueSelectedImplCopyWith<$Res> {
+  factory _$$LeagueSelectedImplCopyWith(_$LeagueSelectedImpl value,
+          $Res Function(_$LeagueSelectedImpl) then) =
+      __$$LeagueSelectedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({LeagueName name, UniqueId id, List<MemberId> members});
+}
+
+/// @nodoc
+class __$$LeagueSelectedImplCopyWithImpl<$Res>
+    extends _$LeagueManagerEventCopyWithImpl<$Res, _$LeagueSelectedImpl>
+    implements _$$LeagueSelectedImplCopyWith<$Res> {
+  __$$LeagueSelectedImplCopyWithImpl(
+      _$LeagueSelectedImpl _value, $Res Function(_$LeagueSelectedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? id = null,
+    Object? members = null,
+  }) {
+    return _then(_$LeagueSelectedImpl(
+      null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as LeagueName,
+      null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
+      null == members
+          ? _value._members
+          : members // ignore: cast_nullable_to_non_nullable
+              as List<MemberId>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LeagueSelectedImpl implements LeagueSelected {
+  const _$LeagueSelectedImpl(this.name, this.id, final List<MemberId> members)
+      : _members = members;
+
+  @override
+  final LeagueName name;
+  @override
+  final UniqueId id;
+  final List<MemberId> _members;
+  @override
+  List<MemberId> get members {
+    if (_members is EqualUnmodifiableListView) return _members;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_members);
+  }
+
+  @override
+  String toString() {
+    return 'LeagueManagerEvent.leagueSelected(name: $name, id: $id, members: $members)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LeagueSelectedImpl &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality().equals(other._members, _members));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, name, id, const DeepCollectionEquality().hash(_members));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LeagueSelectedImplCopyWith<_$LeagueSelectedImpl> get copyWith =>
+      __$$LeagueSelectedImplCopyWithImpl<_$LeagueSelectedImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String nameStr) nameChanged,
+    required TResult Function(UniqueId id) idSet,
+    required TResult Function(
+            LeagueName name, UniqueId id, List<MemberId> members)
+        leagueSelected,
+    required TResult Function() createLeaguePressed,
+    required TResult Function() updateLeaguePressed,
+    required TResult Function() deleteLeagueTriggered,
+  }) {
+    return leagueSelected(name, id, members);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String nameStr)? nameChanged,
+    TResult? Function(UniqueId id)? idSet,
+    TResult? Function(LeagueName name, UniqueId id, List<MemberId> members)?
+        leagueSelected,
+    TResult? Function()? createLeaguePressed,
+    TResult? Function()? updateLeaguePressed,
+    TResult? Function()? deleteLeagueTriggered,
+  }) {
+    return leagueSelected?.call(name, id, members);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(UniqueId id)? idSet,
+    TResult Function(LeagueName name, UniqueId id, List<MemberId> members)?
+        leagueSelected,
+    TResult Function()? createLeaguePressed,
+    TResult Function()? updateLeaguePressed,
+    TResult Function()? deleteLeagueTriggered,
+    required TResult orElse(),
+  }) {
+    if (leagueSelected != null) {
+      return leagueSelected(name, id, members);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NameChanged value) nameChanged,
+    required TResult Function(IdSet value) idSet,
+    required TResult Function(LeagueSelected value) leagueSelected,
+    required TResult Function(CreateLeaguePressed value) createLeaguePressed,
+    required TResult Function(UpdateLeaguePressed value) updateLeaguePressed,
+    required TResult Function(DeleteLeagueTriggered value)
+        deleteLeagueTriggered,
+  }) {
+    return leagueSelected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NameChanged value)? nameChanged,
+    TResult? Function(IdSet value)? idSet,
+    TResult? Function(LeagueSelected value)? leagueSelected,
+    TResult? Function(CreateLeaguePressed value)? createLeaguePressed,
+    TResult? Function(UpdateLeaguePressed value)? updateLeaguePressed,
+    TResult? Function(DeleteLeagueTriggered value)? deleteLeagueTriggered,
+  }) {
+    return leagueSelected?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NameChanged value)? nameChanged,
+    TResult Function(IdSet value)? idSet,
+    TResult Function(LeagueSelected value)? leagueSelected,
+    TResult Function(CreateLeaguePressed value)? createLeaguePressed,
+    TResult Function(UpdateLeaguePressed value)? updateLeaguePressed,
+    TResult Function(DeleteLeagueTriggered value)? deleteLeagueTriggered,
+    required TResult orElse(),
+  }) {
+    if (leagueSelected != null) {
+      return leagueSelected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LeagueSelected implements LeagueManagerEvent {
+  const factory LeagueSelected(final LeagueName name, final UniqueId id,
+      final List<MemberId> members) = _$LeagueSelectedImpl;
+
+  LeagueName get name;
+  UniqueId get id;
+  List<MemberId> get members;
+  @JsonKey(ignore: true)
+  _$$LeagueSelectedImplCopyWith<_$LeagueSelectedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -241,7 +655,11 @@ class _$CreateLeaguePressedImpl implements CreateLeaguePressed {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() nameChanged,
+    required TResult Function(String nameStr) nameChanged,
+    required TResult Function(UniqueId id) idSet,
+    required TResult Function(
+            LeagueName name, UniqueId id, List<MemberId> members)
+        leagueSelected,
     required TResult Function() createLeaguePressed,
     required TResult Function() updateLeaguePressed,
     required TResult Function() deleteLeagueTriggered,
@@ -252,7 +670,10 @@ class _$CreateLeaguePressedImpl implements CreateLeaguePressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? nameChanged,
+    TResult? Function(String nameStr)? nameChanged,
+    TResult? Function(UniqueId id)? idSet,
+    TResult? Function(LeagueName name, UniqueId id, List<MemberId> members)?
+        leagueSelected,
     TResult? Function()? createLeaguePressed,
     TResult? Function()? updateLeaguePressed,
     TResult? Function()? deleteLeagueTriggered,
@@ -263,7 +684,10 @@ class _$CreateLeaguePressedImpl implements CreateLeaguePressed {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? nameChanged,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(UniqueId id)? idSet,
+    TResult Function(LeagueName name, UniqueId id, List<MemberId> members)?
+        leagueSelected,
     TResult Function()? createLeaguePressed,
     TResult Function()? updateLeaguePressed,
     TResult Function()? deleteLeagueTriggered,
@@ -279,6 +703,8 @@ class _$CreateLeaguePressedImpl implements CreateLeaguePressed {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(NameChanged value) nameChanged,
+    required TResult Function(IdSet value) idSet,
+    required TResult Function(LeagueSelected value) leagueSelected,
     required TResult Function(CreateLeaguePressed value) createLeaguePressed,
     required TResult Function(UpdateLeaguePressed value) updateLeaguePressed,
     required TResult Function(DeleteLeagueTriggered value)
@@ -291,6 +717,8 @@ class _$CreateLeaguePressedImpl implements CreateLeaguePressed {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(NameChanged value)? nameChanged,
+    TResult? Function(IdSet value)? idSet,
+    TResult? Function(LeagueSelected value)? leagueSelected,
     TResult? Function(CreateLeaguePressed value)? createLeaguePressed,
     TResult? Function(UpdateLeaguePressed value)? updateLeaguePressed,
     TResult? Function(DeleteLeagueTriggered value)? deleteLeagueTriggered,
@@ -302,6 +730,8 @@ class _$CreateLeaguePressedImpl implements CreateLeaguePressed {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NameChanged value)? nameChanged,
+    TResult Function(IdSet value)? idSet,
+    TResult Function(LeagueSelected value)? leagueSelected,
     TResult Function(CreateLeaguePressed value)? createLeaguePressed,
     TResult Function(UpdateLeaguePressed value)? updateLeaguePressed,
     TResult Function(DeleteLeagueTriggered value)? deleteLeagueTriggered,
@@ -357,7 +787,11 @@ class _$UpdateLeaguePressedImpl implements UpdateLeaguePressed {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() nameChanged,
+    required TResult Function(String nameStr) nameChanged,
+    required TResult Function(UniqueId id) idSet,
+    required TResult Function(
+            LeagueName name, UniqueId id, List<MemberId> members)
+        leagueSelected,
     required TResult Function() createLeaguePressed,
     required TResult Function() updateLeaguePressed,
     required TResult Function() deleteLeagueTriggered,
@@ -368,7 +802,10 @@ class _$UpdateLeaguePressedImpl implements UpdateLeaguePressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? nameChanged,
+    TResult? Function(String nameStr)? nameChanged,
+    TResult? Function(UniqueId id)? idSet,
+    TResult? Function(LeagueName name, UniqueId id, List<MemberId> members)?
+        leagueSelected,
     TResult? Function()? createLeaguePressed,
     TResult? Function()? updateLeaguePressed,
     TResult? Function()? deleteLeagueTriggered,
@@ -379,7 +816,10 @@ class _$UpdateLeaguePressedImpl implements UpdateLeaguePressed {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? nameChanged,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(UniqueId id)? idSet,
+    TResult Function(LeagueName name, UniqueId id, List<MemberId> members)?
+        leagueSelected,
     TResult Function()? createLeaguePressed,
     TResult Function()? updateLeaguePressed,
     TResult Function()? deleteLeagueTriggered,
@@ -395,6 +835,8 @@ class _$UpdateLeaguePressedImpl implements UpdateLeaguePressed {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(NameChanged value) nameChanged,
+    required TResult Function(IdSet value) idSet,
+    required TResult Function(LeagueSelected value) leagueSelected,
     required TResult Function(CreateLeaguePressed value) createLeaguePressed,
     required TResult Function(UpdateLeaguePressed value) updateLeaguePressed,
     required TResult Function(DeleteLeagueTriggered value)
@@ -407,6 +849,8 @@ class _$UpdateLeaguePressedImpl implements UpdateLeaguePressed {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(NameChanged value)? nameChanged,
+    TResult? Function(IdSet value)? idSet,
+    TResult? Function(LeagueSelected value)? leagueSelected,
     TResult? Function(CreateLeaguePressed value)? createLeaguePressed,
     TResult? Function(UpdateLeaguePressed value)? updateLeaguePressed,
     TResult? Function(DeleteLeagueTriggered value)? deleteLeagueTriggered,
@@ -418,6 +862,8 @@ class _$UpdateLeaguePressedImpl implements UpdateLeaguePressed {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NameChanged value)? nameChanged,
+    TResult Function(IdSet value)? idSet,
+    TResult Function(LeagueSelected value)? leagueSelected,
     TResult Function(CreateLeaguePressed value)? createLeaguePressed,
     TResult Function(UpdateLeaguePressed value)? updateLeaguePressed,
     TResult Function(DeleteLeagueTriggered value)? deleteLeagueTriggered,
@@ -474,7 +920,11 @@ class _$DeleteLeagueTriggeredImpl implements DeleteLeagueTriggered {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() nameChanged,
+    required TResult Function(String nameStr) nameChanged,
+    required TResult Function(UniqueId id) idSet,
+    required TResult Function(
+            LeagueName name, UniqueId id, List<MemberId> members)
+        leagueSelected,
     required TResult Function() createLeaguePressed,
     required TResult Function() updateLeaguePressed,
     required TResult Function() deleteLeagueTriggered,
@@ -485,7 +935,10 @@ class _$DeleteLeagueTriggeredImpl implements DeleteLeagueTriggered {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? nameChanged,
+    TResult? Function(String nameStr)? nameChanged,
+    TResult? Function(UniqueId id)? idSet,
+    TResult? Function(LeagueName name, UniqueId id, List<MemberId> members)?
+        leagueSelected,
     TResult? Function()? createLeaguePressed,
     TResult? Function()? updateLeaguePressed,
     TResult? Function()? deleteLeagueTriggered,
@@ -496,7 +949,10 @@ class _$DeleteLeagueTriggeredImpl implements DeleteLeagueTriggered {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? nameChanged,
+    TResult Function(String nameStr)? nameChanged,
+    TResult Function(UniqueId id)? idSet,
+    TResult Function(LeagueName name, UniqueId id, List<MemberId> members)?
+        leagueSelected,
     TResult Function()? createLeaguePressed,
     TResult Function()? updateLeaguePressed,
     TResult Function()? deleteLeagueTriggered,
@@ -512,6 +968,8 @@ class _$DeleteLeagueTriggeredImpl implements DeleteLeagueTriggered {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(NameChanged value) nameChanged,
+    required TResult Function(IdSet value) idSet,
+    required TResult Function(LeagueSelected value) leagueSelected,
     required TResult Function(CreateLeaguePressed value) createLeaguePressed,
     required TResult Function(UpdateLeaguePressed value) updateLeaguePressed,
     required TResult Function(DeleteLeagueTriggered value)
@@ -524,6 +982,8 @@ class _$DeleteLeagueTriggeredImpl implements DeleteLeagueTriggered {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(NameChanged value)? nameChanged,
+    TResult? Function(IdSet value)? idSet,
+    TResult? Function(LeagueSelected value)? leagueSelected,
     TResult? Function(CreateLeaguePressed value)? createLeaguePressed,
     TResult? Function(UpdateLeaguePressed value)? updateLeaguePressed,
     TResult? Function(DeleteLeagueTriggered value)? deleteLeagueTriggered,
@@ -535,6 +995,8 @@ class _$DeleteLeagueTriggeredImpl implements DeleteLeagueTriggered {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(NameChanged value)? nameChanged,
+    TResult Function(IdSet value)? idSet,
+    TResult Function(LeagueSelected value)? leagueSelected,
     TResult Function(CreateLeaguePressed value)? createLeaguePressed,
     TResult Function(UpdateLeaguePressed value)? updateLeaguePressed,
     TResult Function(DeleteLeagueTriggered value)? deleteLeagueTriggered,
@@ -555,6 +1017,7 @@ abstract class DeleteLeagueTriggered implements LeagueManagerEvent {
 mixin _$LeagueManagerState {
   LeagueName get leagueName => throw _privateConstructorUsedError;
   UniqueId get uniqueId => throw _privateConstructorUsedError;
+  List<MemberId> get members => throw _privateConstructorUsedError;
   Option<Either<LeagueFailure, Unit>> get operationFailureOrSuccess =>
       throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
@@ -573,6 +1036,7 @@ abstract class $LeagueManagerStateCopyWith<$Res> {
   $Res call(
       {LeagueName leagueName,
       UniqueId uniqueId,
+      List<MemberId> members,
       Option<Either<LeagueFailure, Unit>> operationFailureOrSuccess,
       bool showErrorMessages});
 }
@@ -592,6 +1056,7 @@ class _$LeagueManagerStateCopyWithImpl<$Res, $Val extends LeagueManagerState>
   $Res call({
     Object? leagueName = null,
     Object? uniqueId = null,
+    Object? members = null,
     Object? operationFailureOrSuccess = null,
     Object? showErrorMessages = null,
   }) {
@@ -604,6 +1069,10 @@ class _$LeagueManagerStateCopyWithImpl<$Res, $Val extends LeagueManagerState>
           ? _value.uniqueId
           : uniqueId // ignore: cast_nullable_to_non_nullable
               as UniqueId,
+      members: null == members
+          ? _value.members
+          : members // ignore: cast_nullable_to_non_nullable
+              as List<MemberId>,
       operationFailureOrSuccess: null == operationFailureOrSuccess
           ? _value.operationFailureOrSuccess
           : operationFailureOrSuccess // ignore: cast_nullable_to_non_nullable
@@ -627,6 +1096,7 @@ abstract class _$$LeagueManagerStateImplCopyWith<$Res>
   $Res call(
       {LeagueName leagueName,
       UniqueId uniqueId,
+      List<MemberId> members,
       Option<Either<LeagueFailure, Unit>> operationFailureOrSuccess,
       bool showErrorMessages});
 }
@@ -644,6 +1114,7 @@ class __$$LeagueManagerStateImplCopyWithImpl<$Res>
   $Res call({
     Object? leagueName = null,
     Object? uniqueId = null,
+    Object? members = null,
     Object? operationFailureOrSuccess = null,
     Object? showErrorMessages = null,
   }) {
@@ -656,6 +1127,10 @@ class __$$LeagueManagerStateImplCopyWithImpl<$Res>
           ? _value.uniqueId
           : uniqueId // ignore: cast_nullable_to_non_nullable
               as UniqueId,
+      members: null == members
+          ? _value._members
+          : members // ignore: cast_nullable_to_non_nullable
+              as List<MemberId>,
       operationFailureOrSuccess: null == operationFailureOrSuccess
           ? _value.operationFailureOrSuccess
           : operationFailureOrSuccess // ignore: cast_nullable_to_non_nullable
@@ -674,13 +1149,23 @@ class _$LeagueManagerStateImpl implements _LeagueManagerState {
   const _$LeagueManagerStateImpl(
       {required this.leagueName,
       required this.uniqueId,
+      required final List<MemberId> members,
       required this.operationFailureOrSuccess,
-      required this.showErrorMessages});
+      required this.showErrorMessages})
+      : _members = members;
 
   @override
   final LeagueName leagueName;
   @override
   final UniqueId uniqueId;
+  final List<MemberId> _members;
+  @override
+  List<MemberId> get members {
+    if (_members is EqualUnmodifiableListView) return _members;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_members);
+  }
+
   @override
   final Option<Either<LeagueFailure, Unit>> operationFailureOrSuccess;
   @override
@@ -688,7 +1173,7 @@ class _$LeagueManagerStateImpl implements _LeagueManagerState {
 
   @override
   String toString() {
-    return 'LeagueManagerState(leagueName: $leagueName, uniqueId: $uniqueId, operationFailureOrSuccess: $operationFailureOrSuccess, showErrorMessages: $showErrorMessages)';
+    return 'LeagueManagerState(leagueName: $leagueName, uniqueId: $uniqueId, members: $members, operationFailureOrSuccess: $operationFailureOrSuccess, showErrorMessages: $showErrorMessages)';
   }
 
   @override
@@ -700,6 +1185,7 @@ class _$LeagueManagerStateImpl implements _LeagueManagerState {
                 other.leagueName == leagueName) &&
             (identical(other.uniqueId, uniqueId) ||
                 other.uniqueId == uniqueId) &&
+            const DeepCollectionEquality().equals(other._members, _members) &&
             (identical(other.operationFailureOrSuccess,
                     operationFailureOrSuccess) ||
                 other.operationFailureOrSuccess == operationFailureOrSuccess) &&
@@ -708,8 +1194,13 @@ class _$LeagueManagerStateImpl implements _LeagueManagerState {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, leagueName, uniqueId,
-      operationFailureOrSuccess, showErrorMessages);
+  int get hashCode => Object.hash(
+      runtimeType,
+      leagueName,
+      uniqueId,
+      const DeepCollectionEquality().hash(_members),
+      operationFailureOrSuccess,
+      showErrorMessages);
 
   @JsonKey(ignore: true)
   @override
@@ -723,6 +1214,7 @@ abstract class _LeagueManagerState implements LeagueManagerState {
   const factory _LeagueManagerState(
       {required final LeagueName leagueName,
       required final UniqueId uniqueId,
+      required final List<MemberId> members,
       required final Option<Either<LeagueFailure, Unit>>
           operationFailureOrSuccess,
       required final bool showErrorMessages}) = _$LeagueManagerStateImpl;
@@ -731,6 +1223,8 @@ abstract class _LeagueManagerState implements LeagueManagerState {
   LeagueName get leagueName;
   @override
   UniqueId get uniqueId;
+  @override
+  List<MemberId> get members;
   @override
   Option<Either<LeagueFailure, Unit>> get operationFailureOrSuccess;
   @override

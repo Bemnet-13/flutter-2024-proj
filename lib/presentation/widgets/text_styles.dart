@@ -25,6 +25,8 @@ class StyledText extends StatelessWidget {
     letterSpacing: 6,
     fontFamily: 'Allura',
   );
+  static const TextStyle drawerTestStyle =
+      TextStyle(fontSize: 20, fontWeight: FontWeight.w900);
 
   const StyledText({super.key});
 

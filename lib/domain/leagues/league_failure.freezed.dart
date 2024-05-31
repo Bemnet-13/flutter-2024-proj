@@ -21,6 +21,7 @@ mixin _$LeagueFailure {
     required TResult Function() unexpected,
     required TResult Function() insufficientPermissions,
     required TResult Function() unableToUpdate,
+    required TResult Function() shortLeagueName,
     required TResult Function() notFound,
     required TResult Function() invalidData,
   }) =>
@@ -30,6 +31,7 @@ mixin _$LeagueFailure {
     TResult? Function()? unexpected,
     TResult? Function()? insufficientPermissions,
     TResult? Function()? unableToUpdate,
+    TResult? Function()? shortLeagueName,
     TResult? Function()? notFound,
     TResult? Function()? invalidData,
   }) =>
@@ -39,6 +41,7 @@ mixin _$LeagueFailure {
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
+    TResult Function()? shortLeagueName,
     TResult Function()? notFound,
     TResult Function()? invalidData,
     required TResult orElse(),
@@ -50,6 +53,7 @@ mixin _$LeagueFailure {
     required TResult Function(InsufficientPermissions value)
         insufficientPermissions,
     required TResult Function(UnableToUpdate value) unableToUpdate,
+    required TResult Function(ShortLeagueName value) shortLeagueName,
     required TResult Function(NotFound value) notFound,
     required TResult Function(InvalidData value) invalidData,
   }) =>
@@ -59,6 +63,7 @@ mixin _$LeagueFailure {
     TResult? Function(Unexpected value)? unexpected,
     TResult? Function(InsufficientPermissions value)? insufficientPermissions,
     TResult? Function(UnableToUpdate value)? unableToUpdate,
+    TResult? Function(ShortLeagueName value)? shortLeagueName,
     TResult? Function(NotFound value)? notFound,
     TResult? Function(InvalidData value)? invalidData,
   }) =>
@@ -68,6 +73,7 @@ mixin _$LeagueFailure {
     TResult Function(Unexpected value)? unexpected,
     TResult Function(InsufficientPermissions value)? insufficientPermissions,
     TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult Function(ShortLeagueName value)? shortLeagueName,
     TResult Function(NotFound value)? notFound,
     TResult Function(InvalidData value)? invalidData,
     required TResult orElse(),
@@ -134,6 +140,7 @@ class _$UnexpectedImpl implements Unexpected {
     required TResult Function() unexpected,
     required TResult Function() insufficientPermissions,
     required TResult Function() unableToUpdate,
+    required TResult Function() shortLeagueName,
     required TResult Function() notFound,
     required TResult Function() invalidData,
   }) {
@@ -146,6 +153,7 @@ class _$UnexpectedImpl implements Unexpected {
     TResult? Function()? unexpected,
     TResult? Function()? insufficientPermissions,
     TResult? Function()? unableToUpdate,
+    TResult? Function()? shortLeagueName,
     TResult? Function()? notFound,
     TResult? Function()? invalidData,
   }) {
@@ -158,6 +166,7 @@ class _$UnexpectedImpl implements Unexpected {
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
+    TResult Function()? shortLeagueName,
     TResult Function()? notFound,
     TResult Function()? invalidData,
     required TResult orElse(),
@@ -175,6 +184,7 @@ class _$UnexpectedImpl implements Unexpected {
     required TResult Function(InsufficientPermissions value)
         insufficientPermissions,
     required TResult Function(UnableToUpdate value) unableToUpdate,
+    required TResult Function(ShortLeagueName value) shortLeagueName,
     required TResult Function(NotFound value) notFound,
     required TResult Function(InvalidData value) invalidData,
   }) {
@@ -187,6 +197,7 @@ class _$UnexpectedImpl implements Unexpected {
     TResult? Function(Unexpected value)? unexpected,
     TResult? Function(InsufficientPermissions value)? insufficientPermissions,
     TResult? Function(UnableToUpdate value)? unableToUpdate,
+    TResult? Function(ShortLeagueName value)? shortLeagueName,
     TResult? Function(NotFound value)? notFound,
     TResult? Function(InvalidData value)? invalidData,
   }) {
@@ -199,6 +210,7 @@ class _$UnexpectedImpl implements Unexpected {
     TResult Function(Unexpected value)? unexpected,
     TResult Function(InsufficientPermissions value)? insufficientPermissions,
     TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult Function(ShortLeagueName value)? shortLeagueName,
     TResult Function(NotFound value)? notFound,
     TResult Function(InvalidData value)? invalidData,
     required TResult orElse(),
@@ -258,6 +270,7 @@ class _$InsufficientPermissionsImpl implements InsufficientPermissions {
     required TResult Function() unexpected,
     required TResult Function() insufficientPermissions,
     required TResult Function() unableToUpdate,
+    required TResult Function() shortLeagueName,
     required TResult Function() notFound,
     required TResult Function() invalidData,
   }) {
@@ -270,6 +283,7 @@ class _$InsufficientPermissionsImpl implements InsufficientPermissions {
     TResult? Function()? unexpected,
     TResult? Function()? insufficientPermissions,
     TResult? Function()? unableToUpdate,
+    TResult? Function()? shortLeagueName,
     TResult? Function()? notFound,
     TResult? Function()? invalidData,
   }) {
@@ -282,6 +296,7 @@ class _$InsufficientPermissionsImpl implements InsufficientPermissions {
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
+    TResult Function()? shortLeagueName,
     TResult Function()? notFound,
     TResult Function()? invalidData,
     required TResult orElse(),
@@ -299,6 +314,7 @@ class _$InsufficientPermissionsImpl implements InsufficientPermissions {
     required TResult Function(InsufficientPermissions value)
         insufficientPermissions,
     required TResult Function(UnableToUpdate value) unableToUpdate,
+    required TResult Function(ShortLeagueName value) shortLeagueName,
     required TResult Function(NotFound value) notFound,
     required TResult Function(InvalidData value) invalidData,
   }) {
@@ -311,6 +327,7 @@ class _$InsufficientPermissionsImpl implements InsufficientPermissions {
     TResult? Function(Unexpected value)? unexpected,
     TResult? Function(InsufficientPermissions value)? insufficientPermissions,
     TResult? Function(UnableToUpdate value)? unableToUpdate,
+    TResult? Function(ShortLeagueName value)? shortLeagueName,
     TResult? Function(NotFound value)? notFound,
     TResult? Function(InvalidData value)? invalidData,
   }) {
@@ -323,6 +340,7 @@ class _$InsufficientPermissionsImpl implements InsufficientPermissions {
     TResult Function(Unexpected value)? unexpected,
     TResult Function(InsufficientPermissions value)? insufficientPermissions,
     TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult Function(ShortLeagueName value)? shortLeagueName,
     TResult Function(NotFound value)? notFound,
     TResult Function(InvalidData value)? invalidData,
     required TResult orElse(),
@@ -379,6 +397,7 @@ class _$UnableToUpdateImpl implements UnableToUpdate {
     required TResult Function() unexpected,
     required TResult Function() insufficientPermissions,
     required TResult Function() unableToUpdate,
+    required TResult Function() shortLeagueName,
     required TResult Function() notFound,
     required TResult Function() invalidData,
   }) {
@@ -391,6 +410,7 @@ class _$UnableToUpdateImpl implements UnableToUpdate {
     TResult? Function()? unexpected,
     TResult? Function()? insufficientPermissions,
     TResult? Function()? unableToUpdate,
+    TResult? Function()? shortLeagueName,
     TResult? Function()? notFound,
     TResult? Function()? invalidData,
   }) {
@@ -403,6 +423,7 @@ class _$UnableToUpdateImpl implements UnableToUpdate {
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
+    TResult Function()? shortLeagueName,
     TResult Function()? notFound,
     TResult Function()? invalidData,
     required TResult orElse(),
@@ -420,6 +441,7 @@ class _$UnableToUpdateImpl implements UnableToUpdate {
     required TResult Function(InsufficientPermissions value)
         insufficientPermissions,
     required TResult Function(UnableToUpdate value) unableToUpdate,
+    required TResult Function(ShortLeagueName value) shortLeagueName,
     required TResult Function(NotFound value) notFound,
     required TResult Function(InvalidData value) invalidData,
   }) {
@@ -432,6 +454,7 @@ class _$UnableToUpdateImpl implements UnableToUpdate {
     TResult? Function(Unexpected value)? unexpected,
     TResult? Function(InsufficientPermissions value)? insufficientPermissions,
     TResult? Function(UnableToUpdate value)? unableToUpdate,
+    TResult? Function(ShortLeagueName value)? shortLeagueName,
     TResult? Function(NotFound value)? notFound,
     TResult? Function(InvalidData value)? invalidData,
   }) {
@@ -444,6 +467,7 @@ class _$UnableToUpdateImpl implements UnableToUpdate {
     TResult Function(Unexpected value)? unexpected,
     TResult Function(InsufficientPermissions value)? insufficientPermissions,
     TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult Function(ShortLeagueName value)? shortLeagueName,
     TResult Function(NotFound value)? notFound,
     TResult Function(InvalidData value)? invalidData,
     required TResult orElse(),
@@ -457,6 +481,133 @@ class _$UnableToUpdateImpl implements UnableToUpdate {
 
 abstract class UnableToUpdate implements LeagueFailure {
   const factory UnableToUpdate() = _$UnableToUpdateImpl;
+}
+
+/// @nodoc
+abstract class _$$ShortLeagueNameImplCopyWith<$Res> {
+  factory _$$ShortLeagueNameImplCopyWith(_$ShortLeagueNameImpl value,
+          $Res Function(_$ShortLeagueNameImpl) then) =
+      __$$ShortLeagueNameImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ShortLeagueNameImplCopyWithImpl<$Res>
+    extends _$LeagueFailureCopyWithImpl<$Res, _$ShortLeagueNameImpl>
+    implements _$$ShortLeagueNameImplCopyWith<$Res> {
+  __$$ShortLeagueNameImplCopyWithImpl(
+      _$ShortLeagueNameImpl _value, $Res Function(_$ShortLeagueNameImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ShortLeagueNameImpl implements ShortLeagueName {
+  const _$ShortLeagueNameImpl();
+
+  @override
+  String toString() {
+    return 'LeagueFailure.shortLeagueName()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ShortLeagueNameImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() insufficientPermissions,
+    required TResult Function() unableToUpdate,
+    required TResult Function() shortLeagueName,
+    required TResult Function() notFound,
+    required TResult Function() invalidData,
+  }) {
+    return shortLeagueName();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? unexpected,
+    TResult? Function()? insufficientPermissions,
+    TResult? Function()? unableToUpdate,
+    TResult? Function()? shortLeagueName,
+    TResult? Function()? notFound,
+    TResult? Function()? invalidData,
+  }) {
+    return shortLeagueName?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? insufficientPermissions,
+    TResult Function()? unableToUpdate,
+    TResult Function()? shortLeagueName,
+    TResult Function()? notFound,
+    TResult Function()? invalidData,
+    required TResult orElse(),
+  }) {
+    if (shortLeagueName != null) {
+      return shortLeagueName();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Unexpected value) unexpected,
+    required TResult Function(InsufficientPermissions value)
+        insufficientPermissions,
+    required TResult Function(UnableToUpdate value) unableToUpdate,
+    required TResult Function(ShortLeagueName value) shortLeagueName,
+    required TResult Function(NotFound value) notFound,
+    required TResult Function(InvalidData value) invalidData,
+  }) {
+    return shortLeagueName(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Unexpected value)? unexpected,
+    TResult? Function(InsufficientPermissions value)? insufficientPermissions,
+    TResult? Function(UnableToUpdate value)? unableToUpdate,
+    TResult? Function(ShortLeagueName value)? shortLeagueName,
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(InvalidData value)? invalidData,
+  }) {
+    return shortLeagueName?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Unexpected value)? unexpected,
+    TResult Function(InsufficientPermissions value)? insufficientPermissions,
+    TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult Function(ShortLeagueName value)? shortLeagueName,
+    TResult Function(NotFound value)? notFound,
+    TResult Function(InvalidData value)? invalidData,
+    required TResult orElse(),
+  }) {
+    if (shortLeagueName != null) {
+      return shortLeagueName(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ShortLeagueName implements LeagueFailure {
+  const factory ShortLeagueName() = _$ShortLeagueNameImpl;
 }
 
 /// @nodoc
@@ -500,6 +651,7 @@ class _$NotFoundImpl implements NotFound {
     required TResult Function() unexpected,
     required TResult Function() insufficientPermissions,
     required TResult Function() unableToUpdate,
+    required TResult Function() shortLeagueName,
     required TResult Function() notFound,
     required TResult Function() invalidData,
   }) {
@@ -512,6 +664,7 @@ class _$NotFoundImpl implements NotFound {
     TResult? Function()? unexpected,
     TResult? Function()? insufficientPermissions,
     TResult? Function()? unableToUpdate,
+    TResult? Function()? shortLeagueName,
     TResult? Function()? notFound,
     TResult? Function()? invalidData,
   }) {
@@ -524,6 +677,7 @@ class _$NotFoundImpl implements NotFound {
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
+    TResult Function()? shortLeagueName,
     TResult Function()? notFound,
     TResult Function()? invalidData,
     required TResult orElse(),
@@ -541,6 +695,7 @@ class _$NotFoundImpl implements NotFound {
     required TResult Function(InsufficientPermissions value)
         insufficientPermissions,
     required TResult Function(UnableToUpdate value) unableToUpdate,
+    required TResult Function(ShortLeagueName value) shortLeagueName,
     required TResult Function(NotFound value) notFound,
     required TResult Function(InvalidData value) invalidData,
   }) {
@@ -553,6 +708,7 @@ class _$NotFoundImpl implements NotFound {
     TResult? Function(Unexpected value)? unexpected,
     TResult? Function(InsufficientPermissions value)? insufficientPermissions,
     TResult? Function(UnableToUpdate value)? unableToUpdate,
+    TResult? Function(ShortLeagueName value)? shortLeagueName,
     TResult? Function(NotFound value)? notFound,
     TResult? Function(InvalidData value)? invalidData,
   }) {
@@ -565,6 +721,7 @@ class _$NotFoundImpl implements NotFound {
     TResult Function(Unexpected value)? unexpected,
     TResult Function(InsufficientPermissions value)? insufficientPermissions,
     TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult Function(ShortLeagueName value)? shortLeagueName,
     TResult Function(NotFound value)? notFound,
     TResult Function(InvalidData value)? invalidData,
     required TResult orElse(),
@@ -621,6 +778,7 @@ class _$InvalidDataImpl implements InvalidData {
     required TResult Function() unexpected,
     required TResult Function() insufficientPermissions,
     required TResult Function() unableToUpdate,
+    required TResult Function() shortLeagueName,
     required TResult Function() notFound,
     required TResult Function() invalidData,
   }) {
@@ -633,6 +791,7 @@ class _$InvalidDataImpl implements InvalidData {
     TResult? Function()? unexpected,
     TResult? Function()? insufficientPermissions,
     TResult? Function()? unableToUpdate,
+    TResult? Function()? shortLeagueName,
     TResult? Function()? notFound,
     TResult? Function()? invalidData,
   }) {
@@ -645,6 +804,7 @@ class _$InvalidDataImpl implements InvalidData {
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
+    TResult Function()? shortLeagueName,
     TResult Function()? notFound,
     TResult Function()? invalidData,
     required TResult orElse(),
@@ -662,6 +822,7 @@ class _$InvalidDataImpl implements InvalidData {
     required TResult Function(InsufficientPermissions value)
         insufficientPermissions,
     required TResult Function(UnableToUpdate value) unableToUpdate,
+    required TResult Function(ShortLeagueName value) shortLeagueName,
     required TResult Function(NotFound value) notFound,
     required TResult Function(InvalidData value) invalidData,
   }) {
@@ -674,6 +835,7 @@ class _$InvalidDataImpl implements InvalidData {
     TResult? Function(Unexpected value)? unexpected,
     TResult? Function(InsufficientPermissions value)? insufficientPermissions,
     TResult? Function(UnableToUpdate value)? unableToUpdate,
+    TResult? Function(ShortLeagueName value)? shortLeagueName,
     TResult? Function(NotFound value)? notFound,
     TResult? Function(InvalidData value)? invalidData,
   }) {
@@ -686,6 +848,7 @@ class _$InvalidDataImpl implements InvalidData {
     TResult Function(Unexpected value)? unexpected,
     TResult Function(InsufficientPermissions value)? insufficientPermissions,
     TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult Function(ShortLeagueName value)? shortLeagueName,
     TResult Function(NotFound value)? notFound,
     TResult Function(InvalidData value)? invalidData,
     required TResult orElse(),

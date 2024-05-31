@@ -1,5 +1,5 @@
-// main.dart
 import 'package:FantasyE/application/auth/auth_logic/auth_logic_bloc.dart';
+import 'package:FantasyE/application/league/league_manager/league_manager_bloc.dart';
 import 'package:FantasyE/presentation/widgets/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,9 +22,10 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => getIt<AuthLogicBloc>()
             ..add(
-              AuthLogicEvent.authCheckRequested(),
+              const AuthLogicEvent.authCheckRequested(),
             ),
-        )
+        ),
+        BlocProvider(create: (context) => getIt<LeagueManagerBloc>())
       ],
       child: MaterialApp.router(
         title: 'Fantasy Ethiopia',

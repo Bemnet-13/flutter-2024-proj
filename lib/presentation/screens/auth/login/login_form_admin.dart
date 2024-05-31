@@ -7,7 +7,7 @@ import '../../../widgets/buttons.dart';
 import '../../../widgets/text_styles.dart';
 import '../../../widgets/text_fields.dart';
 import '../../../../injection.dart';
-import '../../../../application/auth/auth_bloc.dart';
+import '../../../../application/auth/auth_form/auth_bloc.dart';
 
 class LoginAdmin extends StatelessWidget {
   const LoginAdmin({super.key});

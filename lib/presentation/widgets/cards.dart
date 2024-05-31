@@ -26,7 +26,7 @@ class DashboardCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(25),
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(
             imagePath,

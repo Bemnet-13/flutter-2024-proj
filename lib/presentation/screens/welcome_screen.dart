@@ -35,7 +35,7 @@ class WelcomeScreen extends StatelessWidget {
                     style: StyledText.welcomeScreenStyle,
                   ),
                   Text(
-                    "Play",
+                    "Play.",
                     style: StyledText.welcomeScreenStyle,
                   ),
                   Text(

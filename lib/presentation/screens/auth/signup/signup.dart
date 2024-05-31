@@ -1,4 +1,4 @@
-import 'package:FantasyE/application/auth/auth_bloc.dart';
+import 'package:FantasyE/application/auth/auth_form/auth_bloc.dart';
 import 'package:FantasyE/application/auth/auth_logic/auth_logic_bloc.dart';
 import 'package:flutter/material.dart';
 import '../../../widgets/colors.dart';

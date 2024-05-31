@@ -7,7 +7,7 @@ import '../../../widgets/text_styles.dart';
 import '../../../widgets/text_fields.dart';
 import '../../../widgets/chips.dart';
 import 'package:flutter/material.dart';
-import '../../../../application/auth/auth_bloc.dart';
+import '../../../../application/auth/auth_form/auth_bloc.dart';
 
 class LoginChoice extends StatefulWidget {
   const LoginChoice({super.key});

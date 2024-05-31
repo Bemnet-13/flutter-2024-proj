@@ -1,8 +1,11 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:FantasyE/application/auth/auth_logic/auth_logic_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'colors.dart';
+import 'package:FantasyE/injection.dart';
 
 class Appbar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -40,21 +43,24 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      title: Text(
-        title,
-        style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
-      ),
-      centerTitle: true,
-      leading: Builder(
-        builder: (context) {
-          return IconButton(
-            icon: Icon(icon),
-            onPressed: () => icon == Icons.menu
-                ? Scaffold.of(context).openDrawer()
-                : context.pop(),
-          );
-        },
+    return BlocProvider(
+      create: (context) => getIt<AuthLogicBloc>(),
+      child: AppBar(
+        title: Text(
+          title,
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
+        ),
+        centerTitle: true,
+        leading: Builder(
+          builder: (context) {
+            return IconButton(
+              icon: Icon(icon),
+              onPressed: () => icon == Icons.menu
+                  ? Scaffold.of(context).openDrawer()
+                  : context.pop(),
+            );
+          },
+        ),
       ),
     );
   }

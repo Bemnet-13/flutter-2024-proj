@@ -6,7 +6,6 @@ import 'package:FantasyE/domain/core/entity.dart';
 import 'package:FantasyE/domain/core/failures.dart';
 import 'package:FantasyE/domain/core/value_objects.dart';
 import 'package:FantasyE/domain/leagues/value_objects.dart';
-
 part 'league.freezed.dart';
 
 @freezed
@@ -23,11 +22,3 @@ abstract class League with _$League implements IEntity {
         members: [],
       );
 }
-
-// extension LeagueX on League {
-  // Option<ValueFailure<dynamic>> get failureOption {
-    // return name.failureOrUnit
-        // .andThen(members.failureOrUnit)
-        // .fold((f) => some(f), (_) => none());
-  // }
-// }

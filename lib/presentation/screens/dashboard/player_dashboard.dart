@@ -2,9 +2,9 @@ import 'package:FantasyE/application/auth/auth_logic/auth_logic_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../widgets/drawer.dart';
-import '../widgets/appbar.dart';
-import '../widgets/cards.dart';
+import '../../widgets/drawer.dart';
+import '../../widgets/appbar.dart';
+import '../../widgets/cards.dart';
 
 class PlayerDashboardScreen extends StatelessWidget {
   const PlayerDashboardScreen({super.key});
@@ -12,11 +12,11 @@ class PlayerDashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppbar(
+      appBar: const CustomAppbar(
         title: 'Player Dashboard',
         icon: Icons.menu,
       ),
-      drawer: DrawerMenu(),
+      drawer: const DrawerMenu(),
       body: BlocListener<AuthLogicBloc, AuthLogicState>(
         listener: (context, state) {},
         child: const Column(

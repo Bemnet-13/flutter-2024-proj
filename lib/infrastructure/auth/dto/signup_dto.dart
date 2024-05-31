@@ -1,5 +1,3 @@
-import 'package:FantasyE/infrastructure/auth/model/signup_model.dart';
-
 class SignupDto {
   final String name;
   final String email;
@@ -24,11 +22,11 @@ class SignupDto {
     return {'name': name, 'email': email, 'password': password, 'role': role};
   }
 
-  Signup toDomain() {
-    return Signup(name: name, email: email, password: password, role: role);
+  SignupDto toDomain() {
+    return SignupDto(name: name, email: email, password: password, role: role);
   }
 
-  factory SignupDto.fromDomain(Signup signup) {
+  factory SignupDto.fromDomain(SignupDto signup) {
     return SignupDto(
         name: signup.name,
         email: signup.email,
