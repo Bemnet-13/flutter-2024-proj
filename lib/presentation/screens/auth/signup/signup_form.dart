@@ -1,11 +1,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../widgets/colors.dart';
-import '../../widgets/buttons.dart';
-import '../../widgets/text_styles.dart';
-import '../../widgets/text_fields.dart';
-import '../../widgets/chips.dart';
+import '../../../widgets/colors.dart';
+import '../../../widgets/buttons.dart';
+import '../../../widgets/text_styles.dart';
+import '../../../widgets/text_fields.dart';
+import '../../../widgets/chips.dart';
 import 'package:flutter/material.dart';
-import '../../../application/auth/auth_bloc.dart';
+import '../../../../application/auth/auth_bloc.dart';
 
 class SignUpForm extends StatelessWidget {
   const SignUpForm({super.key});
@@ -60,6 +60,7 @@ class SignUpForm extends StatelessWidget {
                         : AutovalidateMode.disabled,
                     child: Column(
                       children: [
+                        NameFieldEntry(),
                         EmailFieldEntry(isLoggingIn: false),
                         PasswordFieldEntry(isLoggingIn: false),
                       ],

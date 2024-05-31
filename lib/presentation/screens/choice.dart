@@ -3,22 +3,30 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import '../widgets/colors.dart';
 
-
 class Choice extends StatelessWidget {
   const Choice({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Center(child: Text("Choose role"),),
-        backgroundColor: CustomColors.primary,),
-      body: Column(
+      appBar: AppBar(
+        title: const Center(
+          child: Text("Choose role"),
+        ),
+        backgroundColor: CustomColors.primary,
+      ),
+      body: const Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("You are logged in as", style: TextStyle(fontSize: 30),),
-          Text('OR', style: TextStyle(fontSize: 30),),
-
+          Text(
+            "You are logged in as",
+            style: TextStyle(fontSize: 30),
+          ),
+          Text(
+            'OR',
+            style: TextStyle(fontSize: 30),
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [

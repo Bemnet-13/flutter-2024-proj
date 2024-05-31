@@ -25,9 +25,17 @@ class SignupFormBloc extends Bloc<SignupFormEvent, SignupFormState> {
           password: Password(event.passwordStr),
           authFailureOrSuccessOption: none()));
     });
+    on<NameChanged>((event, emit) {
+      emit(state.copyWith(
+          name: Name(event.nameStr), authFailureOrSuccessOption: none()));
+    });
     on<ChipSelected>((event, emit) {
       emit(state.copyWith(
           role: Role(event.role), authFailureOrSuccessOption: none()));
+    });
+    on<UpdateChip>((event, emit) {
+      emit(state.copyWith(
+          roleValue: event.value, authFailureOrSuccessOption: none()));
     });
     on<RegisterWithEmailAndPasswordPressed>((event, emit) async {
       final isEmailValid = state.emailAddress.isValid();
@@ -39,6 +47,7 @@ class SignupFormBloc extends Bloc<SignupFormEvent, SignupFormState> {
         await _authFacade.registerWithEmailAndPassword(
             emailAddress: state.emailAddress,
             password: state.password,
+            name: state.name,
             role: state.role);
         emit(state.copyWith(
             showErrorMessages: true, authFailureOrSuccessOption: none()));
@@ -64,6 +73,10 @@ class LoginFormBloc extends Bloc<LoginFormEvent, LoginFormState> {
           password: Password(event.passwordStr),
           authFailureOrSuccessOption: none()));
     });
+    on<RoleSelected>((event, emit) {
+      emit(state.copyWith(
+          role: Role(event.roleStr), authFailureOrSuccessOption: none()));
+    });
     on<LoginWithEmailAndPasswordPressed>((event, emit) async {
       final isEmailValid = state.emailAddress.isValid();
       final isPassowrdValid = state.password.isValid();
@@ -73,7 +86,9 @@ class LoginFormBloc extends Bloc<LoginFormEvent, LoginFormState> {
             isSubmitting: true, authFailureOrSuccessOption: none()));
 
         final failureOrSuccess = await _authFacade.loginWithEmailAndPassword(
-            emailAddress: state.emailAddress, password: state.password);
+            emailAddress: state.emailAddress,
+            password: state.password,
+            role: state.role);
         emit(state.copyWith(
             showErrorMessages: true, authFailureOrSuccessOption: none()));
       }

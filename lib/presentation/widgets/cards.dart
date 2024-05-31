@@ -7,33 +7,37 @@ class DashboardCard extends StatelessWidget {
   final String navigateTo;
   final String buttonText;
   final String imagePath;
-  final double imageWidth;
-  final double imageHeight;
+  static const imageWidth = 185.0;
+  static const imageHeight = 185.0;
 
-  const DashboardCard({super.key,required this.navigateTo, required this.buttonText,  required this.imagePath, required this.imageWidth, required this.imageHeight});
+  const DashboardCard({
+    super.key,
+    required this.navigateTo,
+    required this.buttonText,
+    required this.imagePath,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 200,
-      height: 175,
+      margin: EdgeInsetsDirectional.symmetric(horizontal: 50, vertical: 0),
       decoration: BoxDecoration(
         color: const Color.fromARGB(255, 189, 189, 189),
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(25),
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          SizedBox(
+          Image.asset(
+            imagePath,
             width: imageWidth,
             height: imageHeight,
-            child: Image.asset(
-              imagePath,
-              fit: BoxFit.contain,
-            ),
+            // fit: BoxFit.contain,
           ),
           CardButton(buttonText, CustomColors.texColor, navigateTo),
-
+          SizedBox(
+            height: 5,
+          )
         ],
       ),
     );

@@ -12,6 +12,9 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.invalidRole({
     required T failedValue,
   }) = InvalidRole<T>;
+  const factory ValueFailure.invalidName({
+    required T failedValue,
+  }) = InvalidName<T>;
   const factory ValueFailure.invalidPlayerName({
     required T failedValue,
   }) = InvalidPlayerName<T>;

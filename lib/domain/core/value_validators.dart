@@ -57,3 +57,10 @@ Either<ValueFailure<String>, String> validateStringNotEmpty(String input) {
   }
 }
 
+Either<ValueFailure<String>, String> validateName(String input) {
+  if (input.length >= 3) {
+    return right(input);
+  } else {
+    return left(ValueFailure.invalidName(failedValue: input));
+  }
+}

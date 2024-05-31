@@ -22,6 +22,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) invalidRole,
+    required TResult Function(T failedValue) invalidName,
     required TResult Function(T failedValue) invalidPlayerName,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) empty,
@@ -32,6 +33,7 @@ mixin _$ValueFailure<T> {
     TResult? Function(T failedValue)? invalidEmail,
     TResult? Function(T failedValue)? shortPassword,
     TResult? Function(T failedValue)? invalidRole,
+    TResult? Function(T failedValue)? invalidName,
     TResult? Function(T failedValue)? invalidPlayerName,
     TResult? Function(T failedValue, int max)? exceedingLength,
     TResult? Function(T failedValue)? empty,
@@ -42,6 +44,7 @@ mixin _$ValueFailure<T> {
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidRole,
+    TResult Function(T failedValue)? invalidName,
     TResult Function(T failedValue)? invalidPlayerName,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? empty,
@@ -53,6 +56,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidRole<T> value) invalidRole,
+    required TResult Function(InvalidName<T> value) invalidName,
     required TResult Function(InvalidPlayerName<T> value) invalidPlayerName,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Empty<T> value) empty,
@@ -63,6 +67,7 @@ mixin _$ValueFailure<T> {
     TResult? Function(InvalidEmail<T> value)? invalidEmail,
     TResult? Function(ShortPassword<T> value)? shortPassword,
     TResult? Function(InvalidRole<T> value)? invalidRole,
+    TResult? Function(InvalidName<T> value)? invalidName,
     TResult? Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult? Function(ExceedingLength<T> value)? exceedingLength,
     TResult? Function(Empty<T> value)? empty,
@@ -73,6 +78,7 @@ mixin _$ValueFailure<T> {
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidRole<T> value)? invalidRole,
+    TResult Function(InvalidName<T> value)? invalidName,
     TResult Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
@@ -190,6 +196,7 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) invalidRole,
+    required TResult Function(T failedValue) invalidName,
     required TResult Function(T failedValue) invalidPlayerName,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) empty,
@@ -203,6 +210,7 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
     TResult? Function(T failedValue)? invalidEmail,
     TResult? Function(T failedValue)? shortPassword,
     TResult? Function(T failedValue)? invalidRole,
+    TResult? Function(T failedValue)? invalidName,
     TResult? Function(T failedValue)? invalidPlayerName,
     TResult? Function(T failedValue, int max)? exceedingLength,
     TResult? Function(T failedValue)? empty,
@@ -216,6 +224,7 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidRole,
+    TResult Function(T failedValue)? invalidName,
     TResult Function(T failedValue)? invalidPlayerName,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? empty,
@@ -233,6 +242,7 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidRole<T> value) invalidRole,
+    required TResult Function(InvalidName<T> value) invalidName,
     required TResult Function(InvalidPlayerName<T> value) invalidPlayerName,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Empty<T> value) empty,
@@ -246,6 +256,7 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
     TResult? Function(InvalidEmail<T> value)? invalidEmail,
     TResult? Function(ShortPassword<T> value)? shortPassword,
     TResult? Function(InvalidRole<T> value)? invalidRole,
+    TResult? Function(InvalidName<T> value)? invalidName,
     TResult? Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult? Function(ExceedingLength<T> value)? exceedingLength,
     TResult? Function(Empty<T> value)? empty,
@@ -259,6 +270,7 @@ class _$InvalidEmailImpl<T> implements InvalidEmail<T> {
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidRole<T> value)? invalidRole,
+    TResult Function(InvalidName<T> value)? invalidName,
     TResult Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
@@ -355,6 +367,7 @@ class _$ShortPasswordImpl<T> implements ShortPassword<T> {
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) invalidRole,
+    required TResult Function(T failedValue) invalidName,
     required TResult Function(T failedValue) invalidPlayerName,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) empty,
@@ -368,6 +381,7 @@ class _$ShortPasswordImpl<T> implements ShortPassword<T> {
     TResult? Function(T failedValue)? invalidEmail,
     TResult? Function(T failedValue)? shortPassword,
     TResult? Function(T failedValue)? invalidRole,
+    TResult? Function(T failedValue)? invalidName,
     TResult? Function(T failedValue)? invalidPlayerName,
     TResult? Function(T failedValue, int max)? exceedingLength,
     TResult? Function(T failedValue)? empty,
@@ -381,6 +395,7 @@ class _$ShortPasswordImpl<T> implements ShortPassword<T> {
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidRole,
+    TResult Function(T failedValue)? invalidName,
     TResult Function(T failedValue)? invalidPlayerName,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? empty,
@@ -398,6 +413,7 @@ class _$ShortPasswordImpl<T> implements ShortPassword<T> {
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidRole<T> value) invalidRole,
+    required TResult Function(InvalidName<T> value) invalidName,
     required TResult Function(InvalidPlayerName<T> value) invalidPlayerName,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Empty<T> value) empty,
@@ -411,6 +427,7 @@ class _$ShortPasswordImpl<T> implements ShortPassword<T> {
     TResult? Function(InvalidEmail<T> value)? invalidEmail,
     TResult? Function(ShortPassword<T> value)? shortPassword,
     TResult? Function(InvalidRole<T> value)? invalidRole,
+    TResult? Function(InvalidName<T> value)? invalidName,
     TResult? Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult? Function(ExceedingLength<T> value)? exceedingLength,
     TResult? Function(Empty<T> value)? empty,
@@ -424,6 +441,7 @@ class _$ShortPasswordImpl<T> implements ShortPassword<T> {
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidRole<T> value)? invalidRole,
+    TResult Function(InvalidName<T> value)? invalidName,
     TResult Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
@@ -520,6 +538,7 @@ class _$InvalidRoleImpl<T> implements InvalidRole<T> {
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) invalidRole,
+    required TResult Function(T failedValue) invalidName,
     required TResult Function(T failedValue) invalidPlayerName,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) empty,
@@ -533,6 +552,7 @@ class _$InvalidRoleImpl<T> implements InvalidRole<T> {
     TResult? Function(T failedValue)? invalidEmail,
     TResult? Function(T failedValue)? shortPassword,
     TResult? Function(T failedValue)? invalidRole,
+    TResult? Function(T failedValue)? invalidName,
     TResult? Function(T failedValue)? invalidPlayerName,
     TResult? Function(T failedValue, int max)? exceedingLength,
     TResult? Function(T failedValue)? empty,
@@ -546,6 +566,7 @@ class _$InvalidRoleImpl<T> implements InvalidRole<T> {
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidRole,
+    TResult Function(T failedValue)? invalidName,
     TResult Function(T failedValue)? invalidPlayerName,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? empty,
@@ -563,6 +584,7 @@ class _$InvalidRoleImpl<T> implements InvalidRole<T> {
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidRole<T> value) invalidRole,
+    required TResult Function(InvalidName<T> value) invalidName,
     required TResult Function(InvalidPlayerName<T> value) invalidPlayerName,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Empty<T> value) empty,
@@ -576,6 +598,7 @@ class _$InvalidRoleImpl<T> implements InvalidRole<T> {
     TResult? Function(InvalidEmail<T> value)? invalidEmail,
     TResult? Function(ShortPassword<T> value)? shortPassword,
     TResult? Function(InvalidRole<T> value)? invalidRole,
+    TResult? Function(InvalidName<T> value)? invalidName,
     TResult? Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult? Function(ExceedingLength<T> value)? exceedingLength,
     TResult? Function(Empty<T> value)? empty,
@@ -589,6 +612,7 @@ class _$InvalidRoleImpl<T> implements InvalidRole<T> {
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidRole<T> value)? invalidRole,
+    TResult Function(InvalidName<T> value)? invalidName,
     TResult Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
@@ -610,6 +634,177 @@ abstract class InvalidRole<T> implements ValueFailure<T> {
   @override
   @JsonKey(ignore: true)
   _$$InvalidRoleImplCopyWith<T, _$InvalidRoleImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$InvalidNameImplCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory _$$InvalidNameImplCopyWith(_$InvalidNameImpl<T> value,
+          $Res Function(_$InvalidNameImpl<T>) then) =
+      __$$InvalidNameImplCopyWithImpl<T, $Res>;
+  @override
+  @useResult
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class __$$InvalidNameImplCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res, _$InvalidNameImpl<T>>
+    implements _$$InvalidNameImplCopyWith<T, $Res> {
+  __$$InvalidNameImplCopyWithImpl(
+      _$InvalidNameImpl<T> _value, $Res Function(_$InvalidNameImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(_$InvalidNameImpl<T>(
+      failedValue: freezed == failedValue
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InvalidNameImpl<T> implements InvalidName<T> {
+  const _$InvalidNameImpl({required this.failedValue});
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidName(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InvalidNameImpl<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InvalidNameImplCopyWith<T, _$InvalidNameImpl<T>> get copyWith =>
+      __$$InvalidNameImplCopyWithImpl<T, _$InvalidNameImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) shortPassword,
+    required TResult Function(T failedValue) invalidRole,
+    required TResult Function(T failedValue) invalidName,
+    required TResult Function(T failedValue) invalidPlayerName,
+    required TResult Function(T failedValue, int max) exceedingLength,
+    required TResult Function(T failedValue) empty,
+  }) {
+    return invalidName(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(T failedValue)? invalidEmail,
+    TResult? Function(T failedValue)? shortPassword,
+    TResult? Function(T failedValue)? invalidRole,
+    TResult? Function(T failedValue)? invalidName,
+    TResult? Function(T failedValue)? invalidPlayerName,
+    TResult? Function(T failedValue, int max)? exceedingLength,
+    TResult? Function(T failedValue)? empty,
+  }) {
+    return invalidName?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? shortPassword,
+    TResult Function(T failedValue)? invalidRole,
+    TResult Function(T failedValue)? invalidName,
+    TResult Function(T failedValue)? invalidPlayerName,
+    TResult Function(T failedValue, int max)? exceedingLength,
+    TResult Function(T failedValue)? empty,
+    required TResult orElse(),
+  }) {
+    if (invalidName != null) {
+      return invalidName(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(InvalidRole<T> value) invalidRole,
+    required TResult Function(InvalidName<T> value) invalidName,
+    required TResult Function(InvalidPlayerName<T> value) invalidPlayerName,
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(Empty<T> value) empty,
+  }) {
+    return invalidName(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(InvalidEmail<T> value)? invalidEmail,
+    TResult? Function(ShortPassword<T> value)? shortPassword,
+    TResult? Function(InvalidRole<T> value)? invalidRole,
+    TResult? Function(InvalidName<T> value)? invalidName,
+    TResult? Function(InvalidPlayerName<T> value)? invalidPlayerName,
+    TResult? Function(ExceedingLength<T> value)? exceedingLength,
+    TResult? Function(Empty<T> value)? empty,
+  }) {
+    return invalidName?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(InvalidRole<T> value)? invalidRole,
+    TResult Function(InvalidName<T> value)? invalidName,
+    TResult Function(InvalidPlayerName<T> value)? invalidPlayerName,
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    required TResult orElse(),
+  }) {
+    if (invalidName != null) {
+      return invalidName(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidName<T> implements ValueFailure<T> {
+  const factory InvalidName({required final T failedValue}) =
+      _$InvalidNameImpl<T>;
+
+  @override
+  T get failedValue;
+  @override
+  @JsonKey(ignore: true)
+  _$$InvalidNameImplCopyWith<T, _$InvalidNameImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -686,6 +881,7 @@ class _$InvalidPlayerNameImpl<T> implements InvalidPlayerName<T> {
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) invalidRole,
+    required TResult Function(T failedValue) invalidName,
     required TResult Function(T failedValue) invalidPlayerName,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) empty,
@@ -699,6 +895,7 @@ class _$InvalidPlayerNameImpl<T> implements InvalidPlayerName<T> {
     TResult? Function(T failedValue)? invalidEmail,
     TResult? Function(T failedValue)? shortPassword,
     TResult? Function(T failedValue)? invalidRole,
+    TResult? Function(T failedValue)? invalidName,
     TResult? Function(T failedValue)? invalidPlayerName,
     TResult? Function(T failedValue, int max)? exceedingLength,
     TResult? Function(T failedValue)? empty,
@@ -712,6 +909,7 @@ class _$InvalidPlayerNameImpl<T> implements InvalidPlayerName<T> {
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidRole,
+    TResult Function(T failedValue)? invalidName,
     TResult Function(T failedValue)? invalidPlayerName,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? empty,
@@ -729,6 +927,7 @@ class _$InvalidPlayerNameImpl<T> implements InvalidPlayerName<T> {
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidRole<T> value) invalidRole,
+    required TResult Function(InvalidName<T> value) invalidName,
     required TResult Function(InvalidPlayerName<T> value) invalidPlayerName,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Empty<T> value) empty,
@@ -742,6 +941,7 @@ class _$InvalidPlayerNameImpl<T> implements InvalidPlayerName<T> {
     TResult? Function(InvalidEmail<T> value)? invalidEmail,
     TResult? Function(ShortPassword<T> value)? shortPassword,
     TResult? Function(InvalidRole<T> value)? invalidRole,
+    TResult? Function(InvalidName<T> value)? invalidName,
     TResult? Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult? Function(ExceedingLength<T> value)? exceedingLength,
     TResult? Function(Empty<T> value)? empty,
@@ -755,6 +955,7 @@ class _$InvalidPlayerNameImpl<T> implements InvalidPlayerName<T> {
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidRole<T> value)? invalidRole,
+    TResult Function(InvalidName<T> value)? invalidName,
     TResult Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
@@ -859,6 +1060,7 @@ class _$ExceedingLengthImpl<T> implements ExceedingLength<T> {
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) invalidRole,
+    required TResult Function(T failedValue) invalidName,
     required TResult Function(T failedValue) invalidPlayerName,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) empty,
@@ -872,6 +1074,7 @@ class _$ExceedingLengthImpl<T> implements ExceedingLength<T> {
     TResult? Function(T failedValue)? invalidEmail,
     TResult? Function(T failedValue)? shortPassword,
     TResult? Function(T failedValue)? invalidRole,
+    TResult? Function(T failedValue)? invalidName,
     TResult? Function(T failedValue)? invalidPlayerName,
     TResult? Function(T failedValue, int max)? exceedingLength,
     TResult? Function(T failedValue)? empty,
@@ -885,6 +1088,7 @@ class _$ExceedingLengthImpl<T> implements ExceedingLength<T> {
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidRole,
+    TResult Function(T failedValue)? invalidName,
     TResult Function(T failedValue)? invalidPlayerName,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? empty,
@@ -902,6 +1106,7 @@ class _$ExceedingLengthImpl<T> implements ExceedingLength<T> {
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidRole<T> value) invalidRole,
+    required TResult Function(InvalidName<T> value) invalidName,
     required TResult Function(InvalidPlayerName<T> value) invalidPlayerName,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Empty<T> value) empty,
@@ -915,6 +1120,7 @@ class _$ExceedingLengthImpl<T> implements ExceedingLength<T> {
     TResult? Function(InvalidEmail<T> value)? invalidEmail,
     TResult? Function(ShortPassword<T> value)? shortPassword,
     TResult? Function(InvalidRole<T> value)? invalidRole,
+    TResult? Function(InvalidName<T> value)? invalidName,
     TResult? Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult? Function(ExceedingLength<T> value)? exceedingLength,
     TResult? Function(Empty<T> value)? empty,
@@ -928,6 +1134,7 @@ class _$ExceedingLengthImpl<T> implements ExceedingLength<T> {
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidRole<T> value)? invalidRole,
+    TResult Function(InvalidName<T> value)? invalidName,
     TResult Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,
@@ -1025,6 +1232,7 @@ class _$EmptyImpl<T> implements Empty<T> {
     required TResult Function(T failedValue) invalidEmail,
     required TResult Function(T failedValue) shortPassword,
     required TResult Function(T failedValue) invalidRole,
+    required TResult Function(T failedValue) invalidName,
     required TResult Function(T failedValue) invalidPlayerName,
     required TResult Function(T failedValue, int max) exceedingLength,
     required TResult Function(T failedValue) empty,
@@ -1038,6 +1246,7 @@ class _$EmptyImpl<T> implements Empty<T> {
     TResult? Function(T failedValue)? invalidEmail,
     TResult? Function(T failedValue)? shortPassword,
     TResult? Function(T failedValue)? invalidRole,
+    TResult? Function(T failedValue)? invalidName,
     TResult? Function(T failedValue)? invalidPlayerName,
     TResult? Function(T failedValue, int max)? exceedingLength,
     TResult? Function(T failedValue)? empty,
@@ -1051,6 +1260,7 @@ class _$EmptyImpl<T> implements Empty<T> {
     TResult Function(T failedValue)? invalidEmail,
     TResult Function(T failedValue)? shortPassword,
     TResult Function(T failedValue)? invalidRole,
+    TResult Function(T failedValue)? invalidName,
     TResult Function(T failedValue)? invalidPlayerName,
     TResult Function(T failedValue, int max)? exceedingLength,
     TResult Function(T failedValue)? empty,
@@ -1068,6 +1278,7 @@ class _$EmptyImpl<T> implements Empty<T> {
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
     required TResult Function(InvalidRole<T> value) invalidRole,
+    required TResult Function(InvalidName<T> value) invalidName,
     required TResult Function(InvalidPlayerName<T> value) invalidPlayerName,
     required TResult Function(ExceedingLength<T> value) exceedingLength,
     required TResult Function(Empty<T> value) empty,
@@ -1081,6 +1292,7 @@ class _$EmptyImpl<T> implements Empty<T> {
     TResult? Function(InvalidEmail<T> value)? invalidEmail,
     TResult? Function(ShortPassword<T> value)? shortPassword,
     TResult? Function(InvalidRole<T> value)? invalidRole,
+    TResult? Function(InvalidName<T> value)? invalidName,
     TResult? Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult? Function(ExceedingLength<T> value)? exceedingLength,
     TResult? Function(Empty<T> value)? empty,
@@ -1094,6 +1306,7 @@ class _$EmptyImpl<T> implements Empty<T> {
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
     TResult Function(InvalidRole<T> value)? invalidRole,
+    TResult Function(InvalidName<T> value)? invalidName,
     TResult Function(InvalidPlayerName<T> value)? invalidPlayerName,
     TResult Function(ExceedingLength<T> value)? exceedingLength,
     TResult Function(Empty<T> value)? empty,

@@ -9,18 +9,26 @@ class RoleChoiceChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ActionChoiceExample(roles: roles);
+    return ChooseRole(
+      roles: roles,
+    );
   }
 }
 
-class ActionChoiceExample extends StatelessWidget {
+class ChooseRole extends StatefulWidget {
   final List<String> roles;
-  ActionChoiceExample({required this.roles});
+  const ChooseRole({required this.roles});
+
+  @override
+  State<ChooseRole> createState() => _ChooseRoleState();
+}
+
+class _ChooseRoleState extends State<ChooseRole> {
+  int _value = 0;
 
   @override
   Widget build(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
-
     return BlocBuilder<SignupFormBloc, SignupFormState>(
       builder: (context, state) {
         return Container(
@@ -33,19 +41,20 @@ class ActionChoiceExample extends StatelessWidget {
               Wrap(
                 spacing: 10.0,
                 children: List<Widget>.generate(
-                  roles.length,
+                  widget.roles.length,
                   (int index) {
                     return ChoiceChip(
-                      label: Text(roles[index]),
-                      selected: state.role.value == roles[index],
+                      label: Text(widget.roles[index]),
+                      selected: _value == index,
                       onSelected: (bool selected) {
-                        print(selected);
-                        if (selected) {
-                          context
-                              .read<SignupFormBloc>()
-                              .add(SignupFormEvent.chipSelected(roles[index]));
-                          print(state.role.value);
-                        }
+                        setState(() {
+                          _value = selected ? index : 0;
+                          if (selected) {
+                            context.read<SignupFormBloc>().add(
+                                SignupFormEvent.chipSelected(
+                                    widget.roles[index]));
+                          }
+                        });
                       },
                     );
                   },
@@ -58,3 +67,12 @@ class ActionChoiceExample extends StatelessWidget {
     );
   }
 }
+
+// class ActionChoiceExample extends StatelessWidget {
+//   final List<String> roles;
+//   ActionChoiceExample({required this.roles});
+// }
+// (bool selected) {                      
+// print('roleValue: ${state.roleValue}');
+// print('index: $index');
+                        

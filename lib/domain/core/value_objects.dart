@@ -5,7 +5,6 @@ import 'package:FantasyE/domain/core/common_interfaces.dart';
 import 'package:FantasyE/domain/core/errors.dart';
 import 'package:FantasyE/domain/core/failures.dart';
 
-
 @immutable
 abstract class ValueObject<T> {
   Either<ValueFailure<T>, T> get value;
@@ -26,10 +25,8 @@ abstract class ValueObject<T> {
   @override
   int get hashCode => value.hashCode;
 
-  
   @override
   String toString() => 'Value($value)';
-
 
   Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
     return value.fold(
@@ -39,10 +36,11 @@ abstract class ValueObject<T> {
   }
 }
 
-
 class UniqueId extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
+  const UniqueId._(this.value);
+
 
   // We cannot let a simple String be passed in. This would allow for possible non-unique IDs.
   factory UniqueId() {
@@ -51,12 +49,11 @@ class UniqueId extends ValueObject<String> {
     );
   }
 
-  /// Used with strings we trust are unique, such as database IDs.
+  // Used with strings we trust are unique, such as database IDs.
   factory UniqueId.fromUniqueString(String uniqueIdStr) {
-    return UniqueId._(
-      right(uniqueIdStr),
-    );
+      return UniqueId._(
+        right(uniqueIdStr),
+      );
+    }
   }
 
-  const UniqueId._(this.value);
-}

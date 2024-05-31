@@ -34,8 +34,15 @@ class EmailFieldEntry extends StatelessWidget {
               : (value) => context
                   .read<SignupFormBloc>()
                   .add(SignupFormEvent.emailChanged(value)),
-          validator: (_) =>
-              context.read<SignupFormBloc>().state.emailAddress.value.fold(
+          validator: (_) => isLoggingIn
+              ? context.read<LoginFormBloc>().state.emailAddress.value.fold(
+                    (f) => f.maybeMap(
+                      invalidEmail: (_) => 'Invalid Email',
+                      orElse: () => null,
+                    ),
+                    (_) => null,
+                  )
+              : context.read<SignupFormBloc>().state.emailAddress.value.fold(
                     (f) => f.maybeMap(
                       invalidEmail: (_) => 'Invalid Email',
                       orElse: () => null,
@@ -62,6 +69,57 @@ class PasswordFieldEntry extends StatelessWidget {
       child: SizedBox(
         width: 350,
         child: TextFormField(
+            decoration: const InputDecoration(
+              labelText: text,
+              prefixIcon: Align(
+                widthFactor: 1.0,
+                heightFactor: 1.0,
+                child: Icon(
+                  icon,
+                ),
+              ),
+            ),
+            obscureText: isObscured,
+            onChanged: isLoggingIn
+                ? (value) => context
+                    .read<LoginFormBloc>()
+                    .add(LoginFormEvent.passwordChangedInLogin(value))
+                : (value) => context
+                    .read<SignupFormBloc>()
+                    .add(SignupFormEvent.passwordChanged(value)),
+            validator: (_) => isLoggingIn
+                ? context.read<LoginFormBloc>().state.password.value.fold(
+                      (f) => f.maybeMap(
+                        shortPassword: (_) => 'Short Password',
+                        orElse: () => null,
+                      ),
+                      (_) => null,
+                    )
+                : context.read<SignupFormBloc>().state.password.value.fold(
+                      (f) => f.maybeMap(
+                        shortPassword: (_) => 'Short Password',
+                        orElse: () => null,
+                      ),
+                      (_) => null,
+                    )),
+      ),
+    );
+  }
+}
+
+class NameFieldEntry extends StatelessWidget {
+  static const text = 'NAME';
+  static const IconData icon = Icons.person_2_rounded;
+  static const isObscured = false;
+  const NameFieldEntry();
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 20.0),
+      child: SizedBox(
+        width: 350,
+        child: TextFormField(
           decoration: const InputDecoration(
             labelText: text,
             prefixIcon: Align(
@@ -73,17 +131,13 @@ class PasswordFieldEntry extends StatelessWidget {
             ),
           ),
           obscureText: isObscured,
-          onChanged: isLoggingIn
-              ? (value) => context
-                  .read<LoginFormBloc>()
-                  .add(LoginFormEvent.passwordChangedInLogin(value))
-              : (value) => context
-                  .read<SignupFormBloc>()
-                  .add(SignupFormEvent.passwordChanged(value)),
+          onChanged: (value) => context
+              .read<SignupFormBloc>()
+              .add(SignupFormEvent.nameChanged(value)),
           validator: (_) =>
-              context.read<SignupFormBloc>().state.password.value.fold(
+              context.read<SignupFormBloc>().state.name.value.fold(
                     (f) => f.maybeMap(
-                      shortPassword: (_) => 'Short Password',
+                      invalidName: (_) => 'Short Name',
                       orElse: () => null,
                     ),
                     (_) => null,

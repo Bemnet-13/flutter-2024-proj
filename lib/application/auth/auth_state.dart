@@ -5,7 +5,9 @@ class SignupFormState with _$SignupFormState {
   const factory SignupFormState({
     required EmailAddress emailAddress,
     required Password password,
+    required Name name,
     required Role role,
+    required int roleValue,
     required bool showErrorMessages,
     required bool isSubmitting,
     required Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption,
@@ -14,6 +16,8 @@ class SignupFormState with _$SignupFormState {
   factory SignupFormState.initial() => SignupFormState(
       emailAddress: EmailAddress(''),
       password: Password(''),
+      name: Name(""),
+      roleValue: 0,
       role: Role('PLAYER'),
       showErrorMessages: false,
       isSubmitting: false,
@@ -25,6 +29,7 @@ class LoginFormState with _$LoginFormState {
   const factory LoginFormState({
     required EmailAddress emailAddress,
     required Password password,
+    required Role role,
     required bool showErrorMessages,
     required bool isSubmitting,
     required Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption,
@@ -33,6 +38,7 @@ class LoginFormState with _$LoginFormState {
   factory LoginFormState.initial() => LoginFormState(
       emailAddress: EmailAddress(''),
       password: Password(''),
+      role: Role(""),
       showErrorMessages: false,
       isSubmitting: false,
       authFailureOrSuccessOption: none());

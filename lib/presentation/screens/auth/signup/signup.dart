@@ -1,12 +1,13 @@
-import 'package:flutter/material.dart';
-import '../../widgets/colors.dart';
 import 'package:FantasyE/application/auth/auth_bloc.dart';
-import '../../../injection.dart';
-import 'login_form.dart';
+import 'package:FantasyE/application/auth/bloc/auth_logic_bloc.dart';
+import 'package:flutter/material.dart';
+import '../../../widgets/colors.dart';
+import '../../../../injection.dart';
+import 'signup_form.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class SignupScreen extends StatelessWidget {
+  const SignupScreen({super.key});
 
   // This widget is the root of your application.
   @override
@@ -21,23 +22,11 @@ class LoginScreen extends StatelessWidget {
             BlocProvider<SignupFormBloc>(
               create: (BuildContext context) => getIt<SignupFormBloc>(),
             ),
+            BlocProvider<AuthLogicBloc>(
+              create: (BuildContext context) => getIt<AuthLogicBloc>(),
+            ),
           ],
-          child: LoginForm(),
+          child: SignUpForm(),
         ));
   }
-}    
-      
-      
-//       MultiBlocProvider(
-//         providers: [
-//           BlocProvider<LoginFormBloc>(
-//             create: (context) => getIt<LoginFormBloc>(),
-//           ),
-//           BlocProvider<SignupFormBloc>(
-//             create: (context) => getIt<SignupFormBloc>(),
-//           ),
-//         ],
-//         child: LoginForm(),
-//       ),)
-//   }
-// }
+}
