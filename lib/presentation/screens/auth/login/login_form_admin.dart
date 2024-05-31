@@ -1,6 +1,7 @@
-import 'package:FantasyE/application/auth/bloc/auth_logic_bloc.dart';
+import 'package:FantasyE/application/auth/auth_logic/auth_logic_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import '../../../widgets/colors.dart';
 import '../../../widgets/buttons.dart';
 import '../../../widgets/text_styles.dart';
@@ -40,15 +41,44 @@ class LoginFormAdmin extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<LoginFormBloc, LoginFormState>(
         listener: (context, state) {
-      state.authFailureOrSuccessOption.fold(
+      state.authFailureOrSuccessOption
+      .fold(
         () {},
         (either) => either.fold(
-          (failure) {},
-          (_) {},
+          (failure) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: failure.map(
+                  cancelledByUser: (_) => const Text('Cancelled'),
+                  serverError: (_) => const Text('Server Error'),
+                  emailAlreadyInUse: (_) =>
+                      const Text('Email Already In Use. Try another email'),
+                  invalidEmailAndPasswordCombination: (_) =>
+                      const Text('Invalid Email or Password'),
+                  invalidRoleUsedInLogin: (_) =>
+                      const Text('Invalid Role. Use defined these roles'),
+                ),
+              ),
+            );
+          },
+          (_) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('Login Successful'),
+                action: SnackBarAction(
+                  label: 'Go To Dashboard',
+                  onPressed: () {
+                    context.go('/admin_dashboard');
+                  },
+                ),
+              ),
+            );
+          },
         ),
       );
     }, builder: (context, state) {
       return Scaffold(
+        backgroundColor: CustomColors.scaffoldBackground,
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -103,8 +133,16 @@ class LoginFormAdmin extends StatelessWidget {
                     const SizedBox(
                       height: 20.0,
                     ),
-                    RegisterButton("LOGIN ", CustomColors.divider,
-                        '/admin_dashboard', true),
+                    AuthButton("LOGIN ", CustomColors.darkPrimary,
+                        '/admin_dashboard', true, () {
+                      context.read<LoginFormBloc>().add(
+                            const LoginFormEvent
+                                .loginWithEmailAndPasswordPressed(),
+                          );
+                      context.read<AuthLogicBloc>().add(
+                            const AuthLogicEvent.loginRequestedAsAdmin(),
+                          );
+                    }),
                     const BottomText(
                         "Don't you have an account?", "Sign Up", '/signup')
                   ],

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:FantasyE/application/auth/bloc/auth_logic_bloc.dart';
+import 'package:FantasyE/application/auth/auth_logic/auth_logic_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import '../../application/auth/auth_bloc.dart';
@@ -21,10 +21,11 @@ class CustomButton extends StatelessWidget {
   }
 }
 
-class RegisterButton extends CustomButton {
+class AuthButton extends CustomButton {
   final bool isLoggingIn;
-  const RegisterButton(
-      super.buttonText, super.buttonColor, super.navigateTo, this.isLoggingIn,
+  final void Function() onPressedAction;
+  const AuthButton(super.buttonText, super.buttonColor, super.navigateTo,
+      this.isLoggingIn, this.onPressedAction,
       {super.key});
 
   @override
@@ -34,35 +35,15 @@ class RegisterButton extends CustomButton {
       children: [
         const Text(" "),
         ElevatedButton(
-          onPressed: () {
-            isLoggingIn
-                ? context.read<LoginFormBloc>().add(
-                      const LoginFormEvent.loginWithEmailAndPasswordPressed(),
-                    )
-                : context.read<SignupFormBloc>().add(
-                      const SignupFormEvent
-                          .registerWithEmailAndPasswordPressed(),
-                    );
-            if (navigateTo == '/admin_dashboard') {
-              context.read<AuthLogicBloc>().add(
-                    const AuthLogicEvent.loginRequestedAsAdmin(),
-                  );
-              print('I have sent loginRequestedAsAdmin Event');
-            } else {
-              context.read<AuthLogicBloc>().add(
-                    const AuthLogicEvent.loginRequestedAsPlayer(),
-                  );
-            }
-            context.go('/splash');
-          },
+          onPressed: onPressedAction,
           style: setButtonStyle(buttonColor, 13.0, 8.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              setButtonText(buttonText, Colors.black, 25.0, FontWeight.bold),
+              setButtonText(buttonText, Colors.white, 25.0, FontWeight.bold),
               const Icon(
                 Icons.arrow_forward,
-                color: Colors.black,
+                color: Colors.white,
               )
             ],
           ),

@@ -1,5 +1,6 @@
 // main.dart
-import 'package:FantasyE/application/auth/bloc/auth_logic_bloc.dart';
+import 'package:FantasyE/application/auth/auth_logic/auth_logic_bloc.dart';
+import 'package:FantasyE/presentation/widgets/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -29,9 +30,15 @@ class MyApp extends StatelessWidget {
         title: 'Fantasy Ethiopia',
         routerConfig: routeSetup.router,
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
           useMaterial3: true,
           fontFamily: 'Poppins',
+          appBarTheme: const AppBarTheme(
+            backgroundColor: CustomColors.primary,
+            centerTitle: true,
+            iconTheme: IconThemeData(color: Colors.white),
+            actionsIconTheme: IconThemeData(color: Colors.white),
+          ),
         ),
       ),
     );

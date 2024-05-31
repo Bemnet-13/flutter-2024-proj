@@ -13,21 +13,21 @@ class CustomTextFIeld extends StatelessWidget {
         label: Text(
           label,
           style: const TextStyle(
-            color: CustomColors.texColor,
+            color: CustomColors.primaryText,
             fontSize: 16,
           ),
         ),
         labelStyle: const TextStyle(
-          color: CustomColors.texColor,
+          color: CustomColors.primaryText,
           fontSize: 18,
         ),
         hintText: hintText,
         hintStyle: const TextStyle(
-          color: CustomColors.subText,
+          color: CustomColors.secondaryText,
         ),
         focusedBorder: const OutlineInputBorder(
           borderSide: BorderSide(
-            color: CustomColors.texColor,
+            color: CustomColors.primaryText,
             width: 2,
           ),
         ),

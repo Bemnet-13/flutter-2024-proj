@@ -10,7 +10,10 @@ class LeaderboardRankScreen extends StatelessWidget {
   @override
   Widget build(context) {
     return Scaffold(
-      appBar: Appbar(title: "Leader Board"),
+      appBar: CustomAppbar(
+        title: "Leader Board",
+        icon: Icons.menu,
+      ),
       body: LeaderBoardListBody(),
     );
   }

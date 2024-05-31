@@ -9,7 +9,7 @@ class CustomAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-      backgroundColor: CustomColors.texColor,
+      backgroundColor: CustomColors.primaryText,
       radius: rad,
       child: CircleAvatar(
         radius: rad - 1,

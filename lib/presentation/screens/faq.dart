@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class FaqScreen extends StatelessWidget {
   const FaqScreen({super.key});
@@ -13,7 +14,20 @@ class FaqScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Icon(Icons.arrow_back),
+        backgroundColor: Colors.white,
+        leading: Builder(
+          builder: (context) {
+            return IconButton(
+              icon: const Icon(
+                Icons.arrow_back,
+                color: Colors.black,
+              ),
+              onPressed: () {
+                context.pop();
+              },
+            );
+          },
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(

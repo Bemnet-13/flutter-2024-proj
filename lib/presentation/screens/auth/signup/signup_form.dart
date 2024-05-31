@@ -4,8 +4,10 @@ import '../../../widgets/buttons.dart';
 import '../../../widgets/text_styles.dart';
 import '../../../widgets/text_fields.dart';
 import '../../../widgets/chips.dart';
+import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
 import '../../../../application/auth/auth_bloc.dart';
+import 'package:FantasyE/application/auth/auth_logic/auth_logic_bloc.dart';
 
 class SignUpForm extends StatelessWidget {
   const SignUpForm({super.key});
@@ -17,8 +19,35 @@ class SignUpForm extends StatelessWidget {
       state.authFailureOrSuccessOption.fold(
         () {},
         (either) => either.fold(
-          (failure) {},
-          (_) {},
+          (failure) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: failure.map(
+                  cancelledByUser: (_) => const Text('Cancelled'),
+                  serverError: (_) => const Text('Server Error'),
+                  emailAlreadyInUse: (_) =>
+                      const Text('Email Already In Use. Try another email'),
+                  invalidEmailAndPasswordCombination: (_) =>
+                      const Text('Invalid Email or Password'),
+                  invalidRoleUsedInLogin: (_) =>
+                      const Text('Invalid Role. Use defined these roles'),
+                ),
+              ),
+            );
+          },
+          (_) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: const Text('Registration successful'),
+                action: SnackBarAction(
+                  label: 'Go To Login',
+                  onPressed: () {
+                    context.go('/login');
+                  },
+                ),
+              ),
+            );
+          },
         ),
       );
     }, builder: (context, state) {
@@ -69,7 +98,15 @@ class SignUpForm extends StatelessWidget {
                   const SizedBox(
                     height: 20.0,
                   ),
-                  RegisterButton("SIGNUP ", CustomColors.divider,'/login', false),
+                  AuthButton(
+                    "SIGNUP ",
+                    CustomColors.darkPrimary,
+                    '/login',
+                    false,
+                    () => context.read<SignupFormBloc>().add(
+                          SignupFormEvent.registerWithEmailAndPasswordPressed(),
+                        ),
+                  ),
                   const BottomText(
                       "Already have an account?", "Login", '/login')
                 ],
@@ -81,3 +118,20 @@ class SignUpForm extends StatelessWidget {
     });
   }
 }
+
+// 
+//  ? context.read<LoginFormBloc>().add(
+      //  const LoginFormEvent
+          //  .loginWithEmailAndPasswordPressed(),
+    //  )
+// 
+// if (navigateTo == '/admin_dashboard') {
+  // context.read<AuthLogicBloc>().add(
+        // const AuthLogicEvent.loginRequestedAsAdmin(),
+      // );
+  // print('I have sent loginRequestedAsAdmin Event');
+// } else {
+  // context.read<AuthLogicBloc>().add(
+        // const AuthLogicEvent.loginRequestedAsPlayer(),
+      // );
+// }

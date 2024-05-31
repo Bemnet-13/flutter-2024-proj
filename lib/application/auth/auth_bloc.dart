@@ -13,6 +13,7 @@ part 'auth_bloc.freezed.dart';
 @injectable
 class SignupFormBloc extends Bloc<SignupFormEvent, SignupFormState> {
   final IAuthFacade _authFacade;
+  Either<AuthFailure, Unit> failureOrSuccess = left(const AuthFailure.cancelledByUser());
 
   SignupFormBloc(this._authFacade) : super(SignupFormState.initial()) {
     on<EmailChanged>((event, emit) {
@@ -44,16 +45,19 @@ class SignupFormBloc extends Bloc<SignupFormEvent, SignupFormState> {
       if (isEmailValid && isPassowrdValid) {
         emit(state.copyWith(
             isSubmitting: true, authFailureOrSuccessOption: none()));
-        await _authFacade.registerWithEmailAndPassword(
+        failureOrSuccess = await _authFacade.registerWithEmailAndPassword(
             emailAddress: state.emailAddress,
             password: state.password,
             name: state.name,
             role: state.role);
-        emit(state.copyWith(
-            showErrorMessages: true, authFailureOrSuccessOption: none()));
       }
-      emit(state.copyWith(
-          showErrorMessages: true, authFailureOrSuccessOption: none()));
+      emit(
+        state.copyWith(
+          isSubmitting: false,
+          showErrorMessages: true,
+          authFailureOrSuccessOption: optionOf(failureOrSuccess),
+        ),
+      );
     });
   }
 }
@@ -61,6 +65,7 @@ class SignupFormBloc extends Bloc<SignupFormEvent, SignupFormState> {
 @injectable
 class LoginFormBloc extends Bloc<LoginFormEvent, LoginFormState> {
   final IAuthFacade _authFacade;
+  // late Either<AuthFailure, Unit> failureOrSuccess;
 
   LoginFormBloc(this._authFacade) : super(LoginFormState.initial()) {
     on<EmailChangedInLogin>((event, emit) {
@@ -89,11 +94,21 @@ class LoginFormBloc extends Bloc<LoginFormEvent, LoginFormState> {
             emailAddress: state.emailAddress,
             password: state.password,
             role: state.role);
-        emit(state.copyWith(
-            showErrorMessages: true, authFailureOrSuccessOption: none()));
+
+        emit(
+          state.copyWith(
+            isSubmitting: false,
+            showErrorMessages: true,
+            authFailureOrSuccessOption: optionOf(failureOrSuccess),
+          ),
+        );
       }
-      emit(state.copyWith(
-          showErrorMessages: true, authFailureOrSuccessOption: none()));
+      emit(
+        state.copyWith(
+          isSubmitting: false,
+          showErrorMessages: true,
+        ),
+      );
     });
   }
 }

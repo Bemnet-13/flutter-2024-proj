@@ -9,11 +9,12 @@ class RoleChoiceChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChooseRole(
+    return const ChooseRole(
       roles: roles,
     );
   }
 }
+
 
 class ChooseRole extends StatefulWidget {
   final List<String> roles;
@@ -37,7 +38,14 @@ class _ChooseRoleState extends State<ChooseRole> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text('As', style: textTheme.headlineMedium),
+              Text(
+                'Create Account',
+                style: textTheme.headlineLarge,
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Text('As', style: textTheme.headlineSmall),
               Wrap(
                 spacing: 10.0,
                 children: List<Widget>.generate(
@@ -67,12 +75,3 @@ class _ChooseRoleState extends State<ChooseRole> {
     );
   }
 }
-
-// class ActionChoiceExample extends StatelessWidget {
-//   final List<String> roles;
-//   ActionChoiceExample({required this.roles});
-// }
-// (bool selected) {                      
-// print('roleValue: ${state.roleValue}');
-// print('index: $index');
-                        

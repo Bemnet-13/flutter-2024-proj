@@ -1,5 +1,6 @@
+import 'package:FantasyE/presentation/screens/welcome_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:FantasyE/application/auth/bloc/auth_logic_bloc.dart';
+import 'package:FantasyE/application/auth/auth_logic/auth_logic_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart';
 import 'presentation/screens/add_avatar.dart';
@@ -13,9 +14,9 @@ import 'presentation/screens/leaderboard_rank.dart';
 import 'presentation/screens/leagues.dart';
 import 'presentation/screens/auth/login/login.dart';
 import 'presentation/screens/auth/signup/signup.dart';
-import 'presentation/screens/auth/login/login_form_user.dart';
+import 'presentation/screens/auth/login/login_form_player.dart';
+import 'presentation/screens/auth/manage_account/edit_account.dart';
 import 'presentation/screens/auth/login/login_form_admin.dart';
-import 'presentation/screens/auth/login/login_choice.dart';
 import 'presentation/screens/auth/auth_splash.dart';
 import 'presentation/screens/manage_team.dart';
 import 'presentation/screens/my_leagues.dart';
@@ -26,20 +27,20 @@ class Routes {
   final router = GoRouter(
     initialLocation: '/splash',
     // redirect: (context, state) {
-      // final authState = context.read<AuthLogicBloc>().state;
-      // print(authState);
+    // final authState = context.read<AuthLogicBloc>().state;
+    // print(authState);
 
-      // if (authState is Unauthenticated && state.fullPath != '/login') {
-        // return '/login';
-      // } else if (authState is AuthenticatedAsAdmin &&
-          // (state.fullPath == 'login')) {
-        // print('My redirect');
-        // return '/admin_dashboard';
-      // } else if (authState is AuthenticatedAsPlayer &&
-          // (state.fullPath == 'login')) {
-        // return '/player_dashboard';
-      // }
-      // return null;
+    // if (authState is Unauthenticated && state.fullPath != '/login') {
+    // return '/login';
+    // } else if (authState is AuthenticatedAsAdmin &&
+    // (state.fullPath == 'login')) {
+    // print('My redirect');
+    // return '/admin_dashboard';
+    // } else if (authState is AuthenticatedAsPlayer &&
+    // (state.fullPath == 'login')) {
+    // return '/player_dashboard';
+    // }
+    // return null;
     // },
     routes: [
       GoRoute(
@@ -51,6 +52,11 @@ class Routes {
         name: 'login',
         path: '/login',
         builder: (context, state) => const LoginScreen(),
+      ),
+      GoRoute(
+        name: 'welcome',
+        path: '/welcome',
+        builder: (context, state) => const WelcomeScreen(),
       ),
       GoRoute(
         name: 'splash',
@@ -71,6 +77,11 @@ class Routes {
         name: 'signup',
         path: '/signup',
         builder: (context, state) => const SignupScreen(),
+      ),
+      GoRoute(
+        name: 'edit_account',
+        path: '/edit_account',
+        builder: (context, state) => const EditAccount(),
       ),
       GoRoute(
         name: 'admin_dashboard',

@@ -11,7 +11,10 @@ class AdminManageAvatarsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Appbar(title: "Avatars"),
+      appBar: CustomAppbar(
+        title: "Avatars",
+        icon: Icons.menu,
+      ),
       body: AdminAvatarListBody(),
     );
   }

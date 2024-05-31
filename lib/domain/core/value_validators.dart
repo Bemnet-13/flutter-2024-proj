@@ -27,8 +27,8 @@ Either<ValueFailure<String>, String> validateRole(String input) {
   }
 }
 
-Either<ValueFailure<String>, String> validatePlayerName(String input){
-  if (input.length >= 20){
+Either<ValueFailure<String>, String> validatePlayerName(String input) {
+  if (input.length >= 20) {
     return right(input);
   } else {
     return left(ValueFailure.invalidPlayerName(failedValue: input));
@@ -59,6 +59,14 @@ Either<ValueFailure<String>, String> validateStringNotEmpty(String input) {
 
 Either<ValueFailure<String>, String> validateName(String input) {
   if (input.length >= 3) {
+    return right(input);
+  } else {
+    return left(ValueFailure.invalidName(failedValue: input));
+  }
+}
+
+Either<ValueFailure<String>, String> validateTeamName(String input) {
+  if (input.length >= 5) {
     return right(input);
   } else {
     return left(ValueFailure.invalidName(failedValue: input));

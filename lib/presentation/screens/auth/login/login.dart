@@ -13,7 +13,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: CustomColors.lightPrimary,
+      // backgroundColor: CustomColors.lightPrimary,
       body: LoginChoice(),
     );
   }

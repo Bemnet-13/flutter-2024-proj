@@ -1,8 +1,8 @@
-import 'package:FantasyE/application/auth/bloc/auth_logic_bloc.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/widgets.dart';
+import 'package:FantasyE/application/auth/auth_logic/auth_logic_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import '../widgets/drawer.dart';
 import '../widgets/appbar.dart';
 import '../widgets/cards.dart';
 
@@ -12,7 +12,11 @@ class PlayerDashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppbar(title: 'Player DashBoard'),
+      appBar: CustomAppbar(
+        title: 'Player Dashboard',
+        icon: Icons.menu,
+      ),
+      drawer: DrawerMenu(),
       body: BlocListener<AuthLogicBloc, AuthLogicState>(
         listener: (context, state) {},
         child: const Column(
@@ -54,7 +58,7 @@ class PlayerDashboardScreen extends StatelessWidget {
           ],
         ),
       ),
-      backgroundColor: Color.fromARGB(255, 245, 245, 245),
+      backgroundColor: Colors.white,
     );
   }
 }

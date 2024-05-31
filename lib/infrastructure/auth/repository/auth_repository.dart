@@ -4,7 +4,7 @@ import '../../../api_constants.dart';
 import 'package:dartz/dartz.dart';
 import '../../../domain/auth/auth_failure.dart';
 import '../../../domain/auth/value_objects.dart';
-import '../api_client.dart';
+import '../../api_client.dart';
 import '../dto/signup_dto.dart';
 import '../dto/login_dto.dart';
 import 'package:FantasyE/domain/auth/user.dart';
@@ -38,6 +38,13 @@ class AuthRepository implements IAuthFacade {
   @override
   Future<void> logOut() async {
     await secureStorage.delete(key: 'Token');
+    await secureStorage.delete(key: 'Token');
+    String? token = await secureStorage.read(key: 'Token');
+    if (token == null) {
+      print('Token deleted successfully');
+    } else {
+      print('Token is not deleted');
+    }
   }
 
   @override
@@ -111,7 +118,10 @@ class AuthRepository implements IAuthFacade {
       if (response.statusCode == 500 ||
           responseBody['message'] == 'Internal server error') {
         return left(const AuthFailure.serverError());
-      } else if (response.statusCode == 401 ||
+      } else if (response.statusCode == 401 &&
+          responseBody['message'] == 'Invalid email or password') {
+        return left(const AuthFailure.invalidEmailAndPasswordCombination());
+      } else if (response.statusCode == 401 &&
           responseBody['message'] ==
               'Wrong Role. Role not matched correctly.') {
         return left(const AuthFailure.invalidRoleUsedInLogin());

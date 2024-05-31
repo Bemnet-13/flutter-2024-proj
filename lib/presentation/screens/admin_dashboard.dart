@@ -1,6 +1,7 @@
 import 'package:FantasyE/presentation/widgets/appbar.dart';
 import 'package:FantasyE/presentation/widgets/buttons.dart';
 import 'package:flutter/material.dart';
+import 'package:FantasyE/presentation/widgets/drawer.dart';
 import '../widgets/cards.dart';
 
 class AdminDashboardScreen extends StatelessWidget {
@@ -9,7 +10,11 @@ class AdminDashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: CustomAppbar(title: 'Adminboard'),
+      appBar: CustomAppbar(
+        title: 'Adminboard',
+        icon: Icons.menu,
+      ),
+      drawer: DrawerMenu(),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [

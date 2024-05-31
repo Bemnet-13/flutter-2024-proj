@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:FantasyE/application/auth/bloc/auth_logic_bloc.dart';
+import 'package:FantasyE/application/auth/auth_logic/auth_logic_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -11,29 +11,37 @@ class AuthSplash extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<AuthLogicBloc, AuthLogicState>(
       listener: (context, state) {
-        state.map(
-          initial: (_) {
-            context.go('/login');
-          },
-          authenticatedAsAdmin: (_) {
-            context.go('/admin_dashboard');
-          },
-          authenticatedAsPlayer: (_) {
-            context.go('/player_dashboard');
-          },
-          unauthenticated: (_) {
-            context.go('/login');
-          },
-        );
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          state.maybeMap(
+            initial: (_) {
+              context.go('/welocome');
+            },
+            authenticatedAsAdmin: (_) {
+              context.go('/admin_dashboard');
+            },
+            authenticatedAsPlayer: (_) {
+              context.go('/player_dashboard');
+            },
+            unauthenticated: (_) {
+              context.go('/welcome');
+            },
+            orElse: () => context.go('/welcome'),
+          );
+        });
       },
       child: Scaffold(
-        body: Column(
-          children: [
-            Center(
-              child: CircularProgressIndicator(),
-            ),
-            Text('Please Wait...')
-          ],
+        body:Container(
+          width: double.infinity,
+          child: const Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CircularProgressIndicator(),
+              Text(
+                'Please Wait...',
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              )
+            ],
+          ),
         ),
       ),
     );

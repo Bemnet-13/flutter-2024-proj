@@ -1,6 +1,9 @@
+import 'package:FantasyE/presentation/widgets/appbar.dart';
+import 'package:FantasyE/presentation/widgets/buttons.dart';
+import 'package:FantasyE/presentation/widgets/drawer.dart';
+
 import '../widgets/colors.dart';
 import '../widgets/custom_field.dart';
-import '../widgets/my_button.dart';
 import 'package:flutter/material.dart';
 
 class CreateTeamScreen extends StatelessWidget {
@@ -8,32 +11,13 @@ class CreateTeamScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          leading: Builder(
-              builder: (context) => IconButton(
-                    onPressed: () {
-                      Scaffold.of(context).openDrawer();
-                    },
-                    icon: const Icon(
-                      Icons.menu,
-                      color: CustomColors.lightPrimary,
-                    ),
-                  )),
-          title: const Text(
-            'Create Avatar',
-            style: TextStyle(color: CustomColors.lightPrimary),
-          ),
-          centerTitle: true,
-          backgroundColor: CustomColors.darkPrimary,
+    return const Scaffold(
+        appBar: CustomAppbar(
+          title: 'Create Team',
+          icon: Icons.menu,
         ),
-        drawer: const Drawer(
-            // child: Icon(
-            //   Icons.menu,
-            //   color: CustomColors.lightPrimary,
-            // ),
-            ),
-        body: const Padding(
+        drawer: DrawerMenu(),
+        body: Padding(
           padding: EdgeInsets.symmetric(vertical: 30, horizontal: 18),
           child: Center(
             child: Column(
@@ -44,7 +28,7 @@ class CreateTeamScreen extends StatelessWidget {
                 Text(
                   'CREATE YOUR TEAM TO ADD PLAYER AVATARS',
                   style: TextStyle(
-                    color: CustomColors.texColor,
+                    color: CustomColors.primaryText,
                     fontSize: 24,
                   ),
                   textAlign: TextAlign.center,
@@ -60,7 +44,10 @@ class CreateTeamScreen extends StatelessWidget {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
-                  children: [CustomButton(child: 'Create Team')],
+                  children: [
+                    CustomButton(
+                        'Create Team', CustomColors.accent, '/player_dashboard')
+                  ],
                 )
               ],
             ),

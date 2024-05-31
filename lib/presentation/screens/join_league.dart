@@ -10,7 +10,10 @@ class JoinLeagueScreen extends StatelessWidget {
   @override
   Widget build(context) {
     return Scaffold(
-      appBar: Appbar(title: "Leagues"),
+      appBar: CustomAppbar(
+        title: "Leagues",
+        icon: Icons.menu,
+      ),
       body: LeagueListBody(),
     );
   }

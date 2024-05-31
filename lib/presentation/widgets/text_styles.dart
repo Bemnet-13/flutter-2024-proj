@@ -1,3 +1,4 @@
+import 'package:FantasyE/presentation/widgets/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -8,6 +9,22 @@ class StyledText extends StatelessWidget {
   );
   static const TextStyle loginStyle =
       TextStyle(fontWeight: FontWeight.w800, fontSize: 40.0);
+
+  static const TextStyle welcomeScreenStyle = TextStyle(
+      fontFamily: 'Allura',
+      fontSize: 55,
+      fontWeight: FontWeight.w600,
+      color: Colors.white);
+  static const TextStyle welcomeScreenBottomText =
+      TextStyle(fontSize: 30, color: CustomColors.lightPrimary);
+
+  static const TextStyle fantasyEthiopiaText = TextStyle(
+    fontSize: 50,
+    color: Colors.white,
+    fontWeight: FontWeight.normal,
+    letterSpacing: 6,
+    fontFamily: 'Allura',
+  );
 
   const StyledText({super.key});
 

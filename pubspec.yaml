@@ -74,6 +74,9 @@ flutter:
     - family: Poppins
       fonts:
         - asset: fonts/Poppins-Light.ttf
+    - family: Allura
+      fonts:
+        - asset: fonts/Allura-Regular.ttf
 
   assets:
     - assets/

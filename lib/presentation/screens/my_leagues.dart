@@ -1,4 +1,6 @@
-import '../widgets/my_button.dart';
+import 'package:FantasyE/presentation/widgets/buttons.dart';
+import 'package:FantasyE/presentation/widgets/colors.dart';
+
 import '../widgets/appbar.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +10,10 @@ class MyLeaguesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomBar(title: 'My Leagues'),
+      appBar: CustomAppbar(
+        title: 'My Leagues',
+        icon: Icons.menu,
+      ),
       drawer: const Drawer(),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -47,7 +52,8 @@ class MyLeaguesScreen extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        CustomButton(child: 'Leaderboard'),
+                        CustomButton('Leaderboard', CustomColors.accent,
+                            '/player_dashboard'),
                       ],
                     ),
                   ),

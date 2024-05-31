@@ -22,7 +22,7 @@ class DashboardCard extends StatelessWidget {
     return Container(
       margin: EdgeInsetsDirectional.symmetric(horizontal: 50, vertical: 0),
       decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 189, 189, 189),
+        color: CustomColors.lightPrimary,
         borderRadius: BorderRadius.circular(25),
       ),
       child: Column(
@@ -34,7 +34,7 @@ class DashboardCard extends StatelessWidget {
             height: imageHeight,
             // fit: BoxFit.contain,
           ),
-          CardButton(buttonText, CustomColors.texColor, navigateTo),
+          CardButton(buttonText, CustomColors.accent, navigateTo),
           SizedBox(
             height: 5,
           )

@@ -1,5 +1,5 @@
 import 'package:FantasyE/application/auth/auth_bloc.dart';
-import 'package:FantasyE/application/auth/bloc/auth_logic_bloc.dart';
+import 'package:FantasyE/application/auth/auth_logic/auth_logic_bloc.dart';
 import 'package:flutter/material.dart';
 import '../../../widgets/colors.dart';
 import '../../../../injection.dart';
@@ -13,7 +13,7 @@ class SignupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: CustomColors.lightPrimary,
+        backgroundColor: CustomColors.scaffoldBackground,
         body: MultiBlocProvider(
           providers: [
             BlocProvider<LoginFormBloc>(
