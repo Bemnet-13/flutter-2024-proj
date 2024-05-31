@@ -21,6 +21,7 @@ mixin _$AvatarFailure {
     required TResult Function() unexpected,
     required TResult Function() insufficientPermissions,
     required TResult Function() unableToUpdate,
+    required TResult Function() invalidData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +29,7 @@ mixin _$AvatarFailure {
     TResult? Function()? unexpected,
     TResult? Function()? insufficientPermissions,
     TResult? Function()? unableToUpdate,
+    TResult? Function()? invalidData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +37,7 @@ mixin _$AvatarFailure {
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
+    TResult Function()? invalidData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -44,6 +47,7 @@ mixin _$AvatarFailure {
     required TResult Function(InsufficientPermissions value)
         insufficientPermissions,
     required TResult Function(UnableToUpdate value) unableToUpdate,
+    required TResult Function(InvalidData value) invalidData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,6 +55,7 @@ mixin _$AvatarFailure {
     TResult? Function(Unexpected value)? unexpected,
     TResult? Function(InsufficientPermissions value)? insufficientPermissions,
     TResult? Function(UnableToUpdate value)? unableToUpdate,
+    TResult? Function(InvalidData value)? invalidData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -58,6 +63,7 @@ mixin _$AvatarFailure {
     TResult Function(Unexpected value)? unexpected,
     TResult Function(InsufficientPermissions value)? insufficientPermissions,
     TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult Function(InvalidData value)? invalidData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -122,6 +128,7 @@ class _$UnexpectedImpl implements Unexpected {
     required TResult Function() unexpected,
     required TResult Function() insufficientPermissions,
     required TResult Function() unableToUpdate,
+    required TResult Function() invalidData,
   }) {
     return unexpected();
   }
@@ -132,6 +139,7 @@ class _$UnexpectedImpl implements Unexpected {
     TResult? Function()? unexpected,
     TResult? Function()? insufficientPermissions,
     TResult? Function()? unableToUpdate,
+    TResult? Function()? invalidData,
   }) {
     return unexpected?.call();
   }
@@ -142,6 +150,7 @@ class _$UnexpectedImpl implements Unexpected {
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
+    TResult Function()? invalidData,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -157,6 +166,7 @@ class _$UnexpectedImpl implements Unexpected {
     required TResult Function(InsufficientPermissions value)
         insufficientPermissions,
     required TResult Function(UnableToUpdate value) unableToUpdate,
+    required TResult Function(InvalidData value) invalidData,
   }) {
     return unexpected(this);
   }
@@ -167,6 +177,7 @@ class _$UnexpectedImpl implements Unexpected {
     TResult? Function(Unexpected value)? unexpected,
     TResult? Function(InsufficientPermissions value)? insufficientPermissions,
     TResult? Function(UnableToUpdate value)? unableToUpdate,
+    TResult? Function(InvalidData value)? invalidData,
   }) {
     return unexpected?.call(this);
   }
@@ -177,6 +188,7 @@ class _$UnexpectedImpl implements Unexpected {
     TResult Function(Unexpected value)? unexpected,
     TResult Function(InsufficientPermissions value)? insufficientPermissions,
     TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult Function(InvalidData value)? invalidData,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -234,6 +246,7 @@ class _$InsufficientPermissionsImpl implements InsufficientPermissions {
     required TResult Function() unexpected,
     required TResult Function() insufficientPermissions,
     required TResult Function() unableToUpdate,
+    required TResult Function() invalidData,
   }) {
     return insufficientPermissions();
   }
@@ -244,6 +257,7 @@ class _$InsufficientPermissionsImpl implements InsufficientPermissions {
     TResult? Function()? unexpected,
     TResult? Function()? insufficientPermissions,
     TResult? Function()? unableToUpdate,
+    TResult? Function()? invalidData,
   }) {
     return insufficientPermissions?.call();
   }
@@ -254,6 +268,7 @@ class _$InsufficientPermissionsImpl implements InsufficientPermissions {
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
+    TResult Function()? invalidData,
     required TResult orElse(),
   }) {
     if (insufficientPermissions != null) {
@@ -269,6 +284,7 @@ class _$InsufficientPermissionsImpl implements InsufficientPermissions {
     required TResult Function(InsufficientPermissions value)
         insufficientPermissions,
     required TResult Function(UnableToUpdate value) unableToUpdate,
+    required TResult Function(InvalidData value) invalidData,
   }) {
     return insufficientPermissions(this);
   }
@@ -279,6 +295,7 @@ class _$InsufficientPermissionsImpl implements InsufficientPermissions {
     TResult? Function(Unexpected value)? unexpected,
     TResult? Function(InsufficientPermissions value)? insufficientPermissions,
     TResult? Function(UnableToUpdate value)? unableToUpdate,
+    TResult? Function(InvalidData value)? invalidData,
   }) {
     return insufficientPermissions?.call(this);
   }
@@ -289,6 +306,7 @@ class _$InsufficientPermissionsImpl implements InsufficientPermissions {
     TResult Function(Unexpected value)? unexpected,
     TResult Function(InsufficientPermissions value)? insufficientPermissions,
     TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult Function(InvalidData value)? invalidData,
     required TResult orElse(),
   }) {
     if (insufficientPermissions != null) {
@@ -343,6 +361,7 @@ class _$UnableToUpdateImpl implements UnableToUpdate {
     required TResult Function() unexpected,
     required TResult Function() insufficientPermissions,
     required TResult Function() unableToUpdate,
+    required TResult Function() invalidData,
   }) {
     return unableToUpdate();
   }
@@ -353,6 +372,7 @@ class _$UnableToUpdateImpl implements UnableToUpdate {
     TResult? Function()? unexpected,
     TResult? Function()? insufficientPermissions,
     TResult? Function()? unableToUpdate,
+    TResult? Function()? invalidData,
   }) {
     return unableToUpdate?.call();
   }
@@ -363,6 +383,7 @@ class _$UnableToUpdateImpl implements UnableToUpdate {
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToUpdate,
+    TResult Function()? invalidData,
     required TResult orElse(),
   }) {
     if (unableToUpdate != null) {
@@ -378,6 +399,7 @@ class _$UnableToUpdateImpl implements UnableToUpdate {
     required TResult Function(InsufficientPermissions value)
         insufficientPermissions,
     required TResult Function(UnableToUpdate value) unableToUpdate,
+    required TResult Function(InvalidData value) invalidData,
   }) {
     return unableToUpdate(this);
   }
@@ -388,6 +410,7 @@ class _$UnableToUpdateImpl implements UnableToUpdate {
     TResult? Function(Unexpected value)? unexpected,
     TResult? Function(InsufficientPermissions value)? insufficientPermissions,
     TResult? Function(UnableToUpdate value)? unableToUpdate,
+    TResult? Function(InvalidData value)? invalidData,
   }) {
     return unableToUpdate?.call(this);
   }
@@ -398,6 +421,7 @@ class _$UnableToUpdateImpl implements UnableToUpdate {
     TResult Function(Unexpected value)? unexpected,
     TResult Function(InsufficientPermissions value)? insufficientPermissions,
     TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult Function(InvalidData value)? invalidData,
     required TResult orElse(),
   }) {
     if (unableToUpdate != null) {
@@ -409,4 +433,119 @@ class _$UnableToUpdateImpl implements UnableToUpdate {
 
 abstract class UnableToUpdate implements AvatarFailure {
   const factory UnableToUpdate() = _$UnableToUpdateImpl;
+}
+
+/// @nodoc
+abstract class _$$InvalidDataImplCopyWith<$Res> {
+  factory _$$InvalidDataImplCopyWith(
+          _$InvalidDataImpl value, $Res Function(_$InvalidDataImpl) then) =
+      __$$InvalidDataImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$InvalidDataImplCopyWithImpl<$Res>
+    extends _$AvatarFailureCopyWithImpl<$Res, _$InvalidDataImpl>
+    implements _$$InvalidDataImplCopyWith<$Res> {
+  __$$InvalidDataImplCopyWithImpl(
+      _$InvalidDataImpl _value, $Res Function(_$InvalidDataImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$InvalidDataImpl implements InvalidData {
+  const _$InvalidDataImpl();
+
+  @override
+  String toString() {
+    return 'AvatarFailure.invalidData()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$InvalidDataImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() insufficientPermissions,
+    required TResult Function() unableToUpdate,
+    required TResult Function() invalidData,
+  }) {
+    return invalidData();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? unexpected,
+    TResult? Function()? insufficientPermissions,
+    TResult? Function()? unableToUpdate,
+    TResult? Function()? invalidData,
+  }) {
+    return invalidData?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? insufficientPermissions,
+    TResult Function()? unableToUpdate,
+    TResult Function()? invalidData,
+    required TResult orElse(),
+  }) {
+    if (invalidData != null) {
+      return invalidData();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Unexpected value) unexpected,
+    required TResult Function(InsufficientPermissions value)
+        insufficientPermissions,
+    required TResult Function(UnableToUpdate value) unableToUpdate,
+    required TResult Function(InvalidData value) invalidData,
+  }) {
+    return invalidData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Unexpected value)? unexpected,
+    TResult? Function(InsufficientPermissions value)? insufficientPermissions,
+    TResult? Function(UnableToUpdate value)? unableToUpdate,
+    TResult? Function(InvalidData value)? invalidData,
+  }) {
+    return invalidData?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Unexpected value)? unexpected,
+    TResult Function(InsufficientPermissions value)? insufficientPermissions,
+    TResult Function(UnableToUpdate value)? unableToUpdate,
+    TResult Function(InvalidData value)? invalidData,
+    required TResult orElse(),
+  }) {
+    if (invalidData != null) {
+      return invalidData(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidData implements AvatarFailure {
+  const factory InvalidData() = _$InvalidDataImpl;
 }

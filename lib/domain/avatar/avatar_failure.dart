@@ -7,4 +7,5 @@ abstract class AvatarFailure with _$AvatarFailure {
   const factory AvatarFailure.unexpected() = Unexpected;
   const factory AvatarFailure.insufficientPermissions() = InsufficientPermissions;
   const factory AvatarFailure.unableToUpdate() = UnableToUpdate;
+  const factory AvatarFailure.invalidData() = InvalidData;
 }

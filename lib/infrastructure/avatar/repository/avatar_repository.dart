@@ -16,7 +16,7 @@ class AvatarRepository implements IAvatarRepository {
   final ApiClient apiClient;
   AvatarRepository({required this.apiClient});
   @override
-  Stream<Either<AvatarFailure, KtList<Avatar>>> watchAll() async* {
+  Future<Either<AvatarFailure, KtList<Avatar>>> watchAll() async {
     try {
       final response = await apiClient.fetchData();
       if (response.statusCode == 200) {
@@ -26,12 +26,12 @@ class AvatarRepository implements IAvatarRepository {
             .map((data) =>
                 AvatarDto.fromJson(data as Map<String, dynamic>).toDomain())
             .toImmutableList();
-        yield Right(avatars);
+        return Right(avatars);
       } else {
-        yield const Left(AvatarFailure.unexpected());
+        return const Left(AvatarFailure.unexpected());
       }
     } catch (e) {
-      yield const Left(AvatarFailure.unexpected());
+      return const Left(AvatarFailure.unexpected());
     }
   }
 

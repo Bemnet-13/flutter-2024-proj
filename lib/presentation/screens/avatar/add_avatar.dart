@@ -22,7 +22,7 @@ class AddAvatarScreen extends StatelessWidget {
         bloc.add(const AddAvatarEvent.addStarted());
         return bloc;
       },
-      child: Scaffold(
+      child: const Scaffold(
         appBar: Appbar(title: "Avatars"),
         body: AvatarListBody(),
       ),
@@ -92,7 +92,7 @@ class AvatarListEntry extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.all(12),
+          padding: const EdgeInsets.all(12),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(50),
             child: const SizedBox(
@@ -102,15 +102,15 @@ class AvatarListEntry extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(width: 16), // Add spacing between image and text
+        SizedBox(width: 16), 
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              currentAvatar.name.getOrCrash(), 
+              currentAvatar.avatarName.getOrCrash(), 
               style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            Text(currentAvatar.club.getOrCrash()), 
+            Text(currentAvatar.avatarClub.getOrCrash()), 
             
               
               Padding(
@@ -124,7 +124,7 @@ class AvatarListEntry extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  addAvatarBloc.add(AddAvatarEvent.addStarted());
+                  addAvatarBloc.add(const AddAvatarEvent.addStarted());
                 },
                 child: const Text('Add to Team'),
               ),

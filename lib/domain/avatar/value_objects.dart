@@ -17,6 +17,8 @@ class AvatarName extends ValueObject<String> {
     );
   }
 
+  bool isValid() => value.isRight();
+
   const AvatarName._(this.value);
 }
 
@@ -33,6 +35,7 @@ class AvatarClub extends ValueObject<String> {
       validateMaxStringLength(input, maxLength).flatMap(validateStringNotEmpty),
     );
   }
+  bool isValid() => value.isRight();
 
   const AvatarClub._(this.value);
 }
@@ -45,5 +48,7 @@ class AvatarScore extends ValueObject<int> {
   factory AvatarScore(int input){
     return AvatarScore._(right(input),);
   }
+  bool isValid() => value.isRight();
+
   const AvatarScore._(this.value);
 }

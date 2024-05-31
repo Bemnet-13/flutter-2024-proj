@@ -11,24 +11,16 @@ part 'avatar.freezed.dart';
 abstract class Avatar with _$Avatar implements IEntity {
   const factory Avatar({
     required UniqueId id,
-    required AvatarName name,
-    required AvatarScore score,
-    required AvatarClub club,
+    required AvatarName avatarName,
+    required AvatarScore avatarScore,
+    required AvatarClub avatarClub,
   }) = _Avatar;
 
   factory Avatar.empty() => Avatar(
         id: UniqueId(),
-        name: AvatarName(''),
-        score: AvatarScore(0),
-        club: AvatarClub(''),
+        avatarName: AvatarName(''),
+        avatarScore: AvatarScore(0),
+        avatarClub: AvatarClub(''),
       );
 }
 
-extension AvatarX on Avatar {
-  Option<ValueFailure<dynamic>> get failureOption {
-    return name.failureOrUnit
-        .andThen(score.failureOrUnit)
-        .andThen(club.failureOrUnit)
-        .fold((f) => some(f), (_) => none());
-  }
-}

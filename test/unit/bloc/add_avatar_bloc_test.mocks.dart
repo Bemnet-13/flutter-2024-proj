@@ -44,16 +44,24 @@ class MockIAvatarRepository extends _i1.Mock implements _i3.IAvatarRepository {
   }
 
   @override
-  _i4.Stream<_i2.Either<_i5.AvatarFailure, _i6.KtList<_i7.Avatar>>>
+  _i4.Future<_i2.Either<_i5.AvatarFailure, _i6.KtList<_i7.Avatar>>>
       watchAll() => (super.noSuchMethod(
             Invocation.method(
               #watchAll,
               [],
             ),
-            returnValue: _i4.Stream<
-                _i2.Either<_i5.AvatarFailure, _i6.KtList<_i7.Avatar>>>.empty(),
+            returnValue: _i4.Future<
+                    _i2
+                    .Either<_i5.AvatarFailure, _i6.KtList<_i7.Avatar>>>.value(
+                _FakeEither_0<_i5.AvatarFailure, _i6.KtList<_i7.Avatar>>(
+              this,
+              Invocation.method(
+                #watchAll,
+                [],
+              ),
+            )),
           ) as _i4
-              .Stream<_i2.Either<_i5.AvatarFailure, _i6.KtList<_i7.Avatar>>>);
+              .Future<_i2.Either<_i5.AvatarFailure, _i6.KtList<_i7.Avatar>>>);
 
   @override
   _i4.Future<_i2.Either<_i5.AvatarFailure, _i2.Unit>> create(
@@ -137,16 +145,24 @@ class MockAvatarRepositoryUnique extends _i1.Mock
   }
 
   @override
-  _i4.Stream<_i2.Either<_i5.AvatarFailure, _i6.KtList<_i7.Avatar>>>
+  _i4.Future<_i2.Either<_i5.AvatarFailure, _i6.KtList<_i7.Avatar>>>
       watchAll() => (super.noSuchMethod(
             Invocation.method(
               #watchAll,
               [],
             ),
-            returnValue: _i4.Stream<
-                _i2.Either<_i5.AvatarFailure, _i6.KtList<_i7.Avatar>>>.empty(),
+            returnValue: _i4.Future<
+                    _i2
+                    .Either<_i5.AvatarFailure, _i6.KtList<_i7.Avatar>>>.value(
+                _FakeEither_0<_i5.AvatarFailure, _i6.KtList<_i7.Avatar>>(
+              this,
+              Invocation.method(
+                #watchAll,
+                [],
+              ),
+            )),
           ) as _i4
-              .Stream<_i2.Either<_i5.AvatarFailure, _i6.KtList<_i7.Avatar>>>);
+              .Future<_i2.Either<_i5.AvatarFailure, _i6.KtList<_i7.Avatar>>>);
 
   @override
   _i4.Future<_i2.Either<_i5.AvatarFailure, _i2.Unit>> create(

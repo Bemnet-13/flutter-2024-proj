@@ -3,11 +3,16 @@ import 'package:FantasyE/presentation/screens/league/league_details.dart';
 import 'package:FantasyE/presentation/screens/league/manage_league.dart';
 import 'package:FantasyE/presentation/screens/league/update_league.dart';
 import 'package:FantasyE/presentation/screens/welcome_screen.dart';
+import 'package:FantasyE/presentation/screens/avatar/create_avatar.dart';
+import 'package:FantasyE/presentation/screens/avatar/avatar_details.dart';
+import 'package:FantasyE/presentation/screens/avatar/manage_avatars.dart';
+import 'package:FantasyE/presentation/screens/avatar/my_avatars.dart';
+import 'package:FantasyE/presentation/screens/avatar/add_avatar.dart';
+import 'package:FantasyE/presentation/screens/avatar/avatars.dart';
+
 import 'package:go_router/go_router.dart';
-import 'presentation/screens/add_avatar.dart';
 import 'presentation/screens/admin_manage_avatars.dart';
 import 'presentation/screens/dashboard/admin_dashboard.dart';
-import 'presentation/screens/create_avatar.dart';
 import 'presentation/screens/create_team.dart';
 import 'presentation/screens/faq.dart';
 import 'presentation/screens/league/join_league.dart';
@@ -147,6 +152,26 @@ class Routes {
         name: 'faq',
         path: '/faq',
         builder: (context, state) => const FaqScreen(),
+      ),
+      GoRoute(
+        name: 'my_avatars',
+        path: '/my_avatars',
+        builder: (context, state) => const MyAvatarsScreen(),
+      ),
+      GoRoute(
+        name: 'avatars',
+        path: '/avatars',
+        builder: (context, state) => const AvatarScreen(),
+      ),
+      GoRoute(
+        name: 'manage_avatars',
+        path: '/manage_avatars',
+        builder: (context, state) => const ManageAvatarScreen(),
+      ),
+      GoRoute(
+        name: 'avatar_details',
+        path: '/avatar_details',
+        builder: (context, state) => const AvatarDetailsScreen(),
       ),
     ],
   );

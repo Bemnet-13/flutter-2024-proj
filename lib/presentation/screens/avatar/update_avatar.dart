@@ -3,7 +3,6 @@ import 'package:FantasyE/presentation/widgets/appbar.dart';
 import 'package:FantasyE/presentation/widgets/buttons.dart';
 import 'package:FantasyE/presentation/widgets/drawer.dart';
 import 'package:FantasyE/presentation/widgets/text_fields.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../../../injection.dart';
@@ -11,19 +10,16 @@ import '../../widgets/colors.dart';
 import '../../widgets/custom_field.dart';
 import 'package:flutter/material.dart';
 
-class CreateAvatarScreen extends StatelessWidget {
-  const CreateAvatarScreen({super.key});
+class UpdateAvatarScreen extends StatelessWidget {
+  const UpdateAvatarScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => getIt<AvatarManagerBloc>(),
-      child: const CreateAvatar(),
-    );
+    return UpdateAvatar();
   }
 }
 
-class CreateAvatar extends StatelessWidget {
-  const CreateAvatar({
+class UpdateAvatar extends StatelessWidget {
+  const UpdateAvatar({
     super.key,
   });
 
@@ -41,6 +37,7 @@ class CreateAvatar extends StatelessWidget {
                     unexpected: (_) => const Text("Unexpected. Try again"),
                     insufficientPermissions: (_) =>
                         const Text("Insuffiecient Permissions"),
+                    unableToUpdate: (_) =>const Text("Unable to update"),
                     orElse: () => const Text("Please Try again"),
                   ),
                 ),
@@ -55,10 +52,10 @@ class CreateAvatar extends StatelessWidget {
       builder: (context, state) {
         return Scaffold(
           appBar: const CustomAppbar(
-            title: 'Create Avatar',
+            title: 'Update Avatar',
             icon: Icons.menu,
           ),
-          drawer: const DrawerMenu(),
+          drawer: DrawerMenu(),
           body: Padding(
             padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 18),
             child: Center(
@@ -68,7 +65,7 @@ class CreateAvatar extends StatelessWidget {
                     height: 48,
                   ),
                   const Text(
-                    'CREAT new Avatar',
+                    'UPDATE Avatar',
                     style: TextStyle(
                       color: CustomColors.primaryText,
                       fontSize: 24,
@@ -85,7 +82,7 @@ class CreateAvatar extends StatelessWidget {
                     child: Column(
                       children: [
                         FieldEntry(
-                          text: "Avatar Name",
+                          text: "League Name",
                           icon: Icons.format_list_numbered_rtl_sharp,
                           isObscured: false,
                           validatorCallback: (_) => context
@@ -95,57 +92,57 @@ class CreateAvatar extends StatelessWidget {
                               .value
                               .fold(
                                 (f) => f.maybeMap(
-                                  invalidName: (_) => 'Invalid Avatar name',
+                                  invalidName: (_) => 'Invalid avatar name',
                                   orElse: () =>
                                       'Please fill out the Name field',
                                 ),
-                                (_) => 'Please fill out the Avatar name field',
+                                (_) => 'Please fill out the avatar name field',
                               ),
                           onchangedCallback: (value) => context
                               .read<AvatarManagerBloc>()
                               .add(AvatarManagerEvent.nameChanged(value)),
                         ),
                         FieldEntry(
-                          text: "Avatar Club",
+                          text: "Avatar Score",
                           icon: Icons.format_list_numbered_rtl_sharp,
                           isObscured: false,
                           validatorCallback: (_) => context
                               .read<AvatarManagerBloc>()
                               .state
-                              .avatarClub
+                              .avatarScore
                               .value
                               .fold(
                                 (f) => f.maybeMap(
-                                  invalidClub: (_) => 'Invalid Avatar Club',
+                                  invalidName: (_) => 'Invalid avatar score',
                                   orElse: () =>
-                                      'Please fill out the Club field',
+                                      'Please fill out the Name field',
                                 ),
-                                (_) => 'Please fill out the Avatar club field',
-                              ),
-                          onchangedCallback: (value) => context
-                              .read<AvatarManagerBloc>()
-                              .add(AvatarManagerEvent.nameChanged(value)),
-                        ),
-                        FieldEntry(
-                          text: "Avatar Club",
-                          icon: Icons.format_list_numbered_rtl_sharp,
-                          isObscured: false,
-                          validatorCallback: (_) => context
-                              .read<AvatarManagerBloc>()
-                              .state
-                              .avatarClub
-                              .value
-                              .fold(
-                                (f) => f.maybeMap(
-                                  invalidScore: (_) => 'Invalid Avatar Score',
-                                  orElse: () =>
-                                      'Please fill out the Score field',
-                                ),
-                                (_) => 'Please fill out the Avatar Score field',
+                                (_) => 'Please fill out the avatar score field',
                               ),
                           onchangedCallback: (value) => context
                               .read<AvatarManagerBloc>()
                               .add(AvatarManagerEvent.scoreChanged(value as int)),
+                        ),
+                        FieldEntry(
+                          text: "Avatar Club",
+                          icon: Icons.format_list_numbered_rtl_sharp,
+                          isObscured: false,
+                          validatorCallback: (_) => context
+                              .read<AvatarManagerBloc>()
+                              .state
+                              .avatarClub
+                              .value
+                              .fold(
+                                (f) => f.maybeMap(
+                                  invalidName: (_) => 'Invalid avatar club',
+                                  orElse: () =>
+                                      'Please fill out the club field',
+                                ),
+                                (_) => 'Please fill out the avatar club field',
+                              ),
+                          onchangedCallback: (value) => context
+                              .read<AvatarManagerBloc>()
+                              .add(AvatarManagerEvent.clubChanged(value)),
                         ),
                       ],
                     ),
@@ -153,19 +150,15 @@ class CreateAvatar extends StatelessWidget {
                   const SizedBox(
                     height: 40,
                   ),
-                  const SizedBox(
-                    height: 40,
-                  ),
-                  
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       ActionButton(
-                          buttonText: 'Create Avatar',
+                          buttonText: 'Update Avatar',
                           buttonColor: CustomColors.accent,
                           onPressedAction: () {
                             context.read<AvatarManagerBloc>().add(
-                                const AvatarManagerEvent.createAvatarPressed());
+                                const AvatarManagerEvent.updateAvatarPressed());
                           })
                     ],
                   )

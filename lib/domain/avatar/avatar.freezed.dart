@@ -17,9 +17,9 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$Avatar {
   UniqueId get id => throw _privateConstructorUsedError;
-  AvatarName get name => throw _privateConstructorUsedError;
-  AvatarScore get score => throw _privateConstructorUsedError;
-  AvatarClub get club => throw _privateConstructorUsedError;
+  AvatarName get avatarName => throw _privateConstructorUsedError;
+  AvatarScore get avatarScore => throw _privateConstructorUsedError;
+  AvatarClub get avatarClub => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AvatarCopyWith<Avatar> get copyWith => throw _privateConstructorUsedError;
@@ -30,7 +30,11 @@ abstract class $AvatarCopyWith<$Res> {
   factory $AvatarCopyWith(Avatar value, $Res Function(Avatar) then) =
       _$AvatarCopyWithImpl<$Res, Avatar>;
   @useResult
-  $Res call({UniqueId id, AvatarName name, AvatarScore score, AvatarClub club});
+  $Res call(
+      {UniqueId id,
+      AvatarName avatarName,
+      AvatarScore avatarScore,
+      AvatarClub avatarClub});
 }
 
 /// @nodoc
@@ -47,26 +51,26 @@ class _$AvatarCopyWithImpl<$Res, $Val extends Avatar>
   @override
   $Res call({
     Object? id = null,
-    Object? name = null,
-    Object? score = null,
-    Object? club = null,
+    Object? avatarName = null,
+    Object? avatarScore = null,
+    Object? avatarClub = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as UniqueId,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      avatarName: null == avatarName
+          ? _value.avatarName
+          : avatarName // ignore: cast_nullable_to_non_nullable
               as AvatarName,
-      score: null == score
-          ? _value.score
-          : score // ignore: cast_nullable_to_non_nullable
+      avatarScore: null == avatarScore
+          ? _value.avatarScore
+          : avatarScore // ignore: cast_nullable_to_non_nullable
               as AvatarScore,
-      club: null == club
-          ? _value.club
-          : club // ignore: cast_nullable_to_non_nullable
+      avatarClub: null == avatarClub
+          ? _value.avatarClub
+          : avatarClub // ignore: cast_nullable_to_non_nullable
               as AvatarClub,
     ) as $Val);
   }
@@ -79,7 +83,11 @@ abstract class _$$AvatarImplCopyWith<$Res> implements $AvatarCopyWith<$Res> {
       __$$AvatarImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({UniqueId id, AvatarName name, AvatarScore score, AvatarClub club});
+  $Res call(
+      {UniqueId id,
+      AvatarName avatarName,
+      AvatarScore avatarScore,
+      AvatarClub avatarClub});
 }
 
 /// @nodoc
@@ -94,26 +102,26 @@ class __$$AvatarImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? name = null,
-    Object? score = null,
-    Object? club = null,
+    Object? avatarName = null,
+    Object? avatarScore = null,
+    Object? avatarClub = null,
   }) {
     return _then(_$AvatarImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as UniqueId,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      avatarName: null == avatarName
+          ? _value.avatarName
+          : avatarName // ignore: cast_nullable_to_non_nullable
               as AvatarName,
-      score: null == score
-          ? _value.score
-          : score // ignore: cast_nullable_to_non_nullable
+      avatarScore: null == avatarScore
+          ? _value.avatarScore
+          : avatarScore // ignore: cast_nullable_to_non_nullable
               as AvatarScore,
-      club: null == club
-          ? _value.club
-          : club // ignore: cast_nullable_to_non_nullable
+      avatarClub: null == avatarClub
+          ? _value.avatarClub
+          : avatarClub // ignore: cast_nullable_to_non_nullable
               as AvatarClub,
     ));
   }
@@ -124,22 +132,22 @@ class __$$AvatarImplCopyWithImpl<$Res>
 class _$AvatarImpl with DiagnosticableTreeMixin implements _Avatar {
   const _$AvatarImpl(
       {required this.id,
-      required this.name,
-      required this.score,
-      required this.club});
+      required this.avatarName,
+      required this.avatarScore,
+      required this.avatarClub});
 
   @override
   final UniqueId id;
   @override
-  final AvatarName name;
+  final AvatarName avatarName;
   @override
-  final AvatarScore score;
+  final AvatarScore avatarScore;
   @override
-  final AvatarClub club;
+  final AvatarClub avatarClub;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Avatar(id: $id, name: $name, score: $score, club: $club)';
+    return 'Avatar(id: $id, avatarName: $avatarName, avatarScore: $avatarScore, avatarClub: $avatarClub)';
   }
 
   @override
@@ -148,9 +156,9 @@ class _$AvatarImpl with DiagnosticableTreeMixin implements _Avatar {
     properties
       ..add(DiagnosticsProperty('type', 'Avatar'))
       ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('score', score))
-      ..add(DiagnosticsProperty('club', club));
+      ..add(DiagnosticsProperty('avatarName', avatarName))
+      ..add(DiagnosticsProperty('avatarScore', avatarScore))
+      ..add(DiagnosticsProperty('avatarClub', avatarClub));
   }
 
   @override
@@ -159,13 +167,17 @@ class _$AvatarImpl with DiagnosticableTreeMixin implements _Avatar {
         (other.runtimeType == runtimeType &&
             other is _$AvatarImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.score, score) || other.score == score) &&
-            (identical(other.club, club) || other.club == club));
+            (identical(other.avatarName, avatarName) ||
+                other.avatarName == avatarName) &&
+            (identical(other.avatarScore, avatarScore) ||
+                other.avatarScore == avatarScore) &&
+            (identical(other.avatarClub, avatarClub) ||
+                other.avatarClub == avatarClub));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, score, club);
+  int get hashCode =>
+      Object.hash(runtimeType, id, avatarName, avatarScore, avatarClub);
 
   @JsonKey(ignore: true)
   @override
@@ -177,18 +189,18 @@ class _$AvatarImpl with DiagnosticableTreeMixin implements _Avatar {
 abstract class _Avatar implements Avatar {
   const factory _Avatar(
       {required final UniqueId id,
-      required final AvatarName name,
-      required final AvatarScore score,
-      required final AvatarClub club}) = _$AvatarImpl;
+      required final AvatarName avatarName,
+      required final AvatarScore avatarScore,
+      required final AvatarClub avatarClub}) = _$AvatarImpl;
 
   @override
   UniqueId get id;
   @override
-  AvatarName get name;
+  AvatarName get avatarName;
   @override
-  AvatarScore get score;
+  AvatarScore get avatarScore;
   @override
-  AvatarClub get club;
+  AvatarClub get avatarClub;
   @override
   @JsonKey(ignore: true)
   _$$AvatarImplCopyWith<_$AvatarImpl> get copyWith =>
