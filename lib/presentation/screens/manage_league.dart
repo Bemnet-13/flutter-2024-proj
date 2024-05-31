@@ -1,4 +1,5 @@
 import 'package:FantasyE/presentation/widgets/appbar.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -27,11 +28,12 @@ class ManageLeagues extends StatelessWidget {
           padding: const EdgeInsets.all(12),
           child: ListView.builder(
             itemCount: 6,
-            itemBuilder: (context, index) => const Column(
+            itemBuilder: (context, index) => Column(
               children: [
-                Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Padding(
+                Container(
+                  padding: const EdgeInsets.all(8.0),
+                  decoration: const BoxDecoration(color: Colors.grey),
+                  child: const Padding(
                     padding: EdgeInsets.only(left: 24.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
