@@ -22,6 +22,8 @@ mixin _$AuthLogicEvent {
     required TResult Function() authCheckRequested,
     required TResult Function() loginRequestedAsAdmin,
     required TResult Function() loginRequestedAsPlayer,
+    required TResult Function() playerAuthenticated,
+    required TResult Function() adminAuthenticated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +32,8 @@ mixin _$AuthLogicEvent {
     TResult? Function()? authCheckRequested,
     TResult? Function()? loginRequestedAsAdmin,
     TResult? Function()? loginRequestedAsPlayer,
+    TResult? Function()? playerAuthenticated,
+    TResult? Function()? adminAuthenticated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +42,8 @@ mixin _$AuthLogicEvent {
     TResult Function()? authCheckRequested,
     TResult Function()? loginRequestedAsAdmin,
     TResult Function()? loginRequestedAsPlayer,
+    TResult Function()? playerAuthenticated,
+    TResult Function()? adminAuthenticated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -49,6 +55,8 @@ mixin _$AuthLogicEvent {
         loginRequestedAsAdmin,
     required TResult Function(LoginRequestedAsPlayer value)
         loginRequestedAsPlayer,
+    required TResult Function(PlayerAuthenticated value) playerAuthenticated,
+    required TResult Function(AdminAuthenticated value) adminAuthenticated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +65,8 @@ mixin _$AuthLogicEvent {
     TResult? Function(AuthCheckRequested value)? authCheckRequested,
     TResult? Function(LoginRequestedAsAdmin value)? loginRequestedAsAdmin,
     TResult? Function(LoginRequestedAsPlayer value)? loginRequestedAsPlayer,
+    TResult? Function(PlayerAuthenticated value)? playerAuthenticated,
+    TResult? Function(AdminAuthenticated value)? adminAuthenticated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +75,8 @@ mixin _$AuthLogicEvent {
     TResult Function(AuthCheckRequested value)? authCheckRequested,
     TResult Function(LoginRequestedAsAdmin value)? loginRequestedAsAdmin,
     TResult Function(LoginRequestedAsPlayer value)? loginRequestedAsPlayer,
+    TResult Function(PlayerAuthenticated value)? playerAuthenticated,
+    TResult Function(AdminAuthenticated value)? adminAuthenticated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -130,6 +142,8 @@ class _$LoggedOutImpl implements LoggedOut {
     required TResult Function() authCheckRequested,
     required TResult Function() loginRequestedAsAdmin,
     required TResult Function() loginRequestedAsPlayer,
+    required TResult Function() playerAuthenticated,
+    required TResult Function() adminAuthenticated,
   }) {
     return loggedOut();
   }
@@ -141,6 +155,8 @@ class _$LoggedOutImpl implements LoggedOut {
     TResult? Function()? authCheckRequested,
     TResult? Function()? loginRequestedAsAdmin,
     TResult? Function()? loginRequestedAsPlayer,
+    TResult? Function()? playerAuthenticated,
+    TResult? Function()? adminAuthenticated,
   }) {
     return loggedOut?.call();
   }
@@ -152,6 +168,8 @@ class _$LoggedOutImpl implements LoggedOut {
     TResult Function()? authCheckRequested,
     TResult Function()? loginRequestedAsAdmin,
     TResult Function()? loginRequestedAsPlayer,
+    TResult Function()? playerAuthenticated,
+    TResult Function()? adminAuthenticated,
     required TResult orElse(),
   }) {
     if (loggedOut != null) {
@@ -169,6 +187,8 @@ class _$LoggedOutImpl implements LoggedOut {
         loginRequestedAsAdmin,
     required TResult Function(LoginRequestedAsPlayer value)
         loginRequestedAsPlayer,
+    required TResult Function(PlayerAuthenticated value) playerAuthenticated,
+    required TResult Function(AdminAuthenticated value) adminAuthenticated,
   }) {
     return loggedOut(this);
   }
@@ -180,6 +200,8 @@ class _$LoggedOutImpl implements LoggedOut {
     TResult? Function(AuthCheckRequested value)? authCheckRequested,
     TResult? Function(LoginRequestedAsAdmin value)? loginRequestedAsAdmin,
     TResult? Function(LoginRequestedAsPlayer value)? loginRequestedAsPlayer,
+    TResult? Function(PlayerAuthenticated value)? playerAuthenticated,
+    TResult? Function(AdminAuthenticated value)? adminAuthenticated,
   }) {
     return loggedOut?.call(this);
   }
@@ -191,6 +213,8 @@ class _$LoggedOutImpl implements LoggedOut {
     TResult Function(AuthCheckRequested value)? authCheckRequested,
     TResult Function(LoginRequestedAsAdmin value)? loginRequestedAsAdmin,
     TResult Function(LoginRequestedAsPlayer value)? loginRequestedAsPlayer,
+    TResult Function(PlayerAuthenticated value)? playerAuthenticated,
+    TResult Function(AdminAuthenticated value)? adminAuthenticated,
     required TResult orElse(),
   }) {
     if (loggedOut != null) {
@@ -246,6 +270,8 @@ class _$AuthCheckRequestedImpl implements AuthCheckRequested {
     required TResult Function() authCheckRequested,
     required TResult Function() loginRequestedAsAdmin,
     required TResult Function() loginRequestedAsPlayer,
+    required TResult Function() playerAuthenticated,
+    required TResult Function() adminAuthenticated,
   }) {
     return authCheckRequested();
   }
@@ -257,6 +283,8 @@ class _$AuthCheckRequestedImpl implements AuthCheckRequested {
     TResult? Function()? authCheckRequested,
     TResult? Function()? loginRequestedAsAdmin,
     TResult? Function()? loginRequestedAsPlayer,
+    TResult? Function()? playerAuthenticated,
+    TResult? Function()? adminAuthenticated,
   }) {
     return authCheckRequested?.call();
   }
@@ -268,6 +296,8 @@ class _$AuthCheckRequestedImpl implements AuthCheckRequested {
     TResult Function()? authCheckRequested,
     TResult Function()? loginRequestedAsAdmin,
     TResult Function()? loginRequestedAsPlayer,
+    TResult Function()? playerAuthenticated,
+    TResult Function()? adminAuthenticated,
     required TResult orElse(),
   }) {
     if (authCheckRequested != null) {
@@ -285,6 +315,8 @@ class _$AuthCheckRequestedImpl implements AuthCheckRequested {
         loginRequestedAsAdmin,
     required TResult Function(LoginRequestedAsPlayer value)
         loginRequestedAsPlayer,
+    required TResult Function(PlayerAuthenticated value) playerAuthenticated,
+    required TResult Function(AdminAuthenticated value) adminAuthenticated,
   }) {
     return authCheckRequested(this);
   }
@@ -296,6 +328,8 @@ class _$AuthCheckRequestedImpl implements AuthCheckRequested {
     TResult? Function(AuthCheckRequested value)? authCheckRequested,
     TResult? Function(LoginRequestedAsAdmin value)? loginRequestedAsAdmin,
     TResult? Function(LoginRequestedAsPlayer value)? loginRequestedAsPlayer,
+    TResult? Function(PlayerAuthenticated value)? playerAuthenticated,
+    TResult? Function(AdminAuthenticated value)? adminAuthenticated,
   }) {
     return authCheckRequested?.call(this);
   }
@@ -307,6 +341,8 @@ class _$AuthCheckRequestedImpl implements AuthCheckRequested {
     TResult Function(AuthCheckRequested value)? authCheckRequested,
     TResult Function(LoginRequestedAsAdmin value)? loginRequestedAsAdmin,
     TResult Function(LoginRequestedAsPlayer value)? loginRequestedAsPlayer,
+    TResult Function(PlayerAuthenticated value)? playerAuthenticated,
+    TResult Function(AdminAuthenticated value)? adminAuthenticated,
     required TResult orElse(),
   }) {
     if (authCheckRequested != null) {
@@ -364,6 +400,8 @@ class _$LoginRequestedAsAdminImpl implements LoginRequestedAsAdmin {
     required TResult Function() authCheckRequested,
     required TResult Function() loginRequestedAsAdmin,
     required TResult Function() loginRequestedAsPlayer,
+    required TResult Function() playerAuthenticated,
+    required TResult Function() adminAuthenticated,
   }) {
     return loginRequestedAsAdmin();
   }
@@ -375,6 +413,8 @@ class _$LoginRequestedAsAdminImpl implements LoginRequestedAsAdmin {
     TResult? Function()? authCheckRequested,
     TResult? Function()? loginRequestedAsAdmin,
     TResult? Function()? loginRequestedAsPlayer,
+    TResult? Function()? playerAuthenticated,
+    TResult? Function()? adminAuthenticated,
   }) {
     return loginRequestedAsAdmin?.call();
   }
@@ -386,6 +426,8 @@ class _$LoginRequestedAsAdminImpl implements LoginRequestedAsAdmin {
     TResult Function()? authCheckRequested,
     TResult Function()? loginRequestedAsAdmin,
     TResult Function()? loginRequestedAsPlayer,
+    TResult Function()? playerAuthenticated,
+    TResult Function()? adminAuthenticated,
     required TResult orElse(),
   }) {
     if (loginRequestedAsAdmin != null) {
@@ -403,6 +445,8 @@ class _$LoginRequestedAsAdminImpl implements LoginRequestedAsAdmin {
         loginRequestedAsAdmin,
     required TResult Function(LoginRequestedAsPlayer value)
         loginRequestedAsPlayer,
+    required TResult Function(PlayerAuthenticated value) playerAuthenticated,
+    required TResult Function(AdminAuthenticated value) adminAuthenticated,
   }) {
     return loginRequestedAsAdmin(this);
   }
@@ -414,6 +458,8 @@ class _$LoginRequestedAsAdminImpl implements LoginRequestedAsAdmin {
     TResult? Function(AuthCheckRequested value)? authCheckRequested,
     TResult? Function(LoginRequestedAsAdmin value)? loginRequestedAsAdmin,
     TResult? Function(LoginRequestedAsPlayer value)? loginRequestedAsPlayer,
+    TResult? Function(PlayerAuthenticated value)? playerAuthenticated,
+    TResult? Function(AdminAuthenticated value)? adminAuthenticated,
   }) {
     return loginRequestedAsAdmin?.call(this);
   }
@@ -425,6 +471,8 @@ class _$LoginRequestedAsAdminImpl implements LoginRequestedAsAdmin {
     TResult Function(AuthCheckRequested value)? authCheckRequested,
     TResult Function(LoginRequestedAsAdmin value)? loginRequestedAsAdmin,
     TResult Function(LoginRequestedAsPlayer value)? loginRequestedAsPlayer,
+    TResult Function(PlayerAuthenticated value)? playerAuthenticated,
+    TResult Function(AdminAuthenticated value)? adminAuthenticated,
     required TResult orElse(),
   }) {
     if (loginRequestedAsAdmin != null) {
@@ -483,6 +531,8 @@ class _$LoginRequestedAsPlayerImpl implements LoginRequestedAsPlayer {
     required TResult Function() authCheckRequested,
     required TResult Function() loginRequestedAsAdmin,
     required TResult Function() loginRequestedAsPlayer,
+    required TResult Function() playerAuthenticated,
+    required TResult Function() adminAuthenticated,
   }) {
     return loginRequestedAsPlayer();
   }
@@ -494,6 +544,8 @@ class _$LoginRequestedAsPlayerImpl implements LoginRequestedAsPlayer {
     TResult? Function()? authCheckRequested,
     TResult? Function()? loginRequestedAsAdmin,
     TResult? Function()? loginRequestedAsPlayer,
+    TResult? Function()? playerAuthenticated,
+    TResult? Function()? adminAuthenticated,
   }) {
     return loginRequestedAsPlayer?.call();
   }
@@ -505,6 +557,8 @@ class _$LoginRequestedAsPlayerImpl implements LoginRequestedAsPlayer {
     TResult Function()? authCheckRequested,
     TResult Function()? loginRequestedAsAdmin,
     TResult Function()? loginRequestedAsPlayer,
+    TResult Function()? playerAuthenticated,
+    TResult Function()? adminAuthenticated,
     required TResult orElse(),
   }) {
     if (loginRequestedAsPlayer != null) {
@@ -522,6 +576,8 @@ class _$LoginRequestedAsPlayerImpl implements LoginRequestedAsPlayer {
         loginRequestedAsAdmin,
     required TResult Function(LoginRequestedAsPlayer value)
         loginRequestedAsPlayer,
+    required TResult Function(PlayerAuthenticated value) playerAuthenticated,
+    required TResult Function(AdminAuthenticated value) adminAuthenticated,
   }) {
     return loginRequestedAsPlayer(this);
   }
@@ -533,6 +589,8 @@ class _$LoginRequestedAsPlayerImpl implements LoginRequestedAsPlayer {
     TResult? Function(AuthCheckRequested value)? authCheckRequested,
     TResult? Function(LoginRequestedAsAdmin value)? loginRequestedAsAdmin,
     TResult? Function(LoginRequestedAsPlayer value)? loginRequestedAsPlayer,
+    TResult? Function(PlayerAuthenticated value)? playerAuthenticated,
+    TResult? Function(AdminAuthenticated value)? adminAuthenticated,
   }) {
     return loginRequestedAsPlayer?.call(this);
   }
@@ -544,6 +602,8 @@ class _$LoginRequestedAsPlayerImpl implements LoginRequestedAsPlayer {
     TResult Function(AuthCheckRequested value)? authCheckRequested,
     TResult Function(LoginRequestedAsAdmin value)? loginRequestedAsAdmin,
     TResult Function(LoginRequestedAsPlayer value)? loginRequestedAsPlayer,
+    TResult Function(PlayerAuthenticated value)? playerAuthenticated,
+    TResult Function(AdminAuthenticated value)? adminAuthenticated,
     required TResult orElse(),
   }) {
     if (loginRequestedAsPlayer != null) {
@@ -555,6 +615,263 @@ class _$LoginRequestedAsPlayerImpl implements LoginRequestedAsPlayer {
 
 abstract class LoginRequestedAsPlayer implements AuthLogicEvent {
   const factory LoginRequestedAsPlayer() = _$LoginRequestedAsPlayerImpl;
+}
+
+/// @nodoc
+abstract class _$$PlayerAuthenticatedImplCopyWith<$Res> {
+  factory _$$PlayerAuthenticatedImplCopyWith(_$PlayerAuthenticatedImpl value,
+          $Res Function(_$PlayerAuthenticatedImpl) then) =
+      __$$PlayerAuthenticatedImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$PlayerAuthenticatedImplCopyWithImpl<$Res>
+    extends _$AuthLogicEventCopyWithImpl<$Res, _$PlayerAuthenticatedImpl>
+    implements _$$PlayerAuthenticatedImplCopyWith<$Res> {
+  __$$PlayerAuthenticatedImplCopyWithImpl(_$PlayerAuthenticatedImpl _value,
+      $Res Function(_$PlayerAuthenticatedImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$PlayerAuthenticatedImpl implements PlayerAuthenticated {
+  const _$PlayerAuthenticatedImpl();
+
+  @override
+  String toString() {
+    return 'AuthLogicEvent.playerAuthenticated()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PlayerAuthenticatedImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loggedOut,
+    required TResult Function() authCheckRequested,
+    required TResult Function() loginRequestedAsAdmin,
+    required TResult Function() loginRequestedAsPlayer,
+    required TResult Function() playerAuthenticated,
+    required TResult Function() adminAuthenticated,
+  }) {
+    return playerAuthenticated();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loggedOut,
+    TResult? Function()? authCheckRequested,
+    TResult? Function()? loginRequestedAsAdmin,
+    TResult? Function()? loginRequestedAsPlayer,
+    TResult? Function()? playerAuthenticated,
+    TResult? Function()? adminAuthenticated,
+  }) {
+    return playerAuthenticated?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loggedOut,
+    TResult Function()? authCheckRequested,
+    TResult Function()? loginRequestedAsAdmin,
+    TResult Function()? loginRequestedAsPlayer,
+    TResult Function()? playerAuthenticated,
+    TResult Function()? adminAuthenticated,
+    required TResult orElse(),
+  }) {
+    if (playerAuthenticated != null) {
+      return playerAuthenticated();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoggedOut value) loggedOut,
+    required TResult Function(AuthCheckRequested value) authCheckRequested,
+    required TResult Function(LoginRequestedAsAdmin value)
+        loginRequestedAsAdmin,
+    required TResult Function(LoginRequestedAsPlayer value)
+        loginRequestedAsPlayer,
+    required TResult Function(PlayerAuthenticated value) playerAuthenticated,
+    required TResult Function(AdminAuthenticated value) adminAuthenticated,
+  }) {
+    return playerAuthenticated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoggedOut value)? loggedOut,
+    TResult? Function(AuthCheckRequested value)? authCheckRequested,
+    TResult? Function(LoginRequestedAsAdmin value)? loginRequestedAsAdmin,
+    TResult? Function(LoginRequestedAsPlayer value)? loginRequestedAsPlayer,
+    TResult? Function(PlayerAuthenticated value)? playerAuthenticated,
+    TResult? Function(AdminAuthenticated value)? adminAuthenticated,
+  }) {
+    return playerAuthenticated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoggedOut value)? loggedOut,
+    TResult Function(AuthCheckRequested value)? authCheckRequested,
+    TResult Function(LoginRequestedAsAdmin value)? loginRequestedAsAdmin,
+    TResult Function(LoginRequestedAsPlayer value)? loginRequestedAsPlayer,
+    TResult Function(PlayerAuthenticated value)? playerAuthenticated,
+    TResult Function(AdminAuthenticated value)? adminAuthenticated,
+    required TResult orElse(),
+  }) {
+    if (playerAuthenticated != null) {
+      return playerAuthenticated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PlayerAuthenticated implements AuthLogicEvent {
+  const factory PlayerAuthenticated() = _$PlayerAuthenticatedImpl;
+}
+
+/// @nodoc
+abstract class _$$AdminAuthenticatedImplCopyWith<$Res> {
+  factory _$$AdminAuthenticatedImplCopyWith(_$AdminAuthenticatedImpl value,
+          $Res Function(_$AdminAuthenticatedImpl) then) =
+      __$$AdminAuthenticatedImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AdminAuthenticatedImplCopyWithImpl<$Res>
+    extends _$AuthLogicEventCopyWithImpl<$Res, _$AdminAuthenticatedImpl>
+    implements _$$AdminAuthenticatedImplCopyWith<$Res> {
+  __$$AdminAuthenticatedImplCopyWithImpl(_$AdminAuthenticatedImpl _value,
+      $Res Function(_$AdminAuthenticatedImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AdminAuthenticatedImpl implements AdminAuthenticated {
+  const _$AdminAuthenticatedImpl();
+
+  @override
+  String toString() {
+    return 'AuthLogicEvent.adminAuthenticated()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$AdminAuthenticatedImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loggedOut,
+    required TResult Function() authCheckRequested,
+    required TResult Function() loginRequestedAsAdmin,
+    required TResult Function() loginRequestedAsPlayer,
+    required TResult Function() playerAuthenticated,
+    required TResult Function() adminAuthenticated,
+  }) {
+    return adminAuthenticated();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loggedOut,
+    TResult? Function()? authCheckRequested,
+    TResult? Function()? loginRequestedAsAdmin,
+    TResult? Function()? loginRequestedAsPlayer,
+    TResult? Function()? playerAuthenticated,
+    TResult? Function()? adminAuthenticated,
+  }) {
+    return adminAuthenticated?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loggedOut,
+    TResult Function()? authCheckRequested,
+    TResult Function()? loginRequestedAsAdmin,
+    TResult Function()? loginRequestedAsPlayer,
+    TResult Function()? playerAuthenticated,
+    TResult Function()? adminAuthenticated,
+    required TResult orElse(),
+  }) {
+    if (adminAuthenticated != null) {
+      return adminAuthenticated();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoggedOut value) loggedOut,
+    required TResult Function(AuthCheckRequested value) authCheckRequested,
+    required TResult Function(LoginRequestedAsAdmin value)
+        loginRequestedAsAdmin,
+    required TResult Function(LoginRequestedAsPlayer value)
+        loginRequestedAsPlayer,
+    required TResult Function(PlayerAuthenticated value) playerAuthenticated,
+    required TResult Function(AdminAuthenticated value) adminAuthenticated,
+  }) {
+    return adminAuthenticated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(LoggedOut value)? loggedOut,
+    TResult? Function(AuthCheckRequested value)? authCheckRequested,
+    TResult? Function(LoginRequestedAsAdmin value)? loginRequestedAsAdmin,
+    TResult? Function(LoginRequestedAsPlayer value)? loginRequestedAsPlayer,
+    TResult? Function(PlayerAuthenticated value)? playerAuthenticated,
+    TResult? Function(AdminAuthenticated value)? adminAuthenticated,
+  }) {
+    return adminAuthenticated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoggedOut value)? loggedOut,
+    TResult Function(AuthCheckRequested value)? authCheckRequested,
+    TResult Function(LoginRequestedAsAdmin value)? loginRequestedAsAdmin,
+    TResult Function(LoginRequestedAsPlayer value)? loginRequestedAsPlayer,
+    TResult Function(PlayerAuthenticated value)? playerAuthenticated,
+    TResult Function(AdminAuthenticated value)? adminAuthenticated,
+    required TResult orElse(),
+  }) {
+    if (adminAuthenticated != null) {
+      return adminAuthenticated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AdminAuthenticated implements AuthLogicEvent {
+  const factory AdminAuthenticated() = _$AdminAuthenticatedImpl;
 }
 
 /// @nodoc

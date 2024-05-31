@@ -16,6 +16,7 @@ void main() {
       MaterialApp(
         home: Scaffold(
           body: FieldEntry(
+            initialValue: "",
             text: testText,
             icon: testIcon,
             isObscured: false,

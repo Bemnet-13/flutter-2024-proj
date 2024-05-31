@@ -36,17 +36,18 @@ class SignUpForm extends StatelessWidget {
             );
           },
           (_) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: const Text('Registration successful'),
-                action: SnackBarAction(
-                  label: 'Go To Login',
-                  onPressed: () {
-                    context.go('/login');
-                  },
-                ),
-              ),
-            );
+            context.go('/login');
+
+            // ScaffoldMessenger.of(context).showSnackBar(
+              // SnackBar(
+                // content: const Text('Registration successful'),
+                // action: SnackBarAction(
+                  // label: 'Go To Login',
+                  // onPressed: () {
+                  // },
+                // ),
+              // ),
+            // );
           },
         ),
       );
@@ -89,9 +90,15 @@ class SignUpForm extends StatelessWidget {
                         : AutovalidateMode.disabled,
                     child: const Column(
                       children: [
-                        NameFieldEntry(),
-                        EmailFieldEntry(isLoggingIn: false),
-                        PasswordFieldEntry(isLoggingIn: false),
+                        NameFieldEntry(
+                          key: const Key('nameField'),
+                        ),
+                        EmailFieldEntry(
+                          key: const Key('emailField'),
+                          isLoggingIn: false),
+                        PasswordFieldEntry(
+                          key: const Key('passwordField'),
+                          isLoggingIn: false),
                       ],
                     ),
                   ),
@@ -99,6 +106,8 @@ class SignUpForm extends StatelessWidget {
                     height: 20.0,
                   ),
                   AuthButton(
+                  key: const Key('signupButton'),
+
                     "SIGNUP ",
                     CustomColors.darkPrimary,
                     '/login',

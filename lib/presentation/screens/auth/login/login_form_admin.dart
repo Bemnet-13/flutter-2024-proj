@@ -123,9 +123,11 @@ class LoginFormAdmin extends StatelessWidget {
                       child: const Column(
                         children: [
                           EmailFieldEntry(
+                            key: const Key('emailField'),
                             isLoggingIn: true,
                           ),
                           PasswordFieldEntry(
+                            key: const Key('passwordField'),
                             isLoggingIn: true,
                           ),
                         ],
@@ -134,7 +136,9 @@ class LoginFormAdmin extends StatelessWidget {
                     const SizedBox(
                       height: 20.0,
                     ),
-                    AuthButton("LOGIN ", CustomColors.darkPrimary,
+                    AuthButton(
+                      key: const Key('loginButton'),
+                      "LOGIN ", CustomColors.darkPrimary,
                         '/admin_dashboard', true, () {
                       context.read<LoginFormBloc>().add(
                             const LoginFormEvent

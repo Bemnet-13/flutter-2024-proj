@@ -21,7 +21,7 @@ class AvatarScreen extends StatelessWidget {
             child: DashboardCard(
               navigateTo: '/create_avatar',
               buttonText: 'Create New Avatar',
-              imagePath: 'assets/cale.png',
+              icon: Icons.person,
             ),
           ),
           SizedBox(
@@ -31,7 +31,7 @@ class AvatarScreen extends StatelessWidget {
             child: DashboardCard(
               navigateTo: '/manage_avatar',
               buttonText: 'Manage Avatars',
-              imagePath: 'assets/cale.png',
+              icon: Icons.person,
             ),
           ),
           SizedBox(

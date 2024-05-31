@@ -127,9 +127,11 @@ class LoginFormPlayer extends StatelessWidget {
                       child: const Column(
                         children: [
                           EmailFieldEntry(
+                            key: const Key('emailField'),
                             isLoggingIn: true,
                           ),
                           PasswordFieldEntry(
+                            key: const Key('passwordField'),
                             isLoggingIn: true,
                           ),
                         ],
@@ -138,7 +140,9 @@ class LoginFormPlayer extends StatelessWidget {
                     const SizedBox(
                       height: 20.0,
                     ),
-                    AuthButton("LOGIN ", CustomColors.darkPrimary,
+                    AuthButton(
+                      key: const Key('loginButton'),
+                      "LOGIN ", CustomColors.darkPrimary,
                         '/player_dashboard', true, () {
                       context.read<LoginFormBloc>().add(
                             const LoginFormEvent

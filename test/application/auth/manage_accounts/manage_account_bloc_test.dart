@@ -6,7 +6,7 @@ import 'package:mockito/annotations.dart';
 import 'package:FantasyE/domain/manage_account/i_manage_account_facade.dart';
 import 'package:dartz/dartz.dart';
 
-import 'manage_account_bloc.mocks.dart';
+import 'manage_account_bloc_test.mocks.dart';
 
 @GenerateMocks([IManageAccountFacade])
 void main() {

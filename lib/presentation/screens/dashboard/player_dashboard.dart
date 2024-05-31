@@ -29,7 +29,7 @@ class PlayerDashboardScreen extends StatelessWidget {
               child: DashboardCard(
                 navigateTo: '/create_team',
                 buttonText: 'Create New Team',
-                imagePath: 'assets/leg.png',
+                icon: Icons.people,
               ),
             ),
             SizedBox(
@@ -39,7 +39,7 @@ class PlayerDashboardScreen extends StatelessWidget {
               child: DashboardCard(
                 navigateTo: '/manage_team',
                 buttonText: 'Manage Teams',
-                imagePath: 'assets/leg.png',
+                icon: Icons.people,
               ),
             ),
             SizedBox(
@@ -49,7 +49,7 @@ class PlayerDashboardScreen extends StatelessWidget {
               child: DashboardCard(
                 navigateTo: '/leagues',
                 buttonText: 'Leagues',
-                imagePath: 'assets/cale.png',
+                icon: Icons.table_chart_outlined,
               ),
             ),
             SizedBox(

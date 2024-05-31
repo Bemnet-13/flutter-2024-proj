@@ -23,7 +23,7 @@ class AdminDashboardScreen extends StatelessWidget {
           DashboardCard(
             navigateTo: '/create_avatar',
             buttonText: 'Create New Avatar',
-            imagePath: 'assets/avat.png',
+            icon: Icons.person,
           ),
           SizedBox(
             height: 10,
@@ -31,15 +31,14 @@ class AdminDashboardScreen extends StatelessWidget {
           DashboardCard(
             navigateTo: '/admin_manage_avatars',
             buttonText: 'Manage Avatars',
-            imagePath: 'assets/herevat.png',
-          ),
+            icon: Icons.table_chart_outlined),
           SizedBox(
             height: 10,
           ),
           DashboardCard(
             navigateTo: '/manage_leagues',
             buttonText: 'Manage Leagues',
-            imagePath: 'assets/cale.png',
+            icon: Icons.table_chart_outlined
           ),
           SizedBox(
             height: 20,

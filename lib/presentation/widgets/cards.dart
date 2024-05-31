@@ -6,15 +6,13 @@ import '../widgets/buttons.dart';
 class DashboardCard extends StatelessWidget {
   final String navigateTo;
   final String buttonText;
-  final String imagePath;
-  static const imageWidth = 185.0;
-  static const imageHeight = 185.0;
+  final IconData icon;
 
   const DashboardCard({
     super.key,
     required this.navigateTo,
     required this.buttonText,
-    required this.imagePath,
+    required this.icon,
   });
 
   @override
@@ -28,14 +26,12 @@ class DashboardCard extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(
-            imagePath,
-            width: imageWidth,
-            height: imageHeight,
-            // fit: BoxFit.contain,
+          Icon(
+            icon,
+            size: 70,
           ),
           CardButton(buttonText, CustomColors.accent, navigateTo),
-          SizedBox(
+          const SizedBox(
             height: 5,
           )
         ],

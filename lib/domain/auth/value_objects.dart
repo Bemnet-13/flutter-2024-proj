@@ -126,10 +126,11 @@ class Name extends Equatable implements ValueObject {
   }
 }
 
-class TeamName implements ValueObject {
+class TeamName extends Equatable implements ValueObject {
   final Either<ValueFailure<String>, String> value;
   const TeamName._(this.value);
 
+  List<Object> get props => [value];
   bool isValid() => value.isRight();
 
   String getOrCrash() {

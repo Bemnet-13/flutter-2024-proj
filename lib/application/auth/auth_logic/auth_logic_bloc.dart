@@ -31,6 +31,12 @@ class AuthLogicBloc extends Bloc<AuthLogicEvent, AuthLogicState> {
       await _authFacade.logOut();
       emit(const AuthLogicState.unauthenticated());
     });
+    on<PlayerAuthenticated>((event, emit) async {
+      emit(const AuthLogicState.authenticatedAsPlayer());
+    });
+    on<AdminAuthenticated>((event, emit) async {
+      emit(const AuthLogicState.authenticatedAsAdmin());
+    });
     on<LoginRequestedAsAdmin>((event, emit) async {
       final userOption = await _authFacade.getSignedInUser();
       emit(

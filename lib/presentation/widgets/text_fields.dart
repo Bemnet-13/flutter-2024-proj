@@ -16,6 +16,7 @@ class EmailFieldEntry extends StatelessWidget {
       child: SizedBox(
         width: 350,
         child: TextFormField(
+          key: const Key('emailField'),
           decoration: const InputDecoration(
             labelText: text,
             prefixIcon: Align(
@@ -69,6 +70,7 @@ class PasswordFieldEntry extends StatelessWidget {
       child: SizedBox(
         width: 350,
         child: TextFormField(
+            key: const Key('passwordField'),
             decoration: const InputDecoration(
               labelText: text,
               prefixIcon: Align(
@@ -120,6 +122,7 @@ class NameFieldEntry extends StatelessWidget {
       child: SizedBox(
         width: 350,
         child: TextFormField(
+          key: const Key('namefield'),
           decoration: const InputDecoration(
             labelText: text,
             prefixIcon: Align(

@@ -21,7 +21,7 @@ class LeaguesScreen extends StatelessWidget {
             child: DashboardCard(
               navigateTo: '/create_league',
               buttonText: 'Create New League',
-              imagePath: 'assets/cale.png',
+              icon: Icons.table_chart_outlined,
             ),
           ),
           SizedBox(
@@ -31,7 +31,7 @@ class LeaguesScreen extends StatelessWidget {
             child: DashboardCard(
               navigateTo: '/manage_leagues',
               buttonText: 'Manage Leagues',
-              imagePath: 'assets/cale.png',
+              icon: Icons.table_chart_outlined,
             ),
           ),
           SizedBox(
