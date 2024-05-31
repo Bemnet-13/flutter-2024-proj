@@ -37,7 +37,7 @@ class UpdateAvatar extends StatelessWidget {
                     unexpected: (_) => const Text("Unexpected. Try again"),
                     insufficientPermissions: (_) =>
                         const Text("Insuffiecient Permissions"),
-                    unableToUpdate: (_) =>const Text("Unable to update"),
+                    unableToUpdate: (_) => const Text("Unable to update"),
                     orElse: () => const Text("Please Try again"),
                   ),
                 ),
@@ -82,7 +82,8 @@ class UpdateAvatar extends StatelessWidget {
                     child: Column(
                       children: [
                         FieldEntry(
-                          text: "League Name",
+                          initialValue: state.avatarName.getOrCrash(),
+                          text: "Avatar Name",
                           icon: Icons.format_list_numbered_rtl_sharp,
                           isObscured: false,
                           validatorCallback: (_) => context
@@ -102,7 +103,20 @@ class UpdateAvatar extends StatelessWidget {
                               .read<AvatarManagerBloc>()
                               .add(AvatarManagerEvent.nameChanged(value)),
                         ),
+                        // Slider(
+                        // min: 0,
+                        // max: 100,
+                        // divisions: 1,
+                        // value: state.avatarScore.getOrCrash().toDouble(),
+                        // onChanged: (value) => context
+                        // .read<AvatarManagerBloc>()
+                        // .add(AvatarManagerEvent.scoreChanged(
+                        // value.toString(),
+                        // )),
+                        // ),
                         FieldEntry(
+                          initialValue:
+                              state.avatarScore.getOrCrash().toString(),
                           text: "Avatar Score",
                           icon: Icons.format_list_numbered_rtl_sharp,
                           isObscured: false,
@@ -124,6 +138,7 @@ class UpdateAvatar extends StatelessWidget {
                               .add(AvatarManagerEvent.scoreChanged(value)),
                         ),
                         FieldEntry(
+                          initialValue: state.avatarClub.getOrCrash(),
                           text: "Avatar Club",
                           icon: Icons.format_list_numbered_rtl_sharp,
                           isObscured: false,

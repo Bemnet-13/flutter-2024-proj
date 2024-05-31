@@ -43,13 +43,17 @@ class AvatarScore extends ValueObject<int> {
   final Either<ValueFailure<int>, int> value;
 
   factory AvatarScore(String input) {
+    if (input == "") {
+      return AvatarScore._(right(0));
+    }
     try {
       int score = int.parse(input);
       return AvatarScore._(
         right(score),
       );
     } catch (e) {
-      return AvatarScore._(left(const ValueFailure.invalidScore(failedValue: -1)));
+      return AvatarScore._(
+          left(const ValueFailure.invalidScore(failedValue: -1)));
     }
   }
   bool isValid() => value.isRight();

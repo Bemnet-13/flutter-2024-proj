@@ -59,118 +59,119 @@ class CreateAvatar extends StatelessWidget {
             icon: Icons.menu,
           ),
           drawer: const DrawerMenu(),
-          body: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 18),
-            child: Center(
-              child: Column(
-                children: [
-                  const SizedBox(
-                    height: 48,
-                  ),
-                  const Text(
-                    'CREAT new Avatar',
-                    style: TextStyle(
+          body: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                const SizedBox(
+                  height: 48,
+                ),
+                const Text(
+                  'CREATE NEW AVATAR',
+                  style: TextStyle(
                       color: CustomColors.primaryText,
                       fontSize: 24,
-                    ),
-                    textAlign: TextAlign.center,
-                  ), // will be edited with custom text widget
-                  const SizedBox(
-                    height: 25,
-                  ),
-                  Form(
-                    autovalidateMode: state.showErrorMessages
-                        ? AutovalidateMode.always
-                        : AutovalidateMode.disabled,
-                    child: Column(
-                      children: [
-                        FieldEntry(
-                          text: "Avatar Name",
-                          icon: Icons.format_list_numbered_rtl_sharp,
-                          isObscured: false,
-                          validatorCallback: (_) => context
-                              .read<AvatarManagerBloc>()
-                              .state
-                              .avatarName
-                              .value
-                              .fold(
-                                (f) => f.maybeMap(
-                                  invalidName: (_) => 'Invalid Avatar name',
-                                  orElse: () =>
-                                      'Please fill out the Name field',
-                                ),
-                                (_) => 'Please fill out the Avatar name field',
-                              ),
-                          onchangedCallback: (value) => context
-                              .read<AvatarManagerBloc>()
-                              .add(AvatarManagerEvent.nameChanged(value)),
-                        ),
-                        FieldEntry(
-                          text: "Avatar Club",
-                          icon: Icons.format_list_numbered_rtl_sharp,
-                          isObscured: false,
-                          validatorCallback: (_) => context
-                              .read<AvatarManagerBloc>()
-                              .state
-                              .avatarClub
-                              .value
-                              .fold(
-                                (f) => f.maybeMap(
-                                  invalidClub: (_) => 'Invalid Avatar Club',
-                                  orElse: () =>
-                                      'Please fill out the Club field',
-                                ),
-                                (_) => 'Please fill out the Avatar club field',
-                              ),
-                          onchangedCallback: (value) => context
-                              .read<AvatarManagerBloc>()
-                              .add(AvatarManagerEvent.clubChanged(value)),
-                        ),
-                        FieldEntry(
-                          text: "Avatar Score",
-                          icon: Icons.format_list_numbered_rtl_sharp,
-                          isObscured: false,
-                          validatorCallback: (_) => context
-                              .read<AvatarManagerBloc>()
-                              .state
-                              .avatarClub
-                              .value
-                              .fold(
-                                (f) => f.maybeMap(
-                                  invalidScore: (_) => 'Invalid Avatar Score',
-                                  orElse: () =>
-                                      'Please fill out the Score field',
-                                ),
-                                (_) => 'Please fill out the Avatar Score field',
-                              ),
-                          onchangedCallback: (value) => context
-                              .read<AvatarManagerBloc>()
-                              .add(AvatarManagerEvent.scoreChanged(value)),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 40,
-                  ),
-                  const SizedBox(
-                    height: 40,
-                  ),
-                  
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                      fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ), // will be edited with custom text widget
+                const SizedBox(
+                  height: 25,
+                ),
+                Form(
+                  autovalidateMode: state.showErrorMessages
+                      ? AutovalidateMode.always
+                      : AutovalidateMode.disabled,
+                  child: Column(
                     children: [
-                      ActionButton(
+                      FieldEntry(
+                        initialValue: "",
+                        text: "Avatar Name",
+                        icon: Icons.format_list_numbered_rtl_sharp,
+                        isObscured: false,
+                        validatorCallback: (_) => context
+                            .read<AvatarManagerBloc>()
+                            .state
+                            .avatarName
+                            .value
+                            .fold(
+                              (f) => f.maybeMap(
+                                invalidName: (_) => 'Invalid Avatar name',
+                                orElse: () => 'Please fill out the Name field',
+                              ),
+                              (_) => 'Please fill out the Avatar name field',
+                            ),
+                        onchangedCallback: (value) => context
+                            .read<AvatarManagerBloc>()
+                            .add(AvatarManagerEvent.nameChanged(value)),
+                      ),
+                      FieldEntry(
+                        initialValue: "",
+                        text: "Avatar Club",
+                        icon: Icons.format_list_numbered_rtl_sharp,
+                        isObscured: false,
+                        validatorCallback: (_) => context
+                            .read<AvatarManagerBloc>()
+                            .state
+                            .avatarClub
+                            .value
+                            .fold(
+                              (f) => f.maybeMap(
+                                invalidClub: (_) => 'Invalid Avatar Club',
+                                orElse: () => 'Please fill out the Club field',
+                              ),
+                              (_) => 'Please fill out the Avatar club field',
+                            ),
+                        onchangedCallback: (value) => context
+                            .read<AvatarManagerBloc>()
+                            .add(AvatarManagerEvent.clubChanged(value)),
+                      ),
+                      FieldEntry(
+                        initialValue: "",
+                        text: "Avatar Score",
+                        icon: Icons.format_list_numbered_rtl_sharp,
+                        isObscured: false,
+                        validatorCallback: (_) => context
+                            .read<AvatarManagerBloc>()
+                            .state
+                            .avatarClub
+                            .value
+                            .fold(
+                              (f) => f.maybeMap(
+                                invalidScore: (_) => 'Invalid Avatar Score',
+                                orElse: () => 'Please fill out the Score field',
+                              ),
+                              (_) => 'Please fill out the Avatar Score field',
+                            ),
+                        onchangedCallback: (value) => context
+                            .read<AvatarManagerBloc>()
+                            .add(AvatarManagerEvent.scoreChanged(value)),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ActionButton(
                           buttonText: 'Create Avatar',
                           buttonColor: CustomColors.accent,
                           onPressedAction: () {
                             context.read<AvatarManagerBloc>().add(
                                 const AvatarManagerEvent.createAvatarPressed());
-                          })
-                    ],
-                  )
-                ],
-              ),
+                          }),
+                    )
+                  ],
+                )
+              ],
             ),
           ),
         );

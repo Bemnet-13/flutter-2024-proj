@@ -134,8 +134,7 @@ class NameFieldEntry extends StatelessWidget {
           onChanged: (value) => context
               .read<SignupFormBloc>()
               .add(SignupFormEvent.nameChanged(value)),
-          validator:
-           (_) =>
+          validator: (_) =>
               context.read<SignupFormBloc>().state.name.value.fold(
                     (f) => f.maybeMap(
                       invalidName: (_) => 'Short Name',
@@ -154,10 +153,12 @@ class FieldEntry extends StatelessWidget {
   final IconData icon;
   final void Function(String value)? onchangedCallback;
   final String Function(String? _)? validatorCallback;
+  final String initialValue;
   //  = Icons.person_2_rounded;
   final bool isObscured;
   const FieldEntry(
       {required this.text,
+      required this.initialValue,
       required this.icon,
       required this.isObscured,
       required this.validatorCallback,
@@ -180,6 +181,7 @@ class FieldEntry extends StatelessWidget {
               ),
             ),
           ),
+          initialValue: initialValue,
           obscureText: isObscured,
           onChanged: onchangedCallback,
           validator: validatorCallback,

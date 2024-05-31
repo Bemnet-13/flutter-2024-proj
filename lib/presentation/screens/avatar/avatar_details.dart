@@ -1,5 +1,4 @@
 import 'package:FantasyE/application/avatar/avatar_manager/avatar_manager_bloc.dart';
-import 'package:FantasyE/domain/leagues/value_objects.dart';
 import 'package:FantasyE/presentation/widgets/appbar.dart';
 import 'package:FantasyE/presentation/widgets/drawer.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,7 +12,7 @@ class AvatarDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AvatarDetails();
+    return const AvatarDetails();
   }
 }
 
@@ -27,7 +26,7 @@ class AvatarDetails extends StatelessWidget {
       builder: (context, state) {
         print(state);
         final avatarName = state.avatarName.getOrCrash();
-        final avatarScore = state.avatarScore.getOrCrash();
+        final avatarScore = state.avatarScore.getOrCrash().toString();
         final avatarClub = state.avatarClub.getOrCrash();
         final firstLetter = avatarName[0];
         return Scaffold(
@@ -97,7 +96,7 @@ class AvatarDetails extends StatelessWidget {
                             fontSize: 30, fontWeight: FontWeight.w900),
                       ),
                       Text(
-                        avatarScore as String,
+                        avatarScore,
                         style: const TextStyle(
                             fontSize: 30, fontWeight: FontWeight.w900),
                       ),

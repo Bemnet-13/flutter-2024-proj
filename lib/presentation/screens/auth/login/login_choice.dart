@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import '../../../widgets/colors.dart';
-import '../../../widgets/buttons.dart';
-import '../../../widgets/text_styles.dart';
-import '../../../widgets/text_fields.dart';
-import '../../../widgets/chips.dart';
-import 'package:flutter/material.dart';
-import '../../../../application/auth/auth_form/auth_bloc.dart';
 
 class LoginChoice extends StatefulWidget {
   const LoginChoice({super.key});

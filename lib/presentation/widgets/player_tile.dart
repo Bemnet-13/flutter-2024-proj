@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-
 
 class PlayerTile extends StatelessWidget {
   final String playerName;
   final String clubName;
-  final TextStyle playerStyle = TextStyle(
-    fontSize: 18.0,
+  final TextStyle playerStyle = const TextStyle(
+    fontSize: 12.0,
     fontWeight: FontWeight.bold,
   );
   PlayerTile(this.playerName, this.clubName);
@@ -15,29 +13,38 @@ class PlayerTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-      const Padding(
-        padding: EdgeInsets.only(left: 30.0),
-        child: CircleAvatar(
-          radius: 50.0,
+        const Padding(
+          padding: EdgeInsets.only(left: 18.0),
+          child: CircleAvatar(
+            radius: 50.0,
+          ),
         ),
-      ),
         Padding(
           padding: const EdgeInsets.fromLTRB(12.0, 15.0, 10.0, 0.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Player Name : ${playerName}", style: playerStyle,),
-              Text("Club Name : ${clubName}", style: playerStyle),
-              IconButton(onPressed: (){},
-                  icon: const Icon(Icons.delete_rounded,
+              Expanded(
+                child: Text(
+                  "Player Name : $playerName",
+                  style: playerStyle,
+                ),
+              ),
+              Expanded(
+                  child: Text("Club Name : $clubName", style: playerStyle)),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.delete_rounded,
                   color: Colors.red,
-                    size: 40.0,
-                  )
-          )]
+                  size: 20.0,
+                ),
+              )
+            ],
           ),
         ),
-        ]
+      ],
     );
   }
 }

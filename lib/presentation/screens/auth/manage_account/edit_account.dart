@@ -70,7 +70,7 @@ class EditAccountForm extends StatelessWidget {
       },
       builder: (context, state) {
         return Scaffold(
-          appBar: CustomAppbar(
+          appBar: const CustomAppbar(
             title: "Edit Account",
             icon: Icons.arrow_back,
           ),
@@ -82,6 +82,7 @@ class EditAccountForm extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 FieldEntry(
+                  initialValue: "",
                   text: 'NAME',
                   icon: Icons.person,
                   isObscured: false,
@@ -98,6 +99,7 @@ class EditAccountForm extends StatelessWidget {
                       .add(ManageAccountEvent.nameChanged(value)),
                 ),
                 FieldEntry(
+                  initialValue: "",
                   text: 'EMAIL',
                   icon: Icons.email_outlined,
                   isObscured: false,
@@ -118,6 +120,7 @@ class EditAccountForm extends StatelessWidget {
                       .add(ManageAccountEvent.emailChanged(value)),
                 ),
                 FieldEntry(
+                  initialValue: "",
                   text: 'PASSWORD',
                   icon: Icons.lock_open_outlined,
                   isObscured: true,
@@ -138,6 +141,7 @@ class EditAccountForm extends StatelessWidget {
                       .add(ManageAccountEvent.passwordChanged(value)),
                 ),
                 FieldEntry(
+                  initialValue: "",
                   text: 'TEAM NAME',
                   icon: Icons.group_add_sharp,
                   isObscured: false,

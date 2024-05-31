@@ -14,18 +14,7 @@ class AddAvatarScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => getIt<AddAvatarBloc>(),
-        ),
-        BlocProvider(
-          create: (context) => getIt<AvatarManagerBloc>(),
-        ),
-      ],
-      child: AvatarDetails(),
-    );
-    
+    return AvatarDetails();
   }
 }
 
@@ -123,9 +112,8 @@ class AvatarDetails extends StatelessWidget {
                     children: [
                       TextButton.icon(
                         onPressed: () {
-                          context
-                              .read<AddAvatarBloc>()
-                              .add(AddAvatarEvent.addAvatarStarted(state.uniqueId));
+                          context.read<AddAvatarBloc>().add(
+                              AddAvatarEvent.addAvatarStarted(state.uniqueId));
                           context.go('/avatar_list_user');
                         },
                         icon: const Icon(
